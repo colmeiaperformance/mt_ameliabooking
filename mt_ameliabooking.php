@@ -206,7 +206,7 @@ function ajax_event_subscription(){
                ],
                [
                         "field"=> "47",
-                        "value"=> 'Nova isncrição em palestra'
+                        "value"=> 'Nova inscrição em palestra'
                ],
                [
                         "field" => "41",
