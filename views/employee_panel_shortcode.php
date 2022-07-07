@@ -35,7 +35,9 @@
             $(".el-row:contains('Endereço personalizado')")[1].remove()
 
             $(".el-row:contains('Allow bringing more persons')").remove()
+            $(".el-row:contains('Permitir trazer mais pessoas')").remove()
             $(".el-row:contains('Allow the same customer to book more than once')").remove()
+            $(".el-row:contains('Permitir que o mesmo inscrito agende mais de uma vez')").remove()
 
            
 
