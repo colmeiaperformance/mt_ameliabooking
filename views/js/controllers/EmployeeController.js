@@ -56,18 +56,37 @@ class EmployeeController {
                 e.addressLine = addressLine;
                 
 
+                let otherLocationsPass = false;
+                
+
                 if(e_location){
-                    if(cityFilter){
-                        if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
-                        || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
-                            filterPass = false;
-                    }else{
-                        if(stateFilter)
-                            if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '))
+
+                    if(otherLocations.length > 0){
+                        if(cityFilter){
+                            if(otherLocations.includes(cityFilter.toLowerCase())){
+                                otherLocationsPass = true;
+                            }
+                        }
+                        if(stateFilter){
+                            if(otherLocations.includes(stateFilter.toLowerCase())){
+                                otherLocationsPass = true;
+                            }
+                        }
+                    }
+
+                    if(!otherLocationsPass){
+                        if(cityFilter){
+                            if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
+                            || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
                                 filterPass = false;
+                        }else{
+                            if(stateFilter)
+                                if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '))
+                                    filterPass = false;
+                        }
                     }
                 }else{
-                    if(cityFilter || stateFilter){
+                    if((cityFilter || stateFilter) && !otherLocationsPass){
                         filterPass = false;
                     }
                 }
