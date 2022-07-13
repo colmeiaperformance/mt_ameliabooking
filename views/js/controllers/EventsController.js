@@ -43,7 +43,7 @@ class EventsController {
             },
             "recaptcha": false,
             "locale": "pt_BR",
-            "timeZone": "America/Sao_Paulo",
+            //"timeZone": "America/Sao_Paulo",
             "couponCode": "",
             "componentProps": {
                 "phonePopulated": 0,
