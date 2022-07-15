@@ -7,6 +7,10 @@ class EventItem extends View{
 			if(e && e.periods){
 				let startDate = moment(e.periods[0].periodStart);
 				let endDate = moment(e.periods[0].periodEnd);
+
+				startDate.subtract(3, 'hours');
+				endDate.subtract(3, 'hours');
+
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
@@ -28,8 +32,8 @@ class EventItem extends View{
 								<img src="${baseUrl}resources/svg/map_pointer_icon.svg" />
 								${ e.location ? e.location.name : '' }
 								<img src="${baseUrl}resources/svg/clock_icon.svg" />
-								 ${startDateStr}  ${startDate.subtract(3, 'hours').format('HH:mm')} -
-								 ${startDateStr == endDateStr ? endDate.subtract(3, 'hours').format('HH:mm') : endDateStr + ' ' + endDate.subtract(3, 'hours').format('HH:mm') }
+								 ${startDateStr}  ${startDate.format('HH:mm')} -
+								 ${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
 							</h5>
 						</div>
 						<div class="mt_action_button">
