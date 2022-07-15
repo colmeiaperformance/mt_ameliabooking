@@ -1,14 +1,18 @@
 <?php 
    $all_users = get_users();
    $userInfos = [];
+   
    foreach($all_users  as $user){
-    
-    $desc = get_user_meta($user->ID)['description'][0];
-    $userInfos[] = [
-        'email' => $user->data->user_email,
-        'id' => $user->ID,
-        'otherPlaces' => $desc ? explode(';', $desc) : []
-    ];
+    if(isset($user->allcaps['amelia_write_others_events'])){
+        if(!$user->allcaps['amelia_write_others_events']){ 
+            $desc = get_user_meta($user->ID)['description'][0];
+            $userInfos[] = [
+            'email' => $user->data->user_email,
+            'id' => $user->ID,
+            'otherPlaces' => $desc ? explode(';', $desc) : []
+            ]; 
+        }
+    }
    }
 
 ?>
@@ -23,10 +27,12 @@
             <div class="container">
                 <div id="mt-instrutores" class="swiper mt-swiperInstrutores" data-bs-ride="carousel">
                     <div class="swiper-wrapper" id="mt_employees_result">
+                        
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
+                <div id="msg" style="display: none;">Verifique os dados e tente novamente!</div>
             </div>
         </section>
 
@@ -35,6 +41,14 @@
         </div>
     </div>
 </div>
+
+<style>
+    #msg{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bolder;
+    }
+</style>
 
 <script>
     
@@ -54,14 +68,12 @@
     let cities = [];
     let currentName = "";
 
-
-
     render();
 
     async function render() {
         jQuery("#mt_loader_overlay").fadeIn();
-        await getEmployees();
         await getFilterEntities();
+        await getEmployees();
         jQuery("#mt_loader_overlay").fadeOut();      
     }
 
@@ -70,8 +82,13 @@
         controller.renderItems(employee_list);
         startSlider();
     }
+    
+    function showMensage(){
+        document.getElementById("msg").style.display = "flex";
+    }
 
     async function getFilterEntities(){
+        
         states = await state.list();
         filterController.renderFields(states, cities, "--", "--", currentName);
     }
@@ -80,52 +97,57 @@
         currentName = str;
         let result = employee_list;
         result = result.filter(e => e.firstName.toLowerCase().includes(str.toLowerCase()) || e.lastName.toLowerCase().includes(str.toLowerCase()));
+
+        if(result.length > 0){
+            jQuery("#msg").css('display', 'none');
+        }else{
+            showMensage();
+        }
         controller.renderItems(result);
+
+
         console.log(result);
         startSlider();
     }
 
-
-    
-
     function startSlider() {
         jQuery(document).ready(function() {
-        var swiper = new Swiper(".mt-swiperInstrutores", {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-            loop: false,
-            spaceBetween: 10,
-            autoplay: true,
-			 autoplay: {
-			  delay: 3000,
-		 	},
-            centeredSlides:false,
-            pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-            },
-            navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-            320: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 0,
-            },
-			768: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 0,
-            },		
-            992: {
+            var swiper = new Swiper(".mt-swiperInstrutores", {
                 slidesPerView: 4,
                 slidesPerGroup: 4,
-                spaceBetween: 0,
-            },
-            },
-        });
+                loop: false,
+                spaceBetween: 10,
+                autoplay: true,
+                autoplay: {
+                delay: 3000,
+                },
+                centeredSlides:false,
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+                navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2,
+                    spaceBetween: 0,
+                },		
+                992: {
+                    slidesPerView: 4,
+                    slidesPerGroup: 4,
+                    spaceBetween: 0,
+                },
+                },
+            });
         });
     }
 
@@ -140,8 +162,9 @@
         jQuery("#mt_employees_result").css('display', 'flex');
         controller.renderItems(employess);
         startSlider();
-        jQuery("#mt_loader_overlay").fadeOut();
-        
+        jQuery("#msg").css('display', 'none');
+        jQuery("#mt_loader_overlay").fadeOut(); 
+         
     }
 
 
@@ -152,9 +175,12 @@
        eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
        city.nome != '' ? city.nome : false);
        if(eventList.length > 0){
-            jQuery("#mt_employees_result").css('display', 'flex');
-            controller.renderItems(eventList);
+           jQuery("#mt_employees_result").css('display', 'flex');
+           jQuery("#msg").css('display', 'none');
+           controller.renderItems(eventList);
        }else{
+            showMensage();
+            jQuery("#msg").css('display', 'flex');
             jQuery("#mt_employees_result").css('display', 'none');
             let texto = "";
             if(city?.nome)
