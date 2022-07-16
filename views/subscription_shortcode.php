@@ -172,13 +172,13 @@
        city.nome ? city.nome : false);
 
        if(eventList.length > 0){
-            jQuery("#mt_empty_form").css('display', 'none');
-            jQuery('.phoneMask').mask('(00) 00000-0000');
+           jQuery("#mt_empty_form").css('display', 'none');
             
             if(state.sigla && city.nome){
                 document.getElementById('mt_filter_results').removeAttribute('style');
                 document.getElementById('mt_filters').removeAttribute('style');
                 controller.renderItems(eventList);
+                jQuery('.phoneMask').mask('(00) 00000-0000');
             }else{
                 controller.renderItems([]);
             }
