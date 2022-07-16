@@ -65,22 +65,13 @@
 
     async function render(){
         jQuery("#mt_loader_overlay").fadeIn();
-        await getEvents();
         await getFilterEntities();
+        document.getElementById('mt_filter_results').style.display = 'none';
+        document.getElementById('mt_filters').style.marginBottom = '250px';
+        jQuery("#mt_empty_form").css('display', 'none');
         jQuery("#mt_loader_overlay").fadeOut();
     }
-    async function getEvents() {
-         eventList = await controller.list();
-        if(eventList.length > 0){
-            jQuery("#mt_filter_results").css('display', 'block');
-            jQuery("#mt_empty_form").css('display', 'none');
-            controller.renderItems(eventList);
-            jQuery('.phoneMask').mask('(00) 0000-00000');
-        }else{
-            jQuery("#mt_filter_results").css('display', 'none');
-            jQuery("#mt_empty_form").css('display', 'block');
-        }
-    }
+
     async function getFilterEntities(){
         states = await state.list();
         filterController.renderFields(states, cities, "--");
@@ -119,9 +110,14 @@
                 formData.append('lastName',lastName)
                 formData.append('phone',phone)
                 formData.append('oqueTrouxe',filteredCheckOptions.join(', '));
-                formData.append('dataPalestra',moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('YYYY-MM-DD'));
-                formData.append('horaPalestra',moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm'));
-                formData.append('dataHoraPalestra',moment(bkEvent.periods[0].periodStart).format('YYYY-MM-DD HH:mm'));
+                
+                let start = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('YYYY-MM-DD');
+                let hour = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm');
+                let hourDate = moment(bkEvent.periods[0].periodStart).format('YYYY-MM-DD HH:mm');
+
+                formData.append('dataPalestra', `${start}`);
+                formData.append('horaPalestra',  `${hour}`);
+                formData.append('dataHoraPalestra',  `${hourDate}`);
             
                 formData.append('instrutor',bkEvent.organizer?.firstName+' '+ bkEvent.organizer?.lastName)
                 formData.append('message',jQuery("#contactMessage").val())
@@ -160,7 +156,8 @@
         city = new City();
         filterController.renderFields(states,[], "--");
         eventList = await controller.list();
-        jQuery("#mt_filter_results").css('display', 'block');
+        jQuery("#mt_filter_results").css('display', 'none');
+        document.getElementById('mt_filters').style.marginBottom = '250px';
         jQuery("#mt_empty_form").css('display', 'none');
         controller.renderItems(eventList);
         jQuery("#mt_loader_overlay").fadeOut();
@@ -173,13 +170,19 @@
 
        eventList = await controller.list(1, moment(), orderBy, state.sigla ? state.sigla : false,
        city.nome ? city.nome : false);
+
        if(eventList.length > 0){
-            jQuery("#mt_filter_results").css('display', 'block');
             jQuery("#mt_empty_form").css('display', 'none');
-            controller.renderItems(eventList);
-            jQuery('.phoneMask').mask('(00) 0000-00000');
+            jQuery('.phoneMask').mask('(00) 00000-0000');
+            
+            if(state.sigla && city.nome){
+                document.getElementById('mt_filter_results').removeAttribute('style');
+                document.getElementById('mt_filters').removeAttribute('style');
+                controller.renderItems(eventList);
+            }else{
+                controller.renderItems([]);
+            }
        }else{
-            jQuery("#mt_filter_results").css('display', 'none');
             let texto = "";
             if(city?.nome)
                  texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
@@ -190,6 +193,7 @@
             
             if(city?.nome || state?.sigla)
                 jQuery("#cast").val(texto);
+            document.getElementById('mt_filters').removeAttribute('style');
             jQuery("#mt_empty_form").css('display', 'block');
             
        }
