@@ -88,7 +88,6 @@
     }
 
     async function getFilterEntities(){
-        
         states = await state.list();
         filterController.renderFields(states, cities, "--", "--", currentName);
     }
@@ -120,11 +119,18 @@
                 autoplay: true,
                 autoplay: {
                 delay: 3000,
-                },
+                pauseOnMouseEnter: true,
+                disableOnInteraction: false
+                },  
+                watchSlidesProgress: true,
+                watchOverflow: true,
+                lazyLoading: true,
+                resizeObserver: true,
+                observer: true,
                 centeredSlides:false,
                 pagination: {
                 el: ".swiper-pagination",
-                clickable: true,
+                clickable: false
                 },
                 navigation: {
                 nextEl: '.swiper-button-next',
@@ -132,8 +138,8 @@
                 },
                 breakpoints: {
                 320: {
-                    slidesPerView: 2,
-                    slidesPerGroup: 2,
+                    slidesPerView: 1,
+                    slidesPerGroup: 1,
                     spaceBetween: 0,
                 },
                 768: {
@@ -145,12 +151,11 @@
                     slidesPerView: 4,
                     slidesPerGroup: 4,
                     spaceBetween: 0,
-                },
-                },
+                }
+                }
             });
         });
     }
-
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
@@ -158,7 +163,7 @@
         state = new State();
         city = new City();
         filterController.renderFields(states, cities, "--", "--", currentName);
-        employess = await controller.list();
+        employess = await controller.list(false, false, false, wp_user_infos);
         jQuery("#mt_employees_result").css('display', 'flex');
         controller.renderItems(employess);
         startSlider();
@@ -173,7 +178,7 @@
        
        console.log(city.nome);
        eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
-       city.nome != '' ? city.nome : false);
+       city.nome != '' ? city.nome : false, wp_user_infos);
        if(eventList.length > 0){
            jQuery("#mt_employees_result").css('display', 'flex');
            jQuery("#msg").css('display', 'none');
