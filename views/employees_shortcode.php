@@ -3,16 +3,22 @@
    $userInfos = [];
    
    foreach($all_users  as $user){
-    if(isset($user->allcaps['amelia_write_others_events'])){
-        if(!$user->allcaps['amelia_write_others_events']){ 
-            $desc = get_user_meta($user->ID)['description'][0];
-            $userInfos[] = [
-            'email' => $user->data->user_email,
-            'id' => $user->ID,
-            'otherPlaces' => $desc ? explode(';', $desc) : []
-            ]; 
-        }
-    }
+        $desc = get_user_meta($user->ID)['description'][0];
+        $userInfos[] = [
+        'email' => $user->data->user_email,
+        'id' => $user->ID,
+        'otherPlaces' => $desc ? explode(';', $desc) : []
+        ]; 
+    // if(isset($user->allcaps['amelia_write_others_events'])){
+    //     if(!$user->allcaps['amelia_write_others_events']){ 
+    //         $desc = get_user_meta($user->ID)['description'][0];
+    //         $userInfos[] = [
+    //         'email' => $user->data->user_email,
+    //         'id' => $user->ID,
+    //         'otherPlaces' => $desc ? explode(';', $desc) : []
+    //         ]; 
+    //     }
+    // }
    }
 
 ?>
@@ -175,7 +181,6 @@
 
     const filterEvents = async() => {
        jQuery("#mt_loader_overlay").fadeIn();
-       
        console.log(city.nome);
        eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
        city.nome != '' ? city.nome : false, wp_user_infos);
