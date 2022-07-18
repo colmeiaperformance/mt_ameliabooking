@@ -71,6 +71,7 @@
         jQuery("#mt_loader_overlay").fadeIn();
         employee = await getEmployee(id);
         controller.render(employee);
+        jQuery('#contactPhone').mask('(00) 00000-0000');
         jQuery("#mt_loader_overlay").fadeOut();
     }
 

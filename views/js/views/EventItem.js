@@ -74,12 +74,12 @@ class EventItem extends View{
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Email: </label>
-										<input required name="email" onchange="email = this.value" type="text" class="form-control">
+										<input required name="email" onchange="email = this.value" type="email" class="form-control">
 									</div>
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
 										<img src="${baseUrl}resources/svg/flag.svg">
-										<input required name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask">
+										<input required name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="tel" class="form-control phoneMask">
 									</div>
 								</div>
 								${
