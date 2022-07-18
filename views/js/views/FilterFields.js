@@ -32,8 +32,20 @@ class FilterFields extends View{
           </select>
         </div>
       </div>
-      <div class="mt_row">
-        <div class="mt_filter select">
+      <div class="mt_row justify-content-end">
+          <div class="mt_filter">
+            <button id="filterButton" onclick="filterEvents()" class="btn btn-primary">
+            Buscar
+            </button>
+          </div>
+          <div class="mt_filter">
+            <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
+            Remover Filtros
+            </button>
+          </div>
+      </div>
+      <div class="mt_row justify-content-end">
+        <div class="mt_filter col-sm-3">
           <select id="stateFilter" onchange="changeOrderBy(this.value)" class="form-control">
             <option selected disabled>Ordenar por</option>
             <option value="local">Local</option>
@@ -46,20 +58,8 @@ class FilterFields extends View{
           </select>
         </div>
         </div>
-        <div class="mt_row justify-content-end">
-          <div class="mt_filter">
-            <button id="filterButton" onclick="filterEvents()" class="btn btn-primary">
-            Buscar
-            </button>
-          </div>
-          <div class="mt_filter">
-            <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
-            Remover Filtros
-            </button>
-          </div>
-        </div>
       </div>
     </div>
     `);
     }
-    }
+}
