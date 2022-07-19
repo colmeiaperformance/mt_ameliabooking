@@ -78,21 +78,21 @@
     
     let instrutorID = false
 
+    instrutorID = '<?php echo $instrutorID; ?>';
+    if(instrutorID){
+        instrutorID = Number(instrutorID);
+    }else{
+        instrutorID = false;   
+    }
+
     render();
 
     async function render(){
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
-
-        instrutorID = '<?php echo $instrutorID; ?>';
-        if(instrutorID){
-            instrutorID = Number(instrutorID);
-        }else{
-            instrutorID = false;   
-        }
+        eventList = await controller.list();
 
         if(instrutorID){
-            eventList = await controller.list();
 
             let list = []
             eventList.forEach((element) => {
@@ -100,8 +100,8 @@
                     list.push(element);
                 }
             });
-
             eventList = list;
+
 
             if(eventList.length == 0){
                 document.getElementById('mt_filter_results').style.display = 'none';
@@ -237,12 +237,16 @@
             jQuery("#mt_empty_form").css('display', 'none');
             if(eventList.length > 0){
                 let list = [];
-                eventList.forEach((element) => {
+                
+                if(instrutorID){
+                    eventList.forEach((element) => {
                     if(element._organizerId && element._organizerId == instrutorID){
                         list.push(element);
                     }
-                });
-                eventList = list;
+                    });
+                    eventList = list;
+                }
+
                 if(state.sigla){
                     document.getElementById('mt_filter_results').removeAttribute('style');
                     document.getElementById('mt_filters').removeAttribute('style');
