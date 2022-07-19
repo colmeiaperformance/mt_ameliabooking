@@ -3,7 +3,7 @@ class EventItem extends View{
         super(elemento, scope, baseUrl);
     }
     template(model,baseUrl){
-        return (model.map((e,key) => {
+		return (model.map((e,key) => {
 			if(e && e.periods){
 				let startDate = moment(e.periods[0].periodStart);
 				let endDate = moment(e.periods[0].periodEnd);

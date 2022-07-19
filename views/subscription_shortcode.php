@@ -8,6 +8,8 @@
 
         </div>
 
+        <div id="msg" style="display: none;">O instrutor selecionado não pussui eventos cadastrados!</div>
+
         <!-- Form when there is no events for selected filter -->
         <div id="mt_empty_form">
             <?php include('empty_result_form.php'); ?>
@@ -24,6 +26,7 @@
             <button class="mt_btn_default" onclick="closeModal()"> Ok </button>
         </div>
 
+
         <div id="mt_message_overlay_success">
             <h2> Obrigada!</h2>
             <h3> 
@@ -36,14 +39,26 @@
     </div>
 </div>
 
+<style>
+    #msg{
+        text-align: center;
+        font-size: 35px;
+        font-weight: bolder;
+    }
+</style>
 
 
-
+<?php
+    $instrutorID = false; 
+    if(isset($_GET['instrutor'])){
+        $instrutorID = intval($_GET['instrutor']);
+    }
+?>
 
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo plugin_dir_url( __FILE__ ); ?>';
-    
+
     let $ = document.querySelector.bind(document);
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
@@ -54,21 +69,61 @@
     let city = new City();
     let states = [];
     let cities = [];
-
+    
     let firstName = "";
     let lastName = "";
     let email = "";
     let phone = "";
     let checkBox = [];
+    
+    let instrutorID = false
 
     render();
 
     async function render(){
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
-        document.getElementById('mt_filter_results').style.display = 'none';
-        document.getElementById('mt_filters').style.marginBottom = '250px';
-        jQuery("#mt_empty_form").css('display', 'none');
+
+        instrutorID = '<?php echo $instrutorID; ?>';
+        if(instrutorID){
+            instrutorID = Number(instrutorID);
+        }else{
+            instrutorID = false;   
+        }
+
+        if(instrutorID){
+            eventList = await controller.list();
+
+            let list = []
+            eventList.forEach((element) => {
+                if(element._organizerId && element._organizerId == instrutorID){
+                    list.push(element);
+                }
+            });
+
+            eventList = list;
+
+            if(eventList.length == 0){
+                document.getElementById('mt_filter_results').style.display = 'none';
+                document.getElementById('mt_filters').style.marginBottom = '250px';
+                jQuery("#mt_empty_form").css('display', 'none');
+                document.getElementById('mt_filters').removeAttribute('style');
+                document.getElementById("msg").style.display = "flex";
+                document.getElementById('msg').style.marginBottom = '250px';
+            }else{
+                jQuery("#mt_empty_form").css('display', 'none');
+                document.getElementById('mt_filter_results').removeAttribute('style');
+                document.getElementById('mt_filters').removeAttribute('style');
+            }
+
+            controller.renderItems(eventList);
+            jQuery('.phoneMask').mask('(00) 00000-0000');
+        }else{
+            document.getElementById('mt_filter_results').style.display = 'none';
+            document.getElementById('mt_filters').style.marginBottom = '250px';
+            jQuery("#mt_empty_form").css('display', 'none');
+        }
+        
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
@@ -154,35 +209,59 @@
         jQuery("#mt_loader_overlay").fadeIn();
         state = new State();
         city = new City();
-        filterController.renderFields(states,[], "--");
+        await getFilterEntities();
         eventList = await controller.list();
-        jQuery("#mt_filter_results").css('display', 'none');
-        document.getElementById('mt_filters').style.marginBottom = '250px';
-        jQuery("#mt_empty_form").css('display', 'none');
-        controller.renderItems(eventList);
-        jQuery("#mt_loader_overlay").fadeOut();
+        if(instrutorID){
+            render();
+            jQuery("#msg").css('display', 'none');
+        }else{
+            jQuery("#mt_filter_results").css('display', 'none');
+            document.getElementById('mt_filters').style.marginBottom = '250px';
+            jQuery("#mt_empty_form").css('display', 'none');
+            jQuery("#msg").css('display', 'none');
+            controller.renderItems(eventList);
+            jQuery('.phoneMask').mask('(00) 00000-0000');
+            jQuery("#mt_loader_overlay").fadeOut();
+        }
     }
 
     //FilterEvents
     const filterEvents = async() => {
         
-       jQuery("#mt_loader_overlay").fadeIn();
+        jQuery("#mt_loader_overlay").fadeIn();
+        jQuery("#msg").css('display', 'none');
 
-       eventList = await controller.list(1, moment(), orderBy, state.sigla ? state.sigla : false,
-       city.nome ? city.nome : false);
-
-       if(eventList.length > 0){
-           jQuery("#mt_empty_form").css('display', 'none');
-            
-            if(state.sigla && city.nome){
-                document.getElementById('mt_filter_results').removeAttribute('style');
-                document.getElementById('mt_filters').removeAttribute('style');
-                controller.renderItems(eventList);
-                jQuery('.phoneMask').mask('(00) 00000-0000');
+        eventList = await controller.list(1, moment(), orderBy, state.sigla ? state.sigla : false, city.nome ? city.nome : false);
+        
+        if(eventList.length > 0 || instrutorID){
+            jQuery("#mt_empty_form").css('display', 'none');
+            if(eventList.length > 0){
+                let list = [];
+                eventList.forEach((element) => {
+                    if(element._organizerId && element._organizerId == instrutorID){
+                        list.push(element);
+                    }
+                });
+                eventList = list;
+                if(state.sigla){
+                    document.getElementById('mt_filter_results').removeAttribute('style');
+                    document.getElementById('mt_filters').removeAttribute('style');
+                    controller.renderItems(eventList);
+                    jQuery('.phoneMask').mask('(00) 00000-0000');
+                }
             }else{
+                document.getElementById('mt_filter_results').style.display = 'none';
+                document.getElementById('mt_filters').style.marginBottom = '250px';
+                jQuery("#mt_empty_form").css('display', 'none');
+                document.getElementById('mt_filters').removeAttribute('style');
+                document.getElementById("msg").innerText = "O instrutor selecionado não pussui eventos cadastrados nessa cidade/estado!";
+                document.getElementById("msg").style.display = "flex";
+                document.getElementById('msg').style.marginBottom = '250px'
+
                 controller.renderItems([]);
             }
-       }else{
+            
+        }else{
             let texto = "";
             if(city?.nome)
                  texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
@@ -196,8 +275,8 @@
             document.getElementById('mt_filters').removeAttribute('style');
             jQuery("#mt_empty_form").css('display', 'block');
             
-       }
-       jQuery("#mt_loader_overlay").fadeOut();
+        }
+        jQuery("#mt_loader_overlay").fadeOut();
     }
 
     //FilterInteractors
@@ -248,6 +327,5 @@
             $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
         }
     }
-
 
 </script>

@@ -57,7 +57,6 @@
 </style>
 
 <script>
-    
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo site_url(); ?>';
     let $ = document.querySelector.bind(document);
