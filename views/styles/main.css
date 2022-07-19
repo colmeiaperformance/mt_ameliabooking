@@ -481,7 +481,7 @@
 }
 @media screen and (max-width: 992px) {
   .mt_event_details_subscriptions .mt_column.phone img {
-    bottom: 7px;
+    bottom: 20px;
     left: 15px;
   }
 }
@@ -498,7 +498,7 @@
   .mt_event_details_subscriptions .mt_column.phone::before {
     height: 32px;
     left: 52px;
-    bottom: 1px;
+    bottom: 15px;
   }
 }
 .mt_event_details_subscriptions .mt_column:last-child {
