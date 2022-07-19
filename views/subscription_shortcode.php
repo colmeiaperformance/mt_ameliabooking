@@ -212,8 +212,8 @@
         await getFilterEntities();
         eventList = await controller.list();
         if(instrutorID){
-            render();
-            jQuery("#msg").css('display', 'none');
+            let url = document.URL.replace(`?instrutor=${instrutorID}`,'');
+            window.location.href = url;
         }else{
             jQuery("#mt_filter_results").css('display', 'none');
             document.getElementById('mt_filters').style.marginBottom = '250px';
@@ -256,7 +256,7 @@
                 document.getElementById('mt_filters').removeAttribute('style');
                 document.getElementById("msg").innerText = "O instrutor selecionado não pussui eventos cadastrados nessa cidade/estado!";
                 document.getElementById("msg").style.display = "flex";
-                document.getElementById('msg').style.marginBottom = '250px'
+                document.getElementById('msg').style.marginBottom = '200px'
 
                 controller.renderItems([]);
             }
