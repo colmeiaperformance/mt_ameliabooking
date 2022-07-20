@@ -24,15 +24,15 @@
         font-style: normal;
         font-weight: 500;
         font-size: 17px;
-        padding: 8px 25px;
-        line-height: 22px;
+        padding: 9px 31px;
+        line-height: 24px;
         &::placeholder{
           color: #F29F05;
           font-family: 'Work Sans';
           font-style: normal;
           font-weight: 500;
           font-size: 16px;
-          line-height: 22px;
+          line-height: 24px;
         }
       }
       button{
@@ -40,7 +40,7 @@
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
-        line-height: 22px;
+        line-height: 24px;
         background: #F29F05;
         border-radius: 30px;
         padding:7px 20px;
@@ -193,7 +193,7 @@
           font-style: normal;
           font-weight: 700;
           font-size: 1rem;
-          line-height: 22px;
+          line-height: 24px;
           color: #7896C1;
           background: none;
           padding: 9px 31px;
@@ -341,6 +341,18 @@
     flex: 1;
     padding-right:10px;
     position:relative;
+    .input-group-text {
+      border: solid 1px #F29F05;
+      color: #F29F05;
+      background: #FFFFFF;
+      width: 60px;
+      height: auto;
+      margin-bottom: 15px;
+      &.flag {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+      }
+    }
     @media screen and (max-width:992px) {
       margin-bottom: 10px;
     }
@@ -348,26 +360,13 @@
       padding-left: 140px;
       img{
         position: absolute;
-        bottom: 23px;
-        left: 31px;
+        bottom: 25px;
+        left: 20px;
+        z-index: 10;
         @media screen and (max-width:992px) {
           bottom: 20px;
           left: 15px;
         }
-      }
-      &::before{
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 37px;
-        border-left: solid 1px #F29F05;
-        bottom: 15px;
-        left: 77px;
-        @media screen and (max-width:992px) {
-          height: 32px;
-          left: 52px;
-          bottom: 15px;
-      }
       }
     }
     &:last-child {
@@ -379,7 +378,7 @@
       font-style: normal;
       font-weight: 500;
       font-size: 1rem;
-      line-height: 22px;
+      line-height: 24px;
       color: #323B50;
       margin-bottom: 15px;
       @media screen and (max-width:992px) {
@@ -397,9 +396,12 @@
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
-      padding: 8px 25px;
-      line-height: 15px;
+      padding: 9px 31px;
+      line-height: 24px;
       margin-bottom: 15px;
+      &.phoneMask{
+        padding-left: 10px;
+      }
       @media screen and (max-width:992px) {
         font-size: 12px;        
       }
@@ -411,6 +413,10 @@
         font-size: 18px;
         line-height: 28px;
       }
+    }
+    .valid-feedback, .invalid-feedback {
+      margin-top: -0.75rem;
+      margin-bottom: 1rem;
     }
   }
 }

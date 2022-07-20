@@ -59,27 +59,39 @@ class EventItem extends View{
 									</button>
 								</div>
 							</div>
-							<form id="formEvt${e.id}" onsubmit="return false">
+							<form id="formEvt${e.id}" onsubmit="return false" class="needs-validation" novalidate>
 							<div class="mt_event_details_subscriptions" id="mt_event_details_subscriptions_${key}">
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Primeiro Nome: </label>
 										<input name="firstName" required onchange="firstName = this.value" type="text" class="form-control">
+										<div class="valid-feedback">O nome foi preenchido!</div>
+                    <div class="invalid-feedback">Por favor, insira um nome!</div>
 									</div>
 									<div class="mt_column">
 										<label> * Sobrenome: </label>
 										<input required name="lastName" onchange="lastName = this.value" type="text" class="form-control">
+										<div class="valid-feedback">O sobrenome foi preenchido!</div>
+                    <div class="invalid-feedback">Por favor, insira um sobrenome!</div>
 									</div>
 								</div>
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Email: </label>
 										<input required name="email" onchange="email = this.value" type="email" class="form-control">
+										<div class="valid-feedback">O e-mail é válido!</div>
+                    <div class="invalid-feedback">Por favor, insira um e-mail válido!</div>
 									</div>
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
-										<img src="${baseUrl}resources/svg/flag.svg">
-										<input required name="phone" onchange="phone = this.value"  style="padding-left: 75px;" type="tel" class="form-control phoneMask">
+										<div class="input-group">
+      								<span class="input-group-text flag"><img src="${baseUrl}resources/svg/flag.svg"></span>
+      								<input required name="phone" onchange="phone = this.value"  type="tel" class="form-control phoneMask">
+    							</div>
+									<div class="valid-feedback">O número de telefone é válido!</div>
+                  <div class="invalid-feedback">Por favor, insira um número de telefone válido!</div>
+
+										
 									</div>
 								</div>
 								${

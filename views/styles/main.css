@@ -39,8 +39,8 @@
   font-style: normal;
   font-weight: 500;
   font-size: 17px;
-  padding: 8px 25px;
-  line-height: 22px;
+  padding: 9px 31px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter select::-webkit-input-placeholder, #mt_subscription_shortcode .mt_filter_options .mt_filter input::-webkit-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter select::-webkit-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter input::-webkit-input-placeholder {
   color: #F29F05;
@@ -48,7 +48,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter select::-moz-placeholder, #mt_subscription_shortcode .mt_filter_options .mt_filter input::-moz-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter select::-moz-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter input::-moz-placeholder {
   color: #F29F05;
@@ -56,7 +56,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter select:-ms-input-placeholder, #mt_subscription_shortcode .mt_filter_options .mt_filter input:-ms-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter select:-ms-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter input:-ms-input-placeholder {
   color: #F29F05;
@@ -64,7 +64,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter select::-ms-input-placeholder, #mt_subscription_shortcode .mt_filter_options .mt_filter input::-ms-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter select::-ms-input-placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter input::-ms-input-placeholder {
   color: #F29F05;
@@ -72,7 +72,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter select::placeholder, #mt_subscription_shortcode .mt_filter_options .mt_filter input::placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter select::placeholder, #mt_employees_shortcode .mt_filter_options .mt_filter input::placeholder {
   color: #F29F05;
@@ -80,14 +80,14 @@
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
 }
 #mt_subscription_shortcode .mt_filter_options .mt_filter button, #mt_employees_shortcode .mt_filter_options .mt_filter button {
   font-family: "Work Sans";
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   background: #F29F05;
   border-radius: 30px;
   padding: 7px 20px;
@@ -285,7 +285,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: 1rem;
-  line-height: 22px;
+  line-height: 24px;
   color: #7896C1;
   background: none;
   padding: 9px 31px;
@@ -466,6 +466,18 @@
   padding-right: 10px;
   position: relative;
 }
+.mt_event_details_subscriptions .mt_column .input-group-text {
+  border: solid 1px #F29F05;
+  color: #F29F05;
+  background: #FFFFFF;
+  width: 60px;
+  height: auto;
+  margin-bottom: 15px;
+}
+.mt_event_details_subscriptions .mt_column .input-group-text.flag {
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
 @media screen and (max-width: 992px) {
   .mt_event_details_subscriptions .mt_column {
     margin-bottom: 10px;
@@ -476,29 +488,14 @@
 }
 .mt_event_details_subscriptions .mt_column.phone img {
   position: absolute;
-  bottom: 23px;
-  left: 31px;
+  bottom: 25px;
+  left: 20px;
+  z-index: 10;
 }
 @media screen and (max-width: 992px) {
   .mt_event_details_subscriptions .mt_column.phone img {
     bottom: 20px;
     left: 15px;
-  }
-}
-.mt_event_details_subscriptions .mt_column.phone::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 37px;
-  border-left: solid 1px #F29F05;
-  bottom: 15px;
-  left: 77px;
-}
-@media screen and (max-width: 992px) {
-  .mt_event_details_subscriptions .mt_column.phone::before {
-    height: 32px;
-    left: 52px;
-    bottom: 15px;
   }
 }
 .mt_event_details_subscriptions .mt_column:last-child {
@@ -510,7 +507,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
-  line-height: 22px;
+  line-height: 24px;
   color: #323B50;
   margin-bottom: 15px;
 }
@@ -530,9 +527,12 @@
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
-  padding: 8px 25px;
-  line-height: 15px;
+  padding: 9px 31px;
+  line-height: 24px;
   margin-bottom: 15px;
+}
+.mt_event_details_subscriptions .mt_column select.phoneMask, .mt_event_details_subscriptions .mt_column input.phoneMask {
+  padding-left: 10px;
 }
 @media screen and (max-width: 992px) {
   .mt_event_details_subscriptions .mt_column select, .mt_event_details_subscriptions .mt_column input {
@@ -578,6 +578,10 @@
   font-weight: 500;
   font-size: 18px;
   line-height: 28px;
+}
+.mt_event_details_subscriptions .mt_column .valid-feedback, .mt_event_details_subscriptions .mt_column .invalid-feedback {
+  margin-top: -0.75rem;
+  margin-bottom: 1rem;
 }
 
 .mt_empty_form {
