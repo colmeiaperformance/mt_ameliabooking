@@ -690,6 +690,7 @@ input[type="checkbox"]:disabled {
   padding: 50px;
   border-radius: 15px;
   box-shadow: #00000057 4px 4px 4px 4px;
+  z-index: 20;
   display: none;
   h2, h3{
     color: rgb(148, 13, 13);

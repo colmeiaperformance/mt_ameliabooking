@@ -897,6 +897,7 @@ input[type=checkbox]:disabled {
   border-radius: 15px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.3411764706) 4px 4px 4px 4px;
           box-shadow: rgba(0, 0, 0, 0.3411764706) 4px 4px 4px 4px;
+  z-index: 20;
   display: none;
 }
 #mt_message_overlay_error h2, #mt_message_overlay_error h3 {
