@@ -8,7 +8,7 @@
 
         </div>
 
-        <div id="msg" style="display: none;">O instrutor selecionado não pussui eventos cadastrados!</div>
+        <div id="msg" style="display: none;">O instrutor selecionado não possui eventos cadastrados!</div>
 
         <!-- Form when there is no events for selected filter -->
         <div id="mt_empty_form">
@@ -258,7 +258,7 @@
                 document.getElementById('mt_filters').style.marginBottom = '250px';
                 jQuery("#mt_empty_form").css('display', 'none');
                 document.getElementById('mt_filters').removeAttribute('style');
-                document.getElementById("msg").innerText = "O instrutor selecionado não pussui eventos cadastrados nessa cidade/estado!";
+                document.getElementById("msg").innerText = "O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!";
                 document.getElementById("msg").style.display = "flex";
                 document.getElementById('msg').style.marginBottom = '200px'
 
