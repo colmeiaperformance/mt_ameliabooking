@@ -8,7 +8,7 @@
 
         </div>
 
-        <div id="msg" style="display: none;">O instrutor selecionado não possui eventos cadastrados!</div>
+        <div id="msg" style="display: none;">Desculpe! No momento não temos palestra agendada para este instrutor.</div>
 
         <!-- Form when there is no events for selected filter -->
         <div id="mt_empty_form">
@@ -22,7 +22,7 @@
 
         <div id="mt_message_overlay_error">
             <h2> Ops...</h2>
-            <h3>Não foi possível realizar sua inscrição, verifique os dados informados e tente novamente </h3>
+            <h3>Não foi possível realizar sua inscrição, verifique os dados informados e tente novamente.</h3>
             <button class="mt_btn_default" onclick="closeModal()"> Ok </button>
         </div>
 
