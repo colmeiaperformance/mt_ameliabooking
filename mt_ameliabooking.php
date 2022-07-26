@@ -228,6 +228,10 @@ function ajax_event_subscription(){
                         "field" => "44",
                         "value" => $_POST['dataHoraPalestra']
                ],
+               [
+                        "field" => "45",
+                        "value" => $_POST['dataHoraText']
+               ],
          )
       )
    );

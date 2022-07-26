@@ -170,9 +170,14 @@
                 let hour = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm');
                 let hourDate = moment(bkEvent.periods[0].periodStart).format('YYYY-MM-DD HH:mm');
 
+                let momentPeriod = moment(bkEvent.periods[0].periodStart);
+
+                let dataHoraText = `${momentPeriod.format('DD')}/${momentPeriod.format('MM')}/${momentPeriod.format('YYYY')} ${momentPeriod.format('HH')}:${momentPeriod.format('mm')}`
+
                 formData.append('dataPalestra', `${start}`);
                 formData.append('horaPalestra',  `${hour}`);
                 formData.append('dataHoraPalestra',  `${hourDate}`);
+                formData.append('dataHoraText',  `${dataHoraText}`);
             
                 formData.append('instrutor',bkEvent.organizer?.firstName+' '+ bkEvent.organizer?.lastName)
                 formData.append('message',jQuery("#contactMessage").val())
