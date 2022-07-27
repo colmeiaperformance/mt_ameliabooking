@@ -49,8 +49,8 @@ class EmployeeController {
                     if(info){
                         console.log(info)
                         otherLocations = info.otherPlaces;
-                        // if(info.addressLine)
-                        //     addressLine = info.addressLine
+                        if(info.addressLine)
+                            addressLine = info.addressLine
                     }
                 }
                 e.otherLocations = otherLocations;
