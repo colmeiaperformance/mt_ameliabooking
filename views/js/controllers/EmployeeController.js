@@ -79,12 +79,12 @@ class EmployeeController {
                                     if(element.toLowerCase().includes(cityFilter.toLowerCase()) && element.toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
                                     }
-                                }
-
-                                if(stateFilter){
+                                }else if(stateFilter){
                                     if(element.toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
                                     }
+                                }else{
+                                    otherLocationsPass = true;
                                 }
                             }
                         })
