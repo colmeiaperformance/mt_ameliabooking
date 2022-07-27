@@ -71,16 +71,17 @@ class EmployeeController {
                             }
                         })
 
-                        let pass = false;
                         let locationComparison = e_location.name;
                         locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                         locationComparison = locationComparison.toLowerCase();
                         locationComparison = locationComparison.replace(" ", "");
-
+                        
                         let locationComparisonArray = locationComparison.split("-");
-
+                        
+                        let pass = false;
                         filterLocations.forEach((element) => {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            elemento = elemento.replace(" ", "");
                             elemento = elemento.toLowerCase();
 
                             if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
@@ -90,9 +91,15 @@ class EmployeeController {
                         })
 
                         if(!pass){
-                            
-                            filterLocations.push(e_location.name);
+                            let separateArray = e_location.name;
+                            separateArray = separateArray.replace(" ", "");
+                            separateArray = separateArray.split("-");
 
+                            if(locationComparisonArray[0].length > 2){
+                                filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
+                            }else{
+                                filterLocations.push(`${separateArray[0]} - ${separateArray[1]}`);
+                            }
                         }
                     }
                 }
