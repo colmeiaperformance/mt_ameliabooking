@@ -97,7 +97,7 @@ class EmployeeController {
                             if(locationComparisonArray[0].length > 2){
                                 filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
                             }else{
-                                filterLocations.push(e_location.name);
+                                filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
                             }
 
                         }
