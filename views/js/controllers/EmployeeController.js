@@ -65,7 +65,7 @@ class EmployeeController {
                 
 
                 if(e_location){
-                    alert("ta no if:: ")
+                    // alert("ta no if:: ")
                     if(otherLocations.length > 0){
                         if(cityFilter){
                             if(otherLocations.includes(cityFilter.toLowerCase())){
