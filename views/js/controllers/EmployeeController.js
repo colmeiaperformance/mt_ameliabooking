@@ -74,14 +74,13 @@ class EmployeeController {
                     
                     if(otherLocations.length > 0){
                         otherLocations.forEach((element) => {
-                            element = element.replace(/[^a-zA-Z\s]/g, "");
                             if(element != ""){
                                 if(cityFilter && stateFilter){
-                                    if(element.toLowerCase().includes(cityFilter.replace(/[^a-zA-Z\s]/g, "").toLowerCase()) && element.replace(/[^a-zA-Z\s]/g, "").toLowerCase().includes(stateFilter.toLowerCase())){
+                                    if(element.replace(/[^a-zA-Z\s]/g, "").toLowerCase().includes(cityFilter.replace(/[^a-zA-Z\s]/g, "").toLowerCase()) && element.replace(/[^a-zA-Z\s]/g, "").replace(/[^a-zA-Z\s]/g, "").toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
                                     }
                                 }else if(stateFilter){
-                                    if(element.toLowerCase().includes(stateFilter.replace(/[^a-zA-Z\s]/g, "").toLowerCase())){
+                                    if(element.replace(/[^a-zA-Z\s]/g, "").toLowerCase().includes(stateFilter.replace(/[^a-zA-Z\s]/g, "").toLowerCase())){
                                         otherLocationsPass = true;
                                     }
                                 }else{
