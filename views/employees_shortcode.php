@@ -38,7 +38,11 @@
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
-                <div id="msg" style="display: none;">Verifique os dados e tente novamente!</div>
+                <div id="msg" style="display: none;">
+                    <div class="alert alert-secondary" role="alert">
+                    Desculpe! No momento não temos palestra agendada para este instrutor.
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -51,7 +55,7 @@
 <style>
     #msg{
         text-align: center;
-        font-size: 35px;
+        font-size: 24px;
         font-weight: bolder;
     }
 </style>
@@ -89,7 +93,7 @@
     }
     
     function showMensage(){
-        document.getElementById("msg").style.display = "flex";
+        document.getElementById("msg").style.display = "block";
     }
 
     async function getFilterEntities(){
