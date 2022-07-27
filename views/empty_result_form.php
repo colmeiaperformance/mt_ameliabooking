@@ -47,7 +47,7 @@
  #_form_4_._dark ._form-branding { color:#333; }
  #_form_4_._dark ._form-branding ._logo { background-image:url('https://d226aj4ao1t61q.cloudfront.net/jftq2c8s_aclogo_dk.png'); }
  #_form_4_ ._form_element { position:relative; margin-bottom:10px; font-size:0; max-width:100%; }
- #_form_4_ ._form_element * { font-size:14px; }
+ #_form_4_ ._form_element * { font-size:1em; }
  #_form_4_ ._form_element._clear { clear:both; width:100%; float:none; }
  #_form_4_ ._form_element._clear:after { clear:left; }
  #_form_4_ ._form_element input[type="text"],#_form_4_ ._form_element input[type="date"],#_form_4_ ._form_element select,#_form_4_ ._form_element textarea:not(.g-recaptcha-response) { display:block; width:100%; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box; font-family:inherit; }
@@ -152,7 +152,9 @@
     <div class="_form-content">
       <div class="_form_element _x96161933 _full_width _clear" >
         <div class="_form-title">
-          Desculpe! No momento não temos palestra agendada em sua cidade.
+          <div class="alert alert-secondary" role="alert">
+            Desculpe! No momento não temos palestra agendada em sua cidade.
+            </div>
         </div>
       </div>
       <div class="_form_element _x89657108 _full_width _clear" >
