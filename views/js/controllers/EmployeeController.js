@@ -63,53 +63,37 @@ class EmployeeController {
 
                 e.otherLocations = otherLocations;
                 e.addressLine = addressLine;
-                
+
+                if(e_location.name){
+                    otherLocations.push(e_location.name)
+                }
 
                 let otherLocationsPass = false;
                 
-
-                if(e_location){
-                    // alert("ta no if:: ")
+                if(otherLocations.length > 0){
+                    
                     if(otherLocations.length > 0){
-                        if(cityFilter){
-                            if(otherLocations.includes(cityFilter.toLowerCase())){
-                                otherLocationsPass = true;
+                        otherLocations.forEach((element) => {
+                            if(cityFilter){
+                                if(element.toLowerCase().includes(cityFilter.toLowerCase())){
+                                    otherLocationsPass = true;
+                                }
                             }
-                        }
-                        if(stateFilter){
-                            if(otherLocations.includes(stateFilter.toLowerCase())){
-                                otherLocationsPass = true;
+                            if(stateFilter){
+                                if(element.toLowerCase().includes(stateFilter.toLowerCase())){
+                                    otherLocationsPass = true;
+                                }
                             }
-                        }
+                        })
                     }
 
-                    if(!otherLocationsPass){
-                        if(cityFilter){
-                            if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
-                            || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
-                                filterPass = false;
-                        }else{
-                            if(stateFilter)
-                                if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '))
-                                    filterPass = false;
-                        }
-                    }
-                }else{
-                    alert("ta no else:: ")
-                    if((cityFilter || stateFilter) && !otherLocationsPass){
-                        filterPass = false;
-                    }
                 }
-
-                
 
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
                 
-                
-                if(filterPass){
+                if(otherLocationsPass){
                     employeeList.push(employeeItem);
                 }
-
 
                 //FilterByName
                 if(currentName != " " && currentName){
