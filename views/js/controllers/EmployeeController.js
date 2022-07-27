@@ -61,13 +61,6 @@ class EmployeeController {
                 console.log("e_location:>")
                 console.log(e_location)
 
-                if(e_location.name){
-                    otherLocations.push(e_location.name)
-                }
-
-                e.otherLocations = otherLocations;
-                e.addressLine = addressLine;
-
 
                 let filterLocations = []
                 if(otherLocations.length > 0 || e_location.name){
@@ -142,6 +135,9 @@ class EmployeeController {
                         otherLocationsPass = true;
                     }
                 }
+
+                e.otherLocations = filterLocations;
+                e.addressLine = addressLine;
 
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
                 
