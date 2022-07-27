@@ -61,12 +61,12 @@ class EmployeeController {
                 console.log("e_location:>")
                 console.log(e_location)
 
+                if(e_location.name){
+                    otherLocations.push(e_location.name)
+                }
+
                 e.otherLocations = otherLocations;
                 e.addressLine = addressLine;
-
-                // if(e_location.name){
-                //     otherLocations.push(e_location.name)
-                // }
 
                 let otherLocationsPass = false;
                 
