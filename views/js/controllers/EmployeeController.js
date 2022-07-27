@@ -91,7 +91,7 @@ class EmployeeController {
 
                         if(!pass){
                             let separateArray = e_location.name.replace(" ", "").split("-");
-                            filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`)
+                            filterLocations.push(`${separateArray[1]} /- ${separateArray[0]}`)
                         }
                     }
                 }
