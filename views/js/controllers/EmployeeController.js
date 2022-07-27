@@ -91,7 +91,7 @@ class EmployeeController {
 
                         if(!pass){
                             
-                            // filterLocations.push(e_location.name);
+                            filterLocations.push(e_location.name);
 
                         }
                     }
