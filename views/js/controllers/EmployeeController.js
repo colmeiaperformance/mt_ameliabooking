@@ -90,15 +90,8 @@ class EmployeeController {
                         })
 
                         if(!pass){
-                            let separateArray = e_location.name;
-                            separateArray = separateArray.replace(" ", "");
-                            separateArray = separateArray.split("-");
-
-                            if(locationComparisonArray[0].length > 2){
-                                filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
-                            }else{
-                                filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
-                            }
+                            
+                            filterLocations.push(e_location.name);
 
                         }
                     }
