@@ -75,11 +75,12 @@ class EmployeeController {
                     if(otherLocations.length > 0){
                         otherLocations.forEach((element) => {
                             if(element != ""){
-                                if(cityFilter){
-                                    if(element.toLowerCase().includes(cityFilter.toLowerCase())){
+                                if(cityFilter && stateFilter){
+                                    if(element.toLowerCase().includes(cityFilter.toLowerCase()) && element.toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
                                     }
                                 }
+
                                 if(stateFilter){
                                     if(element.toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
