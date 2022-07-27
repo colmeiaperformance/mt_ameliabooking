@@ -74,13 +74,14 @@ class EmployeeController {
                     
                     if(otherLocations.length > 0){
                         otherLocations.forEach((element) => {
+                            element = element.normalize("NFD");
                             if(element != ""){
                                 if(cityFilter && stateFilter){
-                                    if(element.toLowerCase().includes(cityFilter.toLowerCase()) && element.toLowerCase().includes(stateFilter.toLowerCase())){
+                                    if(element.toLowerCase().includes(cityFilter.normalize("NFD").toLowerCase()) && element.normalize("NFD").toLowerCase().includes(stateFilter.toLowerCase())){
                                         otherLocationsPass = true;
                                     }
                                 }else if(stateFilter){
-                                    if(element.toLowerCase().includes(stateFilter.toLowerCase())){
+                                    if(element.toLowerCase().includes(stateFilter.normalize("NFD").toLowerCase())){
                                         otherLocationsPass = true;
                                     }
                                 }else{
@@ -90,6 +91,10 @@ class EmployeeController {
                         })
                     }
 
+                }else{
+                    if(!cityFilter && !stateFilter){
+                        otherLocationsPass = true;
+                    }
                 }
 
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
