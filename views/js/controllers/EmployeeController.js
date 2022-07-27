@@ -71,25 +71,27 @@ class EmployeeController {
                             }
                         })
 
-                        let pass = false
-                        let locationComparison = e_location.name
+                        let pass = false;
+                        let locationComparison = e_location.name;
                         locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                         locationComparison = locationComparison.toLowerCase();
+                        locationComparison = locationComparison.replace(" ", "");
 
-                        let locationComparisonArray = locationComparison.split("-")
+                        let locationComparisonArray = locationComparison.split("-");
 
                         filterLocations.forEach((element) => {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.toLowerCase();
 
-                            if(elemento.includes(locationComparisonArray[0].replace(" ", "")) && elemento.includes(locationComparisonArray[1].replace(" ", ""))){
+                            if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
                                 pass = true;
                             }
 
                         })
 
                         if(!pass){
-                            filterLocations.push(e_location.name)
+                            let separateArray = e_location.name.replace(" ", "").split("-");
+                            filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`)
                         }
                     }
                 }
