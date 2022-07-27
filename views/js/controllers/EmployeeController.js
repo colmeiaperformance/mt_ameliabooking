@@ -53,6 +53,10 @@ class EmployeeController {
                             addressLine = info.addressLine
                     }
                 }
+
+
+                console.log("otherLocations:> ")
+                console.log(otherLocations)
                 e.otherLocations = otherLocations;
                 e.addressLine = addressLine;
                 
