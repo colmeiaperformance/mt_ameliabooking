@@ -68,11 +68,42 @@ class EmployeeController {
                 e.otherLocations = otherLocations;
                 e.addressLine = addressLine;
 
+
+                let filterLocations = []
+                if(otherLocations.length > 0 || e_location.name){
+                    if(otherLocations.length > 0){
+                        otherLocations.forEach((element) => {
+                            if(element != ""){
+                                filterLocations.push(element)
+                            }
+                        })
+
+                        let pass = false
+                        let locationComparison = e_location.name
+                        locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        locationComparison = locationComparison.toLowerCase();
+                        filterLocations.forEach((element) => {
+                            let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            elemento = elemento.toLowerCase();
+
+                            if(elemento == e_location.name){
+                                pass = true;
+                            }
+
+                        })
+
+                        if(!pass){
+                            filterLocations.push(e_location.name)
+                        }
+                    }
+                }
+
+
                 let otherLocationsPass = false;
                 
-                if(otherLocations.length > 0){
+                if(filterLocations.length > 0){
                     
-                    if(otherLocations.length > 0){
+                    if(filterLocations.length > 0){
                         let city = '';
                         let state = '';
 
@@ -86,7 +117,7 @@ class EmployeeController {
                             state = state.toLowerCase();
                         }
 
-                        otherLocations.forEach((element) => {
+                        filterLocations.forEach((element) => {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.toLowerCase();
 
