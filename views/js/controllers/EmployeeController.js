@@ -79,7 +79,7 @@ class EmployeeController {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.toLowerCase();
 
-                            if(elemento == e_location.name){
+                            if(elemento.includes(e_location.name)){
                                 pass = true;
                             }
 
