@@ -171,7 +171,6 @@ class EventsController {
         let events = events_consult.data.data.events;
         let entities = entities_consult.data.data;
         let customFields = entities_consult.data.data.customFields;
-
         
         while(events_consult.data.data.count > events.length) {
             events_consult =  await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
@@ -180,7 +179,7 @@ class EventsController {
         }
 
         let eventList = [];
-        
+               
         events.forEach((e) => {
             let filterPass = true;
             let e_location = entities.locations.filter( l => l.id == e.locationId)[0];
@@ -248,8 +247,5 @@ class EventsController {
         }
         return eventList;
     }
-
-
-    
 
 }

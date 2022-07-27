@@ -47,9 +47,10 @@ class EmployeeController {
                 if(userInfo){
                     let info = userInfo.filter(u => e.email == u.email ? u.otherPlaces : false)[0];
                     if(info){
+                        console.log(info)
                         otherLocations = info.otherPlaces;
-                        if(info.addressLine)
-                            addressLine = info.addressLine
+                        // if(info.addressLine)
+                        //     addressLine = info.addressLine
                     }
                 }
                 e.otherLocations = otherLocations;
@@ -60,7 +61,7 @@ class EmployeeController {
                 
 
                 if(e_location){
-
+                    alert("ta no if:: ")
                     if(otherLocations.length > 0){
                         if(cityFilter){
                             if(otherLocations.includes(cityFilter.toLowerCase())){
@@ -86,6 +87,7 @@ class EmployeeController {
                         }
                     }
                 }else{
+                    alert("ta no else:: ")
                     if((cityFilter || stateFilter) && !otherLocationsPass){
                         filterPass = false;
                     }
