@@ -57,6 +57,10 @@ class EmployeeController {
 
                 console.log("otherLocations:> ")
                 console.log(otherLocations)
+
+                console.log("e_location:>")
+                console.log(e_location)
+
                 e.otherLocations = otherLocations;
                 e.addressLine = addressLine;
                 
@@ -105,6 +109,8 @@ class EmployeeController {
                 if(filterPass){
                     employeeList.push(employeeItem);
                 }
+
+
                 //FilterByName
                 if(currentName != " " && currentName){
                     employeeList = employeeList.filter(e => e.firstName.toLowerCase().includes(currentName.toLowerCase()) || e.lastName.toLowerCase().includes(currentName.toLowerCase()));
