@@ -73,22 +73,29 @@ class EmployeeController {
                 if(otherLocations.length > 0){
                     
                     if(otherLocations.length > 0){
-                        let city = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        city = city.toLowerCase();
+                        let city = '';
+                        let state = '';
 
-                        let state = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        state = state.toLowerCase();
+                        if(cityFilter){
+                            city = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            city = city.toLowerCase();
+                        }
+
+                        if(stateFilter){
+                            state = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            state = state.toLowerCase();
+                        }
 
                         otherLocations.forEach((element) => {
-                            let elemento =  element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.toLowerCase();
 
                             if(element != ""){
-                                if(cityFilter && stateFilter){
+                                if(city && state){
                                     if(elemento.includes(city) && elemento.includes(state)){
                                         otherLocationsPass = true;
                                     }
-                                }else if(stateFilter){
+                                }else if(state){
                                     if(elemento.includes(state)){
                                         otherLocationsPass = true;
                                     }
