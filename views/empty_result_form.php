@@ -184,6 +184,8 @@
 
               <input type="text" id="instructor" disabled name="field[62]" value="" 
               placeholder="Instrutor" />
+              
+              <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
             </div>
           </div>
           <div class="_button-wrapper _full_width">

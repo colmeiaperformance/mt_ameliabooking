@@ -31,17 +31,17 @@
         <br/>
         <section  class="instrutores-carousel">
             <div class="container">
+                <!-- Form when there is no events for selected filter -->
+                <div id="mt_empty_form">
+                    <?php include('empty_result_form.php'); ?>
+                </div>
+            
                 <div id="mt-instrutores" class="swiper mt-swiperInstrutores" data-bs-ride="carousel">
                     <div class="swiper-wrapper" id="mt_employees_result">
                         
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
-                </div>
-                <div id="msg" style="display: none;">
-                    <div class="alert alert-secondary" role="alert">
-                    Desculpe! No momento não temos palestra agendada para este instrutor.
-                    </div>
                 </div>
             </div>
         </section>
@@ -51,14 +51,6 @@
         </div>
     </div>
 </div>
-
-<style>
-    #msg{
-        text-align: center;
-        font-size: 24px;
-        font-weight: bolder;
-    }
-</style>
 
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
@@ -91,9 +83,38 @@
         controller.renderItems(employee_list);
         startSlider();
     }
-    
-    function showMensage(){
-        document.getElementById("msg").style.display = "block";
+
+    const showNotFoundMessage = (alertMensage = '', subtitleMensage = '') => {
+        let texto = "";
+        
+        if(city?.nome){
+            texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
+        }else{
+            if(state?.sigla){
+                texto = `Estado: ${state.sigla}`;
+            }
+        } 
+        
+        jQuery("#typeForm").val('instrutores');
+
+        if(alertMensage){
+            jQuery("#alertMensage").text(alertMensage);
+        }
+
+        if(subtitleMensage){
+            jQuery("#subtitleMensage").text(subtitleMensage);
+        }
+        
+        if(city?.nome || state?.sigla){
+            jQuery("#instructor").css('display', 'none');
+            jQuery("#cast").css('display', 'block');
+            jQuery("#cast").val(texto);
+        }
+
+        mt_filters.classList.add('hideOrder');
+        document.getElementById('mt_filter_results').style.display = 'none';
+        document.getElementById('mt_filters').removeAttribute('style');
+        jQuery("#mt_empty_form").css('display', 'block');
     }
 
     async function getFilterEntities(){
@@ -107,9 +128,9 @@
         result = result.filter(e => e.firstName.toLowerCase().includes(str.toLowerCase()) || e.lastName.toLowerCase().includes(str.toLowerCase()));
 
         if(result.length > 0){
-            jQuery("#msg").css('display', 'none');
+            jQuery("#mt_empty_form").css('display', 'none');
         }else{
-            showMensage();
+            showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
         }
         controller.renderItems(result);
 
@@ -176,7 +197,6 @@
         jQuery("#mt_employees_result").css('display', 'flex');
         controller.renderItems(employess);
         startSlider();
-        jQuery("#msg").css('display', 'none');
         jQuery("#mt_loader_overlay").fadeOut(); 
          
     }
@@ -188,20 +208,12 @@
        eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
        city.nome != '' ? city.nome : false, wp_user_infos);
        if(eventList.length > 0){
+            jQuery("#mt_empty_form").css('display', 'none');
            jQuery("#mt_employees_result").css('display', 'flex');
-           jQuery("#msg").css('display', 'none');
            controller.renderItems(eventList);
        }else{
-            showMensage();
-            jQuery("#msg").css('display', 'block');
+            showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
             jQuery("#mt_employees_result").css('display', 'none');
-            let texto = "";
-            if(city?.nome)
-                 texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
-            else{
-                if(state?.sigla)
-                     texto = `Estado: ${state.sigla}`;
-            }
        }
        startSlider();
        jQuery("#mt_loader_overlay").fadeOut();

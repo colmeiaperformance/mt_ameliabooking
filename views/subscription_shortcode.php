@@ -38,12 +38,6 @@
 </div>
 
 <style>
-    #msg{
-        text-align: center;
-        font-size: 35px;
-        font-weight: bolder;
-    }
-
     #mt_filters.hideOrder #orderBy{
         display: none;
     }
@@ -279,7 +273,7 @@
                             showNotFoundMessage();
                         }
                     }
-                    
+
                     document.getElementById('mt_filters').removeAttribute('style');
                     controller.renderItems(eventList);
                     jQuery('.phoneMask').mask(phoneBehavior, spOptions);
