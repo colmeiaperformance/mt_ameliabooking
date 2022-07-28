@@ -295,6 +295,8 @@
             
             if(city?.nome || state?.sigla)
                 jQuery("#cast").val(texto);
+            mt_filters.classList.add('hideOrder');
+            document.getElementById('mt_filter_results').style.display = 'none';
             document.getElementById('mt_filters').removeAttribute('style');
             jQuery("#mt_empty_form").css('display', 'block');
             
