@@ -54,13 +54,6 @@ class EmployeeController {
                     }
                 }
 
-
-                console.log("otherLocations:> ")
-                console.log(otherLocations)
-
-                console.log("e_location:>")
-                console.log(e_location)
-
                 e.addressLine = addressLine;
 
                 let filterLocations = [];
@@ -149,8 +142,6 @@ class EmployeeController {
         return false;
     }
 
-
-    
     orderBy = function(eventList, orderBy) {
         if(orderBy){
             switch(orderBy){
