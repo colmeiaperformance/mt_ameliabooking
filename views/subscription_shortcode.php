@@ -272,7 +272,11 @@
                     if(eventList.length > 0){
                         mt_filters.classList.remove('hideOrder');
                     }else{
-                        mt_filters.classList.add('hideOrder');
+                        if(instrutorID){
+                            showNotFoundMessage(true, instrutorName, 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
+                        }else{
+                            showNotFoundMessage();
+                        }
                     }
                     document.getElementById('mt_filter_results').removeAttribute('style');
                     document.getElementById('mt_filters').removeAttribute('style');
