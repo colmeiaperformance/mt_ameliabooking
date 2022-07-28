@@ -1,10 +1,10 @@
 <div id="mt_subscription_shortcode">
     <div id="mt_container">
-        <div id="mt_filters">
+        <div id="mt_filters" class="hideOrder">
 
         </div>
 
-        <div id="mt_filter_results" class="hideOrder">
+        <div id="mt_filter_results">
 
         </div>
 
@@ -46,7 +46,7 @@
         font-weight: bolder;
     }
 
-    #mt_filter_results.hideOrder #orderBy{
+    #mt_filters.hideOrder #orderBy{
         display: none;
     }
 </style>
