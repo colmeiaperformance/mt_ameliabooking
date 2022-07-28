@@ -193,7 +193,7 @@
            controller.renderItems(eventList);
        }else{
             showMensage();
-            jQuery("#msg").css('display', 'flex');
+            jQuery("#msg").css('display', 'block');
             jQuery("#mt_employees_result").css('display', 'none');
             let texto = "";
             if(city?.nome)
