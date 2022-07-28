@@ -54,6 +54,12 @@
     $instrutorID = false; 
     if(isset($_GET['instrutor'])){
         $instrutorID = intval($_GET['instrutor']);
+
+        $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
+        $result = file_get_contents($searchURL);
+
+        var_dump($result);
+        
     }
 ?>
 
@@ -83,11 +89,6 @@
     instrutorID = '<?php echo $instrutorID; ?>';
     if(instrutorID){
         instrutorID = Number(instrutorID);
-        let result = await axios.get(`${ajaxUrl}/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations`);
-
-
-        console.log("-------------------result----------------");
-        console.log(result)
     }else{
         instrutorID = false;   
     }
