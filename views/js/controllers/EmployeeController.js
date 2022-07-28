@@ -149,7 +149,7 @@ class EmployeeController {
                     }
                 }
 
-                e.otherLocations = otherLocations;
+                e.otherLocations = filterLocations;
                 e.addressLine = addressLine;
 
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
