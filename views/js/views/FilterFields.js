@@ -44,7 +44,7 @@ class FilterFields extends View{
             </button>
           </div>
       </div>
-      <div class="mt_row justify-content-start" id="orderBy" style="display: none;">
+      <div class="mt_row justify-content-start" id="orderBy">
         <div class="mt_filter col-sm-2">
           <select id="stateFilter" onchange="changeOrderBy(this.value)" class="form-control">
             <option selected disabled>Ordenar por</option>

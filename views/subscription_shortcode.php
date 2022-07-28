@@ -89,6 +89,7 @@
 
     async function render(){
         jQuery("#mt_loader_overlay").fadeIn();
+        jQuery("#orderBy").css('display', 'none');
         await getFilterEntities();
         eventList = await controller.list();
 
