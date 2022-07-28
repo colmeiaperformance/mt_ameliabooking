@@ -72,6 +72,7 @@
     render();
 
     async function render() {
+        jQuery("#mt_empty_form").css('display', 'none');
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
         await getEmployees();
@@ -84,7 +85,7 @@
         startSlider();
     }
 
-    const showNotFoundMessage = (alertMensage = '', subtitleMensage = '') => {
+    const showNotFoundMessage = (alertMensage = '', subtitleMensage = 'Informe seus dados para receber nosso contato, assim que houver instrutor em sua região:') => {
         let texto = "";
         
         if(city?.nome){
@@ -189,6 +190,7 @@
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
+        jQuery("#mt_empty_form").css('display', 'none');
         currentName = "";
         state = new State();
         city = new City();
