@@ -4,7 +4,7 @@
 
         </div>
 
-        <div id="mt_filter_results">
+        <div id="mt_filter_results" class="hideOrder">
 
         </div>
 
@@ -44,6 +44,10 @@
         text-align: center;
         font-size: 35px;
         font-weight: bolder;
+    }
+
+    #mt_filter_results.hideOrder #orderBy{
+        display: none;
     }
 </style>
 
@@ -89,7 +93,6 @@
 
     async function render(){
         jQuery("#mt_loader_overlay").fadeIn();
-        document.getElementById('orderBy').style.display = 'none';
         await getFilterEntities();
         eventList = await controller.list();
 
