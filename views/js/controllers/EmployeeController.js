@@ -75,7 +75,6 @@ class EmployeeController {
                         let locationComparison = e_location.name;
                         locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                         locationComparison = locationComparison.toLowerCase();
-                        locationComparison = locationComparison.replace(" ", "");
                         
                         let locationComparisonArray = locationComparison.split("-");
 
@@ -88,13 +87,11 @@ class EmployeeController {
                             elemento = elemento.replace(" ", "");
                             elemento = elemento.toLowerCase();
 
-                            if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
+                            if(elemento.includes(locationComparisonArray[0].replace(" ", "")) && elemento.includes(locationComparisonArray[1].replace(" ", ""))){
                                 pass = true;
                             }
 
                         })
-
-                        
 
                         if(!pass){
                             let separateArray = e_location.name;
