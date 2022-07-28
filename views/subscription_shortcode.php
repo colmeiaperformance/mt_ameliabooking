@@ -56,7 +56,7 @@
         $instrutorID = intval($_GET['instrutor']);
 
         $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
-        $result = file_get_contents($searchURL);
+        $result = json_decode(file_get_contents($searchURL));
 
         var_dump($result);
         
