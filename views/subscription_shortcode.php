@@ -54,12 +54,19 @@
     $instrutorID = false; 
     if(isset($_GET['instrutor'])){
         $instrutorID = intval($_GET['instrutor']);
+        $instrutorName = '';
 
         $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
         $result = json_decode(file_get_contents($searchURL));
 
         var_dump($result->data->employees);
-        
+
+        foreach($result->data->employees as $employee){
+            if($employee->id == $instrutorID){
+                $instrutorName = $employee->firstName.' '.$employee->lastName;
+                break;
+            }
+        }  
     }
 ?>
 
@@ -84,11 +91,13 @@
     let phone = "";
     let checkBox = [];
     
-    let instrutorID = false
+    let instrutorID = false;
+    let instrutorName = '';
 
     instrutorID = '<?php echo $instrutorID; ?>';
     if(instrutorID){
         instrutorID = Number(instrutorID);
+        instrutorName = '<?php echo $instrutorName; ?>';
     }else{
         instrutorID = false;   
     }
@@ -116,7 +125,7 @@
             if(eventList.length == 0){
                 document.getElementById('mt_filter_results').style.display = 'none';
 
-                showNotFoundMessage(true, 'Raimundo', 'Desculpe! No momento não temos palestra agendada para este instrutor.');
+                showNotFoundMessage(true, instrutorName, 'Desculpe! No momento não temos palestra agendada para este instrutor.');
 
             }else{
                 mt_filters.classList.remove('hideOrder');
@@ -274,7 +283,7 @@
                     jQuery('.phoneMask').mask(phoneBehavior, spOptions);
                 }
             }else{
-                showNotFoundMessage(true, 'Raimundo', 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
+                showNotFoundMessage(true, instrutorName, 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
                 
                 controller.renderItems([]);
             }
