@@ -271,6 +271,7 @@
                 if(state.sigla){
                     if(eventList.length > 0){
                         mt_filters.classList.remove('hideOrder');
+                        document.getElementById('mt_filter_results').removeAttribute('style');
                     }else{
                         if(instrutorID){
                             showNotFoundMessage(true, instrutorName, 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
@@ -278,7 +279,7 @@
                             showNotFoundMessage();
                         }
                     }
-                    document.getElementById('mt_filter_results').removeAttribute('style');
+                    
                     document.getElementById('mt_filters').removeAttribute('style');
                     controller.renderItems(eventList);
                     jQuery('.phoneMask').mask(phoneBehavior, spOptions);
