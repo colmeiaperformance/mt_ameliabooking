@@ -89,6 +89,8 @@
         instrutorID = false;   
     }
 
+    let mt_filters = document.getElementById('mt_filters')
+
     render();
 
     async function render(){
@@ -115,6 +117,7 @@
                 document.getElementById("msg").style.display = "flex";
                 document.getElementById('msg').style.marginBottom = '250px';
             }else{
+                mt_filters.classList.remove('hideOrder');
                 jQuery("#mt_empty_form").css('display', 'none');
                 document.getElementById('mt_filter_results').removeAttribute('style');
                 document.getElementById('mt_filters').removeAttribute('style');
@@ -217,6 +220,7 @@
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
         state = new State();
+        mt_filters.classList.add('hideOrder');
         city = new City();
         await getFilterEntities();
         eventList = await controller.list();
@@ -257,6 +261,7 @@
                 }
 
                 if(state.sigla){
+                    mt_filters.classList.remove('hideOrder')
                     document.getElementById('mt_filter_results').removeAttribute('style');
                     document.getElementById('mt_filters').removeAttribute('style');
                     controller.renderItems(eventList);
