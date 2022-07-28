@@ -74,43 +74,6 @@ class EmployeeController {
                             }
                         })
                     }
-
-                    if(e_location.name){
-                        let locationComparison = e_location.name;
-                        locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        locationComparison = locationComparison.toLowerCase();
-                        locationComparison = locationComparison.replace(" ", "");
-                        
-                        let locationComparisonArray = locationComparison.split("-");
-
-                        
-                        
-                        let passs = true;
-                        filterLocations.forEach((element) => {
-                            let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                            elemento = elemento.replace(" ", "");
-                            elemento = elemento.toLowerCase();
-
-                            alert("aqui")
-
-                            passs = false;
-                            // if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
-                            // }
-
-                        })
-
-                        if(passs){
-                            let separateArray = e_location.name;
-                            separateArray = separateArray.replace(" ", "");
-                            separateArray = separateArray.split("-");
-
-                            if(separateArray[0].length == 2){
-                                filterLocations.push(`${separateArray[0]} - ${separateArray[1]}`);
-                            }else{
-                                filterLocations.push(`${separateArray[1]} - ${separateArray[0]}`);
-                            }
-                        }
-                    }
                 }
 
                 e.otherLocations = filterLocations;
@@ -159,11 +122,6 @@ class EmployeeController {
                         otherLocationsPass = true;
                     }
                 }
-
-                
-
-                console.log("filter Locations");
-                console.log(filterLocations);
 
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
                 
