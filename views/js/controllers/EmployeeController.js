@@ -77,6 +77,9 @@ class EmployeeController {
                         locationComparison = locationComparison.replace(" ", "");
                         
                         let locationComparisonArray = locationComparison.split("-");
+
+                        console.log("filter location antes")
+                        console.log(filterLocations)
                         
                         let pass = false;
                         filterLocations.forEach((element) => {
@@ -90,8 +93,7 @@ class EmployeeController {
 
                         })
 
-                        console.log("filter location antes")
-                        console.log(filterLocations)
+                        
 
                         if(!pass){
                             let separateArray = e_location.name;
