@@ -91,9 +91,9 @@ class EmployeeController {
                             elemento = elemento.replace(" ", "");
                             elemento = elemento.toLowerCase();
 
-                            if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
-                                pass = false;
-                            }
+                            pass = false;
+                            // if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
+                            // }
 
                         })
 
