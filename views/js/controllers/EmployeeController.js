@@ -90,6 +90,9 @@ class EmployeeController {
 
                         })
 
+                        console.log("filter location antes")
+                        console.log(filterLocations)
+
                         if(!pass){
                             let separateArray = e_location.name;
                             separateArray = separateArray.replace(" ", "");
