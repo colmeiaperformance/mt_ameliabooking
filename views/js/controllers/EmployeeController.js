@@ -63,7 +63,7 @@ class EmployeeController {
 
                 e.addressLine = addressLine;
 
-                let filterLocations = []
+                let filterLocations = [];
                 if(otherLocations.length > 0 || e_location.name){
                     console.log("filter location antes")
                     console.log(filterLocations)
@@ -73,7 +73,9 @@ class EmployeeController {
                                 filterLocations.push(element)
                             }
                         })
+                    }
 
+                    if(e_location.name){
                         let locationComparison = e_location.name;
                         locationComparison = locationComparison.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                         locationComparison = locationComparison.toLowerCase();
@@ -83,19 +85,19 @@ class EmployeeController {
 
                         
                         
-                        let pass = false;
+                        let pass = true;
                         filterLocations.forEach((element) => {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.replace(" ", "");
                             elemento = elemento.toLowerCase();
 
                             if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
-                                pass = true;
+                                pass = false;
                             }
 
                         })
 
-                        if(!pass){
+                        if(pass){
                             let separateArray = e_location.name;
                             separateArray = separateArray.replace(" ", "");
                             separateArray = separateArray.split("-");
