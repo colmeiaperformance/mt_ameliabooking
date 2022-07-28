@@ -64,7 +64,7 @@ class EmployeeController {
 
 
 
-                e.otherLocations = otherLocations;
+                e.otherLocations = [];
                 e.addressLine = addressLine;
 
 
