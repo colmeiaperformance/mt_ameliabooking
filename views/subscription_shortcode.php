@@ -49,7 +49,6 @@
     }
 </style>
 
-
 <?php
     $instrutorID = false; 
     if(isset($_GET['instrutor'])){
@@ -58,8 +57,6 @@
 
         $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
         $result = json_decode(file_get_contents($searchURL));
-
-        var_dump($result->data->employees);
 
         foreach($result->data->employees as $employee){
             if($employee->id == $instrutorID){
