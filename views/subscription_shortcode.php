@@ -109,11 +109,9 @@
 
             if(eventList.length == 0){
                 document.getElementById('mt_filter_results').style.display = 'none';
-                document.getElementById('mt_filters').style.marginBottom = '250px';
-                jQuery("#mt_empty_form").css('display', 'none');
-                document.getElementById('mt_filters').removeAttribute('style');
-                document.getElementById("msg").style.display = "flex";
-                document.getElementById('msg').style.marginBottom = '250px';
+
+                showNotFoundMessage(true, 'Raimundo', 'Desculpe! No momento não temos palestra agendada para este instrutor.');
+
             }else{
                 mt_filters.classList.remove('hideOrder');
                 jQuery("#mt_empty_form").css('display', 'none');
@@ -271,7 +269,7 @@
                 }
             }else{
                 showNotFoundMessage(true, 'Raimundo', 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
-
+                
                 controller.renderItems([]);
             }
             
