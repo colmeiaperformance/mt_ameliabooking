@@ -83,6 +83,11 @@
     instrutorID = '<?php echo $instrutorID; ?>';
     if(instrutorID){
         instrutorID = Number(instrutorID);
+        let result = await axios.get(`${ajaxUrl}/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations`);
+
+
+        console.log("-------------------result----------------");
+        console.log(result)
     }else{
         instrutorID = false;   
     }
