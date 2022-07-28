@@ -47,7 +47,6 @@ class EmployeeController {
                 if(userInfo){
                     let info = userInfo.filter(u => e.email == u.email ? u.otherPlaces : false)[0];
                     if(info){
-                        console.log(info)
                         otherLocations = info.otherPlaces;
                         if(info.addressLine)
                             addressLine = info.addressLine
