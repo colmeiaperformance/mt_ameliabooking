@@ -96,6 +96,7 @@
         } 
         
         jQuery("#typeForm").val('instrutores');
+        jQuery("#instructor").css('display', 'none');
 
         if(alertMensage){
             jQuery("#alertMensage").text(alertMensage);
@@ -106,7 +107,6 @@
         }
         
         if(city?.nome || state?.sigla){
-            jQuery("#instructor").css('display', 'none');
             jQuery("#cast").css('display', 'block');
             jQuery("#cast").val(texto);
         }
@@ -120,6 +120,7 @@
     async function getFilterEntities(){
         states = await state.list();
         filterController.renderFields(states, cities, "--", "--", currentName);
+        jQuery("#instructor").css('display', 'none');
     }
 
     function filterByName(str){
@@ -204,20 +205,20 @@
 
 
     const filterEvents = async() => {
-       jQuery("#mt_loader_overlay").fadeIn();
-       console.log(city.nome);
-       eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
-       city.nome != '' ? city.nome : false, wp_user_infos);
-       if(eventList.length > 0){
+        jQuery("#mt_loader_overlay").fadeIn();
+        console.log(city.nome);
+        eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
+        city.nome != '' ? city.nome : false, wp_user_infos);
+        if(eventList.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
-           jQuery("#mt_employees_result").css('display', 'flex');
-           controller.renderItems(eventList);
-       }else{
+            jQuery("#mt_employees_result").css('display', 'flex');
+            controller.renderItems(eventList);
+        }else{
             showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
             jQuery("#mt_employees_result").css('display', 'none');
-       }
-       startSlider();
-       jQuery("#mt_loader_overlay").fadeOut();
+        }
+        startSlider();
+        jQuery("#mt_loader_overlay").fadeOut();
     }
 
 
