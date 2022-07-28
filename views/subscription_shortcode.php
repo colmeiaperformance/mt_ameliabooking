@@ -261,7 +261,11 @@
                 }
 
                 if(state.sigla){
-                    mt_filters.classList.remove('hideOrder')
+                    if(eventList.length > 0){
+                        mt_filters.classList.remove('hideOrder')
+                    }else{
+                        mt_filters.classList.add('hideOrder')
+                    }
                     document.getElementById('mt_filter_results').removeAttribute('style');
                     document.getElementById('mt_filters').removeAttribute('style');
                     controller.renderItems(eventList);
