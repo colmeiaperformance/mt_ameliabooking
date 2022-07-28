@@ -8,8 +8,6 @@
 
         </div>
 
-        <div id="msg" style="display: none;">Desculpe! No momento não temos palestra agendada para este instrutor.</div>
-
         <!-- Form when there is no events for selected filter -->
         <div id="mt_empty_form">
             <?php include('empty_result_form.php'); ?>
@@ -272,36 +270,56 @@
                     jQuery('.phoneMask').mask(phoneBehavior, spOptions);
                 }
             }else{
-                mt_filters.classList.add('hideOrder');
-                document.getElementById('mt_filter_results').style.display = 'none';
-                document.getElementById('mt_filters').style.marginBottom = '250px';
-                jQuery("#mt_empty_form").css('display', 'none');
-                document.getElementById('mt_filters').removeAttribute('style');
-                document.getElementById("msg").innerText = "O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!";
-                document.getElementById("msg").style.display = "flex";
-                document.getElementById('msg').style.marginBottom = '200px'
+                showNotFoundMessage(true, 'Raimundo', 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
 
                 controller.renderItems([]);
             }
             
         }else{
-            let texto = "";
-            if(city?.nome)
-                 texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
-            else{
-                if(state?.sigla)
-                     texto = `Estado: ${state.sigla}`;
-            }    
-            
-            if(city?.nome || state?.sigla)
-                jQuery("#cast").val(texto);
-            mt_filters.classList.add('hideOrder');
-            document.getElementById('mt_filter_results').style.display = 'none';
-            document.getElementById('mt_filters').removeAttribute('style');
-            jQuery("#mt_empty_form").css('display', 'block');
-            
+            showNotFoundMessage();
         }
         jQuery("#mt_loader_overlay").fadeOut();
+    }
+
+    const showNotFoundMessage = (instructor = false, instrutorName = '',alertMensage = '', subtitleMensage = '') => {
+        let texto = "";
+        
+        if(city?.nome){
+            texto = `Cidade: ${city.nome}, Estado: ${state.sigla}`;
+        }else{
+            if(state?.sigla){
+                texto = `Estado: ${state.sigla}`;
+            }
+        }    
+
+        if(alertMensage){
+            jQuery("#alertMensage").text(alertMensage);
+        }
+
+        if(subtitleMensage){
+            jQuery("#subtitleMensage").text(subtitleMensage);
+        }
+        
+        if(instructor){
+            if(city?.nome || state?.sigla){
+                jQuery("#cast").css('display', 'block');
+                jQuery("#cast").val(texto);
+            }else{
+                jQuery("#cast").css('display', 'none');
+            }
+
+            jQuery("#instructor").css('display', 'block');
+            jQuery("#instructor").val(instrutorName);
+        }else if(city?.nome || state?.sigla){
+            jQuery("#instructor").css('display', 'none');
+            jQuery("#cast").css('display', 'block');
+            jQuery("#cast").val(texto);
+        }
+
+        mt_filters.classList.add('hideOrder');
+        document.getElementById('mt_filter_results').style.display = 'none';
+        document.getElementById('mt_filters').removeAttribute('style');
+        jQuery("#mt_empty_form").css('display', 'block');
     }
 
     //FilterInteractors

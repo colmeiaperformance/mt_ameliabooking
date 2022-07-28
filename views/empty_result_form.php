@@ -152,14 +152,14 @@
     <div class="_form-content">
       <div class="_form_element _x96161933 _full_width _clear" >
         <div class="_form-title">
-          <div class="alert alert-secondary" role="alert">
+          <div class="alert alert-secondary" id="alertMensage" role="alert">
             Desculpe! No momento não temos palestra agendada em sua cidade.
             </div>
         </div>
       </div>
       <div class="_form_element _x89657108 _full_width _clear" >
         <div class="_html-code">
-          <p class="subtitle">
+          <p class="subtitle" id="subtitleMensage">
             Informe seus dados para receber nosso contato, assim que houver palestra em sua região:
           </p>
         </div>
@@ -181,6 +181,9 @@
             <div class="_field-wrapper">
               <input type="text" id="cast" disabled name="field[46]" value="" 
               placeholder="Cidade e Estado" />
+
+              <input type="text" id="instructor" disabled name="field[62]" value="" 
+              placeholder="Instrutor" />
             </div>
           </div>
           <div class="_button-wrapper _full_width">
