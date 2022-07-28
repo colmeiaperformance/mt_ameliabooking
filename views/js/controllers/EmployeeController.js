@@ -61,12 +61,7 @@ class EmployeeController {
                 console.log("e_location:>")
                 console.log(e_location)
 
-
-
-
-                e.otherLocations = [];
                 e.addressLine = addressLine;
-
 
                 let filterLocations = []
                 if(otherLocations.length > 0 || e_location.name){
@@ -114,6 +109,8 @@ class EmployeeController {
                         }
                     }
                 }
+
+                e.otherLocations = filterLocations;
 
 
                 let otherLocationsPass = false;
