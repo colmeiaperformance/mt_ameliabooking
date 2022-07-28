@@ -79,6 +79,7 @@
     }
 
     async function getEmployees() {
+        jQuery("#instructor").css('display', 'none');
         employee_list = await controller.list(false, false, false, wp_user_infos);
         controller.renderItems(employee_list);
         startSlider();
@@ -120,7 +121,6 @@
     async function getFilterEntities(){
         states = await state.list();
         filterController.renderFields(states, cities, "--", "--", currentName);
-        jQuery("#instructor").css('display', 'none');
     }
 
     function filterByName(str){
