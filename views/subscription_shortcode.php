@@ -220,7 +220,6 @@
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
         state = new State();
-        mt_filters.classList.add('hideOrder');
         city = new City();
         await getFilterEntities();
         eventList = await controller.list();
@@ -228,6 +227,7 @@
             let url = document.URL.replace(`?instrutor=${instrutorID}`,'');
             window.location.href = url;
         }else{
+            mt_filters.classList.add('hideOrder');
             jQuery("#mt_filter_results").css('display', 'none');
             document.getElementById('mt_filters').style.marginBottom = '250px';
             jQuery("#mt_empty_form").css('display', 'none');
@@ -262,9 +262,9 @@
 
                 if(state.sigla){
                     if(eventList.length > 0){
-                        mt_filters.classList.remove('hideOrder')
+                        mt_filters.classList.remove('hideOrder');
                     }else{
-                        mt_filters.classList.add('hideOrder')
+                        mt_filters.classList.add('hideOrder');
                     }
                     document.getElementById('mt_filter_results').removeAttribute('style');
                     document.getElementById('mt_filters').removeAttribute('style');
@@ -272,6 +272,7 @@
                     jQuery('.phoneMask').mask(phoneBehavior, spOptions);
                 }
             }else{
+                mt_filters.classList.add('hideOrder');
                 document.getElementById('mt_filter_results').style.display = 'none';
                 document.getElementById('mt_filters').style.marginBottom = '250px';
                 jQuery("#mt_empty_form").css('display', 'none');
