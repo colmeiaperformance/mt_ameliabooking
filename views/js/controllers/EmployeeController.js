@@ -62,6 +62,12 @@ class EmployeeController {
                 console.log(e_location)
 
 
+
+
+                e.otherLocations = otherLocations;
+                e.addressLine = addressLine;
+
+
                 let filterLocations = []
                 if(otherLocations.length > 0 || e_location.name){
                     if(otherLocations.length > 0){
@@ -154,8 +160,7 @@ class EmployeeController {
                     }
                 }
 
-                e.otherLocations = filterLocations;
-                e.addressLine = addressLine;
+                
 
                 console.log("filter Locations");
                 console.log(filterLocations);
