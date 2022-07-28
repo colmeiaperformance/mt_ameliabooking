@@ -152,6 +152,9 @@ class EmployeeController {
                 e.otherLocations = filterLocations;
                 e.addressLine = addressLine;
 
+                console.log("filter Locations");
+                console.log(filterLocations);
+
                 employeeItem.constructByObjects(e, e_location ? location.constructByObjects(e_location) : false);
                 
                 if(otherLocationsPass){
