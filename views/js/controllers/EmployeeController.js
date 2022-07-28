@@ -85,19 +85,21 @@ class EmployeeController {
 
                         
                         
-                        let pass = true;
+                        let passs = true;
                         filterLocations.forEach((element) => {
                             let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
                             elemento = elemento.replace(" ", "");
                             elemento = elemento.toLowerCase();
 
-                            pass = false;
+                            alert("aqui")
+
+                            passs = false;
                             // if(elemento.includes(locationComparisonArray[0]) && elemento.includes(locationComparisonArray[1])){
                             // }
 
                         })
 
-                        if(pass){
+                        if(passs){
                             let separateArray = e_location.name;
                             separateArray = separateArray.replace(" ", "");
                             separateArray = separateArray.split("-");
