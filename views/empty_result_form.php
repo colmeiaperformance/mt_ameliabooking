@@ -189,26 +189,11 @@
             </div>
           </div>
 
-          <div class="_form_element _field64 _full_width " >
-            <div class="_field-wrapper">
-              <input type="checkbox" name="field[64]" id="check">
-              
-              <label for="check" style="color: green; display: block;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
-
-              <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
-            </div>
-            <p style="color: blue;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
-          </div>
-
-          <p style="color: yellow;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
-
-          <div>
+          <div class="d-flex">
             <input type="checkbox" name="field[64]" id="check">
               
             <label for="check" style="color: green; display: block;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
           </div>
-
-          
 
           <div class="_button-wrapper _full_width">
             <button id="_form_4_submit" class="_submit" type="submit">
