@@ -131,7 +131,7 @@
             jQuery("#mt_empty_form").css('display', 'none');
             jQuery("#mt_employees_result").css('display', 'flex');
         }else{
-            showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
+            showNotFoundMessage('Desculpe! Não encontramos este instrutor.');
         }
         controller.renderItems(result);
 
@@ -214,7 +214,7 @@
             jQuery("#mt_employees_result").css('display', 'flex');
             controller.renderItems(eventList);
         }else{
-            showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
+            showNotFoundMessage('Desculpe! No momento não temos instrutor em sua região.');
             jQuery("#mt_employees_result").css('display', 'none');
         }
         startSlider();
