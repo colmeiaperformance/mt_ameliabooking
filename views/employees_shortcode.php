@@ -112,6 +112,7 @@
             jQuery("#cast").val(texto);
         }
 
+        jQuery("#mt_empty_form").css('display', 'block');
         jQuery("#mt_employees_result").css('display', 'none');
     }
 
