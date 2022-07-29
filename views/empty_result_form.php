@@ -197,9 +197,10 @@
 
               <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
             </div>
+            <p style="color: blue;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
           </div>
 
-          <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
+          
 
           <div class="_button-wrapper _full_width">
             <button id="_form_4_submit" class="_submit" type="submit">
@@ -211,9 +212,6 @@
         </div>
         <div class="_form-thank-you" style="display:none;">
         </div>
-
-        <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
-        
   </form>
 <script type="text/javascript">
   window.cfields = {"46":"cidade_onde_quer_palestra","47":"mensagem"};
