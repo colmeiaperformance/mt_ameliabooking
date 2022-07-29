@@ -29,12 +29,12 @@
         </div>
         <br/>
         <br/>
+        <!-- Form when there is no events for selected filter -->
+        <div id="mt_empty_form">
+            <?php include('empty_result_form.php'); ?>
+        </div>
         <section  class="instrutores-carousel">
             <div class="container">
-                <!-- Form when there is no events for selected filter -->
-                <div id="mt_empty_form">
-                    <?php include('empty_result_form.php'); ?>
-                </div>
             
                 <div id="mt-instrutores" class="swiper mt-swiperInstrutores" data-bs-ride="carousel">
                     <div class="swiper-wrapper" id="mt_employees_result">
