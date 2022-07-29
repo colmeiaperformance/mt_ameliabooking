@@ -17,31 +17,60 @@ class EventItem extends View{
 				let endDateStr = `${endDate.format('D') } de ${month_names[endDate.month()]} de ${endDate.format('YYYY')}`;
 				return (
 					`<div class="mt_event_item"> 
-						<div class="mt_row">
-						<div class="mt_event_date">
-							<span>${month_labels[startDate.month()]}</span>
-							${startDate.format('D')}
+						<div class="mt_row event-desktop">
+							<div class="mt_event_date">
+								<span>${month_labels[startDate.month()]}</span>
+								${startDate.format('D')}
+							</div>
+							<div class="mt_event_title">
+								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
+									<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
+										Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
+									</span>
+								</h4>
+								<h5> 
+									<img src="${baseUrl}resources/svg/map_pointer_icon.svg" />
+									${ e.location ? e.location.name : '' }
+									<img src="${baseUrl}resources/svg/clock_icon.svg" />
+									${startDateStr}  ${startDate.format('HH:mm')} -
+									${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
+								</h5>
+							</div>
+							<div class="mt_action_button">
+								<button class="btn_open" onclick="toggleDetails(${key})">
+									+ Detalhes
+								</button>
+							</div>
 						</div>
-						<div class="mt_event_title">
-							<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
-								<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
-									Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
-								</span>
-							</h4>
-							<h5> 
-								<img src="${baseUrl}resources/svg/map_pointer_icon.svg" />
-								${ e.location ? e.location.name : '' }
-								<img src="${baseUrl}resources/svg/clock_icon.svg" />
-								 ${startDateStr}  ${startDate.format('HH:mm')} -
-								 ${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
-							</h5>
+
+						<div class="event-mobile">
+							<div class="date-title">
+								<div class="mt_event_date">
+									<span>${month_labels[startDate.month()]}</span>
+									${startDate.format('D')}
+								</div>
+								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
+								</h4>
+							</div>
+								<h5> 
+									<img src="${baseUrl}resources/svg/map_pointer_icon.svg" />
+									${ e.location ? e.location.name : '' }
+									<img src="${baseUrl}resources/svg/clock_icon.svg" />
+									${startDateStr}  ${startDate.format('HH:mm')} -
+									${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
+								</h5>
+							<div class="status-details">
+										<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
+											Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
+										</span>
+								<div class="mt_action_button">
+									<button class="btn_open" onclick="toggleDetails(${key})">
+										+ Detalhes
+									</button>
+								</div>
+							</div>
 						</div>
-						<div class="mt_action_button">
-							<button class="btn_open" onclick="toggleDetails(${key})">
-								+ Detalhes
-							</button>
-						</div>
-					</div>
+
 					<div class="mt_row">
 						<div class="mt_event_details" id="mt_event_details_${key}">
 							<div class="mt_event_details_container">
