@@ -200,6 +200,8 @@
             <p style="color: blue;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
           </div>
 
+          <p style="color: yellow;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
+
           
 
           <div class="_button-wrapper _full_width">
