@@ -199,6 +199,8 @@
             <!-- </div> -->
           </div>
 
+          <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
+
           <div class="_button-wrapper _full_width">
             <button id="_form_4_submit" class="_submit" type="submit">
               Enviar
