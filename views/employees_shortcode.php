@@ -129,6 +129,7 @@
 
         if(result.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
+            jQuery("#mt_employees_result").css('display', 'flex');
         }else{
             showNotFoundMessage('Desculpe! No momento não temos palestra agendada para este instrutor.');
         }
