@@ -73,6 +73,7 @@
 
     async function render() {
         jQuery("#mt_loader_overlay").fadeIn();
+        jQuery("#mt_empty_form").css('display', 'none');
         await getFilterEntities();
         await getEmployees();
         jQuery("#mt_loader_overlay").fadeOut();      
