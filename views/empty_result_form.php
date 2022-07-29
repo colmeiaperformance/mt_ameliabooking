@@ -190,13 +190,13 @@
           </div>
 
           <div class="_form_element _field64 _full_width " >
-            <!-- <div class="_field-wrapper"> -->
+            <div class="_field-wrapper">
               <input type="checkbox" name="field[64]" id="check">
               
               <label for="check" style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
 
               <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
-            <!-- </div> -->
+            </div>
           </div>
 
           <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
@@ -211,25 +211,29 @@
         </div>
         <div class="_form-thank-you" style="display:none;">
         </div>
-      </form><script type="text/javascript">
-window.cfields = {"46":"cidade_onde_quer_palestra","47":"mensagem"};
-window._show_thank_you = function(id, message, trackcmp_url, email) {
-  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-  form.querySelector('._form-content').style.display = 'none';
-  thank_you.innerHTML = message;
-  thank_you.style.display = 'block';
-  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-  var visitorObject = window[vgoAlias];
-  if (email && typeof visitorObject !== 'undefined') {
-    visitorObject('setEmail', email);
-    visitorObject('update');
-  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-    // Site tracking URL to use after inline form submission.
-    _load_script(trackcmp_url);
-  }
-  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-};
-window._show_error = function(id, message, html) {
+
+        <p style="color: red;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</p>
+        
+  </form>
+<script type="text/javascript">
+  window.cfields = {"46":"cidade_onde_quer_palestra","47":"mensagem"};
+  window._show_thank_you = function(id, message, trackcmp_url, email) {
+    var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+    form.querySelector('._form-content').style.display = 'none';
+    thank_you.innerHTML = message;
+    thank_you.style.display = 'block';
+    const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+    var visitorObject = window[vgoAlias];
+    if (email && typeof visitorObject !== 'undefined') {
+      visitorObject('setEmail', email);
+      visitorObject('update');
+    } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+      // Site tracking URL to use after inline form submission.
+      _load_script(trackcmp_url);
+    }
+    if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+  };
+  window._show_error = function(id, message, html) {
   var form = document.getElementById('_form_' + id + '_'), err = document.createElement('div'), button = form.querySelector('button'), old_error = form.querySelector('._form_error');
   if (old_error) old_error.parentNode.removeChild(old_error);
   err.innerHTML = message;
@@ -245,7 +249,7 @@ window._show_error = function(id, message, html) {
     div.innerHTML = html;
     err.appendChild(div);
   }
-};
+  };
 window._load_script = function(url, callback) {
   var head = document.querySelector('head'), script = document.createElement('script'), r = false;
   script.type = 'text/javascript';
