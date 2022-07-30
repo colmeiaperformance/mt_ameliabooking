@@ -448,7 +448,7 @@ window._load_script = function(url, callback) {
       if (!elem.checked) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
-        tooltip = create_tooltip(elem.parentNode, "Aceite os termos");
+        tooltip = create_tooltip(elem, "Aceite os termos");
       }
     }
 
