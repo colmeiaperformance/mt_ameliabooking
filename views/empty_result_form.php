@@ -134,6 +134,10 @@
     font-size: 18px;
     line-height: 22px;
 }
+
+#divCheck ._error-inner {
+  width: 100%;
+}
  
  @media all and (min-width:320px) and (max-width:667px) { #_form_4_._inline-form._inline-style ._inline-style._button-wrapper { margin-top:20px !important; margin-left:0 !important; }
  }
@@ -189,11 +193,11 @@
             </div>
           </div>
 
-          <div class="my-2 d-flex align-items-center">
-            <div>
+          <div class="my-2 d-flex flex-column align-items-center" id="divCheck">
+            <div class="d-flex align-items-center">
               <input type="checkbox" name="field[64]" id="check" required>
+              <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
             </div>
-            <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
           </div>
 
           <div class="_button-wrapper _full_width">
@@ -448,7 +452,7 @@ window._load_script = function(url, callback) {
       if (!elem.checked) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
-        tooltip = create_tooltip(elem, "Aceite os termos");
+        tooltip = create_tooltip(elem.parentNode, "Aceite os termos");
       }
     }
 
