@@ -144,7 +144,7 @@
   display: none;
 }
 
-input._has_error {
+#email._has_error {
   border-color: #f37c7b !important;
   color: #f37c7b !important;
 }
