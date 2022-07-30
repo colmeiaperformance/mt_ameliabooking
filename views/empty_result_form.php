@@ -189,8 +189,8 @@
             </div>
           </div>
 
-          <div class="d-flex align-items-center">
-            <div class="_field-wrapper">
+          <div>
+            <div class="_field-wrapper d-flex align-items-center">
               <input type="checkbox" name="field[64]" id="check" required>
                 
               <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
