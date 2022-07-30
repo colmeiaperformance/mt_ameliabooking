@@ -17,9 +17,9 @@ function add_plugins_and_scripts(){
    wp_register_style('add-mt-ameleia-css', plugin_dir_url(__FILE__).'views/styles/main.css?v=3213', '', '', 'screen');
 
 
-   wp_register_style('add-mt-ameleia-css', plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/css/intlTelInput.css', '', '', 'screen');
+   wp_register_style('add-intl-tel-input-css', plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/css/intlTelInput.css', '', '', 'screen');
 
-   wp_register_script('add-mt-amelia-mask', plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/js/intlTelInput.js', '', null, '');
+   wp_register_script('add-intl-tel-input-js', plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/js/intlTelInput.js', '', null, '');
 
 
    wp_register_script('add-mt-amelia-axios', 'https://unpkg.com/axios/dist/axios.min.js', '', null, '');
@@ -53,6 +53,11 @@ function add_plugins_and_scripts(){
          wp_enqueue_script('jquery');
    }
    wp_enqueue_style('add-mt-ameleia-css');
+   
+   wp_enqueue_style('add-intl-tel-input-css');
+   wp_enqueue_script('add-intl-tel-input-js');
+   
+   
    wp_enqueue_style('');
    wp_enqueue_script('add-mt-amelia-axios');
    wp_enqueue_script('add-mt-amelia-moment');
