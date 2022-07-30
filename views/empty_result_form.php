@@ -135,8 +135,13 @@
     line-height: 22px;
 }
 
-#divCheck ._error-inner {
+#divCheck ._error {
   width: 100%;
+  position: unset !important;
+}
+
+#divCheck ._error ._error-arrow {
+  display: none;
 }
  
  @media all and (min-width:320px) and (max-width:667px) { #_form_4_._inline-form._inline-style ._inline-style._button-wrapper { margin-top:20px !important; margin-left:0 !important; }
