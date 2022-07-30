@@ -114,8 +114,8 @@ class EventItem extends View{
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
 										<div class="input-group">
-      								<span class="input-group-text flag"><img src="${baseUrl}resources/svg/flag.svg"></span>
-      								<input required name="phone" onchange="phone = this.value"  type="tel" class="form-control phoneMask">
+      								
+      								<input required name="phone" type="tel" class="form-control" id="phone">
     							</div>
 									<div class="valid-feedback">O número de telefone é válido!</div>
                   <div class="invalid-feedback">Por favor, insira um número de telefone válido!</div>
