@@ -190,7 +190,7 @@
           </div>
 
           <div class="my-2 d-flex flex-column align-items-center">
-            <div class="d-flex flex-column align-items-center">
+            <div class="d-flex align-items-center">
               <input type="checkbox" name="field[64]" id="check" required>
                 
               <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
@@ -449,7 +449,7 @@ window._load_script = function(url, callback) {
       if (!elem.checked) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
-        tooltip = create_tooltip(elem, "Aceite os termos");
+        tooltip = create_tooltip(elem.parentNode, "Aceite os termos");
       }
     }
 
