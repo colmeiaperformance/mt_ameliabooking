@@ -201,7 +201,7 @@
           <div class="my-2 d-flex flex-column align-items-center" id="divCheck">
             <div class="mb-2 d-flex align-items-center">
               <input type="checkbox" name="field[64]" id="check" required>
-              <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a <a href="<?= site_url() ?>/politica-de-privacidade/" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</label>
+              <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a <a href="<?= site_url() ?>/politica-de-privacidade/" style="color: unset; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</label>
             </div>
           </div>
 
