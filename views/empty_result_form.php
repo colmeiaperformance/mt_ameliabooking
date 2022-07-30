@@ -189,10 +189,10 @@
             </div>
           </div>
 
-          <div class="d-flex">
-            <input type="checkbox" name="field[64]" id="check">
+          <div class="d-flex align-items-center">
+            <input type="checkbox" name="field[64]" id="check" required>
               
-            <label for="check" style="color: green; display: block;">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
+            <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.</label>
           </div>
 
           <div class="_button-wrapper _full_width">
@@ -442,6 +442,15 @@ window._load_script = function(url, callback) {
         tooltip = create_tooltip(elem, "Digite uma data válida.");
       }
     }
+
+    if (no_error && elem.name == 'field[64]') {
+      if (!elem.checked) {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Aceite os termos");
+      }
+    }
+
     tooltip ? resize_tooltip(tooltip) : false;
     return no_error;
   };
@@ -450,6 +459,9 @@ window._load_script = function(url, callback) {
             return true
         }
         if(el.name === 'email' && el.value !== ""){
+            return true
+        }
+        if(el.name === 'field[64]' && el.checked != true){
             return true
         }
         return false
