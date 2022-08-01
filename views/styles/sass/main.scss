@@ -823,15 +823,15 @@
   
   input[type="text"], #_form_4_ ._form_element input[type="text"] {
     font-weight: 500!important;
-    font-size: var(--font-size-extrasmall)!important;
-    line-height: var(--line-height-primary)!important;
+    font-size: 1rem!important;
+    line-height: 1.5rem!important;
     color: #F29F05!important;
     padding: 9px 31px;
     border: 1px solid #F29F05!important;
     border-radius: 30px!important;
     text-align: left!important;
     @media (max-width: 992px) {
-      font-size: var(--font-size-extrasmall)!important;
+      font-size: 1rem!important;
       line-height: 18px!important;
       padding: 7px 17px!important;
       // width: 90%!important;
@@ -880,8 +880,8 @@
   .mt_filter {
     .btn-remove {
       font-weight: 700!important;
-      font-size: var(--font-size-extrasmall)!important;
-      line-height: var(--line-height-primary)!important;
+      font-size: 1rem!important;
+      line-height: 1.5rem!important;
       color: #FFFFFF!important;
       padding: 9px 31px!important;
       background: #323B50!important;
@@ -901,8 +901,8 @@
     }
     .btn-primary {
       font-weight: 700!important;
-      font-size: var(--font-size-extrasmall)!important;
-      line-height: var(--line-height-primary)!important;
+      font-size: 1rem!important;
+      line-height: 1.5rem!important;
       color: #FFFFFF!important;
       padding: 9px 31px!important;
       background: #F29F05!important;
@@ -923,8 +923,8 @@
     .form-control {
       width: 100%;
       font-weight: 500!important;
-      font-size: var(--font-size-extrasmall)!important;
-      // line-height: var(--line-height-primary)!important;
+      font-size: 1rem!important;
+      // line-height: 1.5rem!important;
       color: #F29F05!important;
       // padding: 9px 31px!important;
       border: 1px solid #F29F05!important;
@@ -938,7 +938,7 @@
         box-shadow: none!important;
       }
       @media (max-width: 992px) {
-        font-size: var(--font-size-extrasmall)!important;
+        font-size: 1rem!important;
         line-height: 18px!important;
         padding: 7px 17px!important;
         // width: 90%!important;
@@ -947,5 +947,138 @@
     }
     .mt_container {
       max-width: 100%!important;
+    }
+  }
+
+  .instrutores-carousel {
+    .swiper-button-prev {
+      left: -4px;
+      &::after {
+        color: #FFC536;
+        font-size: 1.875rem;
+        @media (max-width: 992px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .swiper-button-next {
+      right: -4px;
+      &::after {
+        color: #FFC536;
+        font-size: 1.875rem;
+        @media (max-width: 992px) {
+          font-size: 1rem;
+        }
+      }
+    }
+    .swiper {
+      cursor: pointer;
+    }
+    .box {
+      width: 220px;
+      height: 220px;
+      transition: all .3s ease;
+      @media (max-width: 992px) {
+        width: 180px;
+        height: 180px;
+      }
+      .default {
+        position: relative;
+        z-index: 111;
+        height: 100%;
+        width: 100%;
+        transition: all .3s ease;
+        img {
+          border-radius: 50%;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .hover {
+        display: none;
+        transition: all .3s ease;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1111;
+        width: 220px;
+        height: 220px;
+        margin-top: -220px;
+        background: rgba(120, 150, 193, 0.8);
+        overflow: hidden;
+        padding: 50px 20px;
+        @media (max-width: 992px) {
+          width: 180px;
+          height: 180px;
+          margin-top: -180px;
+          padding: 25px 20px;
+        }
+        h6 {
+          font-weight: 700;
+          font-size: 1rem;
+          line-height: 25px;
+          text-align: center;
+          color: white;
+          margin-bottom: 8px;
+          @media (max-width: 992px) {
+            font-size: 14px;
+            line-height: 1.2;
+            margin-bottom: 5px;
+          }
+        }
+        p {
+          color: white;
+          font-weight: 400;
+          font-size: 1rem;
+          line-height: 18px;
+          text-align: center;
+          margin-bottom: 6px;
+          @media (max-width: 992px) {
+            font-size: 11px!important;
+            line-height: 1.2;
+            margin-bottom: 4px;
+          }
+          &::before {
+            content: '';
+            position: relative;
+            background: url('images/instrutores/map.png') top center no-repeat;
+            width: 8px;
+            height: 10px;
+            z-index: 111;
+            margin-top: 5px;
+            margin-left: -12px;
+          }
+        }
+        .btn {
+          padding: 3px 11px;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 14px;
+          text-transform: uppercase;
+          color: white;
+          @media (max-width: 992px)  {
+            font-size: 9px;
+            line-height: 10px;
+            width: 50%;
+            margin-bottom: 1px;
+            padding: 2px 4px;
+          }
+        }
+      }
+      &:hover{
+        width: 220px;
+        height: 220px;
+        transition: all .3s ease;
+        @media (max-width: 992px) {
+          width: 180px;
+          height: 180px;
+        }
+        img {
+          opacity: 0.7;
+        }
+        .hover {
+          display: block;
+        }
+      }
     }
   }
