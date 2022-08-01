@@ -981,58 +981,61 @@ input[type=tel],
   max-width: 100% !important;
 }
 
-.instrutores-carousel .swiper-button-prev {
+.swiper-button-prev {
   left: -4px;
 }
-.instrutores-carousel .swiper-button-prev::after {
+.swiper-button-prev::after {
   color: #FFC536;
   font-size: 1.875rem;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .swiper-button-prev::after {
+  .swiper-button-prev::after {
     font-size: 1rem;
   }
 }
-.instrutores-carousel .swiper-button-next {
+
+.swiper-button-next {
   right: -4px;
 }
-.instrutores-carousel .swiper-button-next::after {
+.swiper-button-next::after {
   color: #FFC536;
   font-size: 1.875rem;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .swiper-button-next::after {
+  .swiper-button-next::after {
     font-size: 1rem;
   }
 }
-.instrutores-carousel .swiper {
+
+.swiper {
   cursor: pointer;
 }
-.instrutores-carousel .box {
+
+.box {
   width: 220px;
   height: 220px;
   transition: all 0.3s ease;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box {
+  .box {
     width: 180px;
     height: 180px;
   }
 }
-.instrutores-carousel .box .default {
+.box .default {
   position: relative;
   z-index: 111;
   height: 100%;
   width: 100%;
   transition: all 0.3s ease;
 }
-.instrutores-carousel .box .default img {
+.box .default img {
   border-radius: 50%;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.instrutores-carousel .box .hover {
+.box .hover {
   display: none;
   transition: all 0.3s ease;
   border-radius: 50%;
@@ -1046,14 +1049,14 @@ input[type=tel],
   padding: 50px 20px;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box .hover {
+  .box .hover {
     width: 180px;
     height: 180px;
     margin-top: -180px;
     padding: 25px 20px;
   }
 }
-.instrutores-carousel .box .hover h6 {
+.box .hover h6 {
   font-weight: 700;
   font-size: 1rem;
   line-height: 25px;
@@ -1062,13 +1065,13 @@ input[type=tel],
   margin-bottom: 8px;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box .hover h6 {
+  .box .hover h6 {
     font-size: 14px;
     line-height: 1.2;
     margin-bottom: 5px;
   }
 }
-.instrutores-carousel .box .hover p {
+.box .hover p {
   color: white;
   font-weight: 400;
   font-size: 1rem;
@@ -1077,13 +1080,13 @@ input[type=tel],
   margin-bottom: 6px;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box .hover p {
+  .box .hover p {
     font-size: 11px !important;
     line-height: 1.2;
     margin-bottom: 4px;
   }
 }
-.instrutores-carousel .box .hover p::before {
+.box .hover p::before {
   content: "";
   position: relative;
   background: url("images/instrutores/map.png") top center no-repeat;
@@ -1093,7 +1096,7 @@ input[type=tel],
   margin-top: 5px;
   margin-left: -12px;
 }
-.instrutores-carousel .box .hover .btn {
+.box .hover .btn {
   padding: 3px 11px;
   font-weight: 700;
   font-size: 12px;
@@ -1102,7 +1105,7 @@ input[type=tel],
   color: white;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box .hover .btn {
+  .box .hover .btn {
     font-size: 9px;
     line-height: 10px;
     width: 50%;
@@ -1110,20 +1113,20 @@ input[type=tel],
     padding: 2px 4px;
   }
 }
-.instrutores-carousel .box:hover {
+.box:hover {
   width: 220px;
   height: 220px;
   transition: all 0.3s ease;
 }
 @media (max-width: 992px) {
-  .instrutores-carousel .box:hover {
+  .box:hover {
     width: 180px;
     height: 180px;
   }
 }
-.instrutores-carousel .box:hover img {
+.box:hover img {
   opacity: 0.7;
 }
-.instrutores-carousel .box:hover .hover {
+.box:hover .hover {
   display: block;
 }/*# sourceMappingURL=main.css.map */
