@@ -54,7 +54,7 @@ class EmployeeView extends View {
                     </div>
                     </div>
                     <div class="col-12 col-lg-7 mt-4 mt-lg-0">
-                        <form id="employee-send-contact">
+                        <form id="employee-send-contact" onsubmit="sendContactForm(event,this)">
                             <div class="form-group">
                                 <input required type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
                             </div>
