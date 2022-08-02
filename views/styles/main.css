@@ -199,7 +199,7 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 15px;
-  color: #c8238e;
+  color: #323B50;
   text-transform: uppercase;
 }
 @media (max-width: 992px) {
@@ -218,7 +218,7 @@
   font-weight: 500;
   font-size: 1rem;
   line-height: 20px;
-  color: #18caa9;
+  color: #323B50;
 }
 @media (max-width: 992px) {
   #mt_subscription_shortcode #mt_filter_results .mt_event_item h4, #mt_employees_shortcode #mt_filter_results .mt_event_item h4 {
@@ -915,7 +915,7 @@ input[type=tel],
   line-height: 1.5rem !important;
   color: #FFFFFF !important;
   padding: 9px 31px !important;
-  background: #323B50 !important;
+  background: #2bcf25 !important;
   border: 1px solid #323B50 !important;
   border-radius: 30px !important;
   width: 100% !important;
