@@ -37,15 +37,15 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/css/intlTelInput.css' ?>">
+<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/intlTelInput.css' ?>">
 
-<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/css/style.css' ?>">
+<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/style.css' ?>">
 
-<script src="<?php echo plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/js/intlTelInput.js' ?>"></script>
+<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/intlTelInput.js' ?>"></script>
 
-<script src="<?php echo plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/js/utils.js' ?>"></script>
+<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/utils.js' ?>"></script>
 
-<script src="<?php echo plugin_dir_url(__FILE__).'views/js/util/intl-tel-input/js/script.js' ?>"></script>
+<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/script.js' ?>"></script>
 
 <style>
     #mt_filters.hideOrder #orderBy{
