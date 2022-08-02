@@ -932,25 +932,26 @@ input[type=tel],
   }
 }
 .mt_filter .btn-primary {
-  font-weight: 700 !important;
-  font-size: 1rem !important;
-  line-height: 1.5rem !important;
-  color: #FFFFFF !important;
-  padding: 9px 31px !important;
-  background: #F29F05 !important;
-  border: 1px solid #F29F05 !important;
-  border-radius: 30px !important;
-  width: 100% !important;
+  font-weight: 700 ;
+  font-size: 1rem ;
+  line-height: 1.5rem;
+  color: #FFFFFF ;
+  padding: 9px 31px ;
+  background: #F29F05 ;
+  border: 1px solid #F29F05;
+  border-radius: 30px ;
+  width: 100% ;
 }
 .mt_filter .btn-primary:hover {
-  background: transparent !important;
-  color: #F29F05 !important;
+  background: transparent ;
+  color: #F29F05 ;
 }
 @media (max-width: 992px) {
   .mt_filter .btn-primary {
-    font-size: 14px !important;
-    line-height: 16px !important;
-    margin: 0 auto !important;
+    font-size: 14px ;
+    line-height: 16px ;
+    margin: 0 auto ;
+    color:rgb(148, 13, 13);
   }
 }
 .mt_filter .form-control {
@@ -1131,8 +1132,4 @@ input[type=tel],
   display: block;
 }/*# sourceMappingURL=main.css.map */
 
-@media (max-width: 600px){
-  #removeFilterButton{
-    position: fixed;
-  }
-}
+
