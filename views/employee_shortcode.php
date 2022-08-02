@@ -78,22 +78,33 @@
     sendContactForm = async(event,form) => {
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
-        const url = `${ajaxurl}?action=event_form`;
-        let formData = new FormData();
-        formData.append('email',jQuery("#contactEmail").val())
-        formData.append('name',jQuery("#contactName").val())
-        formData.append('phone',jQuery("#contactPhone").val())
-        formData.append('instrutor',employee.firstName+' '+ employee.lastName)
-        formData.append('message',jQuery("#contactMessage").val())
 
-        let contactReq = await axios.post(`${url}`,formData,{
-            headers: { 
-                "Content-Type": "application/x-www-form-urlencoded"
+        alert("cheguei");
+
+
+        if(false){
+            console.log("Dentro do if");
+            const url = `${ajaxurl}?action=event_form`;
+            let formData = new FormData();
+            formData.append('email',jQuery("#contactEmail").val())
+            formData.append('name',jQuery("#contactName").val())
+            formData.append('phone',jQuery("#contactPhone").val())
+            formData.append('instrutor',employee.firstName+' '+ employee.lastName)
+            formData.append('message',jQuery("#contactMessage").val())
+
+            let contactReq = await axios.post(`${url}`,formData,{
+                headers: { 
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            });
+            if(contactReq.status === 200){
+                jQuery("#mt_message_overlay_success").fadeIn();
             }
-        });
-        if(contactReq.status === 200){
-            jQuery("#mt_message_overlay_success").fadeIn();
         }
+
+        console.log("final");
+
+
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
