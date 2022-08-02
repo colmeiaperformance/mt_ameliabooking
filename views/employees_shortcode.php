@@ -114,7 +114,8 @@
         }
 
         jQuery("#mt_empty_form").css('display', 'block');
-        jQuery("#mt_employees_result").css('display', 'none');
+        // jQuery("#mt_employees_result").css('display', 'none');
+        jQuery(".instrutores-carousel").css('display', 'none');
     }
 
     async function getFilterEntities(){
@@ -129,7 +130,7 @@
 
         if(result.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
-            jQuery("#mt_employees_result").css('display', 'flex');
+            jQuery(".instrutores-carousel").css('display', 'flex');
         }else{
             showNotFoundMessage('Desculpe! Não encontramos este instrutor.');
         }
@@ -201,7 +202,7 @@
         city = new City();
         filterController.renderFields(states, cities, "--", "--", currentName);
         employess = await controller.list(false, false, false, wp_user_infos);
-        jQuery("#mt_employees_result").css('display', 'flex');
+        jQuery(".instrutores-carousel").css('display', 'flex');
         controller.renderItems(employess);
         startSlider();
         jQuery("#mt_loader_overlay").fadeOut(); 
@@ -216,11 +217,11 @@
         city.nome != '' ? city.nome : false, wp_user_infos);
         if(eventList.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
-            jQuery("#mt_employees_result").css('display', 'flex');
+            jQuery(".instrutores-carousel").css('display', 'flex');
             controller.renderItems(eventList);
         }else{
             showNotFoundMessage('Desculpe! No momento não temos instrutor em sua região.');
-            jQuery("#mt_employees_result").css('display', 'none');
+            jQuery(".instrutores-carousel").css('display', 'none');
         }
         startSlider();
         jQuery("#mt_loader_overlay").fadeOut();
