@@ -115,7 +115,7 @@ class EventItem extends View{
 										<label> * Telefone: </label>
 										<div class="input-group">
       								
-      									<input required name="phone" type="tel" class="form-control phone">
+      									<input required name="phone" type="tel" class="form-control phone" style="background-color: blue;">
 										</div>
     								</div>
 									<div class="valid-feedback">O número de telefone é válido!</div>
