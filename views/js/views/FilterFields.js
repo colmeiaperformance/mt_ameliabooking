@@ -38,8 +38,8 @@ class FilterFields extends View{
             Buscar
             </button>
           </div>
-          <div class="mt_filter" style="background-color: blue;">
-            <button id="removeFilterButton" style="background-color: red;" onclick="removeFilters()" class="btn btn-remove">
+          <div class="mt_filter">
+            <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
             Remover Filtros
             </button>
           </div>
