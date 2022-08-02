@@ -1133,6 +1133,6 @@ input[type=tel],
 
 @media (min-width: 600px){
   #removeFilterButton{
-    font-style: italic;
+    position: fixed;
   }
 }
