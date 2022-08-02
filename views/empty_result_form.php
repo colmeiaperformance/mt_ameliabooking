@@ -60,9 +60,8 @@
  #_form_4_ ._clear-element { clear:left; }
  #_form_4_ ._full_width { width:100%; }
  #_form_4_ ._form_full_field { display:block; width:100%; margin-bottom:10px; }
- #_form_4_ input._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid !important; }
- /* #_form_4_ input[type="text"]._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid; } */
- #_form_4_ input[type="checkbox"]._has_error { outline:#f37c7b 1px solid !important; }
+ #_form_4_ input[type="text"]._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid; }
+ #_form_4_ input[type="checkbox"]._has_error { outline:#f37c7b 1px solid; }
  #_form_4_ ._error { display:block; position:absolute; font-size:14px; z-index:10000001; }
  #_form_4_ ._error._above { padding-bottom:4px; bottom:39px; right:0; }
  #_form_4_ ._error._below { padding-top:4px; top:100%; right:0; }
@@ -177,13 +176,13 @@
       <div class="_form_element _x81838014 _full_width " >
         
         <div class="_field-wrapper">
-          <input type="text" id="firstname" name="firstname" placeholder="Nome" />
+          <input type="text" id="firstname" name="firstname" placeholder="Nome" required />
         </div>
         <!--  This STARTS the Custom Objects section  -->
         </div>
         <div class="_form_element _x35236746 _full_width " >
           <div class="_field-wrapper">
-            <input type="text" id="email" name="email" placeholder="E-mail" required/>
+            <input type="text" id="email" name="email" placeholder="E-mail" required />
           </div>
           <!--  This STARTS the Custom Objects section  -->
           </div>
@@ -458,7 +457,15 @@ window._load_script = function(url, callback) {
       if (!elem.checked) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
-        tooltip = create_tooltip(elem.parentNode, "Aceite os termos");
+        tooltip = create_tooltip(elem.parentNode, "Aceite os termos.");
+      }
+    }
+
+    if (no_error && elem.name == 'firstname') {
+      if (elem.value === "") {
+        elem.className = elem.className + ' _has_error';
+        no_error = false;
+        tooltip = create_tooltip(elem, "Este campo é necessário.");
       }
     }
 
@@ -467,6 +474,9 @@ window._load_script = function(url, callback) {
   };
   var needs_validate = function(el) {
         if(el.getAttribute('required') !== null){
+            return true
+        }
+        if(el.name === 'firstname' && el.value !== ""){
             return true
         }
         if(el.name === 'email' && el.value !== ""){
