@@ -931,6 +931,7 @@ input[type=tel],
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
+    display: flex !important;
   }
 }
 .mt_filter .btn-primary {
@@ -943,6 +944,7 @@ input[type=tel],
   border: 1px solid #F29F05 !important;
   border-radius: 30px !important;
   width: 100% !important;
+  display: flex !important;
 }
 .mt_filter .btn-primary:hover {
   background: transparent !important;
