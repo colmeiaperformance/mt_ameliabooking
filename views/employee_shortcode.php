@@ -75,7 +75,7 @@
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
-    jQuery("#employee-send-contact").on('submit', function (e) {
+    jQuery("#employee-send-contact").submit(function (e) {
         e.preventDefault();
         jQuery("#mt_loader_overlay").fadeIn();
 
