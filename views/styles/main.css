@@ -938,13 +938,13 @@ input[type=tel],
   color: #FFFFFF ;
   padding: 9px 31px ;
   background: #F29F05 ;
-  border: 1px solid #F29F05;
+  border: 1px solid #05f20d;
   border-radius: 30px ;
   width: 100% ;
 }
 .mt_filter .btn-primary:hover {
   background: transparent ;
-  color: #25f205 ;
+  color: #F29F05  ;
 }
 @media (max-width: 992px) {
   .mt_filter .btn-primary {
