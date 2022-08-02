@@ -60,8 +60,9 @@
  #_form_4_ ._clear-element { clear:left; }
  #_form_4_ ._full_width { width:100%; }
  #_form_4_ ._form_full_field { display:block; width:100%; margin-bottom:10px; }
- #_form_4_ input[type="text"]._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid; }
- #_form_4_ input[type="checkbox"]._has_error { outline:#f37c7b 1px solid; }
+ #_form_4_ input._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid !important; }
+ /* #_form_4_ input[type="text"]._has_error,#_form_4_ textarea._has_error { border:#f37c7b 1px solid; } */
+ #_form_4_ input[type="checkbox"]._has_error { outline:#f37c7b 1px solid !important; }
  #_form_4_ ._error { display:block; position:absolute; font-size:14px; z-index:10000001; }
  #_form_4_ ._error._above { padding-bottom:4px; bottom:39px; right:0; }
  #_form_4_ ._error._below { padding-top:4px; top:100%; right:0; }
