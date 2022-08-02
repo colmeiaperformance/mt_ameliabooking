@@ -1,4 +1,4 @@
-$( ".phone" ).ready(function() {
+jQuery( ".phone" ).ready(function() {
 
     var inputs = document.querySelectorAll(".phone");
 
