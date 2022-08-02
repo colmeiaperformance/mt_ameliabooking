@@ -917,7 +917,7 @@ input[type=tel],
   line-height: 1.5rem !important;
   color: #FFFFFF !important;
   padding: 9px 31px !important;
-  background: #323B50 !important;
+  background: #17bb28 !important;
   border: 1px solid #323B50 !important;
   border-radius: 30px !important;
   width: 100% !important;
@@ -928,15 +928,10 @@ input[type=tel],
 }
 @media (max-width: 992px) {
   .mt_filter .btn-remove {
-    font-weight: 700 !important;
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-    color: #FFFFFF !important;
-    padding: 9px 31px !important;
-    background: #323B50 !important;
-    border: 1px solid #323B50 !important;
-    border-radius: 30px !important;
-    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    margin: 0 auto !important;
+   
 
   }
 }
@@ -958,15 +953,10 @@ input[type=tel],
 }
 @media (max-width: 992px) {
   .mt_filter .btn-primary {
-    font-weight: 700 !important;
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-    color: #FFFFFF !important;
-    padding: 9px 31px !important;
-    background: #F29F05 !important;
-    border: 1px solid #F29F05 !important;
-    border-radius: 30px !important;
-    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    margin: 0 auto !important;
+  
   }
 }
 .mt_filter .form-control {
