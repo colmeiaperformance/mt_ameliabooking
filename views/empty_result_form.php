@@ -435,6 +435,7 @@ window._load_script = function(url, callback) {
       } else if (value === undefined || value === null || value === '') {
         elem.className = elem.className + ' _has_error';
         no_error = false;
+        elem.border = "#f37c7b 1px solid !important;"
         tooltip = create_tooltip(elem, "Este campo é necessário.");
       }
     }
@@ -442,6 +443,7 @@ window._load_script = function(url, callback) {
       if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
+        elem.border = "#f37c7b 1px solid !important;"
         tooltip = create_tooltip(elem, "Digite um e-mail válido");
       }
     }
@@ -457,6 +459,7 @@ window._load_script = function(url, callback) {
       if (!elem.checked) {
         elem.className = elem.className + ' _has_error';
         no_error = false;
+        elem.border = "#f37c7b 1px solid !important;"
         tooltip = create_tooltip(elem.parentNode, "Aceite os termos.");
       }
     }
@@ -465,6 +468,7 @@ window._load_script = function(url, callback) {
       if (elem.value === "") {
         elem.className = elem.className + ' _has_error';
         no_error = false;
+        elem.border = "#f37c7b 1px solid !important;"
         tooltip = create_tooltip(elem, "Este campo é necessário.");
       }
     }
