@@ -60,7 +60,7 @@ class EmployeeView extends View {
                             </div>
                             <div class="row">
                             <div class="col-12 col-md-6 form-group">
-                                <input type="email" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
+                                <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
                             </div>
                             <div class="col-12 col-md-6 form-group">
                                 <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
