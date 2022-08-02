@@ -114,10 +114,17 @@
         }
 
         jQuery("#mt_empty_form").css('display', 'block');
-        // jQuery("#mt_employees_result").css('display', 'none');
-        jQuery(".instrutores-carousel").css('display', 'none');
+        showHideCarousel();
     }
 
+    function showHideCarousel(show = false){
+        if(show){
+            jQuery(".instrutores-carousel").css('display', 'flex');
+        }else{
+            jQuery(".instrutores-carousel").css('display', 'none');
+        }
+    }
+    
     async function getFilterEntities(){
         states = await state.list();
         filterController.renderFields(states, cities, "--", "--", currentName);
@@ -130,7 +137,7 @@
 
         if(result.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
-            jQuery(".instrutores-carousel").css('display', 'flex');
+            showHideCarousel(true);
         }else{
             showNotFoundMessage('Desculpe! Não encontramos este instrutor.');
         }
@@ -202,7 +209,7 @@
         city = new City();
         filterController.renderFields(states, cities, "--", "--", currentName);
         employess = await controller.list(false, false, false, wp_user_infos);
-        jQuery(".instrutores-carousel").css('display', 'flex');
+        employess.length > 0 ? showHideCarousel(true) : showHideCarousel();
         controller.renderItems(employess);
         startSlider();
         jQuery("#mt_loader_overlay").fadeOut(); 
@@ -217,11 +224,11 @@
         city.nome != '' ? city.nome : false, wp_user_infos);
         if(eventList.length > 0){
             jQuery("#mt_empty_form").css('display', 'none');
-            jQuery(".instrutores-carousel").css('display', 'flex');
+            showHideCarousel(true);
             controller.renderItems(eventList);
         }else{
             showNotFoundMessage('Desculpe! No momento não temos instrutor em sua região.');
-            jQuery(".instrutores-carousel").css('display', 'none');
+            showHideCarousel();
         }
         startSlider();
         jQuery("#mt_loader_overlay").fadeOut();
