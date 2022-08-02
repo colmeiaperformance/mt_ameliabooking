@@ -31,7 +31,7 @@ function add_plugins_and_scripts(){
    wp_register_script('add-mt-amelia-axios', 'https://unpkg.com/axios/dist/axios.min.js', '', null, '');
    wp_register_script('add-mt-amelia-moment', 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js', '', null, '');
    wp_register_script('add-mt-amelia-mask', plugin_dir_url(__FILE__).'views/js/util/jquery.mask.min.js', '', null, '');
-   wp_register_script('add-mt-amelia-phone', plugin_dir_url(__FILE__).'views/js/util/phone.mask.js', '', null, '');
+   // wp_register_script('add-mt-amelia-phone', plugin_dir_url(__FILE__).'views/js/util/phone.mask.js', '', null, '');
    wp_register_script('add-mt-amelia-form-validation', plugin_dir_url(__FILE__).'views/js/util/form-validation.js', '', null, '');
    //Js Entities
    wp_register_script('add-plugin-classe-location', plugin_dir_url(__FILE__).'views/js/classes/Location.js','', null, '');
@@ -73,7 +73,7 @@ function add_plugins_and_scripts(){
    wp_enqueue_script('add-mt-amelia-axios');
    wp_enqueue_script('add-mt-amelia-moment');
    wp_enqueue_script('add-mt-amelia-mask');
-   wp_enqueue_script('add-mt-amelia-phone');
+   // wp_enqueue_script('add-mt-amelia-phone');
    wp_enqueue_script('add-mt-amelia-form-validation');
 
    //Enquee Views
