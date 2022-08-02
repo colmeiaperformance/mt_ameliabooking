@@ -574,12 +574,12 @@
 }
 
 .btn-remove {
-  background: #e6e7ed !important;
+  background: #3e4a73 !important;
   color: WHITE !important;
   transition: 0.8s;
 }
 .btn-remove:hover {
-  background: white !important;
+  background: rgb(213, 22, 22) !important;
   border: solid #3e4a73 1px !important;
   color: #3e4a73 !important;
 }
