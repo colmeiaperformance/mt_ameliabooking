@@ -944,14 +944,14 @@ input[type=tel],
 }
 .mt_filter .btn-primary:hover {
   background: transparent ;
-  color: #F29F05 ;
+  color: #25f205 ;
 }
 @media (max-width: 992px) {
   .mt_filter .btn-primary {
     font-size: 14px ;
     line-height: 16px ;
     margin: 0 auto ;
-    color:rgb(148, 13, 13);
+    
   }
 }
 .mt_filter .form-control {
