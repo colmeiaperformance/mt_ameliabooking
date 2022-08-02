@@ -44,7 +44,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  background: #1df205;
+  background: #F29F05;
   border-radius: 30px;
   padding: 7px 20px;
   transition: 0.8s;
@@ -574,7 +574,7 @@
 }
 
 .btn-remove {
-  background: #3e4a73 !important;
+  background: #e6e7ed !important;
   color: WHITE !important;
   transition: 0.8s;
 }
