@@ -579,7 +579,7 @@
   transition: 0.8s;
 }
 .btn-remove:hover {
-  background: rgb(213, 22, 22) !important;
+  background: white !important;
   border: solid #3e4a73 1px !important;
   color: #3e4a73 !important;
 }
@@ -1130,3 +1130,10 @@ input[type=tel],
 .box:hover .hover {
   display: block;
 }/*# sourceMappingURL=main.css.map */
+
+
+@media (max-width: 600px) {
+    .btn-remove{
+      font-size: xx-small;
+    }
+}
