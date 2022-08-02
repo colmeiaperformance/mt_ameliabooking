@@ -75,12 +75,11 @@
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
-    sendContactForm = async(event,form) => {
+    jQuery("#employee-send-contact").on('submit', function (e) {
+        e.preventDefault();
         jQuery("#mt_loader_overlay").fadeIn();
-        event.preventDefault();
 
         alert("cheguei");
-
 
         if(false){
             console.log("Dentro do if");
@@ -106,7 +105,7 @@
 
 
         jQuery("#mt_loader_overlay").fadeOut();
-    }
+    });
 
 
     function closeModal(){
