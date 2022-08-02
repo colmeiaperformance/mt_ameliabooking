@@ -44,7 +44,7 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
-  background: #F29F05;
+  background: #1df205;
   border-radius: 30px;
   padding: 7px 20px;
   transition: 0.8s;
@@ -915,7 +915,7 @@ input[type=tel],
   line-height: 1.5rem !important;
   color: #FFFFFF !important;
   padding: 9px 31px !important;
-  background: #2bcf25 !important;
+  background: #335032 !important;
   border: 1px solid #323B50 !important;
   border-radius: 30px !important;
   width: 100% !important;
