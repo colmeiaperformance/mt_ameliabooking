@@ -141,6 +141,8 @@
             showHideError(true, false, message, 'Este campo está válido.');
         }
 
+        showHideError(false, true, email, '');
+
         return valid;
     }
 
