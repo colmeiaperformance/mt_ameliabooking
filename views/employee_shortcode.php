@@ -160,7 +160,7 @@
             }
         }else{
             console.log(elem);
-            console.log(elem.parent());
+            console.log(elem.parent().children(".invalid-feedback"));
             elem.parent().remove(".invalid-feedback");
             elem.parent().remove(".valid-feedback");
         }
