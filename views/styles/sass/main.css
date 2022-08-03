@@ -935,6 +935,11 @@ input[type=tel],
 
   }
 }
+
+.mt_filter .btn-remove .btn-primary{
+    left: 50px;
+
+}
 .mt_filter .btn-primary {
   font-weight: 700 !important;
   font-size: 1rem !important;
@@ -956,6 +961,13 @@ input[type=tel],
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
+  
+  }
+}
+
+@media (max-width: 389px) {
+  .mt_filter .btn-remove {
+    width: 250px !important;
   
   }
 }
