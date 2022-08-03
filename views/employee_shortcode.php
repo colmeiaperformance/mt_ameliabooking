@@ -159,7 +159,7 @@
         div.innerText = text;
         console.log(elem.parent());
 
-        // elem.parentNode.appendChild(div);
+        elem.parent().append(div);
     }
 
     function closeModal(){
