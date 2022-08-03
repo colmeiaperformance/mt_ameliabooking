@@ -32,7 +32,7 @@ class FilterFields extends View{
           </select>
         </div>
       </div>
-      <div class="mt_row justify-content-end">
+      <div class="mx-auto d-flex justisfy-content-center flex-nowrap">
           <div class="mt_filter">
             <button id="filterButton" onclick="filterEvents()" class="btn btn-primary">
             Buscar
