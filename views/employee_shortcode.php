@@ -81,7 +81,7 @@
 
         alert("cheguei");
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
             console.log("Dentro do if");
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
@@ -107,7 +107,7 @@
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
-    function formIsValid(email, name, message){
+    function formIsValid(email, name, phone, message){
         let valid = true;
 
         if(email.val() == ""){
@@ -116,16 +116,29 @@
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
             showHideError(true, true, email, 'Digite um e-mail válido');
+        }else{
+            showHideError(true, false, email, 'Este campo está válido');
         }
 
         if(name.val() == ""){
             valid = false;
             showHideError(true, true, name, 'Este campo é necessário.');
+        }else{
+            showHideError(true, false, email, 'Este campo está válido');
+        }
+
+        if(phone.val() == ""){
+            valid = false;
+            showHideError(true, true, name, 'Este campo é necessário.');
+        }else{
+            showHideError(true, false, email, 'Este campo está válido');
         }
 
         if(message.val() == ""){
             valid = false;
             showHideError(true, true, message, 'Este campo é necessário.');
+        }else{
+            showHideError(true, false, email, 'Este campo está válido');
         }
 
         return valid;
@@ -149,13 +162,10 @@
     }
 
     function createElementAlert(elem, text = '', error = true){
-        console.log('dentro do criar elemento')
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
         div.innerText = text;
-        console.log(elem.parent());
-
         elem.parent().append(div);
     }
 
