@@ -341,22 +341,24 @@
         jQuery("#mt_empty_form").css('display', 'block');
     }
 
-    jQuery('.needs-validation').ready(function() {
-        const forms = document.querySelectorAll('.needs-validation')
+    jQuery('.form-events').ready(function() {
+        alert("oii estou aqui");
+        
+        // const forms = document.querySelectorAll('.needs-validation')
 
-        forms.forEach(form => {
-            form.addEventListener('submit', event => {
-                event.preventDefault();
-                console.log('estou aqui no forms');
+        // forms.forEach(form => {
+        //     form.addEventListener('submit', event => {
+        //         event.preventDefault();
+        //         console.log('estou aqui no forms');
                 
-                if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                }
+        //         if (!form.checkValidity()) {
+        //         event.preventDefault()
+        //         event.stopPropagation()
+        //         }
 
-                form.classList.add('was-validated')
-            })
-        })
+        //         form.classList.add('was-validated')
+        //     })
+        // })
     });
 
     //FilterInteractors
