@@ -135,9 +135,12 @@
         console.log("dentro do show error");
 
         if(show){
+            console.log("mostrar");
             if(error){
+                console.log("erro");
                 createElementAlert(elem, text, true);
             }else{
+                console.log("sem erro");
                 createElementAlert(elem, text, false);
             }
         }else{
@@ -146,6 +149,7 @@
     }
 
     function createElementAlert(elem, text, error = true){
+        console.log('dentro do criar elemento')
         let div = document.createElement('div');
         error ? div.classList.add('valid-feedback') : div.classList.add('invalid-feedback');
         div.innerText = text;
