@@ -159,10 +159,8 @@
                 createElementAlert(elem, text, false);
             }
         }else{
-            console.log(elem);
-            console.log(elem.parent().children(".invalid-feedback"));
-            elem.parent().remove(".invalid-feedback");
-            elem.parent().remove(".valid-feedback");
+            elem.parent().children(".invalid-feedback").remove();
+            elem.parent().children(".valid-feedback").remove();
         }
     }
 
