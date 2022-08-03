@@ -144,12 +144,9 @@
 
     function showHideError(elem, show = true, error = true, text = ''){
         if(show){
-            console.log("mostrar");
             if(error){
-                console.log("erro");
                 createElementAlert(elem, text, true);
             }else{
-                console.log("sem erro");
                 createElementAlert(elem, text, false);
             }
         }else{
