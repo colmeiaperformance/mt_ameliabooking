@@ -112,26 +112,27 @@
 
         if(email.val() == ""){
             valid = false;
-            // showError(email, 'Este campo é necessário.');
+            showError(email, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
-            // showError(email, 'Digite um e-mail válido');
+            showError(email, 'Digite um e-mail válido');
         }
 
         if(name.val() == ""){
             valid = false;
-            // showError(name, 'Este campo é necessário.');
+            showError(name, 'Este campo é necessário.');
         }
 
         if(message.val() == ""){
             valid = false;
-            // showError(message, 'Este campo é necessário.');
+            showError(message, 'Este campo é necessário.');
         }
 
         return valid;
     }
 
     function showError(elem, text){
+        console.log("dentro do show error");
         var tooltip = document.createElement('div'), arrow = document.createElement('div'), inner = document.createElement('div'), new_tooltip = {};
 
         if (elem.type != 'radio' && elem.type != 'checkbox') {
