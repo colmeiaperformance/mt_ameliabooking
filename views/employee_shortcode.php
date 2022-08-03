@@ -115,30 +115,30 @@
             showHideError(true, true, email, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
-            showHideError(true, true, email, 'Digite um e-mail válido');
+            showHideError(true, true, email, 'Digite um e-mail válido.');
         }else{
-            showHideError(true, false, email, 'Este campo está válido');
+            showHideError(true, false, email, 'Este campo está válido.');
         }
 
         if(name.val() == ""){
             valid = false;
             showHideError(true, true, name, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, name, 'Este campo está válido');
+            showHideError(true, false, name, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
             valid = false;
             showHideError(true, true, phone, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, phone, 'Este campo está válido');
+            showHideError(true, false, phone, 'Este campo está válido.');
         }
 
         if(message.val() == ""){
             valid = false;
             showHideError(true, true, message, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, message, 'Este campo está válido');
+            showHideError(true, false, message, 'Este campo está válido.');
         }
 
         return valid;
@@ -157,7 +157,8 @@
                 createElementAlert(elem, text, false);
             }
         }else{
-            
+            elem.parent().remove(".invalid-feedback");
+            elem.parent().remove(".valid-feedback");
         }
     }
 
