@@ -684,104 +684,6 @@
   }
 }
 
-@media screen and (max-width: 992px) {
-  .mt_filter_options .mt_row {
-    flex-direction: column !important;
-  }
-  .mt_filter_options .mt_row .mt_filter {
-    width: 100% !important;
-  }
-  .mt_filter button {
-    width: 100%;
-  }
-  #mt_subscription_shortcode {
-    padding: 10px 20px !important;
-  }
-  .mt_event_title h4 {
-    text-align: center !important;
-  }
-  .mt_event_title h4 span {
-    float: left;
-    margin-left: 0px !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  .mt_event_title h5 {
-    text-align: center !important;
-  }
-  .mt_event_item .mt_row {
-    flex-direction: column !important;
-  }
-  .mt_event_item .mt_row .mt_column {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-}
-@media screen and (max-width: 992px) and (max-width: 992px) {
-  .mt_event_item .mt_row .mt_column {
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .mt_event_item .mt_row .mt_column:last-child {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-}
-input[type=checkbox] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  /* Remove most all native input styles */
-  appearance: none;
-  /* For iOS < 15 */
-  background-color: var(--form-background);
-  /* Not removed via appearance */
-  margin: 0;
-  margin-right: 15px;
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  padding: 0px !important;
-  border: 0.15px solid currentColor;
-  transform: translateY(-0.075em);
-  border-radius: 0px !important;
-  display: grid;
-  place-content: center;
-}
-
-input[type=checkbox]::before {
-  content: "";
-  width: 1.15em;
-  height: 1.15em;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transform: scale(0);
-  transform-origin: bottom left;
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-  /* Windows High Contrast Mode */
-  background-color: CanvasText;
-}
-
-input[type=checkbox]:checked::before {
-  transform: scale(1);
-}
-
-input[type=checkbox]:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
-
-input[type=checkbox]:disabled {
-  --form-control-color: var(--form-control-disabled);
-  color: var(--form-control-disabled);
-  cursor: not-allowed;
-}
-
 #mt_message_overlay_error {
   display: flex;
   flex-direction: column;
@@ -836,11 +738,60 @@ input[type=checkbox]:disabled {
   margin-bottom: 15px;
 }
 
-input[type=text],
-input[type=email],
-input[type=tel],
-.form-control,
-#_form_4_ ._form_element input[type=text] {
+.page-eventos input[type=checkbox], .page-instrutores input[type=checkbox] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  /* Remove most all native input styles */
+  appearance: none;
+  /* For iOS < 15 */
+  background-color: var(--form-background);
+  /* Not removed via appearance */
+  margin: 0;
+  margin-right: 15px;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  padding: 0px !important;
+  border: 0.15px solid currentColor;
+  transform: translateY(-0.075em);
+  border-radius: 0px !important;
+  display: grid;
+  place-content: center;
+}
+.page-eventos input[type=checkbox]::before, .page-instrutores input[type=checkbox]::before {
+  content: "";
+  width: 1.15em;
+  height: 1.15em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+.page-eventos input[type=checkbox]:checked::before, .page-instrutores input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+.page-eventos input[type=checkbox]:focus, .page-instrutores input[type=checkbox]:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.page-eventos input[type=checkbox]:disabled, .page-instrutores input[type=checkbox]:disabled {
+  --form-control-color: var(--form-control-disabled);
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+.page-eventos input[type=text],
+.page-eventos input[type=email],
+.page-eventos input[type=tel],
+.page-eventos .form-control,
+.page-eventos #_form_4_ ._form_element input[type=text], .page-instrutores input[type=text],
+.page-instrutores input[type=email],
+.page-instrutores input[type=tel],
+.page-instrutores .form-control,
+.page-instrutores #_form_4_ ._form_element input[type=text] {
   font-weight: 500 !important;
   font-size: 1rem !important;
   line-height: 1.5rem !important;
@@ -851,65 +802,60 @@ input[type=tel],
   text-align: left !important;
 }
 @media (max-width: 992px) {
-  input[type=text],
-input[type=email],
-input[type=tel],
-.form-control,
-#_form_4_ ._form_element input[type=text] {
+  .page-eventos input[type=text],
+.page-eventos input[type=email],
+.page-eventos input[type=tel],
+.page-eventos .form-control,
+.page-eventos #_form_4_ ._form_element input[type=text], .page-instrutores input[type=text],
+.page-instrutores input[type=email],
+.page-instrutores input[type=tel],
+.page-instrutores .form-control,
+.page-instrutores #_form_4_ ._form_element input[type=text] {
     font-size: 1rem !important;
     line-height: 18px !important;
     padding: 7px 17px !important;
     margin: 0 auto;
   }
 }
-
 @media (max-width: 992px) {
-  #_form_4_ button[type=submit] {
+  .page-eventos #_form_4_ button[type=submit], .page-instrutores #_form_4_ button[type=submit] {
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
     padding: 9px 31px !important;
   }
 }
-
-#_form_4_ input[type=text]:disabled {
+.page-eventos #_form_4_ input[type=text]:disabled, .page-instrutores #_form_4_ input[type=text]:disabled {
   color: #959595 !important;
 }
-
-#_form_4_ ._form-title {
+.page-eventos #_form_4_ ._form-title, .page-instrutores #_form_4_ ._form-title {
   color: #323B50 !important;
 }
 @media (max-width: 992px) {
-  #_form_4_ ._form-title {
+  .page-eventos #_form_4_ ._form-title, .page-instrutores #_form_4_ ._form-title {
     font-size: 14px !important;
     line-height: 16px !important;
   }
 }
-
-.mt_filter_options .mt_filter.select::before {
+.page-eventos .mt_filter_options .mt_filter.select::before, .page-instrutores .mt_filter_options .mt_filter.select::before {
   display: none !important;
 }
-
-.mt_filter.select::before {
+.page-eventos .mt_filter.select::before, .page-instrutores .mt_filter.select::before {
   display: none !important;
 }
-
-#mt_subscription_shortcode .mt_filter_options .mt_filter.select::before {
+.page-eventos #mt_subscription_shortcode .mt_filter_options .mt_filter.select::before, .page-instrutores #mt_subscription_shortcode .mt_filter_options .mt_filter.select::before {
   display: none !important;
 }
-
-#mt_subscription_shortcode .mt_filter_options .mt_filter.select::before, #mt_employees_shortcode .mt_filter_options .mt_filter.select::before {
+.page-eventos #mt_subscription_shortcode .mt_filter_options .mt_filter.select::before, .page-eventos #mt_employees_shortcode .mt_filter_options .mt_filter.select::before, .page-instrutores #mt_subscription_shortcode .mt_filter_options .mt_filter.select::before, .page-instrutores #mt_employees_shortcode .mt_filter_options .mt_filter.select::before {
   display: none !important;
 }
-
 @media (max-width: 992px) {
-  .mt_filter_options {
+  .page-eventos .mt_filter_options, .page-instrutores .mt_filter_options {
     width: 90%;
     margin: 0 auto;
   }
 }
-
-.mt_filter .btn-remove {
+.page-eventos .mt_filter .btn-remove, .page-instrutores .mt_filter .btn-remove {
   font-weight: 700 !important;
   font-size: 1rem !important;
   line-height: 1.5rem !important;
@@ -920,41 +866,40 @@ input[type=tel],
   border-radius: 30px !important;
   width: 100% !important;
 }
-.mt_filter .btn-remove:hover {
+.page-eventos .mt_filter .btn-remove:hover, .page-instrutores .mt_filter .btn-remove:hover {
   background: transparent !important;
   color: #323B50 !important;
 }
 @media (max-width: 992px) {
-  .mt_filter .btn-remove {
+  .page-eventos .mt_filter .btn-remove, .page-instrutores .mt_filter .btn-remove {
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
   }
 }
-.mt_filter .btn-primary {
-  font-weight: 700 !important ;
-  font-size: 1rem  !important;
+.page-eventos .mt_filter .btn-primary, .page-instrutores .mt_filter .btn-primary {
+  font-weight: 700 !important;
+  font-size: 1rem !important;
   line-height: 1.5rem !important;
-  color: #FFFFFF!important ;
+  color: #FFFFFF !important;
   padding: 9px 31px !important;
-  background: #F29F05 !important ;
+  background: #F29F05 !important;
   border: 1px solid #F29F05 !important;
   border-radius: 30px !important;
   width: 100% !important;
 }
-.mt_filter .btn-primary:hover {
-  background: transparent !important ;
-  color: #F29F05 !important ;
+.page-eventos .mt_filter .btn-primary:hover, .page-instrutores .mt_filter .btn-primary:hover {
+  background: transparent !important;
+  color: #F29F05 !important;
 }
 @media (max-width: 992px) {
-  .mt_filter .btn-primary {
+  .page-eventos .mt_filter .btn-primary, .page-instrutores .mt_filter .btn-primary {
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
-    
   }
 }
-.mt_filter .form-control {
+.page-eventos .mt_filter .form-control, .page-instrutores .mt_filter .form-control {
   width: 100%;
   font-weight: 500 !important;
   font-size: 1rem !important;
@@ -967,76 +912,72 @@ input[type=tel],
   background-color: #fff !important;
   background-repeat: no-repeat !important;
 }
-.mt_filter .form-control:active, .mt_filter .form-control:focus {
+.page-eventos .mt_filter .form-control:active, .page-eventos .mt_filter .form-control:focus, .page-instrutores .mt_filter .form-control:active, .page-instrutores .mt_filter .form-control:focus {
   box-shadow: none !important;
 }
 @media (max-width: 992px) {
-  .mt_filter .form-control {
+  .page-eventos .mt_filter .form-control, .page-instrutores .mt_filter .form-control {
     font-size: 1rem !important;
     line-height: 18px !important;
     padding: 7px 17px !important;
     margin: 0 auto;
   }
 }
-.mt_filter .mt_container {
+.page-eventos .mt_filter .mt_container, .page-instrutores .mt_filter .mt_container {
   max-width: 100% !important;
 }
-
-.swiper-button-prev {
+.page-eventos .swiper-button-prev, .page-instrutores .swiper-button-prev {
   left: -4px;
 }
-.swiper-button-prev::after {
+.page-eventos .swiper-button-prev::after, .page-instrutores .swiper-button-prev::after {
   color: #FFC536;
   font-size: 1.875rem;
 }
 @media (max-width: 992px) {
-  .swiper-button-prev::after {
+  .page-eventos .swiper-button-prev::after, .page-instrutores .swiper-button-prev::after {
     font-size: 1rem;
   }
 }
-
-.swiper-button-next {
+.page-eventos .swiper-button-next, .page-instrutores .swiper-button-next {
   right: -4px;
 }
-.swiper-button-next::after {
+.page-eventos .swiper-button-next::after, .page-instrutores .swiper-button-next::after {
   color: #FFC536;
   font-size: 1.875rem;
 }
 @media (max-width: 992px) {
-  .swiper-button-next::after {
+  .page-eventos .swiper-button-next::after, .page-instrutores .swiper-button-next::after {
     font-size: 1rem;
   }
 }
-
-.swiper {
+.page-eventos .swiper, .page-instrutores .swiper {
   cursor: pointer;
 }
-
-.box {
+.page-eventos .box, .page-instrutores .box {
   width: 220px;
   height: 220px;
   transition: all 0.3s ease;
 }
 @media (max-width: 992px) {
-  .box {
+  .page-eventos .box, .page-instrutores .box {
     width: 180px;
     height: 180px;
   }
 }
-.box .default {
+.page-eventos .box .default, .page-instrutores .box .default {
   position: relative;
   z-index: 111;
   height: 100%;
   width: 100%;
   transition: all 0.3s ease;
 }
-.box .default img {
+.page-eventos .box .default img, .page-instrutores .box .default img {
   border-radius: 50%;
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.box .hover {
+.page-eventos .box .hover, .page-instrutores .box .hover {
   display: none;
   transition: all 0.3s ease;
   border-radius: 50%;
@@ -1050,14 +991,14 @@ input[type=tel],
   padding: 50px 20px;
 }
 @media (max-width: 992px) {
-  .box .hover {
+  .page-eventos .box .hover, .page-instrutores .box .hover {
     width: 180px;
     height: 180px;
     margin-top: -180px;
     padding: 25px 20px;
   }
 }
-.box .hover h6 {
+.page-eventos .box .hover h6, .page-instrutores .box .hover h6 {
   font-weight: 700;
   font-size: 1rem;
   line-height: 25px;
@@ -1066,13 +1007,13 @@ input[type=tel],
   margin-bottom: 8px;
 }
 @media (max-width: 992px) {
-  .box .hover h6 {
+  .page-eventos .box .hover h6, .page-instrutores .box .hover h6 {
     font-size: 14px;
     line-height: 1.2;
     margin-bottom: 5px;
   }
 }
-.box .hover p {
+.page-eventos .box .hover p, .page-instrutores .box .hover p {
   color: white;
   font-weight: 400;
   font-size: 1rem;
@@ -1081,13 +1022,13 @@ input[type=tel],
   margin-bottom: 6px;
 }
 @media (max-width: 992px) {
-  .box .hover p {
+  .page-eventos .box .hover p, .page-instrutores .box .hover p {
     font-size: 11px !important;
     line-height: 1.2;
     margin-bottom: 4px;
   }
 }
-.box .hover p::before {
+.page-eventos .box .hover p::before, .page-instrutores .box .hover p::before {
   content: "";
   position: relative;
   background: url("images/instrutores/map.png") top center no-repeat;
@@ -1097,7 +1038,7 @@ input[type=tel],
   margin-top: 5px;
   margin-left: -12px;
 }
-.box .hover .btn {
+.page-eventos .box .hover .btn, .page-instrutores .box .hover .btn {
   padding: 3px 11px;
   font-weight: 700;
   font-size: 12px;
@@ -1106,7 +1047,7 @@ input[type=tel],
   color: white;
 }
 @media (max-width: 992px) {
-  .box .hover .btn {
+  .page-eventos .box .hover .btn, .page-instrutores .box .hover .btn {
     font-size: 9px;
     line-height: 10px;
     width: 50%;
@@ -1114,22 +1055,69 @@ input[type=tel],
     padding: 2px 4px;
   }
 }
-.box:hover {
+.page-eventos .box:hover, .page-instrutores .box:hover {
   width: 220px;
   height: 220px;
   transition: all 0.3s ease;
 }
 @media (max-width: 992px) {
-  .box:hover {
+  .page-eventos .box:hover, .page-instrutores .box:hover {
     width: 180px;
     height: 180px;
   }
 }
-.box:hover img {
+.page-eventos .box:hover img, .page-instrutores .box:hover img {
   opacity: 0.7;
 }
-.box:hover .hover {
+.page-eventos .box:hover .hover, .page-instrutores .box:hover .hover {
   display: block;
-}/*# sourceMappingURL=main.css.map */
+}
 
-
+@media screen and (max-width: 992px) {
+  .mt_filter_options .mt_row {
+    flex-direction: column !important;
+  }
+  .mt_filter_options .mt_row .mt_filter {
+    width: 100% !important;
+  }
+  .mt_filter button {
+    width: 100%;
+  }
+  #mt_subscription_shortcode {
+    padding: 10px 20px !important;
+  }
+  .mt_event_title h4 {
+    text-align: center !important;
+  }
+  .mt_event_title h4 span {
+    float: left;
+    margin-left: 0px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .mt_event_title h5 {
+    text-align: center !important;
+  }
+  .mt_event_item .mt_row {
+    flex-direction: column !important;
+  }
+  .mt_event_item .mt_row .mt_column {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media screen and (max-width: 992px) and (max-width: 992px) {
+  .mt_event_item .mt_row .mt_column {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mt_event_item .mt_row .mt_column:last-child {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
