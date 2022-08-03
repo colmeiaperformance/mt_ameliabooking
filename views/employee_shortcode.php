@@ -79,14 +79,11 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        alert("cheguei");
-
         jQuery("#contactEmail, #contactName, #contactPhone, #contactMessage").on('input', function() {
             formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
         if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
-            console.log("Dentro do if");
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
@@ -104,9 +101,6 @@
                 jQuery("#mt_message_overlay_success").fadeIn();
             }
         }
-
-        console.log("final");
-
 
         jQuery("#mt_loader_overlay").fadeOut();
     }
@@ -149,8 +143,6 @@
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
-        console.log("dentro do show error");
-
         if(show){
             console.log("mostrar");
             if(error){
