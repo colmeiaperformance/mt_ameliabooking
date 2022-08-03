@@ -124,21 +124,21 @@
             valid = false;
             showHideError(true, true, name, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, email, 'Este campo está válido');
+            showHideError(true, false, name, 'Este campo está válido');
         }
 
         if(phone.val() == ""){
             valid = false;
-            showHideError(true, true, name, 'Este campo é necessário.');
+            showHideError(true, true, phone, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, email, 'Este campo está válido');
+            showHideError(true, false, phone, 'Este campo está válido');
         }
 
         if(message.val() == ""){
             valid = false;
             showHideError(true, true, message, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, email, 'Este campo está válido');
+            showHideError(true, false, message, 'Este campo está válido');
         }
 
         return valid;
