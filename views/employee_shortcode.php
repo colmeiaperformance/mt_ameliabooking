@@ -81,7 +81,7 @@
 
         alert("cheguei");
 
-        if(formIsValid(jQuery("#contactEmail").val(), jQuery("#contactName").val(), jQuery("#contactMessage").val())){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactMessage"))){
             console.log("Dentro do if");
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
@@ -107,23 +107,23 @@
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
-    function formIsValid(email = '', name = '', message = ''){
+    function formIsValid(email, name, message){
         let valid = true;
 
-        if(email == ""){
+        if(email.val() == ""){
             valid = false;
             // showError(email, 'Este campo é necessário.');
-        }else if(!email.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+        }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
             // showError(email, 'Digite um e-mail válido');
         }
 
-        if(name == ""){
+        if(name.val() == ""){
             valid = false;
             // showError(name, 'Este campo é necessário.');
         }
 
-        if(message == ""){
+        if(message.val() == ""){
             valid = false;
             // showError(message, 'Este campo é necessário.');
         }
