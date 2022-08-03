@@ -153,7 +153,7 @@
         let div = document.createElement('div');
         error ? div.classList.add('valid-feedback') : div.classList.add('invalid-feedback');
         div.innerText = text;
-        elem.parentNode.appendChild(div);
+        // elem.parentNode.appendChild(div);
     }
 
     function closeModal(){
