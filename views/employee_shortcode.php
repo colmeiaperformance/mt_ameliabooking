@@ -167,7 +167,7 @@
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
         div.innerText = text;
-        showHideError(elem);
+        showHideError(elem, false);
         elem.parent().append(div);
     }
 
