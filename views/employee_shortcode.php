@@ -112,56 +112,44 @@
 
         if(email.val() == ""){
             valid = false;
-            showError(email, 'Este campo é necessário.');
+            showHideError(true, email, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
-            showError(email, 'Digite um e-mail válido');
+            showHideError(true, email, 'Digite um e-mail válido');
         }
 
         if(name.val() == ""){
             valid = false;
-            showError(name, 'Este campo é necessário.');
+            showHideError(true, name, 'Este campo é necessário.');
         }
 
         if(message.val() == ""){
             valid = false;
-            showError(message, 'Este campo é necessário.');
+            showHideError(true, message, 'Este campo é necessário.');
         }
 
         return valid;
     }
 
-    function showError(elem, text){
+    function showHideError(show = true, error = true, elem, text){
         console.log("dentro do show error");
-        var tooltip = document.createElement('div'), arrow = document.createElement('div'), inner = document.createElement('div'), new_tooltip = {};
 
-        if (elem.type != 'radio' && elem.type != 'checkbox') {
-            tooltip.className = '_error';
-            arrow.className = '_error-arrow';
-            inner.className = '_error-inner';
-            inner.innerHTML = text;
-            tooltip.appendChild(arrow);
-            tooltip.appendChild(inner);
-            elem.parentNode.appendChild(tooltip);
-        } else {
-            tooltip.className = '_error-inner _no_arrow';
-            tooltip.innerHTML = text;
-            elem.parentNode.insertBefore(tooltip, elem);
-            new_tooltip.no_arrow = true;
+        if(show){
+            if(error){
+                createElementAlert(elem, text, true);
+            }else{
+                createElementAlert(elem, text, false);
+            }
+        }else{
+            
         }
+    }
 
-        new_tooltip.tip = tooltip;
-        new_tooltip.elem = elem;
-        tooltips.push(new_tooltip);
-        tooltip = new_tooltip;
-
-        var rect = tooltip.elem.getBoundingClientRect();
-        var doc = document.documentElement, scrollPosition = rect.top - ((window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0));
-        if (scrollPosition < 40) {
-            tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _below';
-        } else {
-            tooltip.tip.className = tooltip.tip.className.replace(/ ?(_above|_below) ?/g, '') + ' _above';
-        }
+    function createElementAlert(elem, text, error = true){
+        let div = document.createElement('div');
+        error ? div.classList.add('valid-feedback') : div.classList.add('invalid-feedback');
+        div.innerText = text;
+        elem.parentNode.appendChild(div);
     }
 
     function closeModal(){
