@@ -151,11 +151,7 @@
     function createElementAlert(elem, text = '', error = true){
         console.log('dentro do criar elemento')
         let div = document.createElement('div');
-        if(error){
-            div.classList.add('valid-feedback')
-        }else{
-            div.classList.add('invalid-feedback')
-        }
+        error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.innerText = text;
         console.log(elem.parent());
 
