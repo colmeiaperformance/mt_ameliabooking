@@ -95,13 +95,13 @@ class EventItem extends View{
 										<label> * Primeiro Nome: </label>
 										<input name="firstName" required onchange="firstName = this.value" type="text" class="form-control">
 										<div class="valid-feedback">O nome foi preenchido!</div>
-                    <div class="invalid-feedback">Por favor, insira um nome!</div>
+                    					<div class="invalid-feedback">Por favor, insira um nome!</div>
 									</div>
 									<div class="mt_column">
 										<label> * Sobrenome: </label>
 										<input required name="lastName" onchange="lastName = this.value" type="text" class="form-control">
 										<div class="valid-feedback">O sobrenome foi preenchido!</div>
-                    <div class="invalid-feedback">Por favor, insira um sobrenome!</div>
+                    					<div class="invalid-feedback">Por favor, insira um sobrenome!</div>
 									</div>
 								</div>
 								<div class="mt_row">
@@ -109,7 +109,7 @@ class EventItem extends View{
 										<label> * Email: </label>
 										<input required name="email" onchange="email = this.value" type="email" class="form-control">
 										<div class="valid-feedback">O e-mail é válido!</div>
-                    <div class="invalid-feedback">Por favor, insira um e-mail válido!</div>
+                    					<div class="invalid-feedback">Por favor, insira um e-mail válido!</div>
 									</div>
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
@@ -117,9 +117,9 @@ class EventItem extends View{
       								
       									<input required name="phone" type="tel" class="form-control phone">
 										</div>
+										<div class="valid-feedback">O número de telefone é válido!</div>
+					  					<div class="invalid-feedback">Por favor, insira um número de telefone válido!</div>
     								</div>
-									<div class="valid-feedback">O número de telefone é válido!</div>
-                  <div class="invalid-feedback">Por favor, insira um número de telefone válido!</div>
 
 										
 									</div>
