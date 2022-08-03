@@ -152,6 +152,7 @@
         console.log('dentro do criar elemento')
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
+        div.style.display = 'block';
         div.innerText = text;
         console.log(elem.parent());
 
