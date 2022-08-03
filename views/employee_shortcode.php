@@ -81,19 +81,7 @@
 
         alert("cheguei");
 
-        jQuery("#contactEmail").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
-        });
-
-        jQuery("#contactName").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
-        });
-
-        jQuery("#contactPhone").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
-        });
-
-        jQuery("#contactMessage").on('input', function() {
+        jQuery("#contactEmail, #contactName, #contactPhone, #contactMessage").on('input', function() {
             formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
