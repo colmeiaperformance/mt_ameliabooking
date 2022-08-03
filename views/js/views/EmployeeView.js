@@ -56,18 +56,18 @@ class EmployeeView extends View {
                     <div class="col-12 col-lg-7 mt-4 mt-lg-0">
                         <form id="employee-send-contact" onsubmit="sendContactForm(event,this)">
                             <div class="form-group">
-                                <input required type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
+                                <input type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
                             </div>
                             <div class="row">
                             <div class="col-12 col-md-6 form-group">
-                                <input required type="email" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
+                                <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
                             </div>
                             <div class="col-12 col-md-6 form-group">
-                                <input required type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
+                                <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
                             </div>
                             </div>
                             <div class="form-group">
-                            <textarea required class="form-control" id="contactMessage" rows="7" placeholder="Sua mensagem"></textarea>
+                            <textarea class="form-control" id="contactMessage" rows="7" placeholder="Sua mensagem"></textarea>
                             </div>
                             <div class="text-end">
                             <button type="submit" class="btn">Enviar Mensagem</button>
