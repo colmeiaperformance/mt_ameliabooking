@@ -931,15 +931,13 @@ input[type=tel],
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
+    left: 500px !important;
    
 
   }
 }
 
-.mt_filter .btn-remove .btn-primary{
-    left: 50px;
 
-}
 .mt_filter .btn-primary {
   font-weight: 700 !important;
   font-size: 1rem !important;
@@ -951,6 +949,7 @@ input[type=tel],
   border-radius: 30px !important;
   width: 100% !important;
   
+  
 }
 .mt_filter .btn-primary:hover {
   background: transparent !important;
@@ -961,16 +960,13 @@ input[type=tel],
     font-size: 14px !important;
     line-height: 16px !important;
     margin: 0 auto !important;
+    left: 500px !important;
+    
   
   }
 }
 
-@media (max-width: 389px) {
-  .mt_filter .btn-remove {
-    width: 250px !important;
-  
-  }
-}
+
 .mt_filter .form-control {
   width: 100%;
   font-weight: 500 !important;
