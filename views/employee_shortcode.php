@@ -157,7 +157,7 @@
             div.classList.add('invalid-feedback')
         }
         div.innerText = text;
-        console.log(elem.parentNode);
+        console.log(elem);
 
         // elem.parentNode.appendChild(div);
     }
