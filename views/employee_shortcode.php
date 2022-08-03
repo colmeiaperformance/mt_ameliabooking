@@ -112,20 +112,20 @@
 
         if(email.val() == ""){
             valid = false;
-            showHideError(true, email, 'Este campo é necessário.');
+            showHideError(true, true, email, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
-            showHideError(true, email, 'Digite um e-mail válido');
+            showHideError(true, true, email, 'Digite um e-mail válido');
         }
 
         if(name.val() == ""){
             valid = false;
-            showHideError(true, name, 'Este campo é necessário.');
+            showHideError(true, true, name, 'Este campo é necessário.');
         }
 
         if(message.val() == ""){
             valid = false;
-            showHideError(true, message, 'Este campo é necessário.');
+            showHideError(true, true, message, 'Este campo é necessário.');
         }
 
         return valid;
