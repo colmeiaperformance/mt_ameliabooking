@@ -88,7 +88,7 @@ class EventItem extends View{
 									</button>
 								</div>
 							</div>
-							<form id="formEvt${e.id}" onsubmit="return false" class="needs-validation" novalidate>
+							<form id="formEvt${e.id}" class="needs-validation">
 							<div class="mt_event_details_subscriptions" id="mt_event_details_subscriptions_${key}">
 								<div class="mt_row">
 									<div class="mt_column">

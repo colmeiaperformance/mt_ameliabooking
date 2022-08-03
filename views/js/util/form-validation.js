@@ -1,21 +1,21 @@
-(() => {
-  'use strict'
+// (() => {
+//   'use strict'
 
-  jQuery('.needs-validation').ready(function() {
-    const forms = document.querySelectorAll('.needs-validation')
+//   jQuery('.needs-validation').ready(function() {
+//     const forms = document.querySelectorAll('.needs-validation')
 
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        event.preventDefault();
-        console.log('estou aqui');
+//     Array.from(forms).forEach(form => {
+//       form.addEventListener('submit', event => {
+//         event.preventDefault();
+//         console.log('estou aqui');
         
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+//         if (!form.checkValidity()) {
+//           event.preventDefault()
+//           event.stopPropagation()
+//         }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
-  });
-})()
+//         form.classList.add('was-validated')
+//       }, false)
+//     })
+//   });
+// })()

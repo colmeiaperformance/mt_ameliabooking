@@ -342,21 +342,21 @@
     }
 
     jQuery('.needs-validation').ready(function() {
-    const forms = document.querySelectorAll('.needs-validation')
+        const forms = document.querySelectorAll('.needs-validation')
 
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        event.preventDefault();
-        console.log('estou aqui');
-        
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
+        forms.forEach(form => {
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                console.log('estou aqui no forms');
+                
+                if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+                }
 
-        form.classList.add('was-validated')
-      }, false)
-    })
+                form.classList.add('was-validated')
+            })
+        })
     });
 
     //FilterInteractors
