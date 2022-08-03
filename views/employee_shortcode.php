@@ -110,7 +110,7 @@
     function formIsValid(email = '', name = '', message = ''){
         let valid = true;
 
-        if(email === ""){
+        if(email == ""){
             valid = false;
             // showError(email, 'Este campo é necessário.');
         }else if(!email.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
@@ -118,12 +118,12 @@
             // showError(email, 'Digite um e-mail válido');
         }
 
-        if(name === ""){
+        if(name == ""){
             valid = false;
             // showError(name, 'Este campo é necessário.');
         }
 
-        if(message.val() === ""){
+        if(message == ""){
             valid = false;
             // showError(message, 'Este campo é necessário.');
         }
