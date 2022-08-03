@@ -112,41 +112,39 @@
 
         if(email.val() == ""){
             valid = false;
-            showHideError(true, true, email, 'Este campo é necessário.');
+            showHideError(email, true, true, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
-            showHideError(true, true, email, 'Digite um e-mail válido.');
+            showHideError(email, true, true, 'Digite um e-mail válido.');
         }else{
-            showHideError(true, false, email, 'Este campo está válido.');
+            showHideError(email, true, false, 'Este campo está válido.');
         }
 
         if(name.val() == ""){
             valid = false;
-            showHideError(true, true, name, 'Este campo é necessário.');
+            showHideError(name, true, true, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, name, 'Este campo está válido.');
+            showHideError(name, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
             valid = false;
-            showHideError(true, true, phone, 'Este campo é necessário.');
+            showHideError(phone, true, true, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, phone, 'Este campo está válido.');
+            showHideError(phone, true, false, 'Este campo está válido.');
         }
 
         if(message.val() == ""){
             valid = false;
-            showHideError(true, true, message, 'Este campo é necessário.');
+            showHideError(message, true, true, 'Este campo é necessário.');
         }else{
-            showHideError(true, false, message, 'Este campo está válido.');
+            showHideError(message, true, false, 'Este campo está válido.');
         }
-
-        showHideError(false, true, email, '');
 
         return valid;
     }
 
-    function showHideError(show = true, error = true, elem, text = ''){
+    function showHideError(elem, show = true, error = true, text = ''){
         console.log("dentro do show error");
 
         if(show){
@@ -169,6 +167,7 @@
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
         div.innerText = text;
+        showHideError(elem);
         elem.parent().append(div);
     }
 
