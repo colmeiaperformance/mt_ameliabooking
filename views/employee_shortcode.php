@@ -131,7 +131,7 @@
         return valid;
     }
 
-    function showHideError(show = true, error = true, elem, text){
+    function showHideError(show = true, error = true, elem, text = ''){
         console.log("dentro do show error");
 
         if(show){
@@ -148,11 +148,17 @@
         }
     }
 
-    function createElementAlert(elem, text, error = true){
+    function createElementAlert(elem, text = '', error = true){
         console.log('dentro do criar elemento')
         let div = document.createElement('div');
-        error ? div.classList.add('valid-feedback') : div.classList.add('invalid-feedback');
+        if(error){
+            div.classList.add('valid-feedback')
+        }else{
+            div.classList.add('invalid-feedback')
+        }
         div.innerText = text;
+        console.log(elem.parentNode);
+
         // elem.parentNode.appendChild(div);
     }
 
