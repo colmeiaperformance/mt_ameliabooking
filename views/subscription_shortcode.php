@@ -417,10 +417,10 @@
 
     function showHideError(elem, show = true, error = true, text = ''){
         console.log('show hide error');
-        console.log(elem.parentNode())
+        // console.log(elem.parentNode())
 
 
-        console.log(elem.parentNode().)
+        // console.log(elem.parentNode())
         
         // if(show){
         //     if(error){
