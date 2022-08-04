@@ -343,15 +343,7 @@
 
     jQuery('.form-events').ready(function() { 
         function depois(){
-            alert("oii estou aqui");
-            
             const forms = document.querySelectorAll('.form-events');
-            
-            console.log('Antes');
-            
-            console.log(forms);
-            
-            console.log('Aqui tbm');
 
             return forms.length > 0 ? true : false;
         }
