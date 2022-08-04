@@ -361,10 +361,11 @@
                         console.log("enviou");
 
                         console.log(jQuery(`#${this.id}`));
+                        console.log(jQuery(`#${this.id}`).children('firstName'));
 
                         console.log(event);
 
-                        validateForm(`#${this.id}`);
+                        // validateForm(`#${this.id}`);
                     });
                 });
 
