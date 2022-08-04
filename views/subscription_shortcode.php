@@ -353,13 +353,16 @@
 
             if(elements){
                 elements.forEach((elem) => {
-                    jQuery(elem).on('submit', event => {
+                    jQuery(elem).on('submit', (event, elem) => {
                         event.preventDefault();
                         event.stopPropagation();
 
                         console.log("enviou");
 
                         validateForm(event);
+                        console.log(elem);
+                        console.log(elem.children(".firstName"));
+                        console.log("______________________");
                     });
                 });
 
@@ -371,9 +374,7 @@
     const validateForm = (form) => {
         console.log('validate');
         console.log(form);
-
-        console.log(jQuery(form).children(".firstName"));
-        console.log("______________________");
+        
 
         let firstName =  form.target[0];
         let lastName =  form.target[1];
