@@ -356,6 +356,8 @@
                     jQuery(elem).on('submit', function(event) {
                         event.preventDefault();
                         event.stopPropagation();
+
+                        let form = jQuery(this);
                         
                         let firstName = form.find(".firstName");
                         let lastName = form.find(".lastName");
@@ -364,8 +366,8 @@
                         
                         jQuery(firstName, lastName, email, phone).on('input', function() {
                             alert('alterou');
-                            validateForm(firstName, lastName, email, phone);
                         });
+                        validateForm(firstName, lastName, email, phone);
                     });
                 });
 
