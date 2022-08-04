@@ -357,6 +357,8 @@
                         event.preventDefault();
                         event.stopPropagation();
 
+                        console.log("enviou");
+
                         validateForm(this);
                     });
                 });
@@ -367,45 +369,38 @@
     });
 
     const validateForm = (form) => {
+        console.log('validate');
+
         let firstName = jQuery(form).children('.firstName');
         let lastName = jQuery(form).children('.lastName');
         let email = jQuery(form).children('.email');
         let phone = jQuery(form).children('.phone');
 
-        let valid = true;
-
         if(email.val() == ""){
-            valid = false;
             showHideError(email, true, true, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
-            valid = false;
             showHideError(email, true, true, 'Digite um e-mail válido.');
         }else{
             showHideError(email, true, false, 'Este campo está válido.');
         }
 
         if(firstName.val() == ""){
-            valid = false;
             showHideError(firstName, true, true, 'Este campo é necessário.');
         }else{
             showHideError(firstName, true, false, 'Este campo está válido.');
         }
 
         if(lastName.val() == ""){
-            valid = false;
             showHideError(lastName, true, true, 'Este campo é necessário.');
         }else{
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
-            valid = false;
             showHideError(phone, true, true, 'Este campo é necessário.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
-
-        return valid;
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
@@ -419,6 +414,15 @@
             elem.parent().children(".invalid-feedback").remove();
             elem.parent().children(".valid-feedback").remove();
         }
+    }
+
+    function createElementAlert(elem, text = '', error = true){
+        let div = document.createElement('div');
+        error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
+        div.style.display = 'block';
+        div.innerText = text;
+        showHideError(elem, false);
+        elem.parent().append(div);
     }
 
     //FilterInteractors
