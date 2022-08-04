@@ -370,7 +370,7 @@
 
     const validateForm = (formId) => {
         console.log('validate');
-        console.log(form);
+        console.log(formId);
 
         let firstName =  jQuery(`#${formId}`).children('.firstName');
         let lastName =  jQuery(`#${formId}`).children('.lastName');
