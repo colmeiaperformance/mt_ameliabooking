@@ -372,10 +372,10 @@
         console.log('validate');
         console.log(form);
 
-        let firstName =  jQuery(form).children('.firstName');
-        let lastName =  jQuery(form).children('.lastName');
-        let email =  jQuery(form).children('.email');
-        let phone =  jQuery(form).children('.phone');
+        let firstName =  form.target[0];
+        let lastName =  form.target[1];
+        let email =  form.target[2];
+        let phone =  form.target[3];
 
         console.log(firstName);
         console.log(lastName);
