@@ -358,7 +358,7 @@
                         event.stopPropagation();
 
 
-                        // console.log("enviou");
+                        console.log("enviou");
 
                         console.log(jQuery(`#${this.id}`));
 
@@ -386,11 +386,6 @@
         console.log(lastName);
         console.log(email);
         console.log(phone);
-
-
-        // let lastName =  form.target[1];
-        // let email =  form.target[2];
-        // let phone =  form.target[3];
 
         // if(email.value == ""){
         //     showHideError(email, true, true, 'Este campo é necessário.');
@@ -421,17 +416,25 @@
 
     function showHideError(elem, show = true, error = true, text = ''){
         console.log('show hide error');
-        if(show){
-            if(error){
-                createElementAlert(elem, text, true);
-            }else{
-                createElementAlert(elem, text, false);
-            }
-        }else{
-            elem.parentNode.children
-            elem.parent().children(".valid-feedback").remove();
-        }
+        console.log(elem.parentNode())
+
+
+        console.log(elem.parentNode().)
+        
+        // if(show){
+        //     if(error){
+        //         createElementAlert(elem, text, true);
+        //     }else{
+        //         createElementAlert(elem, text, false);
+        //     }
+        // }else{
+        //     elem.parentNode().lastChild()
+     
+        //     // elem.parent().children(".valid-feedback").remove();
+        // }
     }
+
+    document.
 
     function createElementAlert(elem, text = '', error = true){
         console.log('create element alert');
