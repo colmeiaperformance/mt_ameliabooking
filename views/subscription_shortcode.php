@@ -359,7 +359,7 @@
 
                         console.log("enviou");
 
-                        console.log(jQuery(event).children(".firstName"));
+                        console.log(jQuery(event.currentTarget).children(".firstName"));
 
                         validateForm(event);
                     });
