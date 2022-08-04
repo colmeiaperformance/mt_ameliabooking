@@ -381,7 +381,7 @@
 
     const validateForm = (form) => {
         console.log('validate');
-        console.log(formID);
+        // console.log(formID);
 
         let firstName = form.find(".firstName");
         let lastName = form.find(".lastName");
