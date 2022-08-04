@@ -357,6 +357,11 @@
                         event.preventDefault();
                         event.stopPropagation();
                         validateForm(jQuery(this));
+
+                        jQuery(this).on('change', function() {
+                            alert('alterou');
+                            // formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+                        });
                     });
                 });
 
