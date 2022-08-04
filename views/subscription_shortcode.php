@@ -341,9 +341,7 @@
         jQuery("#mt_empty_form").css('display', 'block');
     }
 
-    jQuery('.form-events').ready(function() {
-        
-        
+    jQuery('.form-events').ready(function() { 
         function depois(){
             alert("oii estou aqui");
             
@@ -354,9 +352,20 @@
             console.log(forms);
             
             console.log('Aqui tbm');
+
+            return forms.length > 0 ? true : false;
         }
-        
-        setTimeout(depois, 5000);
+
+        setTimeout(() => {
+            let chegou = depois();
+
+            if(chegou){
+                alert('achei');
+                console.log(document.querySelectorAll('.form-events'));
+            }else{
+                console.log("não achei");
+            }
+        }, 500);
 
         // forms.forEach(form => {
         //     form.addEventListener('submit', event => {
