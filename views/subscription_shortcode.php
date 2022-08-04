@@ -353,7 +353,8 @@
 
             if(elements){
                 elements.forEach((elem) => {
-                    jQuery(elem).on('submit', () => {
+                    jQuery(elem).on('submit', event => {
+                        event.preventDefault();
                         alert("enviou");
                     });
                 });
