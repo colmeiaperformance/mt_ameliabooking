@@ -1024,7 +1024,7 @@
 @media (max-width: 992px) {
   .page-eventos .box .hover p, .page-instrutores .box .hover p {
     font-size: 11px !important;
-    line-height: 1.2;
+    line-height: 22px;
     margin-bottom: 4px;
   }
 }
