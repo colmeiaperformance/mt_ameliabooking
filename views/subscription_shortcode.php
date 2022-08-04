@@ -359,7 +359,7 @@
 
                         console.log("enviou");
 
-                        validateForm(event.id);
+                        validateForm(event.attr("id"));
                     });
                 });
 
