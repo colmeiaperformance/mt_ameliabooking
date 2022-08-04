@@ -342,21 +342,23 @@
     }
 
     jQuery('.form-events').ready(function() { 
-        function depois(){
-            const forms = document.querySelectorAll('.form-events');
-
-            return forms.length > 0 ? true : false;
+        function search(element){
+            const forms = document.querySelectorAll(element);
+            return forms.length > 0 ? forms : false;
         }
-
+        
         let time = setInterval(() => {
-            let chegou = depois();
+            let element = '.form-events';
+            let elements = search(element);
 
-            if(chegou){
-                alert('achei');
-                console.log(document.querySelectorAll('.form-events'));
+            if(elements){
+                elements.forEach((elem) => {
+                    elem.on('submit', () => {
+                        alert("enviou");
+                    });
+                });
+
                 clearInterval(time);
-            }else{
-                console.log("não achei");
             }
         }, 500);
 
