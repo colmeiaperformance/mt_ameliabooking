@@ -356,24 +356,6 @@
                     jQuery(elem).on('submit', function(event) {
                         event.preventDefault();
                         event.stopPropagation();
-
-
-                        console.log("enviou");
-
-
-                        // console.log(jQuery('#formEvt62').find(".firstName"));
-
-                        // console.log(event.find(".firstName"));
-
-                        // console.log(jQuery(event).find(".firstName"));
-
-                        // console.log(.find(".firstName"));
-                        
-                        // console.log(jQuery(`#${this.id}`));
-                        // console.log(jQuery(`#${this.id}`).children('firstName'));
-                        
-                        // console.log(event);
-                        
                         validateForm(jQuery(this));
                     });
                 });
@@ -444,6 +426,7 @@
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
+        div.style.marginTop = '10px';
         div.innerText = text;
         showHideError(elem, false);
         elem.parent().append(div);
