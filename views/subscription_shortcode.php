@@ -366,6 +366,8 @@
                         // console.log(event.find(".firstName"));
 
                         console.log(jQuery(event).find(".firstName"));
+
+                        console.log(jQuery(this).find(".firstName"));
                         
                         // console.log(jQuery(`#${this.id}`));
                         // console.log(jQuery(`#${this.id}`).children('firstName'));
