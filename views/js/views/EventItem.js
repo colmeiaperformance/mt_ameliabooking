@@ -108,7 +108,7 @@ class EventItem extends View{
 										<input  name="email" onchange="email = this.value" type="email" class="form-control email">
 										
 									</div>
-									<div class="mt_column phone">
+									<div class="mt_column">
 										<label> * Telefone: </label>
 										<div class="input-group">
       								
