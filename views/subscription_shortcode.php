@@ -346,6 +346,8 @@
         
         const forms = document.querySelectorAll('.form-events');
 
+        console.log('Antes');
+
         console.log(forms);
 
         console.log('Aqui tbm');
