@@ -435,8 +435,6 @@
         // }
     }
 
-    document.
-
     function createElementAlert(elem, text = '', error = true){
         console.log('create element alert');
         let div = document.createElement('div');
