@@ -358,7 +358,7 @@
                         event.stopPropagation();
                         validateForm(jQuery(this));
 
-                        jQuery(this).on('change', function() {
+                        jQuery(this).on('input', function() {
                             alert('alterou');
                             // formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
                         });
