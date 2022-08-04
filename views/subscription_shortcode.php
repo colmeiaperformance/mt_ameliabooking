@@ -361,7 +361,9 @@
 
                         // console.log("enviou");
 
-                        console.log(jQuery(`#${this.id}`)[0]);
+                        console.log(jQuery(`#${this.id}`));
+
+                        console.log(event);
 
                         validateForm(jQuery(`#${this.id}`)[0]);
                     });
