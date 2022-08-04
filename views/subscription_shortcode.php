@@ -374,7 +374,7 @@
     const validateForm = (form) => {
         console.log('validate');
         console.log(form);
-        
+
 
         let firstName =  form.target[0];
         let lastName =  form.target[1];
@@ -386,31 +386,31 @@
         console.log(email);
         console.log(phone);
 
-        if(email.val() == ""){
-            showHideError(email, true, true, 'Este campo é necessário.');
-        }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
-            showHideError(email, true, true, 'Digite um e-mail válido.');
-        }else{
-            showHideError(email, true, false, 'Este campo está válido.');
-        }
+        // if(email.val() == ""){
+        //     showHideError(email, true, true, 'Este campo é necessário.');
+        // }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+        //     showHideError(email, true, true, 'Digite um e-mail válido.');
+        // }else{
+        //     showHideError(email, true, false, 'Este campo está válido.');
+        // }
 
-        if(firstName.val() == ""){
-            showHideError(firstName, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(firstName, true, false, 'Este campo está válido.');
-        }
+        // if(firstName.val() == ""){
+        //     showHideError(firstName, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(firstName, true, false, 'Este campo está válido.');
+        // }
 
-        if(lastName.val() == ""){
-            showHideError(lastName, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(lastName, true, false, 'Este campo está válido.');
-        }
+        // if(lastName.val() == ""){
+        //     showHideError(lastName, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(lastName, true, false, 'Este campo está válido.');
+        // }
 
-        if(phone.val() == ""){
-            showHideError(phone, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(phone, true, false, 'Este campo está válido.');
-        }
+        // if(phone.val() == ""){
+        //     showHideError(phone, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(phone, true, false, 'Este campo está válido.');
+        // }
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
