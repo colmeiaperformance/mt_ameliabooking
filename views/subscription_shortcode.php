@@ -353,7 +353,7 @@
 
             if(elements){
                 elements.forEach((elem) => {
-                    jQuery(elem).on('submit', function() {
+                    jQuery(elem).on('submit', function(event) {
                         event.preventDefault();
                         event.stopPropagation();
 
