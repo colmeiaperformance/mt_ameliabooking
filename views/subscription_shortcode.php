@@ -348,13 +348,13 @@
             return forms.length > 0 ? true : false;
         }
 
-        let time = setTimeout(() => {
+        let time = setInterval(() => {
             let chegou = depois();
 
             if(chegou){
                 alert('achei');
                 console.log(document.querySelectorAll('.form-events'));
-                clearTimeout(time);
+                clearInterval(time);
             }else{
                 console.log("não achei");
             }
