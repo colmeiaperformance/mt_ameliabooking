@@ -370,11 +370,17 @@
 
     const validateForm = (form) => {
         console.log('validate');
+        console.log(form);
 
         let firstName = jQuery(form).children('.firstName');
         let lastName = jQuery(form).children('.lastName');
         let email = jQuery(form).children('.email');
         let phone = jQuery(form).children('.phone');
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(email);
+        console.log(phone);
 
         if(email.val() == ""){
             showHideError(email, true, true, 'Este campo é necessário.');
