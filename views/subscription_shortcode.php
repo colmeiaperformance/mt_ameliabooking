@@ -372,7 +372,7 @@
         console.log('validate');
         console.log(form);
 
-        console.log(form.children(".firstName"));
+        console.log(jQuery(form).children(".firstName"));
         console.log("______________________");
 
         let firstName =  form.target[0];
