@@ -357,7 +357,6 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        console.log();
 
                         // console.log("enviou");
 
@@ -365,7 +364,7 @@
 
                         console.log(event);
 
-                        validateForm(jQuery(`#${this.id}`)[0]);
+                        validateForm(`#${this.id}`);
                     });
                 });
 
@@ -374,43 +373,43 @@
         }, 500);
     });
 
-    const validateForm = (form) => {
+    const validateForm = (formID) => {
         console.log('validate');
-        console.log(form);
+        console.log(formID);
 
-        let firstName =  form.children('.firstName');
-        console.log(firstName);
+        // let firstName =  form.children('.firstName');
+        // console.log(firstName);
 
 
-        let lastName =  form.target[1];
-        let email =  form.target[2];
-        let phone =  form.target[3];
+        // let lastName =  form.target[1];
+        // let email =  form.target[2];
+        // let phone =  form.target[3];
 
-        if(email.value == ""){
-            showHideError(email, true, true, 'Este campo é necessário.');
-        }else if(!email.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
-            showHideError(email, true, true, 'Digite um e-mail válido.');
-        }else{
-            showHideError(email, true, false, 'Este campo está válido.');
-        }
+        // if(email.value == ""){
+        //     showHideError(email, true, true, 'Este campo é necessário.');
+        // }else if(!email.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+        //     showHideError(email, true, true, 'Digite um e-mail válido.');
+        // }else{
+        //     showHideError(email, true, false, 'Este campo está válido.');
+        // }
 
-        if(firstName.value == ""){
-            showHideError(firstName, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(firstName, true, false, 'Este campo está válido.');
-        }
+        // if(firstName.value == ""){
+        //     showHideError(firstName, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(firstName, true, false, 'Este campo está válido.');
+        // }
 
-        if(lastName.value == ""){
-            showHideError(lastName, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(lastName, true, false, 'Este campo está válido.');
-        }
+        // if(lastName.value == ""){
+        //     showHideError(lastName, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(lastName, true, false, 'Este campo está válido.');
+        // }
 
-        if(phone.value == ""){
-            showHideError(phone, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(phone, true, false, 'Este campo está válido.');
-        }
+        // if(phone.value == ""){
+        //     showHideError(phone, true, true, 'Este campo é necessário.');
+        // }else{
+        //     showHideError(phone, true, false, 'Este campo está válido.');
+        // }
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
