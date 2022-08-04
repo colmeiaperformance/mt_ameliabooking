@@ -404,6 +404,7 @@
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
+        console.log('show hide error');
         if(show){
             if(error){
                 createElementAlert(elem, text, true);
@@ -417,6 +418,7 @@
     }
 
     function createElementAlert(elem, text = '', error = true){
+        console.log('create element alert');
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
