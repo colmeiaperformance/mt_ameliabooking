@@ -342,15 +342,21 @@
     }
 
     jQuery('.form-events').ready(function() {
-        alert("oii estou aqui");
         
-        const forms = document.querySelectorAll('.form-events');
-
-        console.log('Antes');
-
-        console.log(forms);
-
-        console.log('Aqui tbm');
+        
+        function depois(){
+            alert("oii estou aqui");
+            
+            const forms = document.querySelectorAll('.form-events');
+            
+            console.log('Antes');
+            
+            console.log(forms);
+            
+            console.log('Aqui tbm');
+        }
+        
+        setTimeout(depois, 5000);
 
         // forms.forEach(form => {
         //     form.addEventListener('submit', event => {
