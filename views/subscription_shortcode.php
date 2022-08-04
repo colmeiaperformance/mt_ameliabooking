@@ -353,15 +353,17 @@
 
             if(elements){
                 elements.forEach((elem) => {
-                    jQuery(elem).on('submit', event => {
+                    jQuery(elem).on('submit', function() {
                         event.preventDefault();
                         event.stopPropagation();
 
-                        console.log("enviou");
+                        console.log(this);
 
-                        console.log(jQuery(event.prevObject).children(".firstName"));
+                        // console.log("enviou");
 
-                        validateForm(event);
+                        // console.log(jQuery(event.prevObject).children(".firstName"));
+
+                        // validateForm(event);
                     });
                 });
 
@@ -415,7 +417,7 @@
                 createElementAlert(elem, text, false);
             }
         }else{
-            elem.parent().children(".invalid-feedback").remove();
+            elem.parentNode.children
             elem.parent().children(".valid-feedback").remove();
         }
     }
