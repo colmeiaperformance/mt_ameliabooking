@@ -357,7 +357,7 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        console.log(this);
+                        console.log(jQuery(`#${this.id}`));
 
                         // console.log("enviou");
 
