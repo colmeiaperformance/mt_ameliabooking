@@ -367,10 +367,10 @@
     });
 
     const validateForm = (form) => {
-        let email = jQuery(form).children('.firstName');
-        let name = jQuery(form).children('.lastName');
-        let phone = jQuery(form).children('.email');
-        let message = jQuery(form).children('.phone');
+        let firstName = jQuery(form).children('.firstName');
+        let lastName = jQuery(form).children('.lastName');
+        let email = jQuery(form).children('.email');
+        let phone = jQuery(form).children('.phone');
 
         let valid = true;
 
@@ -384,11 +384,18 @@
             showHideError(email, true, false, 'Este campo está válido.');
         }
 
-        if(name.val() == ""){
+        if(firstName.val() == ""){
             valid = false;
-            showHideError(name, true, true, 'Este campo é necessário.');
+            showHideError(firstName, true, true, 'Este campo é necessário.');
         }else{
-            showHideError(name, true, false, 'Este campo está válido.');
+            showHideError(firstName, true, false, 'Este campo está válido.');
+        }
+
+        if(lastName.val() == ""){
+            valid = false;
+            showHideError(lastName, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
@@ -396,13 +403,6 @@
             showHideError(phone, true, true, 'Este campo é necessário.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
-        }
-
-        if(message.val() == ""){
-            valid = false;
-            showHideError(message, true, true, 'Este campo é necessário.');
-        }else{
-            showHideError(message, true, false, 'Este campo está válido.');
         }
 
         return valid;
