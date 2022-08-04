@@ -426,7 +426,7 @@
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
-        div.classList.add("mt-2")
+        div.classList.add("mt-1")
         div.innerText = text;
         showHideError(elem, false);
         elem.parent().append(div);
