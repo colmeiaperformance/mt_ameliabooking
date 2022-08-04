@@ -348,6 +348,8 @@
 
         console.log(forms);
 
+        console.log('Aqui tbm');
+
         // forms.forEach(form => {
         //     form.addEventListener('submit', event => {
         //         event.preventDefault();
