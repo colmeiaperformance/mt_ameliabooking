@@ -392,61 +392,51 @@
         let email = form.find(".email");
         let phone = form.find(".phone");
 
-        // let firstName = document.querySelector(`${formID} .firstName`);
-        // let lastName = document.querySelector(`${formID} .lastName`);
-        // let email = document.querySelector(`${formID} .email`);
-        // let phone = document.querySelector(`${formID} .phone`);
-
         console.log(firstName);
         console.log(lastName);
         console.log(email);
         console.log(phone);
+        
+        if(email.val() == ""){
+            showHideError(email, true, true, 'Este campo é necessário.');
+        }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+            showHideError(email, true, true, 'Digite um e-mail válido.');
+        }else{
+            showHideError(email, true, false, 'Este campo está válido.');
+        }
 
-        // if(email.value == ""){
-        //     showHideError(email, true, true, 'Este campo é necessário.');
-        // }else if(!email.value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
-        //     showHideError(email, true, true, 'Digite um e-mail válido.');
-        // }else{
-        //     showHideError(email, true, false, 'Este campo está válido.');
-        // }
+        if(firstName.val() == ""){
+            showHideError(firstName, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(firstName, true, false, 'Este campo está válido.');
+        }
 
-        // if(firstName.value == ""){
-        //     showHideError(firstName, true, true, 'Este campo é necessário.');
-        // }else{
-        //     showHideError(firstName, true, false, 'Este campo está válido.');
-        // }
+        if(lastName.val() == ""){
+            showHideError(lastName, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(lastName, true, false, 'Este campo está válido.');
+        }
 
-        // if(lastName.value == ""){
-        //     showHideError(lastName, true, true, 'Este campo é necessário.');
-        // }else{
-        //     showHideError(lastName, true, false, 'Este campo está válido.');
-        // }
-
-        // if(phone.value == ""){
-        //     showHideError(phone, true, true, 'Este campo é necessário.');
-        // }else{
-        //     showHideError(phone, true, false, 'Este campo está válido.');
-        // }
+        if(phone.val() == ""){
+            showHideError(phone, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(phone, true, false, 'Este campo está válido.');
+        }
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
         console.log('show hide error');
-        // console.log(elem.parentNode())
-
-
-        // console.log(elem.parentNode())
         
-        // if(show){
-        //     if(error){
-        //         createElementAlert(elem, text, true);
-        //     }else{
-        //         createElementAlert(elem, text, false);
-        //     }
-        // }else{
-        //     elem.parentNode().lastChild()
-     
-        //     // elem.parent().children(".valid-feedback").remove();
-        // }
+        if(show){
+            if(error){
+                createElementAlert(elem, text, true);
+            }else{
+                createElementAlert(elem, text, false);
+            }
+        }else{
+            elem.parent().children(".invalid-feedback").remove();
+            elem.parent().children(".valid-feedback").remove();
+        }
     }
 
     function createElementAlert(elem, text = '', error = true){
