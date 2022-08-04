@@ -372,6 +372,9 @@
         console.log('validate');
         console.log(form);
 
+        console.log(form.children(".firstName"));
+        console.log("______________________");
+
         let firstName =  form.target[0];
         let lastName =  form.target[1];
         let email =  form.target[2];
