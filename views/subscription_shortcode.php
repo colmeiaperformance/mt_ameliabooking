@@ -372,8 +372,6 @@
                     });
                 });
 
-                console.log(jQuery('#formEvt62').children('.firstName'));
-
                 clearInterval(time);
             }
         }, 500);
