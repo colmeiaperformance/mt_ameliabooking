@@ -359,6 +359,8 @@
 
                         console.log("enviou");
 
+                        console.log(jQuery(event).children(".firstName"));
+
                         validateForm(event);
                     });
                 });
