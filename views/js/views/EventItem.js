@@ -93,23 +93,20 @@ class EventItem extends View{
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Primeiro Nome: </label>
-										<input name="firstName" onchange="firstName = this.value" type="text" class="form-control">
-										<div class="valid-feedback">O nome foi preenchido!</div>
-                    					<div class="invalid-feedback">Por favor, insira um nome!</div>
+										<input name="firstName" onchange="firstName = this.value" type="text" class="form-control firstName">
+										
 									</div>
 									<div class="mt_column">
 										<label> * Sobrenome: </label>
-										<input  name="lastName" onchange="lastName = this.value" type="text" class="form-control">
-										<div class="valid-feedback">O sobrenome foi preenchido!</div>
-                    					<div class="invalid-feedback">Por favor, insira um sobrenome!</div>
+										<input  name="lastName" onchange="lastName = this.value" type="text" class="form-control lastName">
+										
 									</div>
 								</div>
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Email: </label>
-										<input  name="email" onchange="email = this.value" type="email" class="form-control">
-										<div class="valid-feedback">O e-mail é válido!</div>
-                    					<div class="invalid-feedback">Por favor, insira um e-mail válido!</div>
+										<input  name="email" onchange="email = this.value" type="email" class="form-control email">
+										
 									</div>
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
@@ -117,8 +114,7 @@ class EventItem extends View{
       								
       									<input  name="phone" type="tel" class="form-control phone">
 										</div>
-										<div class="valid-feedback">O número de telefone é válido!</div>
-					  					<div class="invalid-feedback">Por favor, insira um número de telefone válido!</div>
+										
     								</div>
 
 										
