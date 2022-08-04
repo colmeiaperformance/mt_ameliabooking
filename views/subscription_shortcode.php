@@ -344,7 +344,9 @@
     jQuery('.form-events').ready(function() {
         alert("oii estou aqui");
         
-        // const forms = document.querySelectorAll('.needs-validation')
+        const forms = document.querySelectorAll('.form-events');
+
+        console.log(forms);
 
         // forms.forEach(form => {
         //     form.addEventListener('submit', event => {
