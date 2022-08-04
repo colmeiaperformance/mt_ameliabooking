@@ -356,11 +356,15 @@
                     jQuery(elem).on('submit', function(event) {
                         event.preventDefault();
                         event.stopPropagation();
-                        validateForm(jQuery(this));
-
-                        jQuery(this).on('input', function() {
+                        
+                        let firstName = form.find(".firstName");
+                        let lastName = form.find(".lastName");
+                        let email = form.find(".email");
+                        let phone = form.find(".phone");
+                        
+                        jQuery(firstName, lastName, email, phone).on('input', function() {
                             alert('alterou');
-                            // formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+                            validateForm(firstName, lastName, email, phone);
                         });
                     });
                 });
@@ -370,14 +374,14 @@
         }, 500);
     });
 
-    const validateForm = (form) => {
+    const validateForm = (firstName, lastName, email, phone) => {
         console.log('validate');
         // console.log(formID);
 
-        let firstName = form.find(".firstName");
-        let lastName = form.find(".lastName");
-        let email = form.find(".email");
-        let phone = form.find(".phone");
+        // let firstName = form.find(".firstName");
+        // let lastName = form.find(".lastName");
+        // let email = form.find(".email");
+        // let phone = form.find(".phone");
 
         console.log(firstName);
         console.log(lastName);
