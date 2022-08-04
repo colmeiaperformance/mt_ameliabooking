@@ -363,11 +363,15 @@
                         let lastName = form.find(".lastName");
                         let email = form.find(".email");
                         let phone = form.find(".phone");
-                        
-                        jQuery([firstName, lastName, email, phone]).on('input', function() {
-                            alert('alterou');
-                        });
+
                         validateForm(firstName, lastName, email, phone);
+                        
+                        let array = [firstName, lastName, email, phone];
+                        array.forEach((element) => {
+                            jQuery(element).on('input', function() {
+                                alert('alterou');
+                            });
+                        });
                     });
                 });
 
