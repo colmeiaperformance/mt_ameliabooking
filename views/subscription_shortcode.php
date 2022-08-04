@@ -357,13 +357,13 @@
                         event.preventDefault();
                         event.stopPropagation();
 
-                        console.log(jQuery(`#${this.id}`));
+                        console.log();
 
                         // console.log("enviou");
 
-                        // console.log(jQuery(event.prevObject).children(".firstName"));
+                        console.log(jQuery(`#${this.id}`)[0]);
 
-                        // validateForm(event);
+                        validateForm(jQuery(`#${this.id}`)[0]);
                     });
                 });
 
@@ -376,7 +376,10 @@
         console.log('validate');
         console.log(form);
 
-        let firstName =  form.target[0];
+        let firstName =  form.children('.firstName');
+        console.log(firstName);
+
+
         let lastName =  form.target[1];
         let email =  form.target[2];
         let phone =  form.target[3];
