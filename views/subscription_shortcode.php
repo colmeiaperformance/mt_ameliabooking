@@ -359,7 +359,7 @@
 
                         console.log("enviou");
 
-                        validateForm(this);
+                        validateForm(event);
                     });
                 });
 
