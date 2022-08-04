@@ -359,7 +359,7 @@
 
                         console.log("enviou");
 
-                        validateForm(event);
+                        validateForm(event.id);
                     });
                 });
 
@@ -368,14 +368,14 @@
         }, 500);
     });
 
-    const validateForm = (form) => {
+    const validateForm = (formId) => {
         console.log('validate');
         console.log(form);
 
-        let firstName = form.children('.firstName');
-        let lastName = form.children('.lastName');
-        let email = form.children('.email');
-        let phone = form.children('.phone');
+        let firstName =  jQuery(`#${formId}`).children('.firstName');
+        let lastName =  jQuery(`#${formId}`).children('.lastName');
+        let email =  jQuery(`#${formId}`).children('.email');
+        let phone =  jQuery(`#${formId}`).children('.phone');
 
         console.log(firstName);
         console.log(lastName);
