@@ -355,28 +355,71 @@
                 elements.forEach((elem) => {
                     jQuery(elem).on('submit', event => {
                         event.preventDefault();
-                        alert("enviou");
+                        event.stopPropagation();
+
+                        validateForm(this);
                     });
                 });
 
                 clearInterval(time);
             }
         }, 500);
-
-        // forms.forEach(form => {
-        //     form.addEventListener('submit', event => {
-        //         event.preventDefault();
-        //         console.log('estou aqui no forms');
-                
-        //         if (!form.checkValidity()) {
-        //         event.preventDefault()
-        //         event.stopPropagation()
-        //         }
-
-        //         form.classList.add('was-validated')
-        //     })
-        // })
     });
+
+    const validateForm = (form) => {
+        let email = jQuery(form).children('.firstName');
+        let name = jQuery(form).children('.lastName');
+        let phone = jQuery(form).children('.email');
+        let message = jQuery(form).children('.phone');
+
+        let valid = true;
+
+        if(email.val() == ""){
+            valid = false;
+            showHideError(email, true, true, 'Este campo é necessário.');
+        }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+            valid = false;
+            showHideError(email, true, true, 'Digite um e-mail válido.');
+        }else{
+            showHideError(email, true, false, 'Este campo está válido.');
+        }
+
+        if(name.val() == ""){
+            valid = false;
+            showHideError(name, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(name, true, false, 'Este campo está válido.');
+        }
+
+        if(phone.val() == ""){
+            valid = false;
+            showHideError(phone, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(phone, true, false, 'Este campo está válido.');
+        }
+
+        if(message.val() == ""){
+            valid = false;
+            showHideError(message, true, true, 'Este campo é necessário.');
+        }else{
+            showHideError(message, true, false, 'Este campo está válido.');
+        }
+
+        return valid;
+    }
+
+    function showHideError(elem, show = true, error = true, text = ''){
+        if(show){
+            if(error){
+                createElementAlert(elem, text, true);
+            }else{
+                createElementAlert(elem, text, false);
+            }
+        }else{
+            elem.parent().children(".invalid-feedback").remove();
+            elem.parent().children(".valid-feedback").remove();
+        }
+    }
 
     //FilterInteractors
     const changeState = async(uf) =>{
