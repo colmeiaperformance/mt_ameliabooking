@@ -381,10 +381,10 @@
         console.log('validate');
         // console.log(formID);
 
-        let firstName = form.find(".firstName");
-        let lastName = form.find(".lastName");
-        let email = form.find(".email");
-        let phone = form.find(".phone");
+        let firstName = jQuery(form).find(".firstName");
+        let lastName = jQuery(form).find(".lastName");
+        let email = jQuery(form).find(".email");
+        let phone = jQuery(form).find(".phone");
 
         // let firstName = document.querySelector(`${formID} .firstName`);
         // let lastName = document.querySelector(`${formID} .lastName`);
