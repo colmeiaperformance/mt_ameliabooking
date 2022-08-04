@@ -368,10 +368,10 @@
                         
                         // console.log(event);
                         
-                        // validateForm(`#${this.id}`);
+                        validateForm(event);
                     });
                 });
-                
+
                 console.log(jQuery('#formEvt62').children('.firstName'));
 
                 clearInterval(time);
@@ -379,14 +379,19 @@
         }, 500);
     });
 
-    const validateForm = (formID) => {
+    const validateForm = (form) => {
         console.log('validate');
         console.log(formID);
 
-        let firstName = document.querySelector(`${formID} .firstName`);
-        let lastName = document.querySelector(`${formID} .lastName`);
-        let email = document.querySelector(`${formID} .email`);
-        let phone = document.querySelector(`${formID} .phone`);
+        let firstName = form.find(".firstName");
+        let lastName = form.find(".lastName");
+        let email = form.find(".email");
+        let phone = form.find(".phone");
+
+        // let firstName = document.querySelector(`${formID} .firstName`);
+        // let lastName = document.querySelector(`${formID} .lastName`);
+        // let email = document.querySelector(`${formID} .email`);
+        // let phone = document.querySelector(`${formID} .phone`);
 
         console.log(firstName);
         console.log(lastName);
