@@ -361,20 +361,20 @@
                         console.log("enviou");
 
 
-                        console.log(jQuery('#formEvt62').find(".firstName"));
+                        // console.log(jQuery('#formEvt62').find(".firstName"));
 
                         // console.log(event.find(".firstName"));
 
-                        console.log(jQuery(event).find(".firstName"));
+                        // console.log(jQuery(event).find(".firstName"));
 
-                        console.log(jQuery(this).find(".firstName"));
+                        // console.log(.find(".firstName"));
                         
                         // console.log(jQuery(`#${this.id}`));
                         // console.log(jQuery(`#${this.id}`).children('firstName'));
                         
                         // console.log(event);
                         
-                        // validateForm(event);
+                        validateForm(jQuery(this));
                     });
                 });
 
@@ -387,10 +387,10 @@
         console.log('validate');
         // console.log(formID);
 
-        let firstName = jQuery(form).find(".firstName");
-        let lastName = jQuery(form).find(".lastName");
-        let email = jQuery(form).find(".email");
-        let phone = jQuery(form).find(".phone");
+        let firstName = form.find(".firstName");
+        let lastName = form.find(".lastName");
+        let email = form.find(".email");
+        let phone = form.find(".phone");
 
         // let firstName = document.querySelector(`${formID} .firstName`);
         // let lastName = document.querySelector(`${formID} .lastName`);
