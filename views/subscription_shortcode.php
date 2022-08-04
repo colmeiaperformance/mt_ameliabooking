@@ -354,8 +354,12 @@
             if(elements){
                 elements.forEach((elem) => {
                     jQuery(elem).on('submit', event => {
-                        event.preventDefault();
-                        alert("enviou");
+                        if(false){
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }else{
+                            alert("enviou");
+                        }
                     });
                 });
 
