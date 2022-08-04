@@ -377,8 +377,15 @@
         console.log('validate');
         console.log(formID);
 
-        // let firstName =  form.children('.firstName');
-        // console.log(firstName);
+        let firstName = document.querySelector(`${formID} .firstName`);
+        let lastName = document.querySelector(`${formID} .lastName`);
+        let email = document.querySelector(`${formID} .email`);
+        let phone = document.querySelector(`${formID} .phone`);
+
+        console.log(firstName);
+        console.log(lastName);
+        console.log(email);
+        console.log(phone);
 
 
         // let lastName =  form.target[1];
