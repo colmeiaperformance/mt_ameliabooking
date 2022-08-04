@@ -364,7 +364,7 @@
                         let email = form.find(".email");
                         let phone = form.find(".phone");
                         
-                        jQuery(firstName, lastName, email, phone).on('input', function() {
+                        jQuery([firstName, lastName, email, phone]).on('input', function() {
                             alert('alterou');
                         });
                         validateForm(firstName, lastName, email, phone);
