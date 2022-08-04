@@ -369,7 +369,7 @@
                         let array = [firstName, lastName, email, phone];
                         array.forEach((element) => {
                             jQuery(element).on('input', function() {
-                                alert('alterou');
+                                validateForm(firstName, lastName, email, phone);
                             });
                         });
                     });
@@ -381,19 +381,6 @@
     });
 
     const validateForm = (firstName, lastName, email, phone) => {
-        console.log('validate');
-        // console.log(formID);
-
-        // let firstName = form.find(".firstName");
-        // let lastName = form.find(".lastName");
-        // let email = form.find(".email");
-        // let phone = form.find(".phone");
-
-        console.log(firstName);
-        console.log(lastName);
-        console.log(email);
-        console.log(phone);
-        
         if(email.val() == ""){
             showHideError(email, true, true, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
@@ -422,8 +409,6 @@
     }
 
     function showHideError(elem, show = true, error = true, text = ''){
-        console.log('show hide error');
-        
         if(show){
             if(error){
                 createElementAlert(elem, text, true);
@@ -437,7 +422,6 @@
     }
 
     function createElementAlert(elem, text = '', error = true){
-        console.log('create element alert');
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
