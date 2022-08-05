@@ -61,6 +61,8 @@ if(isset($_GET['defaultText'])){
 </script>
 
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
     #formEditDefaultText button {
         background: #F29F05;
         border-radius: 30px;
@@ -87,7 +89,7 @@ if(isset($_GET['defaultText'])){
         top: -36px;
         border-radius: 30px;
         transition: 0.8s;
-        font-family: "Work Sans"
+        font-family: 'Work Sans', 
         border: 1px solid #323B50 !important; 
 }
 
