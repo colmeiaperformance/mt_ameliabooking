@@ -11,9 +11,20 @@ if(!$isAdmin){
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
-    include 'DB/getConnection.php';
+    $conn = false;
 
-    $conn = getConnection();
+    try {
+        $conn = new PDO('sqlite:DB/db.sqlite3');
+        return $conn;
+    } catch(PDOException $e) {
+        // header('Location: '. site_url());
+        // exit;
+        // die('Erro ao conectar ao banco de dados');
+
+        echo 'ERROR: ' . $e->getMessage();
+    }
+
+    return $conn;
 
     var_dump($conn);
 
