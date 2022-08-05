@@ -1,12 +1,22 @@
 <?php
 
 $currentUser = wp_get_current_user();
+$isAdmin = $currentUser->caps['administrator'];
+
+if(!$isAdmin){
+    header('Location: '. site_url());
+    exit;
+    die('Você não é adimin');
+}
+
+
+echo site_url();
 
 
 
 echo "User caps";
 
-var_dump($currentUser->caps['administrator']);
+var_dump();
 
 
 
