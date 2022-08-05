@@ -75,9 +75,9 @@ if(isset($_GET['defaultText'])){
 
     #page{
         background-color: #323B50 ;
-        display: flex;
-        position: relative;
-        
+       
+      
+
 
 
 
