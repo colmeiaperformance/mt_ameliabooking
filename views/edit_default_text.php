@@ -1,40 +1,30 @@
 <?php
-
 $currentUser = wp_get_current_user();
 $isAdmin = $currentUser->caps['administrator'];
 
 if(!$isAdmin){
     header('Location: '. site_url());
     exit;
-    die('Você não é adimin');
+    die('Você não é admin');
 }
-
-
-echo site_url();
-
-
-
-echo "User caps";
-
-var_dump();
-
-
-
-echo "____________________";
-
-
 
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
+    try {
+        $conn = new PDO('sqlite:../DB/db.sqlite3');
+
+        echo "conectou";
+        
+    } catch(PDOException $e) {
+        header('Location: '. site_url());
+        exit;
+        die('Erro ao conectar ao banco de dados');
+    }
+
     echo "Está setado: ";
     echo $editDefaultText;
 }
-
-echo "_________________________"; 
-
-var_dump(wp_get_current_user()); // funcionou
-
 ?>
 
 <div class="container-md">
