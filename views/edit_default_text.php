@@ -66,7 +66,8 @@ if(isset($_GET['defaultText'])){
         border-radius: 30px;
         transition: 0.8s;
         font-family: "Work Sans"
-        font-size: 16px;
+        border: 1px solid #F29F05;
+        
     }
 
     #formEditDefaultText button:hover {
@@ -87,7 +88,7 @@ if(isset($_GET['defaultText'])){
         border-radius: 30px;
         transition: 0.8s;
         font-family: "Work Sans"
-        font-size: 16px;
+        border: 1px solid #F29F05 ;
 }
 
 
