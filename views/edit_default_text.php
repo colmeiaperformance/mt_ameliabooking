@@ -11,22 +11,24 @@ if(!$isAdmin){
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
-    $conn = false;
+    // $conn = false;
 
-    try {
-        $conn = new PDO('sqlite:DB/db.sqlite3');
-        return $conn;
-    } catch(PDOException $e) {
-        // header('Location: '. site_url());
-        // exit;
-        // die('Erro ao conectar ao banco de dados');
+    // try {
+    //     $conn = new PDO('sqlite:DB/db.sqlite3');
+    //     return $conn;
+    // } catch(PDOException $e) {
+    //     // header('Location: '. site_url());
+    //     // exit;
+    //     // die('Erro ao conectar ao banco de dados');
 
-        echo 'ERROR: ' . $e->getMessage();
-    }
+    //     echo 'ERROR: ' . $e->getMessage();
+    // }
 
-    return $conn;
+    // return $conn;
 
-    var_dump($conn);
+    // var_dump($conn);
+
+    var_dump(realpath('./DB/db.sqlite3'));
 
     echo "Está setado: ";
     echo $editDefaultText;
