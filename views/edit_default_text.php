@@ -11,7 +11,7 @@ if(!$isAdmin){
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
-    include '../DB/getConnection.php';
+    include 'DB/getConnection.php';
 
     $conn = getConnection();
 
