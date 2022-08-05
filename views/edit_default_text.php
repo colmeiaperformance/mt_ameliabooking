@@ -12,7 +12,7 @@ if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
     try {
-        $conn = new PDO('sqlite:/../DB/db.sqlite3');
+        $conn = new PDO('sqlite:db.sqlite3');
 
         // echo (is_a($conn, PDO)) ? 'Instanciado com êxito' : 'Não deu certo!';
 
