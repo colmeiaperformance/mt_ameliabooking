@@ -62,11 +62,16 @@ if(isset($_GET['defaultText'])){
 
 <style>
     #formEditDefaultText button {
-        background-color: #F29F05;
+        background: #F29F05;
+        border-radius: 30px;
+        transition: 0.8s;
+        font-family: "Work Sans"
+        font-size: 16px;
     }
 
     #formEditDefaultText button:hover {
         background: #FFFF;
+        color: #F29F05;
         
     }
 
@@ -79,6 +84,10 @@ if(isset($_GET['defaultText'])){
         position: relative;
         left: 90px;
         top: -36px;
+        border-radius: 30px;
+        transition: 0.8s;
+        font-family: "Work Sans"
+        font-size: 16px;
 }
 
 
