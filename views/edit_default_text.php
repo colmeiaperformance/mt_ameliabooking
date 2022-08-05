@@ -74,7 +74,7 @@ if(isset($_GET['defaultText'])){
         background: #F29F05 !important;
         border: 1px solid #F29F05 !important;
         border-radius: 30px !important;
-        width: 100% !important;
+       
         font-weight: 700 !important;
         
         
@@ -97,7 +97,7 @@ if(isset($_GET['defaultText'])){
         background: #323B50 !important;
         border: 1px solid #323B50 !important;
         border-radius: 30px !important;
-        width: 100% !important;
+        
         transition: 0.8s;
 }
         
