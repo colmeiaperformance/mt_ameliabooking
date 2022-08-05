@@ -354,24 +354,23 @@
             if(elements){
                 elements.forEach((elem) => {
                     jQuery(elem).on('submit', function(event) {
-                        event.preventDefault();
-                        event.stopPropagation();
-
                         let form = jQuery(this);
-                        
                         let firstName = form.find(".firstName");
                         let lastName = form.find(".lastName");
                         let email = form.find(".email");
                         let phone = form.find(".phone");
 
-                        validateForm(firstName, lastName, email, phone);
-                        
-                        let array = [firstName, lastName, email, phone];
-                        array.forEach((element) => {
-                            jQuery(element).on('input', function() {
-                                validateForm(firstName, lastName, email, phone);
+                        if(!validateForm(firstName, lastName, email, phone)){
+                            event.preventDefault();
+                            event.stopPropagation();
+                            
+                            let array = [firstName, lastName, email, phone];
+                            array.forEach((element) => {
+                                jQuery(element).on('input', function() {
+                                    validateForm(firstName, lastName, email, phone);
+                                });
                             });
-                        });
+                        }
                     });
                 });
 
@@ -380,32 +379,42 @@
         }, 500);
     });
 
+
     const validateForm = (firstName, lastName, email, phone) => {
+        let valid = true;
+
         if(email.val() == ""){
+            valid = false;
             showHideError(email, true, true, 'Este campo é necessário.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
+            valid = false;
             showHideError(email, true, true, 'Digite um e-mail válido.');
         }else{
             showHideError(email, true, false, 'Este campo está válido.');
         }
 
         if(firstName.val() == ""){
+            valid = false;
             showHideError(firstName, true, true, 'Este campo é necessário.');
         }else{
             showHideError(firstName, true, false, 'Este campo está válido.');
         }
 
         if(lastName.val() == ""){
+            valid = false;
             showHideError(lastName, true, true, 'Este campo é necessário.');
         }else{
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
+            valid = false;
             showHideError(phone, true, true, 'Este campo é necessário.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
+
+        return valid;
     }
 
     function showHideError(elem, show = true, error = true, text = ''){

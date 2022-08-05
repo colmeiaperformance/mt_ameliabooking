@@ -140,6 +140,17 @@ function render_panel_scripts_shortcode(){
 add_shortcode("mt_render_panel_scripts", "render_panel_scripts_shortcode");
 
 
+// Edit-default-text
+function edit_default_text(){
+   // ob_start();
+   include 'views/edit_default_text.php';
+   // $html = ob_get_contents();
+   // ob_end_clean();
+   // return $html;
+}
+add_shortcode("edit_default_text", "edit_default_text");
+
+
 
 
 
@@ -309,5 +320,18 @@ function ajax_event_subscription(){
    die;
 }
 
+
+function mt_activate()
+{
+   add_option("mt_defaultText");
+}
+
+function mt_uninstall()
+{
+   remove_option("mt_defaultText");
+}
+
+register_activation_hook( __FILE__, 'mt_activate' );
+register_uninstall_hook( __FILE__, 'mt_uninstall' );
 
 ?>
