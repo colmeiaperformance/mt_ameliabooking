@@ -8,49 +8,53 @@ if(!$isAdmin){
     die('Você não é admin');
 }
 
-$conn = false;
+global $wpdb;
 
-try {
-    $conn = new PDO('sqlite:db.sqlite3');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    header('Location: '. site_url());
-    exit;
-    die('Erro ao conectar ao banco de dados');
-}
+var_dump($wpdb);
 
-if(isset($_POST['editDefaultText'])){
-    $editDefaultText = $_POST['editDefaultText'];
+// $conn = false;
 
-    echo "aqui";
+// try {
+//     $conn = new PDO('sqlite:db.sqlite3');
+//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// } catch(PDOException $e) {
+//     header('Location: '. site_url());
+//     exit;
+//     die('Erro ao conectar ao banco de dados');
+// }
+
+// if(isset($_POST['editDefaultText'])){
+//     $editDefaultText = $_POST['editDefaultText'];
+
+//     echo "aqui";
 
 
-    $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
-    $result = $select->fetch(PDO::FETCH_ASSOC);
+//     $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
+//     $result = $select->fetch(PDO::FETCH_ASSOC);
 
-    if(count($result) >= 1){
-        echo "UPDATE";
-        $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
-    }else{
-        echo "INSERT";
-        $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
-    }
+//     if(count($result) >= 1){
+//         echo "UPDATE";
+//         $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
+//     }else{
+//         echo "INSERT";
+//         $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
+//     }
     
-    $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
-    $stm = $conn->prepare($sql);
-    $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
-    $stm->execute();
-    if($stm->rowCount() >= 1){
-        echo "deu certo";
-    }else{
-        echo "não deu";
-    }   
+//     $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
+//     $stm = $conn->prepare($sql);
+//     $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
+//     $stm->execute();
+//     if($stm->rowCount() >= 1){
+//         echo "deu certo";
+//     }else{
+//         echo "não deu";
+//     }   
 
-    $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
-    $result = $select->fetch(PDO::FETCH_ASSOC);
+//     $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
+//     $result = $select->fetch(PDO::FETCH_ASSOC);
 
-    var_dump($result);
-}
+//     var_dump($result);
+// }
 ?>
 
 <div class="container-md">
