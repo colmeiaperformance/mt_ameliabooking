@@ -46,6 +46,10 @@ if(isset($_POST['editDefaultText'])){
     <?= $error == '' ? '<a href="'.site_url().'" class="btn btn-primary btn-lg">Página inicial</a>' : '' ?>
 </div>
 
+<script>
+    wp_localize_script( 'your-script-handle', 'scriptParams', $script_params );
+</script>
+
 <style>
     #formEditDefaultText button {
         background-color: #F29F05;

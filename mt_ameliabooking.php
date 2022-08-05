@@ -336,5 +336,19 @@ register_deactivation_hook( __FILE__, 'mt_deactivate' );
 
 // register_uninstall_hook( __FILE__, array( $testModulo, 'uninstall' ) );
 
+function mt_function_defaultText() {
+   wp_enqueue_script(
+       'myjs',
+       plugins_url( 'views/js/my.js', __FILE__)
+   );
+
+   $scriptData = array(
+       'mt_defaultText' => get_option( 'mt_defaultText' ),
+   );
+
+   wp_localize_script('myjs', 'mt_defaultText', $scriptData);
+
+}
+add_action( 'wp_enqueue_scripts', 'mt_function_defaultText' );
 
 ?>

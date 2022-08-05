@@ -1,0 +1,1 @@
+alert( mt_defaultText );
