@@ -28,7 +28,7 @@ if(isset($_POST['editDefaultText'])){
 
     // var_dump($conn);
 
-    var_dump(realpath('./DB/db.sqlite3'));
+    echo realpath('./DB/db.sqlite3');
 
     echo "Está setado: ";
     echo $editDefaultText;
