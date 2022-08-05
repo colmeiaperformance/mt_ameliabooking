@@ -380,6 +380,7 @@
         }, 500);
     });
 
+    
     const validateForm = (firstName, lastName, email, phone) => {
         let valid = true;
 
