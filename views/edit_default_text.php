@@ -6,7 +6,7 @@ $currentUser = wp_get_current_user();
 
 echo "User caps";
 
-var_dump($currentUser->caps);
+var_dump($currentUser->caps['administrator']);
 
 
 
