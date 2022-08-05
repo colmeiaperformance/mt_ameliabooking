@@ -143,12 +143,10 @@ add_shortcode("mt_render_panel_scripts", "render_panel_scripts_shortcode");
 // Edit-default-text
 function edit_default_text(){
    // ob_start();
-   // include 'views/employee_panel_shortcode.php';
+   include 'views/edit_default_text.php';
    // $html = ob_get_contents();
    // ob_end_clean();
    // return $html;
-
-   echo "estou aqui mesmo";
 }
 add_shortcode("edit_default_text", "edit_default_text");
 
