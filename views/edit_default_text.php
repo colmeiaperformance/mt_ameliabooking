@@ -67,7 +67,7 @@ if(isset($_GET['defaultText'])){
     #formEditDefaultText button {
       
         
-        transition: 0.8s;
+        transition: 0.8s !important;
         
         color: #FFFFFF !important;
         padding: 9px 31px !important;
@@ -81,8 +81,8 @@ if(isset($_GET['defaultText'])){
     }
 
     #formEditDefaultText button:hover {
-        background: #FFFF;
-        color: #F29F05;
+        background: #FFFF !important;
+        color: #F29F05 !important;
         
     }
 
@@ -97,8 +97,9 @@ if(isset($_GET['defaultText'])){
         background: #323B50 !important;
         border: 1px solid #323B50 !important;
         border-radius: 30px !important;
-        
-        transition: 0.8s;
+        left:90px !important;
+        top: -75px !important;
+        transition: 0.8s !important;
 }
         
         
@@ -106,8 +107,10 @@ if(isset($_GET['defaultText'])){
 }
 
 #page:hover{
-    background: #FFFF;
-        color:  #323B50 ;
+    background: #FFFF !important;
+        color:  #323B50 !important;
+        border: 1px solid #323B50 !important;
+
 }
 
 
