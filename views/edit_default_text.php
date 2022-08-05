@@ -12,7 +12,7 @@ $conn = false;
 
 try {
     $conn = new PDO('sqlite:db.sqlite3');
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     header('Location: '. site_url());
     exit;
@@ -25,7 +25,7 @@ if(isset($_POST['editDefaultText'])){
     
     $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
     $stm = $conn->prepare($sql);
-    $stm->bindParam('defaultText', $editDefaultText, PDO::PARAM_STR);
+    $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
     if($stm->execute()){
         echo "deu certo";
     }else{
