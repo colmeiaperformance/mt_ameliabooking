@@ -738,6 +738,54 @@
   margin-bottom: 15px;
 }
 
+@media screen and (max-width: 992px) {
+  .mt_filter_options .mt_row {
+    flex-direction: column !important;
+  }
+  .mt_filter_options .mt_row .mt_filter {
+    width: 100% !important;
+  }
+  .mt_filter button {
+    width: 100%;
+  }
+  #mt_subscription_shortcode {
+    padding: 10px 20px !important;
+  }
+  .mt_event_title h4 {
+    text-align: center !important;
+  }
+  .mt_event_title h4 span {
+    float: left;
+    margin-left: 0px !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .mt_event_title h5 {
+    text-align: center !important;
+  }
+  .mt_event_item .mt_row {
+    flex-direction: column !important;
+  }
+  .mt_event_item .mt_row .mt_column {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
+@media screen and (max-width: 992px) and (max-width: 992px) {
+  .mt_event_item .mt_row .mt_column {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .mt_event_item .mt_row .mt_column:last-child {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+}
 .page-eventos input[type=checkbox], .page-instrutores input[type=checkbox] {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
@@ -1071,53 +1119,4 @@
 }
 .page-eventos .box:hover .hover, .page-instrutores .box:hover .hover {
   display: block;
-}
-
-@media screen and (max-width: 992px) {
-  .mt_filter_options .mt_row {
-    flex-direction: column !important;
-  }
-  .mt_filter_options .mt_row .mt_filter {
-    width: 100% !important;
-  }
-  .mt_filter button {
-    width: 100%;
-  }
-  #mt_subscription_shortcode {
-    padding: 10px 20px !important;
-  }
-  .mt_event_title h4 {
-    text-align: center !important;
-  }
-  .mt_event_title h4 span {
-    float: left;
-    margin-left: 0px !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-  .mt_event_title h5 {
-    text-align: center !important;
-  }
-  .mt_event_item .mt_row {
-    flex-direction: column !important;
-  }
-  .mt_event_item .mt_row .mt_column {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
-}
-@media screen and (max-width: 992px) and (max-width: 992px) {
-  .mt_event_item .mt_row .mt_column {
-    width: 90%;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 992px) {
-  .mt_event_item .mt_row .mt_column:last-child {
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-  }
 }/*# sourceMappingURL=main.css.map */
