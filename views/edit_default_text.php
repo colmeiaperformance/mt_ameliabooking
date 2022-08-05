@@ -24,13 +24,13 @@ if(isset($_POST['editDefaultText'])){
 
     
     $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
-    $stm = $conn->prepare($sql);
-    $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
-    if($stm->execute()){
-        echo "deu certo";
-    }else{
-        echo "não deu";
-    }
+    // $stm = $conn->prepare($sql);
+    // $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
+    // if($stm->execute()){
+    //     echo "deu certo";
+    // }else{
+    //     echo "não deu";
+    // }
 }
 ?>
 
