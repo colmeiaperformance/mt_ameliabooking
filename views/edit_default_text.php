@@ -4,9 +4,9 @@ $currentUser = wp_get_current_user();
 
 
 
-echo "User data";
+echo "User caps";
 
-var_dump($currentUser->data);
+var_dump($currentUser->caps);
 
 
 
