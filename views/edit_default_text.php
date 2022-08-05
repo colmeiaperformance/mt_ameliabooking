@@ -14,15 +14,17 @@ if(isset($_POST['editDefaultText'])){
     try {
         $conn = new PDO('sqlite:../DB/db.sqlite3');
 
-        echo (is_a($conn, PDO)) ? 'Instanciado com êxito' : 'Não deu certo!';
+        // echo (is_a($conn, PDO)) ? 'Instanciado com êxito' : 'Não deu certo!';
 
 
         echo "conectou";
         
     } catch(PDOException $e) {
-        header('Location: '. site_url());
-        exit;
-        die('Erro ao conectar ao banco de dados');
+        // header('Location: '. site_url());
+        // exit;
+        // die('Erro ao conectar ao banco de dados');
+
+        echo 'ERROR: ' . $e->getMessage();
     }
 
     echo "Está setado: ";
