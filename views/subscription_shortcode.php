@@ -354,19 +354,15 @@
             if(elements){
                 elements.forEach((elem) => {
                     jQuery(elem).on('submit', function(event) {
+                        let form = jQuery(this);
                         let firstName = form.find(".firstName");
                         let lastName = form.find(".lastName");
                         let email = form.find(".email");
                         let phone = form.find(".phone");
 
-                        event.preventDefault();
-                        event.stopPropagation();
-                        
-                        let isValid = validateForm(firstName, lastName, email, phone);
-
-                        if(!isValid){
-
-                            let form = jQuery(this);
+                        if(!validateForm(firstName, lastName, email, phone)){
+                            event.preventDefault();
+                            event.stopPropagation();
                             
                             let array = [firstName, lastName, email, phone];
                             array.forEach((element) => {
