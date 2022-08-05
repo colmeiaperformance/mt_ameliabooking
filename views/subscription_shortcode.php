@@ -359,9 +359,12 @@
                         let email = form.find(".email");
                         let phone = form.find(".phone");
 
-                        if(!validateForm(firstName, lastName, email, phone)){
-                            event.preventDefault();
-                            event.stopPropagation();
+                        event.preventDefault();
+                        event.stopPropagation();
+                        
+                        let isValid = validateForm(firstName, lastName, email, phone);
+
+                        if(!isValid){
 
                             let form = jQuery(this);
                             
@@ -380,7 +383,7 @@
         }, 500);
     });
 
-    
+
     const validateForm = (firstName, lastName, email, phone) => {
         let valid = true;
 
