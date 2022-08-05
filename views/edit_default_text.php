@@ -8,27 +8,29 @@ if(!$isAdmin){
     die('Você não é admin');
 }
 
+$conn = false;
+
+try {
+    $conn = new PDO('sqlite:db.sqlite3');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    header('Location: '. site_url());
+    exit;
+    die('Erro ao conectar ao banco de dados');
+}
+
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
-    $conn = false;
-
-    try {
-        $conn = new PDO('sqlite:db.sqlite3');
-        echo "conectou";
-    } catch(PDOException $e) {
-        // header('Location: '. site_url());
-        // exit;
-        // die('Erro ao conectar ao banco de dados');
-
-        echo 'ERROR: ' . $e->getMessage();
+    
+    $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
+    $stm = $conn->prepare($sql);
+    $stm->bindParam('defaultText', $editDefaultText, PDO::PARAM_STR);
+    if($stm->execute()){
+        echo "deu certo";
+    }else{
+        echo "não deu";
     }
-
-    var_dump($conn);
-
-
-    echo "Está setado: ";
-    echo $editDefaultText;
 }
 ?>
 
