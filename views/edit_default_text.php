@@ -12,7 +12,7 @@ $conn = false;
 
 try {
     $conn = new PDO('sqlite:db.sqlite3');
-    // $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     header('Location: '. site_url());
     exit;
@@ -22,15 +22,34 @@ try {
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
+    echo "aqui";
+
+
+    $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
+    $result = $select->fetch(PDO::FETCH_ASSOC);
+
+    if(count($result) >= 1){
+        echo "UPDATE";
+        $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
+    }else{
+        echo "INSERT";
+        $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
+    }
     
-    $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
-    // $stm = $conn->prepare($sql);
-    // $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
-    // if($stm->execute()){
-    //     echo "deu certo";
-    // }else{
-    //     echo "não deu";
-    // }
+    $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
+    $stm = $conn->prepare($sql);
+    $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
+    $stm->execute();
+    if($stm->rowCount() >= 1){
+        echo "deu certo";
+    }else{
+        echo "não deu";
+    }   
+
+    $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
+    $result = $select->fetch(PDO::FETCH_ASSOC);
+
+    var_dump($result);
 }
 ?>
 
