@@ -66,7 +66,8 @@ if(isset($_GET['defaultText'])){
     }
 
     #formEditDefaultText button:hover {
-        background-color: #FFFF;
+        background: #FFFF;
+        background-color: #F29F05;
     }
 
     #formEditDefaultText textarea {
@@ -79,6 +80,8 @@ if(isset($_GET['defaultText'])){
         left: 90px;
         top: -36px;
 }
+
+
        
       
 
