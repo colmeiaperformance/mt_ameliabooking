@@ -28,7 +28,6 @@ if(isset($_POST['editDefaultText'])){
 
     if(!($error = hasError($editDefaultText))){
         update_option("mt_defaultText", $editDefaultText);
-        header('Location: '. site_url());
     }
 }
 ?>
@@ -37,12 +36,14 @@ if(isset($_POST['editDefaultText'])){
     <form id="formEditDefaultText" method="POST" action="#">
         <div class="mb-3">
             <label for="editDefaultText" class="form-label">Digite seu texto padrão</label>
-            <textarea name="editDefaultText" class="form-control" id="editDefaultText" rows="6"></textarea>
+            <textarea name="editDefaultText" class="form-control" id="editDefaultText" rows="6"><?= $error != '' ? $editDefaultText : '' ?></textarea>
             <?= $error != '' ? "<div class='invalid-feedback'>$error</div>" : '' ?>
+            <?= $error == '' ? "<div class='valid-feedback'>Texto salvo com sucesso!</div>" : '' ?>
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
+    <?= $error == '' ? '<a href="<?= site_url() ?>" class="btn btn-primary btn-lg">Página inicial</a>' : '' ?>
 </div>
 
 <style>
