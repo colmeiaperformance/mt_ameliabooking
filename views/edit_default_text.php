@@ -53,7 +53,7 @@ if(isset($_GET['defaultText'])){
 
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
-    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary btn-lg">Página inicial</a>' : '' ?>
+    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary">Página inicial</a>' : '' ?>
 </div>
 
 <script>
