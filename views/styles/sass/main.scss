@@ -96,13 +96,13 @@
         }
         .date-title {
           display: flex;
-          align-items: start;
+          align-items: flex-start;
           justify-content: left;
           margin-bottom: 10px;
         }
         .status-details {
           display: flex;
-          align-items: start;
+          align-items: flex-start;
           justify-content: left;
           margin-top: 8px;
           span{
