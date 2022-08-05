@@ -8,53 +8,29 @@ if(!$isAdmin){
     die('Você não é admin');
 }
 
-global $wpdb;
+$error = '';
 
-var_dump($wpdb);
-
-// $conn = false;
-
-// try {
-//     $conn = new PDO('sqlite:db.sqlite3');
-//     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// } catch(PDOException $e) {
-//     header('Location: '. site_url());
-//     exit;
-//     die('Erro ao conectar ao banco de dados');
-// }
-
-// if(isset($_POST['editDefaultText'])){
-//     $editDefaultText = $_POST['editDefaultText'];
-
-//     echo "aqui";
-
-
-//     $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
-//     $result = $select->fetch(PDO::FETCH_ASSOC);
-
-//     if(count($result) >= 1){
-//         echo "UPDATE";
-//         $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
-//     }else{
-//         echo "INSERT";
-//         $sql = "INSERT INTO defaultText (id, defaultText) VALUES (1, :defaultText)";
-//     }
+if(isset($_POST['editDefaultText'])){
+    $editDefaultText = $_POST['editDefaultText'];
+    $cleanValue = strip_tags(trim($editDefaultText));
+    $cleanValue = htmlspecialchars($cleanValue);
+    $editDefaultText = str_replace(array("<","WHERE","where",">","=","?"), "", $cleanValue);
     
-//     $sql = "UPDATE defaultText SET defaultText = :defaultText WHERE id = 1";
-//     $stm = $conn->prepare($sql);
-//     $stm->bindParam(':defaultText', $editDefaultText, PDO::PARAM_STR);
-//     $stm->execute();
-//     if($stm->rowCount() >= 1){
-//         echo "deu certo";
-//     }else{
-//         echo "não deu";
-//     }   
+    function hasError($editDefaultText){
+        $error = '';
 
-//     $select = $conn->query("SELECT defaultText FROM defaultText WHERE id = 1");
-//     $result = $select->fetch(PDO::FETCH_ASSOC);
+        if(strlen($editDefaultText) > 400){
+            $error = "O texto não pode conter mais de 400 caracteres.";
+        }
+        
+        return $error;
+    }
 
-//     var_dump($result);
-// }
+    if(!($error = hasError($editDefaultText))){
+        update_option("mt_defaultText", $editDefaultText);
+        header('Location: '. site_url());
+    }
+}
 ?>
 
 <div class="container-md">
@@ -62,6 +38,7 @@ var_dump($wpdb);
         <div class="mb-3">
             <label for="editDefaultText" class="form-label">Digite seu texto padrão</label>
             <textarea name="editDefaultText" class="form-control" id="editDefaultText" rows="6"></textarea>
+            <?= $error != '' ? "<div class='invalid-feedback'>$error</div>" : '' ?>
         </div>
 
         <button type="submit" class="btn btn-primary">Salvar</button>
