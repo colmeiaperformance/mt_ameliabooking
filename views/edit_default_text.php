@@ -73,9 +73,9 @@ if(isset($_GET['defaultText'])){
         resize: none;
     }
 
-    .page{
+    #page{
         background-color: #323B50 ;
-        
+
 
 
     }
