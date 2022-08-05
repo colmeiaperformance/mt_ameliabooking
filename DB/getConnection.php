@@ -1,6 +1,8 @@
 <?php
 
 function getConnection(){
+    $conn = false;
+
     try {
         $conn = new PDO('sqlite:db.sqlite3');
         return $conn;
@@ -11,4 +13,6 @@ function getConnection(){
 
         echo 'ERROR: ' . $e->getMessage();
     }
+
+    return $conn;
 }

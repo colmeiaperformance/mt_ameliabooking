@@ -13,9 +13,9 @@ if(isset($_POST['editDefaultText'])){
 
     include '../DB/getConnection.php';
 
-    // $conn = getConnection();
+    $conn = getConnection();
 
-    // var_dump($conn);
+    var_dump($conn);
 
     echo "Está setado: ";
     echo $editDefaultText;
