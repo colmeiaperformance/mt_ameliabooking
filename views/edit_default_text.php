@@ -15,7 +15,7 @@ if(isset($_POST['editDefaultText'])){
 
     try {
         $conn = new PDO('sqlite:db.sqlite3');
-        return $conn;
+        echo "conectou";
     } catch(PDOException $e) {
         // header('Location: '. site_url());
         // exit;
