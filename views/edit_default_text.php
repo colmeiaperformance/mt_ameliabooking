@@ -1,5 +1,22 @@
 <?php
 
+$currentUser = wp_get_current_user();
+
+
+
+echo "User data";
+
+var_dump($currentUser->data);
+
+
+
+echo "____________________";
+
+echo "Administrator?"
+var_dump($currentUser->data->caps['administrator'])
+
+
+
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
@@ -7,18 +24,9 @@ if(isset($_POST['editDefaultText'])){
     echo $editDefaultText;
 }
 
+echo "_________________________"; 
 
-echo "_________________________";
-
-var_dump($_SESSION['user']);
-
-echo "_________________________";
-
-var_dump(_wp_get_current_user());
-
-echo "_________________________";
-
-var_dump(wp_get_current_user());
+var_dump(wp_get_current_user()); // funcionou
 
 ?>
 
