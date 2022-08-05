@@ -53,7 +53,7 @@ if(isset($_GET['defaultText'])){
 
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
-    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary">Página inicial</a>' : '' ?>
+    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary" id="page">Página inicial</a>' : '' ?>
 </div>
 
 <script>
@@ -66,11 +66,18 @@ if(isset($_GET['defaultText'])){
     }
 
     #formEditDefaultText button:hover {
-        background-color: #FFC536;
+        background-color: #FFFF;
     }
 
     #formEditDefaultText textarea {
         resize: none;
+    }
+
+    .page{
+        background-color: #323B50 ;
+        
+
+
     }
 </style>
 
