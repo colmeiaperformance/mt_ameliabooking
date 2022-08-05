@@ -75,6 +75,10 @@ if(isset($_GET['defaultText'])){
 
     #page{
         background-color: #323B50 ;
+        position: relative;
+        left: 90px;
+        top: -36px;
+}
        
       
 
