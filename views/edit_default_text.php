@@ -88,7 +88,12 @@ if(isset($_GET['defaultText'])){
         border-radius: 30px;
         transition: 0.8s;
         font-family: "Work Sans"
-        border: 1px solid #F29F05 ;
+        border: 1px solid #323B50;
+}
+
+#page:hover{
+    background: #FFFF;
+        color:  #323B50 ;
 }
 
 
