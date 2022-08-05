@@ -11,21 +11,11 @@ if(!$isAdmin){
 if(isset($_POST['editDefaultText'])){
     $editDefaultText = $_POST['editDefaultText'];
 
-    try {
-        $conn = new PDO('sqlite:db.sqlite3');
+    include '../DB/getConnection.php';
 
-        // echo (is_a($conn, PDO)) ? 'Instanciado com êxito' : 'Não deu certo!';
+    $conn = getConnection();
 
-
-        echo "conectou";
-        
-    } catch(PDOException $e) {
-        // header('Location: '. site_url());
-        // exit;
-        // die('Erro ao conectar ao banco de dados');
-
-        echo 'ERROR: ' . $e->getMessage();
-    }
+    var_dump($conn);
 
     echo "Está setado: ";
     echo $editDefaultText;
