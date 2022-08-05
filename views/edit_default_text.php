@@ -12,9 +12,6 @@ var_dump($currentUser->data);
 
 echo "____________________";
 
-echo "Administrator?"
-var_dump($currentUser->data->caps);
-
 
 
 if(isset($_POST['editDefaultText'])){
