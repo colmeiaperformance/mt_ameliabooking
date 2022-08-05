@@ -321,15 +321,15 @@ function ajax_event_subscription(){
 }
 
 
-// function mt_activate()
-// {
-//    add_option("mt_defaultText");
-// }
+function mt_activate()
+{
+   add_option("mt_defaultText");
+}
 
-// function mt_deactivate()
-// {
-//    remove_option("mt_defaultText");
-// }
+function mt_deactivate()
+{
+   remove_option("mt_defaultText");
+}
 
 register_activation_hook( __FILE__, 'mt_activate' );
 register_deactivation_hook( __FILE__, 'mt_deactivate' );
