@@ -1,12 +1,24 @@
 <?php
 
-echo $_POST['editDefaultText'];
+if(isset($_POST['editDefaultText'])){
+    $editDefaultText = $_POST['editDefaultText'];
+
+    echo "Está setado: ";
+    echo $editDefaultText;
+}
 
 
 echo "_________________________";
 
-var_dump($_SESSION);
+var_dump($_SESSION['user']);
 
+echo "_________________________";
+
+var_dump(_wp_get_current_user());
+
+echo "_________________________";
+
+var_dump(wp_get_current_user());
 
 ?>
 
