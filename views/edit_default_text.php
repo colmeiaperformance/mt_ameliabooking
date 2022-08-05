@@ -61,13 +61,21 @@ if(isset($_GET['defaultText'])){
 </script>
 
 <style>
+
     @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 
     #formEditDefaultText button {
-        background: #F29F05;
-        border-radius: 30px;
+      
+        
         transition: 0.8s;
-        font-family: "Work Sans"
+        
+        color: #FFFFFF !important;
+        padding: 9px 31px !important;
+        background: #F29F05 !important;
+        border: 1px solid #F29F05 !important;
+        border-radius: 30px !important;
+        width: 100% !important;
+        font-weight: 700 !important;
         
         
     }
@@ -83,13 +91,17 @@ if(isset($_GET['defaultText'])){
     }
 
     #page{
-        background-color: #323B50 ;
-        position: relative;
-        left: 90px;
-        top: -36px;
-        border-radius: 30px;
+        font-weight: 700 !important;
+        color: #FFFFFF !important;
+        padding: 9px 31px !important;
+        background: #323B50 !important;
+        border: 1px solid #323B50 !important;
+        border-radius: 30px !important;
+        width: 100% !important;
         transition: 0.8s;
-        font-family: 'Work Sans', 
+}
+        
+        
         
 }
 
