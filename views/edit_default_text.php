@@ -67,7 +67,7 @@ if(isset($_GET['defaultText'])){
     #formEditDefaultText button {
       
         
-        transition: 0.8s !important;
+        transition: 0.8s;
         
         color: #FFFFFF !important;
         padding: 9px 31px !important;
@@ -100,11 +100,12 @@ if(isset($_GET['defaultText'])){
         left:90px !important;
         top: -75px !important;
         transition: 0.8s !important;
+        position: relative !important;
 }
         
         
         
-}
+
 
 #page:hover{
     background: #FFFF !important;
@@ -123,7 +124,7 @@ if(isset($_GET['defaultText'])){
 
 
 
-    }
+    
 </style>
 
 <?php } ?>
