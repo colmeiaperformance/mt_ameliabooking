@@ -101,6 +101,8 @@ if(isset($_GET['defaultText'])){
         top: -75px !important;
         transition: 0.8s !important;
         position: relative !important;
+        
+        margin: 30px 50px !important;
 }
         
         
