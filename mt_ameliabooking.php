@@ -334,4 +334,20 @@ function mt_uninstall()
 register_activation_hook( __FILE__, 'mt_activate' );
 register_uninstall_hook( __FILE__, 'mt_uninstall' );
 
+
+add_action(
+   'rest_api_init',
+   function () {
+       register_rest_route(
+           'meuplugin/v1',
+           '/defaultText',
+           array(
+             'methods' => 'GET',
+             'callback' => 'oiii estou aqui', // Esse callable será chamado para responder as chamadas para '/wp-json/meuplugin/v1/autor/<id>'.
+           )
+       );
+   }
+);
+
+
 ?>

@@ -7,10 +7,24 @@ if(!$isAdmin){
     exit;
     die('Você não é admin');
 }
-endelse:
+
+
+
 
 if(isset($_GET['defaultText'])){
     if(urldecode($_GET['defaultText']) == 'FDadfGHKALD'){
+
+        ?>
+            <script>
+           
+
+                // jQuery("header").remove();
+                // jQuery("footer").remove();
+
+                jQuery("html").empty();
+                
+            </script>
+        <?php
         echo json_encode((object) ["defaultText" => get_option("mt_defaultText")]);
     }else{
         echo json_encode((object) []);
