@@ -67,7 +67,7 @@ if(isset($_GET['defaultText'])){
 
         <button type="submit" class="btn btn-primary">Salvar</button>
     </form>
-    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary btn-lg">Página inicial</a>' : '' ?>
+    <?= $error == '' && isset($_POST['editDefaultText']) ? '<a href="'.site_url().'" class="btn btn-primary" id="page">Página inicial</a>' : '' ?>
 </div>
 
 <script>
@@ -75,17 +75,72 @@ if(isset($_GET['defaultText'])){
 </script>
 
 <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
     #formEditDefaultText button {
-        background-color: #F29F05;
+      
+        
+        transition: 0.8s;
+        
+        color: #FFFFFF !important;
+        padding: 9px 31px !important;
+        background: #F29F05 !important;
+        border: 1px solid #F29F05 !important;
+        border-radius: 30px !important;
+       
+        font-weight: 700 !important;
+        
+        
     }
 
     #formEditDefaultText button:hover {
-        background-color: #FFC536;
+        background: #FFFF !important;
+        color: #F29F05 !important;
+        
     }
 
     #formEditDefaultText textarea {
         resize: none;
     }
+
+    #page{
+        font-weight: 700 !important;
+        color: #FFFFFF !important;
+        padding: 9px 31px !important;
+        background: #323B50 !important;
+        border: 1px solid #323B50 !important;
+        border-radius: 30px !important;
+        left:90px !important;
+        top: -75px !important;
+        transition: 0.8s !important;
+        position: relative !important;
+        
+        margin: 30px 50px !important;
+}
+        
+        
+        
+
+
+#page:hover{
+    background: #FFFF !important;
+        color:  #323B50 !important;
+        border: 1px solid #323B50 !important;
+
+}
+
+
+       
+      
+
+
+
+
+
+
+
+    
 </style>
 
 <?php } ?>
