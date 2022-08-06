@@ -59,15 +59,15 @@
         
 
         //Add default description
-        var interval = setInterval(function () {
-            if(jQuery("#am-cabinet .el-textarea__inner").length > 0){
-                if(jQuery("#am-cabinet .el-textarea__inner").val != ''){
-                    jQuery("#am-cabinet .el-textarea__inner").html(`Essa é a primeira etapa do processo de aprendizagem da MT. A palestra gratuita é uma oportunidade imperdível para você conhecer mais detalhes sobre a técnica e seus benefícios, e também tirar suas dúvidas sobre o curso.`);
-                }
-            }
-        }, 1000) 
+        // var interval = setInterval(function () {
+        //     if(jQuery("#am-cabinet .el-textarea__inner").length > 0){
+        //         if(jQuery("#am-cabinet .el-textarea__inner").val != ''){
+        //             jQuery("#am-cabinet .el-textarea__inner").html(`Essa é a primeira etapa do processo de aprendizagem da MT. A palestra gratuita é uma oportunidade imperdível para você conhecer mais detalhes sobre a técnica e seus benefícios, e também tirar suas dúvidas sobre o curso.`);
+        //         }
+        //     }
+        // }, 1000) 
      
-        
+
 
     });
     
