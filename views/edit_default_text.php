@@ -45,7 +45,7 @@ if(isset($_GET['defaultText'])){
     <form id="formEditDefaultText" method="POST" action="#">
         <div class="mb-3">
             <label for="editDefaultText" class="form-label">Digite seu texto padrão</label>
-            <textarea name="editDefaultText" class="form-control" id="editDefaultText" rows="6"><?= $error != '' ? $editDefaultText : '' ?></textarea>
+            <textarea name="editDefaultText" class="form-control" id="editDefaultText" rows="6"><?= isset($_POST['editDefaultText']) ? $editDefaultText : get_option("mt_defaultText") ?></textarea>
             <?= $error != '' ? "<div class='invalid-feedback' style='display: block;'>$error</div>" : '' ?>
             <?= $error == '' && isset($_POST['editDefaultText']) ? "<div class='valid-feedback' style='display: block;'>Texto salvo com sucesso!</div>" : '' ?>
         </div>
