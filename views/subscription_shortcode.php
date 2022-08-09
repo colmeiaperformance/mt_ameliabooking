@@ -185,9 +185,9 @@
                 formData.append('phone',phone)
                 formData.append('oqueTrouxe',filteredCheckOptions.join(', '));
                 
-                let start = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('YYYY-MM-DD');
+                let start = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('DD-MM-YYYY');
                 let hour = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm');
-                let hourDate = moment(bkEvent.periods[0].periodStart).format('YYYY-MM-DD HH:mm');
+                let hourDate = moment(bkEvent.periods[0].periodStart).format('DD-MM-YYYY HH:mm');
 
                 let momentPeriod = moment(bkEvent.periods[0].periodStart);
 
