@@ -142,6 +142,7 @@
     }
 
     async function bookingEvent(eventId){
+        let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);
         let formData = new FormData(form);
         firstName =  formData.getAll('firstName')[0];
@@ -149,10 +150,11 @@
         email =  formData.getAll('email')[0];
         phone =  formData.getAll('phone')[0];
 
-        let formQuery = jQuery(`#formEvt${eventId}`);
         let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
 
-        this.preventDefault();
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+        })
        
         if(!validateForm(array[0], array[1], array[2], array[3])){
             console.log("está com erro");
