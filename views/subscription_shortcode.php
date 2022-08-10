@@ -53,7 +53,7 @@
 <script>
     (function($){
 // function that uses intl-tel-input format as jQuery-
-    $('#mt_filter_results .phone-container').each((index,element) => {
+    $('#mt_filter_results .mt_event_item .phone-container').each((index,element) => {
         let elem = [$(element.children[0]), $(element.children[1])]
 
         function initMasking(formatterInput, maskedInput) {
@@ -105,7 +105,7 @@
     .phone-container {
         position: relative;
         border: 1px solid #000;
-        background-color: red;
+        background-color: blue;
     }
     .phone-container .phone1 {
         visibility: hidden  !important;
