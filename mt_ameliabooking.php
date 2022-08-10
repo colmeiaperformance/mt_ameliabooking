@@ -316,21 +316,21 @@ register_activation_hook( __FILE__, 'mt_activate' );
 register_uninstall_hook( __FILE__, 'mt_uninstall' );
 
 
-function minhas_configuracoes() {
+function mt_config() {
 	register_setting(
 		'general',
-		'chave_api_minha_integracao'
+		'mt_defaultText'
 	);
  
 	add_settings_field(
-		'chave_api_minha_integracao',
-		'chave API da minha integracao',
+		'mt_defaultText',
+		'Default Text',
       function( $args ) {
-         $options = get_option( 'chave_api_minha_integracao' );
+         $options = get_option( 'mt_defaultText' );
          ?>
          <input
             type="text"
-            name="chave_api_minha_integracao"
+            name="mt_defaultText"
             value="<?php echo esc_attr( $options ); ?>"
          >
          <?php
@@ -338,5 +338,5 @@ function minhas_configuracoes() {
       'general'
 	);
 }
-add_action( 'admin_init', 'minhas_configuracoes' );
+add_action( 'admin_init', 'mt_config' );
 ?>
