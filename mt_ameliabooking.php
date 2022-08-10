@@ -331,9 +331,7 @@ function mt_config() {
          <textarea
             name="mt_defaultText"
             style="width: 70%;"
-            rows="5">
-            <?php echo esc_attr( $options ); ?>
-         </textarea>
+            rows="5"><?php echo esc_attr( $options ); ?></textarea>
          <p>
             <a
             href="<?php echo site_url().'/edit-default-text'; ?>" 
