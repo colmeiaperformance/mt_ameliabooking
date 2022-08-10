@@ -150,10 +150,9 @@
         phone =  formData.getAll('phone')[0];
 
         let formQuery = jQuery(`#formEvt${eventId}`);
-
         let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
        
-        if(!validateForm(array[0], array[1], array[2], array[3]) && false){
+        if(!validateForm(array[0], array[1], array[2], array[3])){
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
@@ -211,6 +210,7 @@
                     location.reload(true);
                 }, 1000);
             }else{
+                validateForm(array[0], array[1], array[2], array[3]);
                 jQuery("#mt_message_overlay_error").fadeIn();
                 jQuery("#mt_message_overlay_error").css('display', 'flex');
                 jQuery("#mt_loader_overlay").fadeOut();
