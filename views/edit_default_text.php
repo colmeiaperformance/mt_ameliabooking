@@ -2,19 +2,18 @@
 $currentUser = wp_get_current_user();
 $isAdmin = $currentUser->caps['administrator'];
 
-if(!$isAdmin){
-    header('Location: '. site_url());
-    exit;
-    die('Você não é admin');
-}
-
 if(isset($_GET['defaultText'])){
     if(urldecode($_GET['defaultText']) == 'FDadfGHKALD'){     
         echo '%$'.get_option("mt_defaultText").'%$';
     }else{
         echo json_encode((object) []);
     }
-} else { 
+} else {
+    if(!$isAdmin){
+        header('Location: '. site_url());
+        exit;
+        die('Você não é admin');
+    } 
     
     $error = '';
 
