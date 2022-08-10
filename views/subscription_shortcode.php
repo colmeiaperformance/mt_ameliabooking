@@ -49,7 +49,11 @@
 
     @media (max-width: 992px){
         #mt_filter_results .flag{
-            height: 34px;
+            margin-bottom: unset !important;
+        }
+
+        #mt_filter_results .flag img{
+            margin-bottom: -14px !important;
         }
     }
 </style>
