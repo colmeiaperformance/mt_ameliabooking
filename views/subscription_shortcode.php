@@ -151,6 +151,8 @@
 
         let formQuery = jQuery(`#formEvt${eventId}`);
         let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
+
+        this.preventDefault();
        
         if(!validateForm(array[0], array[1], array[2], array[3])){
             console.log("está com erro");

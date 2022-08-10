@@ -4,7 +4,7 @@
   jQuery('.needs-validation').ready(function() {
     const forms = document.querySelectorAll('.needs-validation')
 
-    Array.from(forms).forEach(form => {
+    forms.forEach(form => {
       form.addEventListener('submit', event => {
         event.preventDefault();
         
