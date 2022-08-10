@@ -46,6 +46,12 @@
         border-top-left-radius: unset !important;
         border-bottom-left-radius: unset !important;
     }
+
+    @media (max-width: 992px){
+        #mt_filter_results .flag{
+            height: 34px;
+        }
+    }
 </style>
 
 <?php
