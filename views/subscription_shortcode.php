@@ -150,15 +150,18 @@
         phone =  formData.getAll('phone')[0];
 
         form.preventDefault();
+
+        let formQuery = jQuery(`#formEvt${eventId}`);
+
+        let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
        
-        if(!validateForm(firstName, lastName, email, phone)){
+        if(!validateForm(array[0], array[1], array[2], array[3])){
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
-            let array = [firstName, lastName, email, phone];
             array.forEach((element) => {
                 jQuery(element).on('input', function() {
-                    validateForm(firstName, lastName, email, phone);
+                    validateForm(array[0], array[1], array[2], array[3]);
                 });
             });
 

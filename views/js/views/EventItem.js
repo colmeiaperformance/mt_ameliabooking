@@ -93,19 +93,19 @@ class EventItem extends View{
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Primeiro Nome: </label>
-										<input name="firstName" onchange="firstName = this.value" type="text" class="form-control firstName">
+										<input name="firstName" required onchange="firstName = this.value" type="text" class="form-control firstName">
 										
 									</div>
 									<div class="mt_column">
 										<label> * Sobrenome: </label>
-										<input  name="lastName" onchange="lastName = this.value" type="text" class="form-control lastName">
+										<input  name="lastName" required onchange="lastName = this.value" type="text" class="form-control lastName">
 										
 									</div>
 								</div>
 								<div class="mt_row">
 									<div class="mt_column">
 										<label> * Email: </label>
-										<input  name="email" onchange="email = this.value" type="email" class="form-control email">
+										<input  name="email" required onchange="email = this.value" type="email" class="form-control email">
 										
 									</div>						
 
@@ -113,7 +113,7 @@ class EventItem extends View{
 										<label> * Telefone: </label>
 										<div class="input-group">
 											
-											<input name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask phoneInpt">
+											<input name="phone" required onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask phoneInpt">
 										</div>
 									</div>
 
