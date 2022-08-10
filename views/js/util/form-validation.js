@@ -6,6 +6,7 @@
 
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
+        event.preventDefault();
         
         if (!form.checkValidity()) {
           event.preventDefault()
