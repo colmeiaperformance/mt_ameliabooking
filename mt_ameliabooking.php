@@ -319,25 +319,24 @@ register_uninstall_hook( __FILE__, 'mt_uninstall' );
 function minhas_configuracoes() {
 	register_setting(
 		'general',
-		// Aqui nada muda.
-	);
- 
-	add_settings_section(
-		'minha_secao',
-		'Minha seção',
-		null,
-		'writing'
+		'chave_api_minha_integracao',
+      [
+         'sanitize_callback' => 'intval'
+      ]
 	);
  
 	add_settings_field(
-		'writing',
-		'minha_secao',
+		'chave_api_minha_integracao',
+		'chave API da minha integracao',
       function( $args ) {
          ?>
-         <a href="/edit-default-text/">Link para editar texto padrão</a>
-
+         <input
+            type="text"
+            name="chave_api_minha_integracao"
+         >
          <?php
-      }
+      },
+      'general'
 	);
 }
 add_action( 'admin_init', 'minhas_configuracoes' );
