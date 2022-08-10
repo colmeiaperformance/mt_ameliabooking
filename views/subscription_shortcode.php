@@ -37,20 +37,87 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/intlTelInput.css' ?>">
+<link rel="stylesheet" href="https://intl-tel-input.com/node_modules/intl-tel-input/build/css/intlTelInput.css">
 
-<link rel="stylesheet" href="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/style.css' ?>">
+<!-- <link rel="stylesheet" href=" echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/style.css' "> -->
 
-<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/intlTelInput.js' ?>"></script>
 
-<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/utils.js' ?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.2/js/intlTelInput-jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/utils.js"></script>
 
-<script src="<?php echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/script.js' ?>"></script>
+
+<!-- <script src=" echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/js/script.js' ?>"></script> -->
+
+<script>
+    (function($){
+// function that uses intl-tel-input format as jQuery-
+    $('.phone-container').each((index,element) => {
+        let elem = [$(element.children[0]), $(element.children[1])]
+
+        function initMasking(formatterInput, maskedInput) {
+            // get the format fromt intl-tel-input placeholder
+            var format = $(formatterInput).attr('placeholder');
+            
+            // use the format as placeholder to jQuery-Mask input
+            $(maskedInput).attr('placeholder', format);
+ 
+            // replace all digits to zero and use is as the mask
+            $(maskedInput).mask(format.replace(/[1-9]/g, 0));  
+        }
+    
+        // initialize intl-tel-input
+        $(elem[0]).intlTelInput({
+            initialCountry: "br",
+            preferredCountries: ["br","us", "co", "in", "de"],
+            autoPlaceholder: "aggressive",
+            // geoIpLookup: getIp,
+            geoIpLookup: function(callback) {
+            $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                callback(countryCode);
+            });
+            }
+        });
+    
+        // initialize the mask
+        initMasking(elem[0], elem[1]);
+    
+        // update the mask format when changing country
+        $(elem[0]).on("countrychange", function (e, countryData) {
+            $(this).val('');
+            $(elem[1]).val('');
+            
+            // update the mask
+            initMasking(this, elem[1]);
+        });
+    });
+
+})(jQuery);
+</script>
 
 <style>
     #mt_filters.hideOrder #orderBy{
         display: none;
     }
+
+    .phone-container {
+        position: relative;
+        border: 1px solid #000;
+    }
+    .phone-container .phone1 {
+        visibility: hidden  !important;
+    }
+
+    .phone-container .phone2 {
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: calc(100% - 54px);
+        border-color: transparent;
+    }
+
 </style>
 
 <?php

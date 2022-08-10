@@ -112,7 +112,11 @@ class EventItem extends View{
 										<label> * Telefone: </label>
 										<div class="input-group">
       								
-      									<input  name="phone" type="tel" class="form-control phone">
+      									
+
+										<div class="phone-container">
+											<input type="tel" class="phone1" >
+											<input type="tel" class="phone2" >
 										</div>
 										
     								</div>
