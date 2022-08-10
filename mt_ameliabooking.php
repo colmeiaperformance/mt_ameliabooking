@@ -334,7 +334,11 @@ function mt_config() {
             value="<?php echo esc_attr( $options ); ?>"
          >
          <p>
-            <a href="<?php echo site_url().'/edit-default-text'; ?> ">Link para página de edição</a>
+            <a
+            href="<?php echo site_url().'/edit-default-text'; ?>" 
+            target="_blank">
+            Link para página de edição
+            </a>
          </p>
          
          <?php

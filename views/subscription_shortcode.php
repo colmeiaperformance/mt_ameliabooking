@@ -33,7 +33,6 @@
             </h3>
             <button class="mt_btn_default" onclick="closeModal()"> Ok </button>
         </div>
-
     </div>
 </div>
 
