@@ -332,6 +332,7 @@ function mt_config() {
             type="text"
             name="mt_defaultText"
             value="<?php echo esc_attr( $options ); ?>"
+            style="width: 100%;"
          >
          <p>
             <a
