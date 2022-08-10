@@ -142,14 +142,13 @@
     }
 
     async function bookingEvent(eventId){
+        console.log("fui apertado");
         let form = document.getElementById(`formEvt${eventId}`);
         let formData = new FormData(form);
         firstName =  formData.getAll('firstName')[0];
         lastName =  formData.getAll('lastName')[0];
         email =  formData.getAll('email')[0];
         phone =  formData.getAll('phone')[0];
-
-        form.preventDefault();
 
         let formQuery = jQuery(`#formEvt${eventId}`);
 
