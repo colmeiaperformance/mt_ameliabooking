@@ -47,9 +47,12 @@
         border-bottom-left-radius: unset !important;
     }
 
+    #mt_filter_results .phone .input-group img{
+        z-index: unset !important;
+    }
+    
     #mt_filter_results .phone .input-group.mt_warning img{
-        margin-bottom: 42px !important;
-        z-index: unset;
+        margin-bottom: 42px !important;        
     }
 
 
