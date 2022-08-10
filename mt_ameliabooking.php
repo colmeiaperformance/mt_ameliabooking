@@ -315,4 +315,30 @@ function mt_uninstall()
 register_activation_hook( __FILE__, 'mt_activate' );
 register_uninstall_hook( __FILE__, 'mt_uninstall' );
 
+
+function minhas_configuracoes() {
+	register_setting(
+		'general',
+		// Aqui nada muda.
+	);
+ 
+	add_settings_section(
+		'minha_secao',
+		'Minha seção',
+		null,
+		'writing'
+	);
+ 
+	add_settings_field(
+		'writing',
+		'minha_secao',
+      function( $args ) {
+         ?>
+         <a href="<?= site_url() ?>/edit-default-text/">Link para editar texto padrão</a>
+
+         <?php
+      }
+	);
+}
+add_action( 'admin_init', 'minhas_configuracoes' );
 ?>
