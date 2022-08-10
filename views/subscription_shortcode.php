@@ -105,6 +105,7 @@
     .phone-container {
         position: relative;
         border: 1px solid #000;
+        background-color: blue;
     }
     .phone-container .phone1 {
         visibility: hidden  !important;

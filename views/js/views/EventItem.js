@@ -114,10 +114,10 @@ class EventItem extends View{
       								
       									
 
-										<div class="phone-container">
-											<input type="tel" class="phone1" >
-											<input type="tel" class="phone2" >
-										</div>
+											<div class="phone-container">
+												<input type="tel" class="phone1" >
+												<input type="tel" class="phone2" >
+											</div>
 
 										</div>
 										
