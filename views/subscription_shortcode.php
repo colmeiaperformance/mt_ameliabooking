@@ -149,9 +149,17 @@
         email =  formData.getAll('email')[0];
         phone =  formData.getAll('phone')[0];
        
-        if(!firstName || !lastName || !email || !phone ){
+        if(!validateForm(firstName, lastName, email, phone)){
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
+
+            let array = [firstName, lastName, email, phone];
+            array.forEach((element) => {
+                jQuery(element).on('input', function() {
+                    validateForm(firstName, lastName, email, phone);
+                });
+            });
+
         }
         else{
             jQuery("#mt_loader_overlay").fadeIn();
@@ -331,43 +339,43 @@
         jQuery("#mt_empty_form").css('display', 'block');
     }
 
-    jQuery('.form-events').ready(function() { 
-        function search(element){
-            const forms = document.querySelectorAll(element);
-            return forms.length > 0 ? forms : false;
-        }
+    // jQuery('.form-events').ready(function() { 
+    //     function search(element){
+    //         const forms = document.querySelectorAll(element);
+    //         return forms.length > 0 ? forms : false;
+    //     }
         
-        let time = setInterval(() => {
-            let element = '.form-events';
-            let elements = search(element);
+    //     let time = setInterval(() => {
+    //         let element = '.form-events';
+    //         let elements = search(element);
 
-            if(elements){
-                elements.forEach((elem) => {
-                    jQuery(elem).on('submit', function(event) {
-                        let form = jQuery(this);
-                        let firstName = form.find(".firstName");
-                        let lastName = form.find(".lastName");
-                        let email = form.find(".email");
-                        let phone = form.find(".phoneInpt");
+    //         if(elements){
+    //             elements.forEach((elem) => {
+    //                 jQuery(elem).on('submit', function(event) {
+    //                     let form = jQuery(this);
+    //                     let firstName = form.find(".firstName");
+    //                     let lastName = form.find(".lastName");
+    //                     let email = form.find(".email");
+    //                     let phone = form.find(".phoneInpt");
 
-                        if(!validateForm(firstName, lastName, email, phone)){
-                            event.preventDefault();
-                            event.stopPropagation();
+    //                     if(!validateForm(firstName, lastName, email, phone)){
+    //                         event.preventDefault();
+    //                         event.stopPropagation();
                             
-                            let array = [firstName, lastName, email, phone];
-                            array.forEach((element) => {
-                                jQuery(element).on('input', function() {
-                                    validateForm(firstName, lastName, email, phone);
-                                });
-                            });
-                        }
-                    });
-                });
+    //                         let array = [firstName, lastName, email, phone];
+    //                         array.forEach((element) => {
+    //                             jQuery(element).on('input', function() {
+    //                                 validateForm(firstName, lastName, email, phone);
+    //                             });
+    //                         });
+    //                     }
+    //                 });
+    //             });
 
-                clearInterval(time);
-            }
-        }, 500);
-    });
+    //             clearInterval(time);
+    //         }
+    //     }, 500);
+    // });
 
 
     const validateForm = (firstName, lastName, email, phone) => {
