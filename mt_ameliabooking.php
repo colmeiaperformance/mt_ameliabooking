@@ -329,10 +329,12 @@ function minhas_configuracoes() {
 		'chave_api_minha_integracao',
 		'chave API da minha integracao',
       function( $args ) {
+         $options = get_option( 'chave_api_minha_integracao' );
          ?>
          <input
             type="text"
             name="chave_api_minha_integracao"
+            value="<?php echo esc_attr( $options ); ?>"
          >
          <?php
       },
