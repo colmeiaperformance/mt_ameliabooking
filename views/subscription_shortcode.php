@@ -41,6 +41,11 @@
     #mt_filters.hideOrder #orderBy{
         display: none;
     }
+
+    #mt_filter_results .phoneInpt {
+        border-top-left-radius: unset !important;
+        border-bottom-left-radius: unset !important;
+    }
 </style>
 
 <?php
