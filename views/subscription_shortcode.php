@@ -154,7 +154,7 @@
 
         form.addEventListener("submit", event => {
             event.preventDefault();
-        })
+        });
        
         if(!validateForm(array[0], array[1], array[2], array[3])){
             console.log("está com erro");
