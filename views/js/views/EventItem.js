@@ -117,8 +117,6 @@ class EventItem extends View{
 										</div>
 									</div>
 
-										
-									</div>
 								</div>
 								${
 									e.customFields ?
