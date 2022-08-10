@@ -42,9 +42,9 @@
 <!-- <link rel="stylesheet" href=" echo plugin_dir_url(__FILE__).'js/util/intl-tel-input/css/style.css' "> -->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.2/js/intlTelInput-jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script> -->
 <script src="https://intl-tel-input.com/node_modules/intl-tel-input/build/js/utils.js"></script>
 
 
@@ -105,7 +105,7 @@
     .phone-container {
         position: relative;
         border: 1px solid #000;
-        background-color: blue;
+        background-color: orange;
     }
     .phone-container .phone1 {
         visibility: hidden  !important;
