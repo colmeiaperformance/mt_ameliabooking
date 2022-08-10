@@ -47,6 +47,11 @@
         border-bottom-left-radius: unset !important;
     }
 
+    #mt_filter_results .phone.mt_warning img{
+        margin-bottom: 42px !important;
+    }
+
+
     @media (max-width: 992px){
         #mt_filter_results .flag{
             margin-bottom: unset !important;
@@ -55,6 +60,11 @@
         #mt_filter_results .flag img{
             margin-bottom: -14px !important;
         }
+
+        #mt_filter_results .phone.mt_warning img{
+            margin-bottom: 27px !important;
+        }
+
     }
 </style>
 
@@ -396,7 +406,7 @@
             showHideError(phone, true, false, 'Este campo está válido.');
         }
         
-        phone.parent().children('.flag').children('img').attr("style", "margin-bottom: 27px !important;");
+        phone.parent().addClass('mt_warning');
 
         return valid;
     }
