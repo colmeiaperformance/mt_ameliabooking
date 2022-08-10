@@ -396,7 +396,7 @@
             showHideError(phone, true, false, 'Este campo está válido.');
         }
 
-        phone.parent().children('').children('').css("margin-bottom", "27px !important")
+        phone.parent().children('flag').children('img').css("margin-bottom", "27px !important")
 
         return valid;
     }
