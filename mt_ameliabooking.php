@@ -328,12 +328,12 @@ function mt_config() {
       function( $args ) {
          $options = get_option( 'mt_defaultText' );
          ?>
-         <input
-            type="text"
+         <textarea
             name="mt_defaultText"
-            value="<?php echo esc_attr( $options ); ?>"
-            style="width: 100%;"
-         >
+            style="width: 70%;"
+            rows="5">
+            <?php echo esc_attr( $options ); ?>
+         </textarea>
          <p>
             <a
             href="<?php echo site_url().'/edit-default-text'; ?>" 
