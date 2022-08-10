@@ -54,7 +54,7 @@ function add_plugins_and_scripts(){
    wp_enqueue_script('add-mt-amelia-axios');
    wp_enqueue_script('add-mt-amelia-moment');
    wp_enqueue_script('add-mt-amelia-mask');
-   // wp_enqueue_script('add-mt-amelia-phone');
+   wp_enqueue_script('add-mt-amelia-phone');
    wp_enqueue_script('add-mt-amelia-form-validation');
 
    //Enquee Views
