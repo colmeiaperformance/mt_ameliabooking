@@ -118,6 +118,8 @@ class EventItem extends View{
 											<input type="tel" class="phone1" >
 											<input type="tel" class="phone2" >
 										</div>
+
+										</div>
 										
     								</div>
 
