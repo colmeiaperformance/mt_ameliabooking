@@ -106,11 +106,11 @@ class EventItem extends View{
 										<input  name="email" onchange="email = this.value" type="email" class="form-control email">							
 									</div>						
 									<div class="mt_column phone">
-										<label> * Telefone: </label>
-									
-										<img src="${baseUrl}resources/svg/flag.svg">											
-										<input name="phone" onchange="phone = this.value" style="padding-left: 75px;" type="tel" class="form-control phoneMask phoneInpt">
-								
+										<label> * Telefone: </label>		
+										<div class="input-group">
+											<span class="input-group-text flag"><img src="${baseUrl}resources/svg/flag.svg"></span>
+											<input name="phone" onchange="phone = this.value" style="padding-left: 75px;" type="tel" class="form-control phoneMask phoneInpt">
+										</div>
 									</div>
 								</div>
 								${
