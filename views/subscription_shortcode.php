@@ -49,6 +49,7 @@
 
     #mt_filter_results .phone .input-group.mt_warning img{
         margin-bottom: 42px !important;
+        z-index: unset;
     }
 
 
