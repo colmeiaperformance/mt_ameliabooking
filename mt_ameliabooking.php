@@ -319,10 +319,7 @@ register_uninstall_hook( __FILE__, 'mt_uninstall' );
 function minhas_configuracoes() {
 	register_setting(
 		'general',
-		'chave_api_minha_integracao',
-      [
-         'sanitize_callback' => 'intval'
-      ]
+		'chave_api_minha_integracao'
 	);
  
 	add_settings_field(
