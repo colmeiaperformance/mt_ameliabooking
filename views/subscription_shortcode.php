@@ -148,6 +148,8 @@
         lastName =  formData.getAll('lastName')[0];
         email =  formData.getAll('email')[0];
         phone =  formData.getAll('phone')[0];
+
+        this.preventDefault();
        
         if(!validateForm(firstName, lastName, email, phone)){
             jQuery("#mt_message_overlay_error").fadeIn();
