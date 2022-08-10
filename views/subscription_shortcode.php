@@ -126,7 +126,7 @@
             }
 
             controller.renderItems(eventList);
-            jQuery('.phoneMask').mask(phoneBehavior, spOptions);
+            // jQuery('.phoneMask').mask(phoneBehavior, spOptions);
         }else{
             document.getElementById('mt_filter_results').style.display = 'none';
             document.getElementById('mt_filters').style.marginBottom = '250px';
@@ -235,7 +235,7 @@
             jQuery("#mt_empty_form").css('display', 'none');
             jQuery("#msg").css('display', 'none');
             controller.renderItems(eventList);
-            jQuery('.phoneMask').mask(phoneBehavior, spOptions);
+            // jQuery('.phoneMask').mask(phoneBehavior, spOptions);
             jQuery("#mt_loader_overlay").fadeOut();
         }
     }
@@ -276,7 +276,7 @@
 
                     document.getElementById('mt_filters').removeAttribute('style');
                     controller.renderItems(eventList);
-                    jQuery('.phoneMask').mask(phoneBehavior, spOptions);
+                    // jQuery('.phoneMask').mask(phoneBehavior, spOptions);
                 }
             }else{
                 showNotFoundMessage(true, instrutorName, 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
