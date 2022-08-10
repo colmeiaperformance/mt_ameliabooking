@@ -107,21 +107,15 @@ class EventItem extends View{
 										<label> * Email: </label>
 										<input  name="email" onchange="email = this.value" type="email" class="form-control email">
 										
-									</div>
-									<div class="mt_column">
+									</div>						
+
+									<div class="mt_column phone">
 										<label> * Telefone: </label>
 										<div class="input-group">
-      								
-      									
-
-											<div class="phone-container">
-												<input type="tel" class="phone1" >
-												<input type="tel" class="phone2" >
-											</div>
-
+											<img src="${baseUrl}resources/svg/flag.svg">
+											<input required name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask">
 										</div>
-										
-    								</div>
+									</div>
 
 										
 									</div>
