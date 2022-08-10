@@ -324,16 +324,19 @@ function mt_config() {
  
 	add_settings_field(
 		'mt_defaultText',
-		'Default Text',
+		'Texto padrão eventos amelia',
       function( $args ) {
          $options = get_option( 'mt_defaultText' );
          ?>
-         <textarea
-            name="mt_defaultText">
-            <?php
-               echo esc_attr( $options ); 
-            ?>
-         </textarea>
+         <input
+            type="text"
+            name="mt_defaultText"
+            value="<?php echo esc_attr( $options ); ?>"
+         >
+         <p>
+            <a href="<?php echo 'oii'.'url'; ?> ">Link para página de edição</a>
+         </p>
+         
          <?php
       },
       'general'
