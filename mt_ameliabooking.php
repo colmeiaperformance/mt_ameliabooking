@@ -328,11 +328,12 @@ function mt_config() {
       function( $args ) {
          $options = get_option( 'mt_defaultText' );
          ?>
-         <input
-            type="text"
-            name="mt_defaultText"
-            value="<?php echo esc_attr( $options ); ?>"
-         >
+         <textarea
+            name="mt_defaultText">
+            <?php
+               echo esc_attr( $options ); 
+            ?>
+         </textarea>
          <?php
       },
       'general'
