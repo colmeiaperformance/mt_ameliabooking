@@ -107,10 +107,10 @@ class EventItem extends View{
 									</div>						
 									<div class="mt_column phone">
 										<label> * Telefone: </label>
-										<div class="input-group">
-											<img src="${baseUrl}resources/svg/flag.svg">											
-											<input name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask phoneInpt">
-										</div>
+									
+										<img src="${baseUrl}resources/svg/flag.svg">											
+										<input name="phone" onchange="phone = this.value" style="padding-left: 75px;" type="tel" class="form-control phoneMask phoneInpt">
+								
 									</div>
 								</div>
 								${
