@@ -334,7 +334,7 @@ function minhas_configuracoes() {
 		'minha_secao',
       function( $args ) {
          ?>
-         <a href="<?= site_url() ?>/edit-default-text/">Link para editar texto padrão</a>
+         <a href="/edit-default-text/">Link para editar texto padrão</a>
 
          <?php
       }
