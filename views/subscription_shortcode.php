@@ -348,7 +348,7 @@
                         let firstName = form.find(".firstName");
                         let lastName = form.find(".lastName");
                         let email = form.find(".email");
-                        let phone = form.find(".phone");
+                        let phone = form.find(".phoneInpt");
 
                         if(!validateForm(firstName, lastName, email, phone)){
                             event.preventDefault();

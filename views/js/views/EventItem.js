@@ -113,7 +113,7 @@ class EventItem extends View{
 										<label> * Telefone: </label>
 										<div class="input-group">
 											
-											<input required name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask phone">
+											<input required name="phone" onchange="phone = this.value"  style="padding-left: 84px;" type="text" class="form-control phoneMask phoneInpt">
 										</div>
 									</div>
 
