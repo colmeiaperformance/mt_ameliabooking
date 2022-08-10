@@ -153,6 +153,7 @@
         let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
        
         if(!validateForm(array[0], array[1], array[2], array[3])){
+            console.log("está com erro");
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
