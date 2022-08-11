@@ -225,6 +225,8 @@
                 let momentPeriod = moment(bkEvent.periods[0].periodStart);
 
                 let dataHoraText = `${momentPeriod.format('DD')}/${momentPeriod.format('MM')}/${momentPeriod.format('YYYY')} ${momentPeriod.format('HH')}:${momentPeriod.format('mm')}`
+                console.log( dataHoraText );
+
 
                 formData.append('dataPalestra', `${start}`);
                 formData.append('horaPalestra',  `${hour}`);
