@@ -57,6 +57,7 @@
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     console.log(ajaxurl);
     const baseurl = '<?php echo get_template_directory_uri(); ?>';
+    const urlRedirectInstructorsPage = '<?php echo get_template_directory_uri() . '/instrutores'; ?>';
     let $ = document.querySelector.bind(document);
     let wp_user_infos = <?php echo json_encode($userInfos) ?>;
     let controller = new EmployeeController(ajaxurl, baseurl, $("#mt_employee_container"));
@@ -100,7 +101,7 @@
             });
             if(contactReq.status === 200){
                 jQuery("#mt_message_overlay_success").fadeIn();
-                window.location.replace(`${baseurl}/instrutores`);
+                window.location.replace(`${urlRedirectInstructorsPage}`);
             }
         }
 
