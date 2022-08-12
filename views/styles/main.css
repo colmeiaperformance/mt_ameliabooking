@@ -1150,6 +1150,21 @@
   display: none;
 }
 
+.empty-event {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.empty-event label {
+  color: #323B50;
+  font-size: 17px;
+}
+@media screen and (max-width: 992px) {
+  .empty-event label {
+    font-size: 14px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .contactAceite {
     font-size: 14px;

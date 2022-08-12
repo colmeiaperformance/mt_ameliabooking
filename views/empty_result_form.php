@@ -46,7 +46,7 @@
  #_form_4_ ._form-label,#_form_4_ ._form_element ._form-label { font-weight:bold; margin-bottom:5px; display:block; }
  #_form_4_._dark ._form-branding { color:#333; }
  #_form_4_._dark ._form-branding ._logo { background-image:url('https://d226aj4ao1t61q.cloudfront.net/jftq2c8s_aclogo_dk.png'); }
- #_form_4_ ._form_element { position:relative; margin-bottom:10px; font-size:0; max-width:100%; }
+ #_form_4_ ._form_element { position:relative; margin-bottom:10px; max-width:100%; }
  #_form_4_ ._form_element * { font-size:1em; }
  #_form_4_ ._form_element._clear { clear:both; width:100%; float:none; }
  #_form_4_ ._form_element._clear:after { clear:left; }
@@ -147,35 +147,23 @@
          </div>
        </div>
        <div class="_form_element _x24363437 _full_width " >
-         <label for="firstname" class="_form-label">
-           Nome*
-         </label>
          <div class="_field-wrapper">
            <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required/>
          </div>
        </div>
        <div class="_form_element _x35236746 _full_width " >
-         <label for="email" class="_form-label">
-           E-mail*
-         </label>
          <div class="_field-wrapper">
            <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
          </div>
        </div>
        <div class="_form_element _x04573228 _full_width " >
-         <label for="phone" class="_form-label">
-           Telefone*
-         </label>
          <div class="_field-wrapper">
            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
          </div>
        </div>
        <div class="_form_element _field47 _full_width " >
-         <label for="field[47]" class="_form-label">
-           Mensagem
-         </label>
          <div class="_field-wrapper">
-           <textarea id="field[47]" name="field[47]" placeholder=""  ></textarea>
+           <textarea id="field[47]" name="field[47]" placeholder="Digite sua mensagem"  ></textarea>
          </div>
        </div>
        <div class="_form_element _x66411184 _full_width " >
@@ -185,7 +173,7 @@
              </legend>
            </div>
            <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
-           <div class="_row _checkbox-radio">
+           <div class="_row _checkbox-radio empty-events">
              <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
              <span>
                <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">

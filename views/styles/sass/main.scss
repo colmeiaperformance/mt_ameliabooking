@@ -1093,6 +1093,18 @@
     }
   }
   
+  .empty-event {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    label {
+      color: #323B50;
+      font-size: 17px;
+      @media  screen and (max-width: 992px) {
+        font-size: 14px;
+      }
+    }
+  }
   .contactAceite {
     @media  screen and (max-width: 992px) {
       font-size: 14px;
