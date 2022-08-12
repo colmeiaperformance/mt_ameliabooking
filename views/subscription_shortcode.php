@@ -380,7 +380,7 @@
 
         if(email.val() == ""){
             valid = false;
-            showHideError(email, true, true, 'Este campo é necessário.');
+            showHideError(email, true, true, 'Digite um e-mail válido.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
             showHideError(email, true, true, 'Digite um e-mail válido.');
@@ -390,21 +390,21 @@
 
         if(firstName.val() == ""){
             valid = false;
-            showHideError(firstName, true, true, 'Este campo é necessário.');
+            showHideError(firstName, true, true, 'Insira seu nome.');
         }else{
             showHideError(firstName, true, false, 'Este campo está válido.');
         }
 
         if(lastName.val() == ""){
             valid = false;
-            showHideError(lastName, true, true, 'Este campo é necessário.');
+            showHideError(lastName, true, true, 'Insira seu sobrenome.');
         }else{
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
             valid = false;
-            showHideError(phone, true, true, 'Este campo é necessário.');
+            showHideError(phone, true, true, 'Digite seu telefone ou celular.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
