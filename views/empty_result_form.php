@@ -152,7 +152,7 @@
           </div>
         </div>
        <div class="row p-0 m-0">
-        <div class="_form_element _x35236746 _col-12 col-lg-6 p-0 mb-0" >
+        <div class="_form_element _x35236746 _col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
           <div class="_field-wrapper">
             <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
           </div>
