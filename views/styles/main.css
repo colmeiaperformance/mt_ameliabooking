@@ -1150,17 +1150,17 @@
   display: none;
 }
 
-.empty-event {
+.empty-events {
   display: flex;
   width: 100%;
   align-items: center;
 }
-.empty-event label {
+.empty-events label {
   color: #323B50;
   font-size: 17px;
 }
 @media screen and (max-width: 992px) {
-  .empty-event label {
+  .empty-events label {
     font-size: 14px;
   }
 }
