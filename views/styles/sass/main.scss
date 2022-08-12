@@ -1058,3 +1058,37 @@
     }
   }
 }
+
+.form-empty {
+  ._field-wrapper input, ._field-wrapper textarea {
+    background: #FFFFFF !important;
+    border: 1px solid #F29F05 !important;
+    border-radius: 30px !important;
+    color: #F29F05 !important;
+    font-family: 'Work Sans' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 18px !important;
+    padding:8px 25px !important;
+    line-height: 22px !important;   
+    margin-bottom: 20px !important; 
+}
+
+._field-wrapper input::placeholder, ._field-wrapper textarea::placeholder{
+    color: #F29F05 !important;
+    font-family: 'Work Sans' !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+#divCheck ._error {
+  width: 100%;
+  position: unset !important;
+}
+
+#divCheck ._error ._error-arrow {
+  display: none;
+}
+}
