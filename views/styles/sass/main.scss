@@ -1083,6 +1083,11 @@
       line-height: 22px;
     }
     
+    textarea {
+      @media  screen and (max-width: 992px) {
+        border-radius: 10px;
+      }
+    }
     #divCheck ._error {
       width: 100%;
       position: unset !important;

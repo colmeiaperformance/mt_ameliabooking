@@ -1142,6 +1142,11 @@
   font-size: 18px;
   line-height: 22px;
 }
+@media screen and (max-width: 992px) {
+  .form-empty textarea {
+    border-radius: 10px;
+  }
+}
 .form-empty #divCheck ._error {
   width: 100%;
   position: unset !important;
