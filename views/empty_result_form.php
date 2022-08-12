@@ -151,13 +151,13 @@
             <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required/>
           </div>
         </div>
-       <div class="row">
-        <div class="_form_element _x35236746 _col-12 col-lg-6" >
+       <div class="row p-0 m-0">
+        <div class="_form_element _x35236746 _col-12 col-lg-6 p-0 mb-0" >
           <div class="_field-wrapper">
             <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
           </div>
         </div>
-        <div class="_form_element _x04573228 col-12 col-lg-6" >
+        <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0" >
          <div class="_field-wrapper">
            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
          </div>

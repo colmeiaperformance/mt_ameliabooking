@@ -1085,7 +1085,7 @@
     
     textarea {
       @media  screen and (max-width: 992px) {
-        border-radius: 10px;
+        border-radius: 10px!important;
       }
     }
     #divCheck ._error {

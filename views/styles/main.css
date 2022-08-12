@@ -1144,7 +1144,7 @@
 }
 @media screen and (max-width: 992px) {
   .form-empty textarea {
-    border-radius: 10px;
+    border-radius: 10px !important;
   }
 }
 .form-empty #divCheck ._error {
