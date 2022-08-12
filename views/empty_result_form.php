@@ -146,22 +146,22 @@
             </p>
          </div>
        </div>
-       <div class="row">
-        <div class="_form_element _x24363437 _full_width col-12 col-lg-6" >
+       <div class="_form_element _x24363437 _full_width col-12 col-lg-6" >
           <div class="_field-wrapper">
             <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required/>
           </div>
         </div>
+       <div class="row">
         <div class="_form_element _x35236746 _full_width col-12 col-lg-6" >
           <div class="_field-wrapper">
             <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
           </div>
         </div>
-       </div>
-       <div class="_form_element _x04573228 _full_width " >
+        <div class="_form_element _x04573228 _full_width " >
          <div class="_field-wrapper">
            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
          </div>
+       </div>
        </div>
        <div class="_form_element _field47 _full_width " >
          <div class="_field-wrapper">
