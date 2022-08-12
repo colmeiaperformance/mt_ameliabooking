@@ -149,7 +149,7 @@
 
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-  <form method="POST" action="https://meditacaotranscedental.activehosted.com/proc.php" id="_form_4_" class="_form _form_4 _inline-form  _dark" novalidate>
+<form method="POST" action="https://meditacaotranscedental.activehosted.com/proc.php" id="_form_4_" class="_form _form_4 _inline-form  _dark" novalidate>
     <input type="hidden" name="u" value="4" />
     <input type="hidden" name="f" value="4" />
     <input type="hidden" name="s" />
@@ -157,84 +157,98 @@
     <input type="hidden" name="m" value="0" />
     <input type="hidden" name="act" value="sub" />
     <input type="hidden" name="v" value="2" />
-    <input type="hidden" name="or" value="6dd60a80fe899aea729f1c570d42b7b6" />
+    <input type="hidden" name="or" value="747badf2abf36cb280cb2e310e91cd23" />
     <div class="_form-content">
       <div class="_form_element _x96161933 _full_width _clear" >
         <div class="_form-title">
-          <div class="alert alert-secondary" id="alertMensage" role="alert">
-            Desculpe! No momento não temos palestra agendada em sua cidade.
-            </div>
+          Desculpe! Ainda não existe nenhuma palestra agendada para a sua localidade.
         </div>
       </div>
       <div class="_form_element _x89657108 _full_width _clear" >
         <div class="_html-code">
-          <p class="subtitle" id="subtitleMensage">
-            Informe seus dados para receber nosso contato, assim que houver palestra em sua região:
+          <p>
+            Informe seus dados para receber alertas sobre palestras na sua região:
           </p>
         </div>
       </div>
-      <div class="_form_element _x81838014 _full_width " >
-        
+      <div class="_form_element _x24363437 _full_width " >
+        <label for="firstname" class="_form-label">
+          Nome*
+        </label>
         <div class="_field-wrapper">
-          <input type="text" id="firstname" name="firstname" placeholder="Nome" required />
+          <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required/>
         </div>
-        <!--  This STARTS the Custom Objects section  -->
+      </div>
+      <div class="_form_element _x35236746 _full_width " >
+        <label for="email" class="_form-label">
+          E-mail*
+        </label>
+        <div class="_field-wrapper">
+          <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required/>
         </div>
-        <div class="_form_element _x35236746 _full_width " >
-          <div class="_field-wrapper">
-            <input type="text" id="email" name="email" placeholder="E-mail" required />
-          </div>
-          <!--  This STARTS the Custom Objects section  -->
-          </div>
-          <div class="_form_element _field46 _full_width " >
-            <div class="_field-wrapper">
-              <input type="text" id="cast" disabled name="field[46]" value="" 
-              placeholder="Cidade e Estado" />
-
-              <input type="text" id="instructor" disabled name="field[62]" value="" 
-              placeholder="Instrutor" />
-              
-              <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
-            </div>
-          </div>
-
-          <div class="my-2 d-flex flex-column align-items-center" id="divCheck">
-            <div class="mb-2 d-flex align-items-center">
-              <input type="checkbox" name="field[64]" id="check" required>
-              <label for="check">Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a <a href="<?= site_url() ?>/politica-de-privacidade/" style="color: unset; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.</label>
-            </div>
-          </div>
-
-          <div class="_button-wrapper _full_width">
-            <button id="_form_4_submit" class="_submit" type="submit">
-              Enviar
-            </button>
-          </div>
-          <div class="_clear-element">
-          </div>
+      </div>
+      <div class="_form_element _x04573228 _full_width " >
+        <label for="phone" class="_form-label">
+          Telefone*
+        </label>
+        <div class="_field-wrapper">
+          <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
         </div>
-        <div class="_form-thank-you" style="display:none;">
+      </div>
+      <div class="_form_element _field47 _full_width " >
+        <label for="field[47]" class="_form-label">
+          Mensagem
+        </label>
+        <div class="_field-wrapper">
+          <textarea id="field[47]" name="field[47]" placeholder=""  ></textarea>
         </div>
-  </form>
-<script type="text/javascript">
-  window.cfields = {"46":"cidade_onde_quer_palestra","47":"mensagem"};
-  window._show_thank_you = function(id, message, trackcmp_url, email) {
-    var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
-    form.querySelector('._form-content').style.display = 'none';
-    thank_you.innerHTML = message;
-    thank_you.style.display = 'block';
-    const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
-    var visitorObject = window[vgoAlias];
-    if (email && typeof visitorObject !== 'undefined') {
-      visitorObject('setEmail', email);
-      visitorObject('update');
-    } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
-      // Site tracking URL to use after inline form submission.
-      _load_script(trackcmp_url);
-    }
-    if (typeof window._form_callback !== 'undefined') window._form_callback(id);
-  };
-  window._show_error = function(id, message, html) {
+      </div>
+      <div class="_form_element _x66411184 _full_width " >
+        <fieldset class="_form-fieldset">
+          <div class="_row">
+            <legend for="field[75][]" class="_form-label">
+            </legend>
+          </div>
+          <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
+          <div class="_row _checkbox-radio">
+            <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
+            <span>
+              <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
+                Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
+              </label>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+      <div class="_button-wrapper _full_width">
+        <button id="_form_4_submit" class="_submit" type="submit">
+          Enviar
+        </button>
+      </div>
+      <div class="_clear-element">
+      </div>
+    </div>
+    <div class="_form-thank-you" style="display:none;">
+    </div>
+  </form><script type="text/javascript">
+window.cfields = {"47":"mensagem","75":"optin"};
+window._show_thank_you = function(id, message, trackcmp_url, email) {
+  var form = document.getElementById('_form_' + id + '_'), thank_you = form.querySelector('._form-thank-you');
+  form.querySelector('._form-content').style.display = 'none';
+  thank_you.innerHTML = message;
+  thank_you.style.display = 'block';
+  const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
+  var visitorObject = window[vgoAlias];
+  if (email && typeof visitorObject !== 'undefined') {
+    visitorObject('setEmail', email);
+    visitorObject('update');
+  } else if (typeof(trackcmp_url) != 'undefined' && trackcmp_url) {
+    // Site tracking URL to use after inline form submission.
+    _load_script(trackcmp_url);
+  }
+  if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+};
+window._show_error = function(id, message, html) {
   var form = document.getElementById('_form_' + id + '_'), err = document.createElement('div'), button = form.querySelector('button'), old_error = form.querySelector('._form_error');
   if (old_error) old_error.parentNode.removeChild(old_error);
   err.innerHTML = message;
@@ -250,7 +264,7 @@
     div.innerHTML = html;
     err.appendChild(div);
   }
-  };
+};
 window._load_script = function(url, callback) {
   var head = document.querySelector('head'), script = document.createElement('script'), r = false;
   script.type = 'text/javascript';
@@ -277,7 +291,7 @@ window._load_script = function(url, callback) {
     var time = now.getTime();
     var expireTime = time + 1000 * 60 * 60 * 24 * 365;
     now.setTime(expireTime);
-    document.cookie = name + '=' + value + '; expires=' + now + ';path=/';
+    document.cookie = name + '=' + value + '; expires=' + now + ';path=/; Secure; SameSite=Lax;';// cannot be HttpOnly
   }
       var addEvent = function(element, event, func) {
     if (element.addEventListener) {
@@ -452,23 +466,6 @@ window._load_script = function(url, callback) {
         tooltip = create_tooltip(elem, "Digite uma data válida.");
       }
     }
-
-    if (no_error && elem.name == 'field[64]') {
-      if (!elem.checked) {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem.parentNode, "Aceite os termos.");
-      }
-    }
-
-    if (no_error && elem.name == 'firstname') {
-      if (elem.value === "") {
-        elem.className = elem.className + ' _has_error';
-        no_error = false;
-        tooltip = create_tooltip(elem, "Este campo é necessário.");
-      }
-    }
-
     tooltip ? resize_tooltip(tooltip) : false;
     return no_error;
   };
@@ -476,13 +473,7 @@ window._load_script = function(url, callback) {
         if(el.getAttribute('required') !== null){
             return true
         }
-        if(el.name === 'firstname' && el.value !== ""){
-            return true
-        }
         if(el.name === 'email' && el.value !== ""){
-            return true
-        }
-        if(el.name === 'field[64]' && el.checked != true){
             return true
         }
         return false
