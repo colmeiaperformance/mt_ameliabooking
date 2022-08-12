@@ -155,6 +155,10 @@ function ajax_event_form(){
                [
                         "field"=> "47",
                         "value"=> $_POST['message']
+               ],
+               [
+                        "field"=> "75",
+                        "value"=> $_POST['aceite']
                ]
          )
       )
@@ -223,10 +227,6 @@ function ajax_event_subscription(){
                [
                         "field" => "37",
                         "value" => $_POST['evento']
-               ],
-               [
-                        "field"=> "47",
-                        "value"=> 'Nova inscrição em palestra'
                ],
                [
                         "field" => "41",

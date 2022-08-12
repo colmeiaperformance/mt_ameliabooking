@@ -79,14 +79,15 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        jQuery("#contactEmail, #contactName, #contactPhone, #contactMessage").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+        jQuery("#contactEmail, #field_75, #contactName, #contactPhone, #contactMessage").on('input', function() {
+            formIsValid(jQuery("#contactEmail"), jQuery("#field_75"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#field_75"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
+            formData.append('aceite',jQuery("#field_75").val())
             formData.append('name',jQuery("#contactName").val())
             formData.append('phone',jQuery("#contactPhone").val())
             formData.append('instrutor',employee.firstName+' '+ employee.lastName)
