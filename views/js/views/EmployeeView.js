@@ -69,13 +69,13 @@ class EmployeeView extends View {
                             <div class="form-group">
                             <textarea class="form-control" id="contactMessage" rows="7" placeholder="Sua mensagem"></textarea>
                             </div>
-                            <div class="form-group">
-                            <input id="contactAceite" type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
-                            <span>
-                            <label for="contactAceite">
-                              Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
-                            </label>
-                            </span>
+                            <div class="form-group d-flex">
+                             <input id="contactAceite" type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
+                                <span>
+                                <label for="contactAceite">
+                                Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
+                                </label>
+                                </span>
                             </div>
                             <div class="text-end">
                             <button type="submit" class="btn">Enviar Mensagem</button>
