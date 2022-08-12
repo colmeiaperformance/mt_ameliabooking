@@ -79,15 +79,15 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        jQuery("#contactEmail, #field_75, #contactName, #contactPhone, #contactMessage").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#field_75"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+        jQuery("#contactEmail, #contactAceite, #contactName, #contactPhone, #contactMessage").on('input', function() {
+            formIsValid(jQuery("#contactEmail"), jQuery("#contactAceite"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#field_75"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactAceite"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
-            formData.append('aceite',jQuery("#field_75").val())
+            formData.append('aceite',jQuery("#contactAceite").val())
             formData.append('name',jQuery("#contactName").val())
             formData.append('phone',jQuery("#contactPhone").val())
             formData.append('instrutor',employee.firstName+' '+ employee.lastName)
@@ -112,7 +112,7 @@
 
         if(email.val() == ""){
             valid = false;
-            showHideError(email, true, true, 'Este campo é necessário.');
+            showHideError(email, true, true, 'Digite um e-mail válido.');
         }else if(!email.val().match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)){
             valid = false;
             showHideError(email, true, true, 'Digite um e-mail válido.');
@@ -122,21 +122,21 @@
 
         if(name.val() == ""){
             valid = false;
-            showHideError(name, true, true, 'Este campo é necessário.');
+            showHideError(name, true, true, 'Insira seu nome completo.');
         }else{
             showHideError(name, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
             valid = false;
-            showHideError(phone, true, true, 'Este campo é necessário.');
+            showHideError(phone, true, true, 'Digite seu telefone ou celular.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
 
         if(message.val() == ""){
             valid = false;
-            showHideError(message, true, true, 'Este campo é necessário.');
+            showHideError(message, true, true, 'Escreva uma mensagem.');
         }else{
             showHideError(message, true, false, 'Este campo está válido.');
         }
