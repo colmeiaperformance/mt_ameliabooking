@@ -141,6 +141,7 @@ function ajax_event_form(){
   $url = 'https://meditacaotranscedental.api-us1.com/api/3/contacts';
   $key = 'e95ce61eb9e4517b45d30bdcedb8a51ee117749f9f45bbdce702f03c5522ffb34d8e7eb8';
   
+  //Formulario pagina single instrutor
    $payload = Array(
       "contact" => Array(
          "email"=> $_POST['email'],
@@ -213,6 +214,7 @@ function ajax_event_subscription(){
    $url = 'https://meditacaotranscedental.api-us1.com/api/3/contacts';
    $key = 'e95ce61eb9e4517b45d30bdcedb8a51ee117749f9f45bbdce702f03c5522ffb34d8e7eb8';
 
+   //Formulario de inscrição
    $payload = Array(
       "contact" => Array(
          "email"=> $_POST['email'],
@@ -245,7 +247,7 @@ function ajax_event_subscription(){
                         "value" => $_POST['dataHoraPalestra']
                ],
                [
-                        "field" => "45",
+                        "field" => "67",
                         "value" => $_POST['dataHoraText']
                ],
          )
