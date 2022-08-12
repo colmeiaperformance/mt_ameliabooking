@@ -71,7 +71,7 @@ class EmployeeView extends View {
                             </div>
                             <div class="form-group d-flex">
                              <input id="contactAceite" type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
-                                <span>
+                                <span class="ms-3">
                                 <label for="contactAceite">
                                 Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
                                 </label>
