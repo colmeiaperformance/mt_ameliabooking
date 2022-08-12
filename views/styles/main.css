@@ -1149,3 +1149,9 @@
 .form-empty #divCheck ._error ._error-arrow {
   display: none;
 }
+
+@media screen and (max-width: 992px) {
+  .contactAceite {
+    font-size: 14px;
+  }
+}
