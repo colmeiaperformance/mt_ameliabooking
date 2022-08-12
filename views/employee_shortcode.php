@@ -100,6 +100,7 @@
             });
             if(contactReq.status === 200){
                 jQuery("#mt_message_overlay_success").fadeIn();
+                window.location.replace(`${baseurl}/instrutores`);
             }
         }
 
