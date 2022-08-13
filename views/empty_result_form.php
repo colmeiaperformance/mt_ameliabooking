@@ -576,7 +576,7 @@
         </div>
         <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="tel" id="phone" name="phone" placeholder="Digite seu telefone" required />
+            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required />
           </div>
         </div>
       </div>
@@ -1031,6 +1031,6 @@
       return false;
     };
     addEvent(form_to_submit, 'submit', form_submit);
-  })();
+  })(); 
   jQuery('#phone').mask(phoneBehavior, spOptions);
 </script>
