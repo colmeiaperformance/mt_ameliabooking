@@ -162,6 +162,7 @@
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
+        div.classList.add('mb-2');
         div.innerText = text;
         showHideError(elem, false);
         elem.parent().append(div);
