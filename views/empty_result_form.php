@@ -582,17 +582,17 @@
       </div>
       
       <div class="row p-0 m-0">
-        <div class="_form_element _full_width _col-12 col-lg-6 p-0 pe-lg-3 mb-0">
+        <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
             <input type="text" id="cast" disabled name="field[46]" value="" placeholder="Cidade e Estado" />
           </div>
         </div>
-        <div class="_form_element _full_width col-12 col-lg-6 p-0 mb-0">
+        <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
             <input type="text" id="instructor" disabled name="field[62]" value="" placeholder="Instrutor" />
           </div>
         </div>
-        <div class="_form_element _full_width col-12 col-lg-6 p-0 mb-0">
+        <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
             <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
           </div>
