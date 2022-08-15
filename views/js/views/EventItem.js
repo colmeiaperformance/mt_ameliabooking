@@ -126,7 +126,7 @@ class EventItem extends View{
 																${e.options.map(opt => {
 																	return(`
 																		<div class="item">
-																			<input type="checkbox" onChange="changeCheckBoxOque(this, ${opt.customFieldId})" value="${opt.label}"  ${opt.required ? 'required' : ''} name="customField${opt.customFieldId}[]" >
+																			<input id="contactAceite" type="checkbox" onChange="changeCheckBoxOque(this, ${opt.customFieldId})" value="${opt.label}"  ${opt.required ? 'required' : ''} name="customField${opt.customFieldId}[]" >
 																			<label for="origin">${opt.label}</label>
 																		</div>
 																	`)	

@@ -250,6 +250,26 @@ function ajax_event_subscription(){
                         "field" => "67",
                         "value" => $_POST['dataHoraText']
                ],
+               [
+                        "field" => "65",
+                        "value" => $_POST['origemDeMensagem']
+               ],
+               [
+                        "field" => "46",
+                        "value" => $_POST['cidadeOndeQuerPalestra']
+               ],
+               [
+                        "field" => "76",
+                        "value" => $_POST['cidadeDaPalestra']
+               ],
+               [
+                        "field" => "77",
+                        "value" => $_POST['nomeDaPalestra']
+               ],
+               [
+                        "field" => "75",
+                        "value" => $_POST['contactAceite']
+               ],
          )
       )
    );

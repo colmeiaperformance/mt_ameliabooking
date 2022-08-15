@@ -80,7 +80,7 @@
     }
 
     async function getEmployees() {
-        jQuery("#instructor").css('display', 'none');
+        jQuery("#origemDeMensagem").css('display', 'none');
         employee_list = await controller.list(false, false, false, wp_user_infos);
         controller.renderItems(employee_list);
         startSlider();
@@ -98,7 +98,7 @@
         } 
         
         jQuery("#typeForm").val('instrutores');
-        jQuery("#instructor").css('display', 'none');
+        jQuery("#origemDeMensagem").css('display', 'none');
 
         if(alertMensage){
             jQuery("#alertMensage").text(alertMensage);
@@ -109,8 +109,8 @@
         }
         
         if(city?.nome || state?.sigla){
-            jQuery("#cast").css('display', 'block');
-            jQuery("#cast").val(texto);
+            jQuery("#cidadeOndeQuerPalestra").css('display', 'block');
+            jQuery("#cidadeOndeQuerPalestra").val(texto);
         }
 
         jQuery("#mt_empty_form").css('display', 'block');

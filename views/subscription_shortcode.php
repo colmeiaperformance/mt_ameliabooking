@@ -355,18 +355,18 @@
         
         if(instructor){
             if(city?.nome || state?.sigla){
-                jQuery("#cast").css('display', 'block');
-                jQuery("#cast").val(texto);
+                jQuery("#cidadeOndeQuerPalestra").css('display', 'block');
+                jQuery("#cidadeOndeQuerPalestra").val(texto);
             }else{
-                jQuery("#cast").css('display', 'none');
+                jQuery("#cidadeOndeQuerPalestra").css('display', 'none');
             }
 
-            jQuery("#instructor").css('display', 'block');
-            jQuery("#instructor").val(instrutorName);
+            jQuery("#origemDeMensagem").css('display', 'block');
+            jQuery("#origemDeMensagem").val(instrutorName);
         }else if(city?.nome || state?.sigla){
-            jQuery("#instructor").css('display', 'none');
-            jQuery("#cast").css('display', 'block');
-            jQuery("#cast").val(texto);
+            jQuery("#origemDeMensagem").css('display', 'none');
+            jQuery("#cidadeOndeQuerPalestra").css('display', 'block');
+            jQuery("#cidadeOndeQuerPalestra").val(texto);
         }
 
         mt_filters.classList.add('hideOrder');
