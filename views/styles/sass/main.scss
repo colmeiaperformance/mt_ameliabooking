@@ -1082,12 +1082,7 @@
       font-size: 18px;
       line-height: 22px;
     }
-    
-    textarea {
-      @media  screen and (max-width: 992px) {
-        border-radius: 10px!important;
-      }
-    }
+  
     #divCheck ._error {
       width: 100%;
       position: unset !important;
@@ -1102,16 +1097,31 @@
     display: flex;
     width: 100%;
     align-items: center;
-    label {
-      color: #323B50;
-      font-size: 17px;
-      @media  screen and (max-width: 992px) {
-        font-size: 14px;
+    @media screen and (max-width: 992px)  {
+      display: block;
+    }
+    span {
+      @media screen and (max-width: 992px)  {
+        width: calc(100% - 40px);
+        margin-left: 15px;
+      }
+      label {
+        color: #323B50;
+        font-size: 17px;
+        @media screen and (max-width: 992px) {
+          font-size: 14px;
+        }
       }
     }
   }
   .contactAceite {
     @media  screen and (max-width: 992px) {
       font-size: 14px;
+    }
+  }
+
+  textarea {
+    @media  screen and (max-width: 992px) {
+      border-radius: 15px!important;
     }
   }

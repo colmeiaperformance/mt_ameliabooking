@@ -1142,11 +1142,6 @@
   font-size: 18px;
   line-height: 22px;
 }
-@media screen and (max-width: 992px) {
-  .form-empty textarea {
-    border-radius: 10px !important;
-  }
-}
 .form-empty #divCheck ._error {
   width: 100%;
   position: unset !important;
@@ -1160,12 +1155,23 @@
   width: 100%;
   align-items: center;
 }
-.empty-events label {
+@media screen and (max-width: 992px) {
+  .empty-events {
+    display: block;
+  }
+}
+@media screen and (max-width: 992px) {
+  .empty-events span {
+    width: calc(100% - 40px);
+    margin-left: 15px;
+  }
+}
+.empty-events span label {
   color: #323B50;
   font-size: 17px;
 }
 @media screen and (max-width: 992px) {
-  .empty-events label {
+  .empty-events span label {
     font-size: 14px;
   }
 }
@@ -1173,5 +1179,11 @@
 @media screen and (max-width: 992px) {
   .contactAceite {
     font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  textarea {
+    border-radius: 15px !important;
   }
 }
