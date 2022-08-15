@@ -166,9 +166,9 @@
     max-width: 100%;
   }
 
-  #_form_4_ ._form_element * {
+  /* #_form_4_ ._form_element * {
     font-size: 1em;
-  }
+  } */
 
   #_form_4_ ._form_element._clear {
     clear: both;
@@ -398,9 +398,9 @@
       width: 100%;
     }
 
-    #_form_4_ ._row._checkbox-radio label {
+    /* #_form_4_ ._row._checkbox-radio label {
       display: inline;
-    }
+    } */
 
     #_form_4_ ._row,
     #_form_4_ p,
@@ -409,20 +409,17 @@
       width: 100%;
     }
 
-    #_form_4_ ._row input[type="checkbox"],
+    /* #_form_4_ ._row input[type="checkbox"],
     #_form_4_ ._row input[type="radio"] {
       margin: 0 !important;
       vertical-align: middle !important;
-    }
-
-    #_form_4_ ._row input[type="checkbox"]+span label {
-      display: inline;
-    }
+    } */
 
     #_form_4_ ._row span label {
       margin: 0 !important;
       width: initial !important;
       vertical-align: middle !important;
+      display: inline;
     }
 
     #_form_4_ ._form-image {
@@ -437,7 +434,7 @@
       line-height: 1.3em;
       -webkit-appearance: none;
     }
-
+/* 
     #_form_4_ input[type="radio"],
     #_form_4_ input[type="checkbox"] {
       display: inline-block;
@@ -446,7 +443,7 @@
       font-size: 1em;
       margin: 0 0.3em 0 0;
       vertical-align: baseline;
-    }
+    } */
 
     #_form_4_ button[type="submit"] {
       padding: 20px;
@@ -612,12 +609,12 @@
            </div>
            <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
            <div class="_row _checkbox-radio empty-events">
-             <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
-             <span>
-               <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
-                 Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
-               </label>
-             </span>
+              <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
+              <span>
+                <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
+                  Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
+                </label>
+              </span>
             </div>
          </fieldset>
        </div>

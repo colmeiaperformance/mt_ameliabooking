@@ -753,50 +753,56 @@
     }
   }  
   .page-eventos, .page-instrutores {
-    input[type="checkbox"] {
-      /* Add if not using autoprefixer */
-      -webkit-appearance: none;
-      /* Remove most all native input styles */
-      appearance: none;
-      /* For iOS < 15 */
-      background-color: var(--form-background);
-      /* Not removed via appearance */
-      margin: 0;
-      margin-right: 15px;
-      font: inherit;
-      color: currentColor;
-      width: 1.15em;
-      height: 1.15em;
-      padding: 0px !important;
-      border: 0.15px solid currentColor;
-      transform: translateY(-0.075em);
-      border-radius: 0px !important;
-      display: grid;
-      place-content: center;
+    .form-check-input {
+      width: 1.3em;
+      height: 1.3em;
+      font-size: 1em;
     }
-    input[type="checkbox"]::before {
-      content: "";
-      width: 1.15em;
-      height: 1.15em;
-      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-      transform: scale(0);
-      transform-origin: bottom left;
-      transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em var(--form-control-color);
-      /* Windows High Contrast Mode */
-      background-color: CanvasText;
+    .form-check-input:checked {
+      background-color: #F29F05!important;
+      border-color: #F29F05!important;
+      color: #191919;
+      box-shadow: none;
     }
-    input[type="checkbox"]:checked::before {
-      transform: scale(1);
+    #_form_4_ ._row input[type="checkbox"],
+    #_form_4_ ._row input[type="radio"] {
+      margin: 0 !important;
+      vertical-align: middle !important;
     }
-    input[type="checkbox"]:focus {
-      outline: max(2px, 0.15px) solid currentColor;
-      outline-offset: max(2px, 0.15px);
+    
+    #_form_4_ ._row input[type="checkbox"]+span label {
+      display: inline;
     }
-    input[type="checkbox"]:disabled {
-      --form-control-color: var(--form-control-disabled);
-      color: var(--form-control-disabled);
-      cursor: not-allowed;
+    
+    #_form_4_ input[type="radio"],
+    #_form_4_ input[type="checkbox"] {
+      display: inline-block;
+      width: 1.3em!important;
+      height: 1.3em!important;
+      font-size: 1em;
+      margin: 0 0.3em 0 0;
+      vertical-align: baseline;
+      @media (max-width: 992px) {
+        width: 17px !important;
+        height: 17px !important;
+      }
+    }
+    
+    ._checkbox-radio  {
+      span {
+        color: #323B50;
+        margin-left: 15px;
+        @media (max-width: 992px) {
+          font-size: 13px;
+          margin-left: 10px;
+        }
+      }
+      input[type="checkbox"] {
+        @media (max-width: 992px) {
+          width: 17px!important;
+          height: 17px!important;
+        }
+      }
     }
     input[type="text"], 
     input[type="email"], 
@@ -1057,71 +1063,74 @@
         }
       }
     }
-  }
-  
-  .form-empty {
-    ._field-wrapper input, ._field-wrapper textarea {
-      background: #FFFFFF !important;
-      border: 1px solid #F29F05 !important;
-      border-radius: 30px !important;
-      color: #F29F05 !important;
-      font-family: 'Work Sans' !important;
-      font-style: normal !important;
-      font-weight: 500 !important;
-      font-size: 18px !important;
-      padding:8px 25px !important;
-      line-height: 22px !important;   
-      margin-bottom: 20px !important; 
-    }
     
-    ._field-wrapper input::placeholder, ._field-wrapper textarea::placeholder{
-      color: #F29F05 !important;
-      font-family: 'Work Sans' !important;
-      font-style: normal;
-      font-weight: 500 !important;
-      font-size: 18px;
-      line-height: 22px;
-    }
-  
-    #divCheck ._error {
-      width: 100%;
-      position: unset !important;
-    }
-    
-    #divCheck ._error ._error-arrow {
-      display: none;
-    }
-  }
-  
-  .empty-events {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    @media screen and (max-width: 992px)  {
-      display: block;
-    }
-    span {
-      @media screen and (max-width: 992px)  {
-        width: calc(100% - 40px);
-        margin-left: 15px;
+    .form-empty {
+      ._field-wrapper input, ._field-wrapper textarea {
+        background: #FFFFFF !important;
+        border: 1px solid #F29F05 !important;
+        border-radius: 30px !important;
+        color: #F29F05 !important;
+        font-family: 'Work Sans' !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        font-size: 18px !important;
+        padding:8px 25px !important;
+        line-height: 22px !important;   
+        margin-bottom: 20px !important; 
       }
-      label {
-        color: #323B50;
-        font-size: 17px;
-        @media screen and (max-width: 992px) {
-          font-size: 14px;
+      
+      ._field-wrapper input::placeholder, ._field-wrapper textarea::placeholder{
+        color: #F29F05 !important;
+        font-family: 'Work Sans' !important;
+        font-style: normal;
+        font-weight: 500 !important;
+        font-size: 18px;
+        line-height: 22px;
+      }
+      
+      #divCheck ._error {
+        width: 100%;
+        position: unset !important;
+      }
+      
+      #divCheck ._error ._error-arrow {
+        display: none;
+      }
+    }
+    
+    .empty-events {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      @media screen and (max-width: 992px)  {
+        display: block;
+      }
+      span {
+        @media screen and (max-width: 992px)  {
+          width: calc(100% - 40px);
+          margin-left: 15px;
+        }
+        label {
+          color: #323B50;
+          font-size: 17px;
+          margin: 0 !important;
+          width: initial !important;
+          vertical-align: middle !important;
+          @media screen and (max-width: 992px) {
+            font-size: 14px;
+          }
         }
       }
     }
-  }
-  .contactAceite {
-    @media  screen and (max-width: 992px) {
-      font-size: 14px;
+    .contactAceite {
+      @media  screen and (max-width: 992px) {
+        font-size: 14px;
+      }
     }
-  }
-
-  textarea {
-    @media  screen and (max-width: 992px) {
-      border-radius: 15px!important;
+    
+    textarea {
+      @media  screen and (max-width: 992px) {
+        border-radius: 15px!important;
+      }
     }
   }

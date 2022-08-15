@@ -786,50 +786,59 @@
     padding-right: 0px !important;
   }
 }
-.page-eventos input[type=checkbox], .page-instrutores input[type=checkbox] {
-  /* Add if not using autoprefixer */
-  -webkit-appearance: none;
-  /* Remove most all native input styles */
-  appearance: none;
-  /* For iOS < 15 */
-  background-color: var(--form-background);
-  /* Not removed via appearance */
-  margin: 0;
-  margin-right: 15px;
-  font: inherit;
-  color: currentColor;
-  width: 1.15em;
-  height: 1.15em;
-  padding: 0px !important;
-  border: 0.15px solid currentColor;
-  transform: translateY(-0.075em);
-  border-radius: 0px !important;
-  display: grid;
-  place-content: center;
+.page-eventos .form-check-input, .page-instrutores .form-check-input {
+  width: 1.3em;
+  height: 1.3em;
+  font-size: 1em;
 }
-.page-eventos input[type=checkbox]::before, .page-instrutores input[type=checkbox]::before {
-  content: "";
-  width: 1.15em;
-  height: 1.15em;
-  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-  transform: scale(0);
-  transform-origin: bottom left;
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--form-control-color);
-  /* Windows High Contrast Mode */
-  background-color: CanvasText;
+.page-eventos .form-check-input:checked, .page-instrutores .form-check-input:checked {
+  background-color: #F29F05 !important;
+  border-color: #F29F05 !important;
+  color: #191919;
+  box-shadow: none;
 }
-.page-eventos input[type=checkbox]:checked::before, .page-instrutores input[type=checkbox]:checked::before {
-  transform: scale(1);
+.page-eventos #_form_4_ ._row input[type=checkbox],
+.page-eventos #_form_4_ ._row input[type=radio], .page-instrutores #_form_4_ ._row input[type=checkbox],
+.page-instrutores #_form_4_ ._row input[type=radio] {
+  margin: 0 !important;
+  vertical-align: middle !important;
 }
-.page-eventos input[type=checkbox]:focus, .page-instrutores input[type=checkbox]:focus {
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
+.page-eventos #_form_4_ ._row input[type=checkbox] + span label, .page-instrutores #_form_4_ ._row input[type=checkbox] + span label {
+  display: inline;
 }
-.page-eventos input[type=checkbox]:disabled, .page-instrutores input[type=checkbox]:disabled {
-  --form-control-color: var(--form-control-disabled);
-  color: var(--form-control-disabled);
-  cursor: not-allowed;
+.page-eventos #_form_4_ input[type=radio],
+.page-eventos #_form_4_ input[type=checkbox], .page-instrutores #_form_4_ input[type=radio],
+.page-instrutores #_form_4_ input[type=checkbox] {
+  display: inline-block;
+  width: 1.3em !important;
+  height: 1.3em !important;
+  font-size: 1em;
+  margin: 0 0.3em 0 0;
+  vertical-align: baseline;
+}
+@media (max-width: 992px) {
+  .page-eventos #_form_4_ input[type=radio],
+.page-eventos #_form_4_ input[type=checkbox], .page-instrutores #_form_4_ input[type=radio],
+.page-instrutores #_form_4_ input[type=checkbox] {
+    width: 17px !important;
+    height: 17px !important;
+  }
+}
+.page-eventos ._checkbox-radio span, .page-instrutores ._checkbox-radio span {
+  color: #323B50;
+  margin-left: 15px;
+}
+@media (max-width: 992px) {
+  .page-eventos ._checkbox-radio span, .page-instrutores ._checkbox-radio span {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 992px) {
+  .page-eventos ._checkbox-radio input[type=checkbox], .page-instrutores ._checkbox-radio input[type=checkbox] {
+    width: 17px !important;
+    height: 17px !important;
+  }
 }
 .page-eventos input[type=text],
 .page-eventos input[type=email],
@@ -1120,8 +1129,7 @@
 .page-eventos .box:hover .hover, .page-instrutores .box:hover .hover {
   display: block;
 }
-
-.form-empty ._field-wrapper input, .form-empty ._field-wrapper textarea {
+.page-eventos .form-empty ._field-wrapper input, .page-eventos .form-empty ._field-wrapper textarea, .page-instrutores .form-empty ._field-wrapper input, .page-instrutores .form-empty ._field-wrapper textarea {
   background: #FFFFFF !important;
   border: 1px solid #F29F05 !important;
   border-radius: 30px !important;
@@ -1134,7 +1142,7 @@
   line-height: 22px !important;
   margin-bottom: 20px !important;
 }
-.form-empty ._field-wrapper input::placeholder, .form-empty ._field-wrapper textarea::placeholder {
+.page-eventos .form-empty ._field-wrapper input::placeholder, .page-eventos .form-empty ._field-wrapper textarea::placeholder, .page-instrutores .form-empty ._field-wrapper input::placeholder, .page-instrutores .form-empty ._field-wrapper textarea::placeholder {
   color: #F29F05 !important;
   font-family: "Work Sans" !important;
   font-style: normal;
@@ -1142,48 +1150,48 @@
   font-size: 18px;
   line-height: 22px;
 }
-.form-empty #divCheck ._error {
+.page-eventos .form-empty #divCheck ._error, .page-instrutores .form-empty #divCheck ._error {
   width: 100%;
   position: unset !important;
 }
-.form-empty #divCheck ._error ._error-arrow {
+.page-eventos .form-empty #divCheck ._error ._error-arrow, .page-instrutores .form-empty #divCheck ._error ._error-arrow {
   display: none;
 }
-
-.empty-events {
+.page-eventos .empty-events, .page-instrutores .empty-events {
   display: flex;
   width: 100%;
   align-items: center;
 }
 @media screen and (max-width: 992px) {
-  .empty-events {
+  .page-eventos .empty-events, .page-instrutores .empty-events {
     display: block;
   }
 }
 @media screen and (max-width: 992px) {
-  .empty-events span {
+  .page-eventos .empty-events span, .page-instrutores .empty-events span {
     width: calc(100% - 40px);
     margin-left: 15px;
   }
 }
-.empty-events span label {
+.page-eventos .empty-events span label, .page-instrutores .empty-events span label {
   color: #323B50;
   font-size: 17px;
+  margin: 0 !important;
+  width: initial !important;
+  vertical-align: middle !important;
 }
 @media screen and (max-width: 992px) {
-  .empty-events span label {
+  .page-eventos .empty-events span label, .page-instrutores .empty-events span label {
     font-size: 14px;
   }
 }
-
 @media screen and (max-width: 992px) {
-  .contactAceite {
+  .page-eventos .contactAceite, .page-instrutores .contactAceite {
     font-size: 14px;
   }
 }
-
 @media screen and (max-width: 992px) {
-  textarea {
+  .page-eventos textarea, .page-instrutores textarea {
     border-radius: 15px !important;
   }
 }
