@@ -597,11 +597,6 @@
             <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
           </div>
         </div>
-
-        <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0" >
-         <div class="_field-wrapper">
-           <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
-         </div>
        </div>
        </div>
        <div class="_form_element _field47 _full_width " >
@@ -616,14 +611,22 @@
              </legend>
            </div>
            <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
-           <div class="_row _checkbox-radio empty-events">
+            <div class="form-group d-flex my-3">
+              <input id="contactAceite" type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
+                <span class="ms-3 contactAceite">
+                    <label for="contactAceite">
+                    Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
+                    </label>
+                </span>
+            </div> 
+           <!-- <div class="_row _checkbox-radio empty-events">
              <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
              <span>
                <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
                  Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
                </label>
              </span>
-           </div>
+            </div> -->
          </fieldset>
        </div>
        <div class="_button-wrapper _full_width">
