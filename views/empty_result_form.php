@@ -640,39 +640,6 @@
    </div>
   
       </div>
-
-      <div class="_form_element _field47 _full_width mt-2">
-        <div class="_field-wrapper">
-          <textarea id="field[47]" name="field[47]" placeholder="Digite sua mensagem"></textarea>
-        </div>
-      </div>
-      <div class="_form_element _x66411184 _full_width">
-        <fieldset class="_form-fieldset">
-          <div class="_row">
-            <legend for="field[75][]" class="_form-label">
-            </legend>
-          </div>
-          <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
-          <div class="_row _checkbox-radio empty-events">
-            <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
-            <span>
-              <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
-                Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a <a href="<?= site_url() ?>/politica-de-privacidade/" style="color: unset; text-decoration: underline;" target="_blank" rel="noopener noreferrer">Política de Privacidade</a>.
-              </label>
-            </span>
-          </div>
-        </fieldset>
-      </div>
-      <div class="_button-wrapper _full_width">
-        <button id="_form_4_submit" class="_submit" type="submit">
-          Enviar
-        </button>
-      </div>
-      <div class="_clear-element">
-      </div>
-    </div>
-    <div class="_form-thank-you" style="display:none;">
-    </div>
   </form>
 </div>
 
