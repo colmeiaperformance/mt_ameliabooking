@@ -611,22 +611,14 @@
              </legend>
            </div>
            <input data-autofill="false" type="hidden" id="field[75][]" name="field[75][]" value="~|">
-            <div class="form-group d-flex my-3">
-              <input id="contactAceite" type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
-                <span class="ms-3 contactAceite">
-                    <label for="contactAceite">
-                    Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
-                    </label>
-                </span>
-            </div> 
-           <!-- <div class="_row _checkbox-radio empty-events">
+           <div class="_row _checkbox-radio empty-events">
              <input id="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade." type="checkbox" name="field[75][]" value="Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade."   >
              <span>
                <label for="field_75Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.">
                  Ao preencher meus dados, concordo em receber comunicações sobre produtos e serviços, conforme a Política de Privacidade.
                </label>
              </span>
-            </div> -->
+            </div>
          </fieldset>
        </div>
        <div class="_button-wrapper _full_width">
