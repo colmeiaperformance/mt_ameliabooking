@@ -597,7 +597,7 @@
             <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
           </div>
         </div>
-<<<<<<< HEAD
+
         <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0" >
          <div class="_field-wrapper">
            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required/>
@@ -638,8 +638,7 @@
      </div>
    </form>
    </div>
-   
-=======
+  
       </div>
 
       <div class="_form_element _field47 _full_width mt-2">
@@ -677,7 +676,6 @@
   </form>
 </div>
 
->>>>>>> 66a7671d0e714d18f77b7e05d8d0e0d382f93991
 <script type="text/javascript">
   window.cfields = {
     "47": "mensagem",
