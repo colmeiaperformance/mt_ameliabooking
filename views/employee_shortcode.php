@@ -57,6 +57,7 @@
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     console.log(ajaxurl);
     const baseurl = '<?php echo get_template_directory_uri(); ?>';
+    const urlRedirectInstructorsPage = '<?php echo home_url() . '/instrutores'; ?>';
     let $ = document.querySelector.bind(document);
     let wp_user_infos = <?php echo json_encode($userInfos) ?>;
     let controller = new EmployeeController(ajaxurl, baseurl, $("#mt_employee_container"));
@@ -79,11 +80,11 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        jQuery("#contactEmail, #contactAceite, #contactName, #contactPhone, #contactMessage").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactAceite"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+        jQuery("#contactEmail, #contactName, #contactPhone, #contactMessage").on('input', function() {
+            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactAceite"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
@@ -100,7 +101,7 @@
             });
             if(contactReq.status === 200){
                 jQuery("#mt_message_overlay_success").fadeIn();
-                window.location.replace(`${baseurl}/instrutores`);
+                window.location.replace(`${urlRedirectInstructorsPage}`);
             }
         }
 
@@ -161,6 +162,7 @@
         let div = document.createElement('div');
         error ? div.classList.add('invalid-feedback') : div.classList.add('valid-feedback');
         div.style.display = 'block';
+        div.classList.add('mb-2');
         div.innerText = text;
         showHideError(elem, false);
         elem.parent().append(div);
