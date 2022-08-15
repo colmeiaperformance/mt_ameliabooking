@@ -646,6 +646,7 @@
     form.querySelector('._form-content').style.display = 'none';
     thank_you.innerHTML = message;
     thank_you.style.display = 'block';
+    const urlRedirectAgendamentoPage = '<?php echo home_url() . '/agendamento'; ?>';
     const vgoAlias = typeof visitorGlobalObjectAlias === 'undefined' ? 'vgo' : visitorGlobalObjectAlias;
     var visitorObject = window[vgoAlias];
     if (email && typeof visitorObject !== 'undefined') {
@@ -656,6 +657,7 @@
       _load_script(trackcmp_url);
     }
     if (typeof window._form_callback !== 'undefined') window._form_callback(id);
+    setTimeout(function(){ window.location.replace(`${urlRedirectAgendamentoPage}`); }, 1500);
   };
   window._show_error = function(id, message, html) {
     var form = document.getElementById('_form_' + id + '_'),
