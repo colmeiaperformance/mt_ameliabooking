@@ -581,14 +581,21 @@
       <div class="row p-0 m-0">
         <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="cidadeOndeQuerPalestra" disabled name="field[46]" value="" placeholder="Cidade e Estado" />
+            <input type="text" id="field[46]" disabled name="field[46]" value="" placeholder="Cidade e Estado" />
           </div>
         </div>
         <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="origemDeMensagem" disabled name="field[62]" value="" placeholder="Instrutor" />
+            <input type="text" id="field[65]" disabled name="field[65]" value="" placeholder="Instrutor" />
           </div>
-        </div>
+        </div>,
+
+
+
+
+
+
+
         <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
             <input type="hidden" id="typeForm" disabled name="field[63]" value="agendamento"/>
@@ -638,7 +645,9 @@
 <script type="text/javascript">
   window.cfields = {
     "47": "mensagem",
-    "75": "optin"
+    "75": "optin",
+    "46": "cidade_onde_quer_palestra",
+    "65": "origemdemensagem"
   };
   window._show_thank_you = function(id, message, trackcmp_url, email) {
     var form = document.getElementById('_form_' + id + '_'),
