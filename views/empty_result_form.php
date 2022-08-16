@@ -588,7 +588,7 @@
           <div class="_field-wrapper">
             <input type="text" id="origemDeMensagem" disabled name="field[65]" value="" placeholder="Instrutor" />
           </div>
-        </div>,
+        </div>
 
 
 
