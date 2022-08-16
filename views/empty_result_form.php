@@ -581,12 +581,12 @@
       <div class="row p-0 m-0">
         <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="field[46]" disabled name="field[46]" value="" placeholder="Cidade e Estado" />
+            <input type="text" id="cidadeOndeQuerPalestra" disabled name="field[46]" value="" placeholder="Cidade e Estado" />
           </div>
         </div>
         <div class="_form_element _full_width col-12 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="field[65]" disabled name="field[65]" value="" placeholder="Instrutor" />
+            <input type="text" id="origemDeMensagem" disabled name="field[65]" value="" placeholder="Instrutor" />
           </div>
         </div>,
 
