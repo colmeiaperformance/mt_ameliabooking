@@ -595,7 +595,7 @@
           </div>
         </div>
        </div>
-       </div>
+       
        <div class="_form_element _field47 _full_width " >
          <div class="_field-wrapper">
            <textarea id="field[47]" name="field[47]" placeholder="Digite sua mensagem" rows="4" cols="50"></textarea>
