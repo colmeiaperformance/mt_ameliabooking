@@ -49,16 +49,18 @@ class EventItem extends View{
 									<span>${month_labels[startDate.month()]}</span>
 									${startDate.format('D')}
 								</div>
-								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
-								</h4>
-							</div>
-								<h5> 
+								<div>
+									<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
+									</h4>
+									<h5> 
 									<img src="${baseUrl}resources/svg/map_pointer_icon.svg" />
-									${ e.location ? e.location.name : '' }
-									<img src="${baseUrl}resources/svg/clock_icon.svg" />
-									${startDateStr}  ${startDate.format('HH:mm')} -
-									${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
-								</h5>
+										${ e.location ? e.location.name : '' }
+										<img src="${baseUrl}resources/svg/clock_icon.svg" />
+										${startDateStr}  ${startDate.format('HH:mm')} -
+										${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
+									</h5>
+								</div>
+							</div>
 							<div class="status-details">
 										<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
 											Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}

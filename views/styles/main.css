@@ -160,7 +160,6 @@
 @media (max-width: 992px) {
   #mt_subscription_shortcode #mt_filter_results .mt_event_item .event-mobile h4, #mt_employees_shortcode #mt_filter_results .mt_event_item .event-mobile h4 {
     padding: 0 !important;
-    width: calc(100% - 60px);
     text-align: left !important;
   }
 }
@@ -279,6 +278,11 @@
   font-size: 1rem;
   line-height: 19px;
   color: #F29F05;
+}
+@media (max-width: 992px) {
+  #mt_subscription_shortcode #mt_filter_results .mt_event_item h5, #mt_employees_shortcode #mt_filter_results .mt_event_item h5 {
+    font-size: 12.5px;
+  }
 }
 @media (max-width: 992px) {
   #mt_subscription_shortcode #mt_filter_results .mt_event_item h5 img, #mt_employees_shortcode #mt_filter_results .mt_event_item h5 img {
