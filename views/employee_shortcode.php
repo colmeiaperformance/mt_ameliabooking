@@ -101,7 +101,7 @@
             });
             if(contactReq.status === 200){
                 jQuery("#mt_message_overlay_success").fadeIn();
-                window.location.replace(`${urlRedirectInstructorsPage}`);
+                setTimeout(function(){ window.location.replace(`${urlRedirectInstructorsPage}`); }, 1500);
             }
         }
 
