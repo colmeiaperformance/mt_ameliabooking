@@ -49,7 +49,7 @@ class EventItem extends View{
 									<span>${month_labels[startDate.month()]}</span>
 									${startDate.format('D')}
 								</div>
-								<div>
+								<div style="width: calc(100% - 60px);">
 									<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
 									</h4>
 									<h5> 
