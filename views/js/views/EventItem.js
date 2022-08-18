@@ -11,6 +11,8 @@ class EventItem extends View{
 				startDate.subtract(3, 'hours');
 				endDate.subtract(3, 'hours');
 
+				console.log(e);
+
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
