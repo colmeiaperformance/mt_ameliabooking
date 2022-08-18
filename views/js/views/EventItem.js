@@ -11,10 +11,6 @@ class EventItem extends View{
 				startDate.subtract(3, 'hours');
 				endDate.subtract(3, 'hours');
 
-				console.log(e);
-				console.log(e.name);
-				console.log(e.local);
-
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
@@ -95,8 +91,8 @@ class EventItem extends View{
 								</div>
 							</div>
 							<form id="formEvt${e.id}" class="needs-validation" method="post">
-							<input type="hidden" name="lectureName" value="${e.name}">
-    						<input type="hidden" name="local" value="${e.local}">
+							<input type="hidden" name="nomeDaPalestra" value="${e.name}">
+    						<input type="hidden" name="cidadeDaPalestra" value="${e.local}">
 							<div class="mt_event_details_subscriptions" id="mt_event_details_subscriptions_${key}">
 								<div class="mt_row">
 									<div class="mt_column">

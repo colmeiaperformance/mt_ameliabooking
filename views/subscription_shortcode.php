@@ -109,6 +109,9 @@
     let email = "";
     let phone = "";
     let checkBox = [];
+
+    let nomeDaPalestra = "";
+    let cidadeDaPalestra = "";
     
     let instrutorID = false;
     let instrutorName = '';
@@ -178,6 +181,9 @@
         email =  formData.getAll('email')[0];
         phone =  formData.getAll('phone')[0];
 
+        nomeDaPalestra =  formData.getAll('nomeDaPalestra')[0];
+        cidadeDaPalestra =  formData.getAll('cidadeDaPalestra')[0];
+
         let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
 
         form.addEventListener("submit", event => {
@@ -217,6 +223,9 @@
                 formData.append('lastName',lastName)
                 formData.append('phone',phone)
                 formData.append('oqueTrouxe',filteredCheckOptions.join(', '));
+                
+                formData.append('nomeDaPalestra',nomeDaPalestra)
+                formData.append('cidadeDaPalestra',cidadeDaPalestra)
                 
                 let start = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('DD-MM-YYYY');
                 let hour = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm');
