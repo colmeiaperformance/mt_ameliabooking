@@ -270,6 +270,10 @@ function ajax_event_subscription(){
                         "field" => "75",
                         "value" => $_POST['contactAceite']
                ],
+               [
+                        "field" => "48",
+                        "value" => $_POST['linkDaPalestra']
+               ],
          )
       )
    );
