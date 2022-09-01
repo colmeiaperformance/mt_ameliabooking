@@ -278,7 +278,7 @@ function ajax_event_subscription(){
       )
    );
    $ch = curl_init($url); 
-	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_PUT, 1);
 	curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 	curl_setopt($ch, CURLOPT_HTTPHEADER, array('Api-Token: '.$key));
