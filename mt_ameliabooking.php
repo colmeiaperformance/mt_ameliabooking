@@ -211,7 +211,7 @@ function ajax_event_form(){
 add_action('wp_ajax_event_subscription', 'ajax_event_subscription');
 add_action('wp_ajax_nopriv_event_subscription', 'ajax_event_subscription');
 function ajax_event_subscription(){
-   $url = 'https://meditacaotranscedental.api-us1.com/api/3/import/contacts';
+   $url = 'https://meditacaotranscedental.api-us1.com/api/3/contacts';
    $key = 'e95ce61eb9e4517b45d30bdcedb8a51ee117749f9f45bbdce702f03c5522ffb34d8e7eb8';
 
    //Formulario de inscrição
@@ -298,7 +298,7 @@ function ajax_event_subscription(){
          )
       );
       $ch = curl_init($url); 
-      curl_setopt($ch, CURLOPT_POST, 1);
+      curl_setopt($ch, CURLOPT_PUT, 1);
       curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
       curl_setopt($ch, CURLOPT_HTTPHEADER, array('Api-Token: '.$key));
