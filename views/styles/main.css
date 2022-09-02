@@ -210,6 +210,7 @@
 }
 #mt_subscription_shortcode #mt_filter_results .mt_event_item .mt_event_title, #mt_employees_shortcode #mt_filter_results .mt_event_item .mt_event_title {
   padding: 8px 0px;
+  text-align: left;
 }
 #mt_subscription_shortcode #mt_filter_results .mt_event_item h4, #mt_employees_shortcode #mt_filter_results .mt_event_item h4 {
   font-family: "Work Sans";
@@ -461,6 +462,7 @@
   flex: 1;
   padding-right: 10px;
   position: relative;
+  align-items: start;
 }
 .mt_event_details_subscriptions .mt_column .input-group-text {
   border: solid 1px #F29F05;

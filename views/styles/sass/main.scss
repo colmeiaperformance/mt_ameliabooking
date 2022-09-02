@@ -198,6 +198,7 @@
       }
       .mt_event_title{
         padding:8px 0px;
+        text-align: left;
       }
       h4{
         font-family: 'Work Sans';
@@ -438,6 +439,7 @@
     flex: 1;
     padding-right:10px;
     position:relative;
+    align-items: start;
     .input-group-text {
       border: solid 1px #F29F05;
       color: #F29F05;
