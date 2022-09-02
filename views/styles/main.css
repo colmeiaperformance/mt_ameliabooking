@@ -417,10 +417,6 @@
   display: flex;
   flex-direction: row;
 }
-.mt_checkbox_container .item input {
-  outline: 1px solid #F29F05;
-}
-
 .mt_event_details_subscriptions {
   width: 100%;
   float: left;
@@ -530,6 +526,7 @@
   padding: 9px 31px;
   line-height: 24px;
   margin-bottom: 15px;
+  margin-right: 5px;
 }
 .mt_event_details_subscriptions .mt_column select.phoneMask, .mt_event_details_subscriptions .mt_column input.phoneMask {
   padding-left: 10px;

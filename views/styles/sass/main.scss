@@ -388,7 +388,7 @@
     display: flex;
     flex-direction: row;
     input{
-      outline: 1px solid #F29F05
+      // outline: 1px solid #F29F05;
     }
   }
 }
@@ -496,6 +496,7 @@
       padding: 9px 31px;
       line-height: 24px;
       margin-bottom: 15px;
+      margin-right: 5px;
       &.phoneMask{
         padding-left: 10px;
       }
