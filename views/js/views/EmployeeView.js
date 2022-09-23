@@ -15,7 +15,7 @@ class EmployeeView extends View {
                 <div class="container">
                     <div class="row d-flex justify-content-center align-items-stat">
                     <div class="col-12 col-lg-5 instrutor-picture pe-lg-4 mb-4 mb-lg-0 text-center d-none d-lg-block">
-                        <img loading="lazy" src=${model.pictureFullPath}' alt="Instrutor">  
+                        <img loading="lazy" src=${model.pictureFullPath} alt="Instrutor">  
                     </div>
                     <div class="col-12 col-lg-7 instrutor-bio">
                         <div class="d-flex align-items-center justify-content-start mb-2 mb-lg-4">
