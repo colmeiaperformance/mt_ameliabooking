@@ -24,7 +24,7 @@ class EventItem extends View{
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
-									<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
+									<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}" style="display:none;">
 										Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
 									</span>
 								</h4>
