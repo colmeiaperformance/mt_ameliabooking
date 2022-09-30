@@ -62,7 +62,7 @@ class EventItem extends View{
 								</div>
 							</div>
 							<div class="status-details">
-										<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}">
+										<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}" style="display:none;">
 											Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
 										</span>
 								<div class="mt_action_button">
