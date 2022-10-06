@@ -34,7 +34,7 @@ class EventItem extends View{
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
 								${startDate.format('D')}
-								<span>${weekday[0]}</span>
+								<span>${diaSemana}</span>
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
