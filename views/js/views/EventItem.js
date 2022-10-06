@@ -18,9 +18,9 @@ class EventItem extends View{
 				console.log("periods");
 				console.log(e.periods[0].periodStart);
 
-				let year = e.periods[0].periodStart.format('Y');
-				let month = e.periods[0].periodStart.format('M');
-				let day = e.periods[0].periodStart.format('D');
+				let year = moment(e.periods[0].periodStart).format('Y');
+				let month = moment(e.periods[0].periodStart).format('M');
+				let day = moment(e.periods[0].periodStart).format('D');
 
 				let newDate = new Date(year, month, day);
 				let diaSemana = newDate.getDay();
