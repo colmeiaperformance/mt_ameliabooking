@@ -13,7 +13,6 @@ class EventItem extends View{
 
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
-				// const weekday = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"];
 
 				console.log("weekday");
 
@@ -29,7 +28,6 @@ class EventItem extends View{
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
 								${startDate.format('D')}
-								<span>${weekday}</span>
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
