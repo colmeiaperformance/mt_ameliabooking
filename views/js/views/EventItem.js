@@ -13,19 +13,14 @@ class EventItem extends View{
 
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
-				const weekday = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"];
+				// const weekday = ["DOM", "SEG", "TER", "QUA", "QUI", "SEX", "SÁB"];
 
-				console.log("periods");
-				console.log(e.periods[0].periodStart);
+				console.log("weekday");
 
-				let year = moment(e.periods[0].periodStart).format('Y');
-				let month = moment(e.periods[0].periodStart).format('M');
-				let day = moment(e.periods[0].periodStart).format('D');
+				let weekday = moment(e.periods[0].periodStart).locale('pt-br').format('dddd').substring(0, 3).toUpperCase();
 
-				let newDate = new Date(year, month, day);
-				let diaSemana = newDate.getDay();
-				console.log(diaSemana);
-
+				console.log(weekday);
+				
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
 				let endDateStr = `${endDate.format('D') } de ${month_names[endDate.month()]} de ${endDate.format('YYYY')}`;
 				return (
@@ -34,7 +29,7 @@ class EventItem extends View{
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
 								${startDate.format('D')}
-								<span>${diaSemana}</span>
+								<span>${weekday}</span>
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
