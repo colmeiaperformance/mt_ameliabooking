@@ -484,15 +484,14 @@
     const toggleSubmission = (key) => {
         let $ = jQuery;
         let element = $(`#mt_event_details_subscriptions_${key}`);
-        $(".mt_event_details").addClass('oppened');
+        
         $(".mt_event_details_container").css('display', 'block');
         if(!element.hasClass('oppened')){
-            // $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
             element.addClass('oppened');
-            // $(".mt_event_details_container").css('display', 'none');
+            $(".mt_event_details").addClass('oppened');
         }else{
-            // $(".mt_event_details_container").css('display', 'block');
             element.removeClass('oppened');
+            $(".mt_event_details").removeClass('oppened');
         }  
     }
 
