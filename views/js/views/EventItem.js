@@ -12,7 +12,39 @@ class EventItem extends View{
 				endDate.subtract(3, 'hours');
 
 				console.log("WeekDay");
-				let weekday = ((moment(e.periods[0].periodStart)).locale('pt')).format('dddd');
+				let weekday = (moment(e.periods[0].periodStart)).format('dddd');
+
+				console.log(weekday);
+
+				switch(weekday){
+					case 'Sunday':
+						weekday = 'DOM';
+						break;
+					
+					case 'Monday':
+						weekday = 'SEG';
+						break;
+
+					case 'Tuesday':
+						weekday = 'TER';
+						break;
+
+					case 'Wednesday':
+						weekday = 'QUA';
+						break;
+						
+					case 'Thursday':
+						weekday = 'QUI';
+						break;
+					
+					case 'Friday':
+						weekday = 'SEX';
+						break;
+
+					case 'Saturday':
+						weekday = 'SÁB';
+						break;
+				}
 
 				console.log(weekday);
 
@@ -26,6 +58,7 @@ class EventItem extends View{
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
 								${startDate.format('D')}
+								<span>${weekday}</span>
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
