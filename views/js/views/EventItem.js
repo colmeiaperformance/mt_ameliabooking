@@ -43,8 +43,6 @@ class EventItem extends View{
 						break;
 				}
 
-				console.log(weekday);
-
 				const month_labels = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 				const month_names = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
@@ -72,8 +70,8 @@ class EventItem extends View{
 								</h5>
 							</div>
 							<div class="mt_action_button">
-								<button class="btn_open" onclick="toggleDetails(${key})">
-									+ Detalhes
+								<button class="btn_open" onclick="toggleSubmission(${key})">
+									Inscreva-se
 								</button>
 							</div>
 						</div>
