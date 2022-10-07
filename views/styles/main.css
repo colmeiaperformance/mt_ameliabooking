@@ -270,9 +270,6 @@
     width: 58.41px;
     height: 58.41px;
   }
-}
-
-@media (max-width: 992px) {
   .mt_event_date {
     margin-right: 5px;
     font-weight: 500;
