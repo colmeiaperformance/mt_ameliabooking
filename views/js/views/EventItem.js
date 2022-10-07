@@ -99,11 +99,11 @@ class EventItem extends View{
 										<span class="${e.closed || !e.bookable ? 'closed' : 'oppened'}" style="display:none;">
 											Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
 										</span>
-								<div class="mt_action_button">
-									<button class="btn_open" onclick="toggleDetails(${key})">
-										+ Detalhes
-									</button>
-								</div>
+									<div class="mt_action_button">
+										<button class="btn_open" onclick="toggleSubmission(${key})">
+											Inscreva-se
+										</button>
+									</div>
 							</div>
 						</div>
 

@@ -468,9 +468,22 @@
         jQuery("#mt_message_overlay_success").fadeOut();
         jQuery("#mt_message_overlay_error").fadeOut();
     }
+    // const toggleSubmission = (key) => {
+    //     let $ = jQuery;
+    //     let element = $(`#mt_event_details_subscriptions_${key}`);
+    //     if(!element.hasClass('oppened')){
+    //         $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
+    //         element.addClass('oppened');
+    //         $(".mt_event_details_container").css('display', 'none');
+    //     }else{
+    //         $(".mt_event_details_container").css('display', 'block');
+    //         element.removeClass('oppened');
+    //     }  
+    // }
+
     const toggleSubmission = (key) => {
         let $ = jQuery;
-        let element = $(`#mt_event_details_subscriptions_${key}`);
+        let element = $(`#mt_event_details_${key}`);
         if(!element.hasClass('oppened')){
             $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
             element.addClass('oppened');
@@ -480,6 +493,8 @@
             element.removeClass('oppened');
         }  
     }
+
+
     function toggleDetails(event_key){
         let $ = jQuery;
         let element = $(`#mt_event_details_${event_key}`);
