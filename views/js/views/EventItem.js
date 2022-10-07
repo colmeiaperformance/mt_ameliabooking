@@ -12,7 +12,7 @@ class EventItem extends View{
 				endDate.subtract(3, 'hours');
 
 				console.log("WeekDay");
-				let weekday = moment(e.periods[0].periodStart, 'dddd', 'pt');
+				let weekday = (moment(e.periods[0].periodStart, 'YYYY-MM-DD HH:mm', 'pt')).format('dddd');
 
 				console.log(weekday);
 
