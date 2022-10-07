@@ -110,19 +110,7 @@ class EventItem extends View{
 					<div class="mt_row">
 						<div class="mt_event_details" id="mt_event_details_${key}">
 							<div class="mt_event_details_container">
-								<div class="mt_event_details_title"> 
-									<h4>Sobre este evento
-										<img onclick="toggleDetails(${key})" src="${baseUrl}resources/svg/arrow.svg" />
-									</h4>
-								</div>
-								<div class="mt_event_details_description">
-									<p>
-										${e.description}
-									</p>
-									<button class="mt_btn_default" onclick="toggleSubmission(${key})">
-										Inscreva-se
-									</button>
-								</div>
+								
 							</div>
 							<form id="formEvt${e.id}" class="needs-validation" method="post">
 							<input type="hidden" name="nomeDaPalestra" value="${e.name}">
