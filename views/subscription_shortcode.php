@@ -488,10 +488,10 @@
         $(".mt_event_details_container").css('display', 'block');
         if(!element.hasClass('oppened')){
             element.addClass('oppened');
-            $(".mt_event_details").addClass('oppened');
+            $(`#mt_event_details_${key}`).addClass('oppened');
         }else{
             element.removeClass('oppened');
-            $(".mt_event_details").removeClass('oppened');
+            $(`#mt_event_details_${key}`).removeClass('oppened');
         }  
     }
 
