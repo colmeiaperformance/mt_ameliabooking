@@ -11,10 +11,7 @@ class EventItem extends View{
 				startDate.subtract(3, 'hours');
 				endDate.subtract(3, 'hours');
 
-				console.log("WeekDay");
 				let weekday = (moment(e.periods[0].periodStart)).format('dddd');
-
-				console.log(weekday);
 
 				switch(weekday){
 					case 'Sunday':
@@ -42,7 +39,7 @@ class EventItem extends View{
 						break;
 
 					case 'Saturday':
-						weekday = 'SÁB';
+						weekday = 'SAB';
 						break;
 				}
 
@@ -57,8 +54,8 @@ class EventItem extends View{
 						<div class="mt_row event-desktop">
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
-								<span>${weekday}</span>
 								${startDate.format('D')}
+								<span>${weekday}</span>
 							</div>
 							<div class="mt_event_title">
 								<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
@@ -86,6 +83,7 @@ class EventItem extends View{
 								<div class="mt_event_date">
 									<span>${month_labels[startDate.month()]}</span>
 									${startDate.format('D')}
+									<span>${weekday}</span>
 								</div>
 								<div style="width: calc(100% - 60px);text-align:left;">
 									<h4>${e.name} - ${e.organizer ? e.organizer?.firstName : ''} ${e.organizer ? e.organizer?.lastName : ''}
