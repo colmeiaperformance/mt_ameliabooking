@@ -48,7 +48,7 @@ class EventItem extends View{
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
 				let endDateStr = `${endDate.format('D') } de ${month_names[endDate.month()]} de ${endDate.format('YYYY')}`;
 				return (
-					`<div class="mt_event_item"> 
+					`<div class="mt_event_item" onclick="toggleSubmission(${key})"> 
 						<div class="mt_row event-desktop">
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
@@ -70,7 +70,7 @@ class EventItem extends View{
 								</h5>
 							</div>
 							<div class="mt_action_button">
-								<button class="btn_open" onclick="toggleSubmission(${key})">
+								<button class="btn_open">
 									Inscreva-se
 								</button>
 							</div>
@@ -100,7 +100,7 @@ class EventItem extends View{
 											Inscrições ${e.closed || !e.bookable ? 'Encerradas' : 'Abertas'}
 										</span>
 									<div class="mt_action_button">
-										<button class="btn_open" onclick="toggleSubmission(${key})">
+										<button class="btn_open">
 											Inscreva-se
 										</button>
 									</div>
