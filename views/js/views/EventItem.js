@@ -107,7 +107,7 @@ class EventItem extends View{
 							</div>
 						</div>
 
-					<div class="mt_row">
+					<div class="mt_row" id="subscription_${key}" onclick="preventDefault(${key})">
 						<div class="mt_event_details" id="mt_event_details_${key}">
 							<div class="mt_event_details_container">
 								
