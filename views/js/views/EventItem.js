@@ -107,7 +107,7 @@ class EventItem extends View{
 							</div>
 						</div>
 
-					<div class="mt_row" id="subscription_${key}" style="padding: 16px 16px !important;">
+					<div class="mt_row" id="subscription_${key}" style="padding: 16px 16px !important; display: none;">
 						<div class="mt_event_details" id="mt_event_details_${key}">
 							<div class="mt_event_details_container">
 								
