@@ -5,8 +5,6 @@ class InstructorStateCityFilter {
         this._listStateCity = this.getStateAndCity;
     }
 
-    instructorStateCityFilter
-
     getStateAndCity = async() => {
         let entities_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/entities&types[]=locations&types[]=tags&types[]=custom_fields&types[]=employees`);    
         let entities = entities_consult.data.data;
