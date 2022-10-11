@@ -55,6 +55,9 @@
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo site_url(); ?>';
+
+    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl);
+
     let $ = document.querySelector.bind(document);
     let employee_list = [];
     //Get alla employee

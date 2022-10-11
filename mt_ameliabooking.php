@@ -42,6 +42,8 @@ function add_plugins_and_scripts(){
    wp_register_script('add-plugin-controller-employee', plugin_dir_url(__FILE__).'views/js/controllers/EmployeeController.js','', null, '');
    wp_register_script('add-plugin-controller-employee-filters', plugin_dir_url(__FILE__).'views/js/controllers/EmployeeFilterController.js','', null, '');
    
+   wp_register_script('add-plugin-controller-instructor-state-city-filter', plugin_dir_url(__FILE__).'views/js/controllers/InstructorStateCityFilter.js','', null, '');
+   
 
    if (!wp_script_is('jquery', 'enqueued')) {
          wp_enqueue_script('jquery');
@@ -77,6 +79,8 @@ function add_plugins_and_scripts(){
    wp_enqueue_script('add-plugin-controller-filters');
    wp_enqueue_script('add-plugin-controller-employee');
    wp_enqueue_script('add-plugin-controller-employee-filters');
+
+   wp_enqueue_script('add-plugin-controller-instructor-state-city-filter');
 }
 add_action('wp_enqueue_scripts', 'add_plugins_and_scripts');
 
