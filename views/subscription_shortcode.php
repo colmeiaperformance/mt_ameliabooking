@@ -489,9 +489,11 @@
         if(!element.hasClass('oppened')){
             element.addClass('oppened');
             $(`#mt_event_details_${key}`).addClass('oppened');
+            $(`#subscription_${key}`).css('display', 'block');
         }else{
             element.removeClass('oppened');
             $(`#mt_event_details_${key}`).removeClass('oppened');
+            $(`#subscription_${key}`).css('display', 'none');
         }  
     }
 
