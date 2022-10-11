@@ -495,14 +495,6 @@
         }  
     }
 
-    const preventDefault = (key) => {
-        document.getElementById(`#subscription_${key}`).addEventListener('click', function(event){
-            event.preventDefault();
-        });
-    }
-
-    
-
     function toggleDetails(event_key){
         let $ = jQuery;
         let element = $(`#mt_event_details_${event_key}`);
