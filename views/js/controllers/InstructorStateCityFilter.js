@@ -1,23 +1,16 @@
 class InstructorStateCityFilter {
-    constructor(ajaxurl){
+    constructor(ajaxurl, employeees){
         this._ajaxurl = ajaxurl;
         // this._baseurl = baseurl;
-        this._listStateCity = this.getStateAndCity;
+        this._listStateCity = this.getStateAndCity(employeees);
     }
 
-    getStateAndCity = async() => {
-        let entities_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/entities&types[]=locations&types[]=tags&types[]=custom_fields&types[]=employees`);    
-        let entities = entities_consult.data.data;
-        let customFields = entities_consult.data.data.customFields;
+    getStateAndCity = async(employeees) => {
+        // console.log("user infos");
+        // console.log(userInfos);
 
-        console.log("Entities consult");
-        console.log(entities_consult)
-
-        console.log("Entities");
-        console.log(entities);
-
-        console.log("Custom Fields");
-        console.log(customFields);
+        console.log("employeees");
+        console.log(employeees);
 
         return [];
         

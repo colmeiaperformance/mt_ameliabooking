@@ -56,15 +56,13 @@
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo site_url(); ?>';
 
-    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl);
-
     let $ = document.querySelector.bind(document);
     let employee_list = [];
     //Get alla employee
     let wp_user_infos = <?php echo json_encode($userInfos) ?>;
     const controller = new EmployeeController(ajaxurl, baseurl, $("#mt_employees_result"));
     const filterController = new EmployeeFilterController(ajaxurl, baseurl, $("#mt_filters"));
-
+    
     let orderBy = "";
     let state = new State();
     let city = new City();
@@ -72,6 +70,9 @@
     let cities = [];
     let currentName = "";
 
+    employeees = controller.list(false, false, false, wp_user_infos)
+    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeees);
+    
     render();
 
     async function render() {
