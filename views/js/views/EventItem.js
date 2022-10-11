@@ -48,8 +48,8 @@ class EventItem extends View{
 				let startDateStr = `${startDate.format('D') } de ${month_names[startDate.month()]} de ${startDate.format('YYYY')}`;
 				let endDateStr = `${endDate.format('D') } de ${month_names[endDate.month()]} de ${endDate.format('YYYY')}`;
 				return (
-					`<div class="mt_event_item"> 
-						<div class="mt_row event-desktop" onclick="toggleSubmission(${key})">
+					`<div class="mt_event_item" style="padding: unset !important;"> 
+						<div class="mt_row event-desktop" onclick="toggleSubmission(${key})" style="padding: 16px 16px !important;">
 							<div class="mt_event_date">
 								<span>${month_labels[startDate.month()]}</span>
 								${startDate.format('D')}
@@ -76,7 +76,7 @@ class EventItem extends View{
 							</div>
 						</div>						
 
-						<div class="event-mobile" onclick="toggleSubmission(${key})">
+						<div class="event-mobile" onclick="toggleSubmission(${key})" style="padding: 16px 16px !important;">
 							<div class="date-title">
 								<div class="mt_event_date">
 									<span>${month_labels[startDate.month()]}</span>
@@ -107,7 +107,7 @@ class EventItem extends View{
 							</div>
 						</div>
 
-					<div class="mt_row" id="subscription_${key}" onclick="preventDefault(${key})">
+					<div class="mt_row" id="subscription_${key}" onclick="preventDefault(${key})" style="padding: 16px 16px !important;">
 						<div class="mt_event_details" id="mt_event_details_${key}">
 							<div class="mt_event_details_container">
 								
