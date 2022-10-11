@@ -485,14 +485,16 @@
         let $ = jQuery;
         let element = $(`#mt_event_details_subscriptions_${key}`);
         
-        $(".mt_event_details_container").css('display', 'block');
+       
         if(!element.hasClass('oppened')){
             element.addClass('oppened');
             $(`#mt_event_details_${key}`).addClass('oppened');
             $(`#subscription_${key}`).css('display', 'block');
+            $(".mt_event_details_container").css('display', 'block');
         }else{
             element.removeClass('oppened');
             $(`#mt_event_details_${key}`).removeClass('oppened');
+            $(".mt_event_details_container").css('display', 'none');
             $(`#subscription_${key}`).css('display', 'none');
         }  
     }
