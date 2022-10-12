@@ -23,9 +23,10 @@ class InstructorStateCityFilter {
         this._employeesList.forEach(empElement => {
             let user = this._userInfos.find(user => user.email == empElement.email);
 
-            if(user.otherPlaces.length > 0){
-                locList.push(...user.otherPlaces);
-            }
+            // if(user.otherPlaces.length > 0){
+            //     locList.push(...user.otherPlaces);
+            // }
+            locList.push('MG - Belo Horizonte');
         });
         locList = locList.filter(value => value != "");
 
