@@ -22,7 +22,10 @@ class InstructorStateCityFilter {
 
         this._employeesList.forEach(empElement => {
             let user = this._userInfos.find(user => user.email == empElement.email);
-            locList.push(...user.otherPlaces);
+
+            if(user.otherPlaces.length > 0){
+                locList.push(...user.otherPlaces);
+            }
         });
         locList = locList.filter(value => value != "");
 
