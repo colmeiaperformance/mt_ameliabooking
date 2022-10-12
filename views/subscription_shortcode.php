@@ -97,10 +97,13 @@
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
+
+    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl);
+
     let eventList = [];
     let orderBy = "";
-    let state = new State();
-    let city = new City();
+    let state = new State(eventsStateCityFilter);
+    let city = new City(eventsStateCityFilter);
     let states = [];
     let cities = [];
     
@@ -274,8 +277,8 @@
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
-        state = new State();
-        city = new City();
+        state = new State(eventsStateCityFilter);
+        city = new City(eventsStateCityFilter);
         await getFilterEntities();
         eventList = await controller.list();
         if(instrutorID){

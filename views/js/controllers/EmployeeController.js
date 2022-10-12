@@ -136,6 +136,8 @@ class EmployeeController {
                     }
                 }
             });
+            console.log("employee List");
+            console.log(employeeList);
             return employeeList;
         }   
         return false;

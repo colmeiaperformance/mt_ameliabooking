@@ -1,7 +1,8 @@
 class City{
-    constructor(id = "",  nome = ""){
+    constructor(stateCityFilter = [], id = "",  nome = ""){
         this._id = id;
         this._nome = nome;
+        this._stateCityFilter = stateCityFilter;
     }
 
     constructByResponse = (responseObj) => {
@@ -16,11 +17,25 @@ class City{
         let citiesList = [];
         if(regions.status == 200){
             regions.data.forEach(e => {
-                let newCity = new City(e.id, e.nome);
+                let newCity = new City([],e.id, e.nome);
                 citiesList.push(
                     newCity
                 );
             });
+
+            let index = this._stateCityFilter.states.indexOf(uf);
+
+            citiesList = citiesList.filter(value => {
+                let result = false;
+                this._stateCityFilter.cities[index].forEach(element => {
+                    if(element.toLowerCase() == value._nome.toLowerCase()) { 
+                        result = true;
+                    }
+                });
+                
+                return result;
+            })
+
             return citiesList;
         }
         return false;

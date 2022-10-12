@@ -52,6 +52,18 @@
     </div>
 </div>
 
+<?php
+   
+    $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
+    $result = json_decode(file_get_contents($searchURL));
+
+    $employeesList = [];
+
+    foreach($result->data->employees as $employee){
+        $employeesList[] = $employee;
+    }
+?>
+
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo site_url(); ?>';
@@ -63,16 +75,16 @@
     const controller = new EmployeeController(ajaxurl, baseurl, $("#mt_employees_result"));
     const filterController = new EmployeeFilterController(ajaxurl, baseurl, $("#mt_filters"));
     
+    let employeesList = <?php echo json_encode($employeesList) ?>;
+    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
+
     let orderBy = "";
-    let state = new State();
-    let city = new City();
+    let state = new State(instructorStateCityFilter);
+    let city = new City(instructorStateCityFilter);
     let states = [];
     let cities = [];
     let currentName = "";
 
-    employeees = controller.list(false, false, false, wp_user_infos)
-    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeees);
-    
     render();
 
     async function render() {
@@ -209,8 +221,8 @@
         jQuery("#mt_loader_overlay").fadeIn();
         jQuery("#mt_empty_form").css('display', 'none');
         currentName = "";
-        state = new State();
-        city = new City();
+        state = new State(instructorStateCityFilter);
+        city = new City(instructorStateCityFilter);
         filterController.renderFields(states, cities, "--", "--", currentName);
         employess = await controller.list(false, false, false, wp_user_infos);
         employess.length > 0 ? showHideCarousel(true) : showHideCarousel();

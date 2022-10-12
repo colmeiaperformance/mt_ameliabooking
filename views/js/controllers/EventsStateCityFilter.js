@@ -1,21 +1,19 @@
-class InstructorStateCityFilter {
-    constructor(ajaxurl, employeesList, userInfos){
+class EventsStateCityFilter {
+    constructor(ajaxurl){
+        // , employeesList, userInfos
         this._ajaxurl = ajaxurl;
         // this._baseurl = baseurl;
-        this._employeesList = employeesList;
-        this._userInfos = userInfos;
-        this._listStateCity = [];
+        // this._listStateCity = this.getStateAndCity(employeesList, userInfos);
         this.states = [];
         this.cities = [];
-        this.getStateAndCity();
     }
 
-    getStateAndCity =  async() => {
+    getStateAndCity =  async (employeesList, userInfos) => {
         let locList = [];
         let listStateCity = [];
 
-        this._employeesList.forEach(empElement => {
-            let user = this._userInfos.find(user => user.email == empElement.email);
+        employeesList.forEach(empElement => {
+            let user = userInfos.find(user => user.email == empElement.email);
             locList.push(...user.otherPlaces);
         });
         locList = locList.filter(value => value != "");
@@ -77,8 +75,8 @@ class InstructorStateCityFilter {
         // console.log("cities");
         // console.log(cities);
 
-        this.states = states;
-        this.cities = cities;
+        // this.states = states;
+        // this.cities = cities;
 
         // console.log("this states");
         // console.log(this._states);
@@ -86,7 +84,7 @@ class InstructorStateCityFilter {
         // console.log("this cities");
         // console.log(this._cities);
         
-        // return [];        
+        return [];        
     }
 
 }
