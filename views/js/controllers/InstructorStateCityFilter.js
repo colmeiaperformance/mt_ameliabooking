@@ -21,11 +21,23 @@ class InstructorStateCityFilter {
         console.log(this._employeesList);
 
         this._employeesList.forEach(empElement => {
+            console.log("Emp Element");
+            console.log(empElement);
+
             let user = this._userInfos.find(user => user.email == empElement.email);
+
+            console.log("User");
+            console.log(user);
+
 
             if(user.hasOwnProperty('otherPlaces') && user.otherPlaces.length > 0){
                 locList.push(...user.otherPlaces);
             }
+
+            console.log("Loc list cima");
+            console.log(locList);
+
+
             // locList.push('MG - Belo Horizonte');
         });
         locList = locList.filter(value => value != "");
