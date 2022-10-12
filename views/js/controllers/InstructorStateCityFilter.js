@@ -14,6 +14,9 @@ class InstructorStateCityFilter {
         let locList = [];
         let listStateCity = [];
 
+        console.log("User infos");
+        console.log(this._userInfos);
+
         this._employeesList.forEach(empElement => {
             let user = this._userInfos.find(user => user.email == empElement.email);
             locList.push(...user.otherPlaces);
