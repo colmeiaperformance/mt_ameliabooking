@@ -30,7 +30,7 @@ class InstructorStateCityFilter {
             console.log(user);
 
 
-            if(user.hasOwnProperty('otherPlaces') && user.otherPlaces.length > 0){
+            if(user && user.hasOwnProperty('otherPlaces') && user.otherPlaces.length > 0){
                 locList.push(...user.otherPlaces);
             }
 
