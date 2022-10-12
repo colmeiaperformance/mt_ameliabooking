@@ -14,31 +14,12 @@ class InstructorStateCityFilter {
         let locList = [];
         let listStateCity = [];
 
-        console.log("User infos");
-        console.log(this._userInfos);
-
-        console.log("Employess list");
-        console.log(this._employeesList);
-
         this._employeesList.forEach(empElement => {
-            console.log("Emp Element");
-            console.log(empElement);
-
             let user = this._userInfos.find(user => user.email == empElement.email);
-
-            console.log("User");
-            console.log(user);
-
 
             if(user && user.hasOwnProperty('otherPlaces') && user.otherPlaces.length > 0){
                 locList.push(...user.otherPlaces);
             }
-
-            console.log("Loc list cima");
-            console.log(locList);
-
-
-            // locList.push('MG - Belo Horizonte');
         });
         locList = locList.filter(value => value != "");
 
@@ -92,23 +73,8 @@ class InstructorStateCityFilter {
             }
 
         });
-
-        // console.log("states");
-        // console.log(states);
-
-        // console.log("cities");
-        // console.log(cities);
-
         this.states = states;
-        this.cities = cities;
-
-        // console.log("this states");
-        // console.log(this._states);
-
-        // console.log("this cities");
-        // console.log(this._cities);
-        
-        // return [];        
+        this.cities = cities;        
     }
 
 }
