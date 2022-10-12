@@ -17,14 +17,17 @@ class InstructorStateCityFilter {
         console.log("User infos");
         console.log(this._userInfos);
 
+        console.log("Employess list");
+        console.log(this._employeesList);
+
         this._employeesList.forEach(empElement => {
             let user = this._userInfos.find(user => user.email == empElement.email);
             locList.push(...user.otherPlaces);
         });
         locList = locList.filter(value => value != "");
 
-        // console.log("Loc list");
-        // console.log(locList);
+        console.log("Loc list");
+        console.log(locList);
 
         let states = [];
         let cities = [];
