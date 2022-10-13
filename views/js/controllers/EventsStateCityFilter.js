@@ -20,8 +20,12 @@ class EventsStateCityFilter {
         let cities = [];
 
         this._eventsList.forEach(element => {
-            console.log(element);
+            console.log(element._local);
+            locList.push(element._local);
         });
+
+        console.log("Loc list");
+        console.log(locList);
 
         // locList.forEach(element => {
         //     let temp = element.split("-");
