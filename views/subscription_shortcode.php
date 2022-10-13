@@ -98,7 +98,8 @@
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
 
-    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl);
+    eventsList = await controller.list();
+    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsList);
 
     let eventList = [];
     let orderBy = "";
