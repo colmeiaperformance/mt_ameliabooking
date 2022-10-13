@@ -6,7 +6,7 @@ class EventsStateCityFilter {
         this._listStateCity = [];
         this.states = [];
         this.cities = [];
-        // this.getStateAndCity();
+        this.getStateAndCity();
     }
 
     getStateAndCity =  async() => {
