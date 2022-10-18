@@ -103,7 +103,7 @@
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
     let eventsss = <?php echo json_encode($events) ?>;
 
-    eventsListtt = controller.list();
+    // eventsListtt = controller.list();
     console.log("eventsss");
     console.log(eventsss);
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
