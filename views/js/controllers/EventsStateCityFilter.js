@@ -10,11 +10,11 @@ class EventsStateCityFilter {
     }
 
     getStateAndCity =  async() => {
-        // let locList = [];
-        // let listStateCity = [];
+        let locList = [];
+        let listStateCity = [];
 
-        // console.log("Events List");
-        // console.log(this._eventsList);
+        console.log("Events List");
+        console.log(this._eventsList);
 
         // let states = [];
         // let cities = [];
