@@ -98,7 +98,7 @@
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
 
-    eventsListtt = await controller.list();
+    eventsListtt = controller.list();
     console.log("eventsListtt");
     console.log(eventsListtt);
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
