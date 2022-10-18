@@ -89,9 +89,7 @@
     }
 ?>
 
-<?php
-   $events = json_decode(file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates'));
-?>
+
 
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
@@ -101,11 +99,11 @@
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
-    let eventsss = <?php echo json_encode($events) ?>;
+    
 
     // eventsListtt = controller.list();
-    console.log("eventsss");
-    console.log(eventsss);
+    // console.log("eventsss");
+    // console.log(eventsss);
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
 
     let eventList = [];
