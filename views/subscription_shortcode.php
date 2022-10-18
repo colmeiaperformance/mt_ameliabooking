@@ -90,7 +90,7 @@
 ?>
 
 <?php
-   $events = file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates');
+   $events = json_decode(file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates'));
 ?>
 
 <script>
