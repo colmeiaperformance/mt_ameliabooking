@@ -89,6 +89,13 @@
     }
 ?>
 
+<?php
+   $events = json_decode(file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates'));
+   echo $events;
+?>
+
+let events_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
+
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo plugin_dir_url( __FILE__ ); ?>';
