@@ -90,11 +90,8 @@
 ?>
 
 <?php
-   $events = json_decode(file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates'));
-   echo $events;
+   $events = file_get_contents($admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates');
 ?>
-
-let events_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
 
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
@@ -104,10 +101,11 @@ let events_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
+    let eventsss = <?php echo json_encode($events) ?>;
 
     eventsListtt = controller.list();
-    console.log("eventsListtt");
-    console.log(eventsListtt);
+    console.log("eventsss");
+    console.log(eventsss);
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
 
     let eventList = [];
