@@ -16,8 +16,10 @@ class EventsStateCityFilter {
         console.log("Events List");
         console.log(this._eventsList);
 
-        // let states = [];
-        // let cities = [];
+        let states = [];
+        let cities = [];
+
+        console.log("depois de adicionar");
 
         // this._eventsList.forEach(element => {
         //     console.log(element._local);
@@ -70,8 +72,8 @@ class EventsStateCityFilter {
         //     }
 
         // });
-        // this.states = states;
-        // this.cities = cities;         
+        this.states = states;
+        this.cities = cities;         
     }
 
 }
