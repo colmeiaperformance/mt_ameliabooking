@@ -125,7 +125,7 @@
     let eventsStateCityFilter = getEvents();
 
     console.log("eventsStateCityFilter 127");
-    console.log(eventsStateCityFilter.states);
+    console.log(eventsStateCityFilter._states);
 
     // const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
 

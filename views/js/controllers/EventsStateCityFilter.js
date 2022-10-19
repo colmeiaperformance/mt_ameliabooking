@@ -4,8 +4,8 @@ class EventsStateCityFilter {
         // this._baseurl = baseurl;
         this._eventsList = eventsList;
         this._listStateCity = [];
-        this.states = [];
-        this.cities = [];
+        this._states = [];
+        this._cities = [];
         this.getStateAndCity();
     }
 
@@ -78,8 +78,8 @@ class EventsStateCityFilter {
         console.log("Cities");
         console.log(cities);
 
-        this.states = states;
-        this.cities = cities;         
+        this._states = states;
+        this._cities = cities;         
     }
 
 }
