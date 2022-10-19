@@ -26,7 +26,22 @@ class State{
             });
 
             console.log("state list 28");
-            console.log(this._stateCityFilter.states);
+            console.log(this._stateCityFilter);
+
+            let p = Promise.resolve(this._stateCityFilter);
+
+            p.then(function(v) {
+                stateList = stateList.filter(value => {
+                    let result = false;
+                    v.states.forEach(element => {
+                        if(element == value._sigla) { 
+                            result = true;
+                        }
+                    });
+                    
+                    return result;
+                })
+            });
 
             // stateList = stateList.filter(value => {
             //     let result = false;
