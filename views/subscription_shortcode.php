@@ -122,8 +122,8 @@
         return eventsStateCityFilter;
     }
     
-    let states = [];
-    let cities = [];
+    let statess = [];
+    let citiess = [];
 
     let result = getEvents().then((resposta) => {
         return [resposta._states, resposta._cities];
