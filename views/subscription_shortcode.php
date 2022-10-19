@@ -126,9 +126,15 @@
     let citiess = [];
 
     let result = getEvents().then((resposta) => {
-        return [resposta._states, resposta._cities];
+        statess = resposta._states;
+        citiess = resposta._cities;
     });
 
+    console.log("States");
+    console.log(statess);
+
+    console.log("citiess");
+    console.log(citiess);
 
     console.log("Events state city filter 127 result");
     console.log(result);
