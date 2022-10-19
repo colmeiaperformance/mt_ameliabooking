@@ -125,14 +125,14 @@
     let eventsStateCityFilter = getEvents();
 
     console.log("eventsStateCityFilter 127");
-    console.log(eventsStateCityFilter);
+    console.log(eventsStateCityFilter.states);
 
     // const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
 
     let eventList = [];
     let orderBy = "";
 
-    let state = new State(eventsStateCityFilter);
+    let state = new State(eventsStateCityFilter.states);
     let city = new City(eventsStateCityFilter);
     
     let states = [];

@@ -1,9 +1,9 @@
 class State{
-    constructor(stateCityFilter = [], id = "", nome = "", sigla = ""){
+    constructor(states = [], id = "", nome = "", sigla = ""){
         this._id = id;
         this._nome = nome;
         this._sigla = sigla;
-        this._stateCityFilter = stateCityFilter;
+        this._states = states;
     }
 
     constructByResponse = (responseObj) => {
@@ -36,10 +36,9 @@ class State{
                 let result = false;
                 
                 console.log("state city filter 38");
-                console.log(this._stateCityFilter);
-                
-                this._stateCityFilter.getStateAndCity();
-                console.log(this._stateCityFilter.states);
+                console.log(this._states);
+
+                console.log();
 
                 // this._stateCityFilter.states.forEach(element => {
                 //     if(element == value._sigla) { 
