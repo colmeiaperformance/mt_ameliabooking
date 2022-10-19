@@ -126,9 +126,8 @@
     let citiess = [];
 
     let result = getEvents().then((resposta) => {
-        statess = resposta._states;
-        citiess = resposta._cities;
-    });
+        
+    
 
     console.log("States");
     console.log(statess);
@@ -152,8 +151,8 @@
     let eventList = [];
     let orderBy = "";
 
-    let state = new State(eventsStateCityFilter.states);
-    let city = new City(eventsStateCityFilter);
+    let state = new State(resposta);
+    let city = new City(resposta);
     
     let states = [];
     let cities = [];
@@ -570,5 +569,5 @@
             $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
         }
     }
-
+});
 </script>
