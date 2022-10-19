@@ -116,7 +116,7 @@
     console.log(eventsss);
     
     
-    function getEvents() {
+    async function getEvents() {
         let aux = await controller.list();
         let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
         return eventsStateCityFilter;
