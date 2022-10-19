@@ -109,14 +109,31 @@
 
     let eventsss = <?php echo json_encode($eventsss); ?>
 
+    
 
     // eventsListtt = controller.list();
     console.log("eventsss");
     console.log(eventsss);
     
+    
+    async function getEvents() {
+        let aux = await controller.list();
+        let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
+        return eventsStateCityFilter;
+    }
+    
+    let eventsStateCityFilter = getEvents();
+
+    console.log("eventsStateCityFilter 127");
+    console.log(eventsStateCityFilter);
+
+    // const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
 
     let eventList = [];
     let orderBy = "";
+
+    let state = new State(eventsStateCityFilter);
+    let city = new City(eventsStateCityFilter);
     
     let states = [];
     let cities = [];
@@ -143,19 +160,9 @@
 
     let mt_filters = document.getElementById('mt_filters')
 
-    
-    
-    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
-    
-    let state = new State(eventsStateCityFilter);
-    let city = new City(eventsStateCityFilter);
-    
     render();
     
     async function render(){
-        let aux = await controller.list();
-        console.log("Event list linha 157");
-        console.log(aux);
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
         eventList = await controller.list();
