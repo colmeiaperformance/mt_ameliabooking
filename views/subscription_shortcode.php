@@ -143,18 +143,18 @@
 
     let mt_filters = document.getElementById('mt_filters')
 
-    console.log("Event list linha 146");
-   
-
+    
+    
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
-
+    
     let state = new State(eventsStateCityFilter);
     let city = new City(eventsStateCityFilter);
-
+    
     render();
-
+    
     async function render(){
         let aux = await controller.list();
+        console.log("Event list linha 157");
         console.log(aux);
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
