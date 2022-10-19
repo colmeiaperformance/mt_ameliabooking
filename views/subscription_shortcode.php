@@ -128,6 +128,10 @@
     console.log(eventsStateCityFilter);
 
     console.log("Promisse");
+
+    console.log(eventsStateCityFilter.PromiseResult);
+    console.log(eventsStateCityFilter['PromiseResult']);
+
     eventsStateCityFilter.then((data) => {
         console.log(data);
     });
