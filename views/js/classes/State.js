@@ -15,7 +15,7 @@ class State{
 
     list = async() => {
         console.log("state city filter");
-        console.log(this._stateCityFilter);
+        console.log(this._stateCityFilter._states);
 
         let states = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
         let stateList = [];
@@ -30,7 +30,7 @@ class State{
 
             stateList = stateList.filter(value => {
                 let result = false;
-                this._stateCityFilter.states.forEach(element => {
+                this._stateCityFilter._states.forEach(element => {
                     if(element == value._sigla) { 
                         result = true;
                     }
