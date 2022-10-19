@@ -26,7 +26,7 @@ class State{
             });
 
             console.log("state list 28");
-            console.log(this._stateCityFilter);
+            console.log(this._states);
 
            
             stateList = stateList.filter(value => {
