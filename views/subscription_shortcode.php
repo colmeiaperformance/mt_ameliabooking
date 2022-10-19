@@ -90,10 +90,10 @@
 ?>
 
 <?php 
-   $eventsssURL = admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates';
-   $eventsss = json_decode(file_get_contents($eventsssURL)); 
+    $date = date_create('now')->format('Y-m-d');
+    $eventsssURL = admin_url( 'admin-ajax.php' ).'?action=wpamelia_api&call=/events&dates[]='.$date.'&page=1';
+    $eventsss = json_decode(file_get_contents($eventsssURL)); 
 ?>
-
 
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
