@@ -33,14 +33,18 @@ class State{
                 console.log("value filter");
                 console.log(value);
 
-                // let result = false;
+                let result = false;
+                
+                console.log("state city filter 38");
+                console.log(this._stateCityFilter.states);
+
                 // this._stateCityFilter.states.forEach(element => {
                 //     if(element == value._sigla) { 
                 //         result = true;
                 //     }
                 // });
                 
-                // return result;
+                return result;
             })
             
 
