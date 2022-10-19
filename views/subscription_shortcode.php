@@ -115,14 +115,14 @@
     console.log("eventsss");
     console.log(eventsss);
     
-    
+    let eventsStateCityFilter = [];
+
     async function getEvents() {
         let aux = await controller.list();
-        let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
-        return eventsStateCityFilter;
+        eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
     }
     
-    let eventsStateCityFilter = getEvents();
+    getEvents();
 
     console.log("Events state city filter 127");
     console.log(eventsStateCityFilter);
