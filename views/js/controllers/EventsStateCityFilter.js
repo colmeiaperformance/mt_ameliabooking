@@ -21,10 +21,10 @@ class EventsStateCityFilter {
 
         console.log("depois de adicionar");
 
-        // this._eventsList.forEach(element => {
-        //     console.log(element._local);
-        //     locList.push(element._local);
-        // });
+        this._eventsList.forEach(element => {
+            console.log(element._local);
+            locList.push(element._local);
+        });
 
         // console.log("Loc list");
         // console.log(locList);
