@@ -113,7 +113,7 @@
     // eventsListtt = controller.list();
     console.log("eventsss");
     console.log(eventsss);
-    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
+    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
 
     let eventList = [];
     let orderBy = "";
