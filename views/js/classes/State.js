@@ -1,9 +1,9 @@
 class State{
-    constructor(states = [], id = "", nome = "", sigla = ""){
+    constructor(stateCityFilter = [], id = "", nome = "", sigla = ""){
         this._id = id;
         this._nome = nome;
         this._sigla = sigla;
-        this._states = states;
+        this._stateCityFilter = stateCityFilter;
     }
 
     constructByResponse = (responseObj) => {
@@ -25,41 +25,16 @@ class State{
                 );
             });
 
-            console.log("state list 28");
-            console.log(this._states);
-
-           
             stateList = stateList.filter(value => {
-                console.log("value filter");
-                console.log(value);
-
                 let result = false;
-                
-                console.log("state city filter 38");
-                console.log(this._states);
-
-                console.log();
-
-                // this._stateCityFilter.states.forEach(element => {
-                //     if(element == value._sigla) { 
-                //         result = true;
-                //     }
-                // });
+                this._stateCityFilter.states.forEach(element => {
+                    if(element == value._sigla) { 
+                        result = true;
+                    }
+                });
                 
                 return result;
             })
-            
-
-            // stateList = stateList.filter(value => {
-            //     let result = false;
-            //     this._stateCityFilter.states.forEach(element => {
-            //         if(element == value._sigla) { 
-            //             result = true;
-            //         }
-            //     });
-                
-            //     return result;
-            // })
 
             return stateList;
         }   
