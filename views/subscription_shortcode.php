@@ -124,7 +124,7 @@
     
     let eventsStateCityFilter = getEvents().then((resposta) => {
         console.log("resposta");
-        console.log(resposta);
+        console.log(resposta._states);
     });
 
     console.log("Events state city filter 127");
