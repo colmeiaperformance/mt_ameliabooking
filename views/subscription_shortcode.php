@@ -122,7 +122,10 @@
         return eventsStateCityFilter;
     }
     
-    let eventsStateCityFilter = await getEvents();
+    let eventsStateCityFilter = getEvents().then((resposta) => {
+        console.log("resposta");
+        console.log(resposta);
+    });
 
     console.log("Events state city filter 127");
     console.log(eventsStateCityFilter);
