@@ -108,8 +108,8 @@
     let eventsss = <?php echo json_encode($eventsss); ?>
 
     // eventsListtt = controller.list();
-    // console.log("eventsss");
-    // console.log(eventsss);
+    console.log("eventsss");
+    console.log(eventsss);
     const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, ["TEste de array", "array teste"]);
 
     let eventList = [];
