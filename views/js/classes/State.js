@@ -28,16 +28,16 @@ class State{
             console.log("state list 28");
             console.log(this._stateCityFilter);
 
-            stateList = stateList.filter(value => {
-                let result = false;
-                this._stateCityFilter.states.forEach(element => {
-                    if(element == value._sigla) { 
-                        result = true;
-                    }
-                });
+            // stateList = stateList.filter(value => {
+            //     let result = false;
+            //     this._stateCityFilter.states.forEach(element => {
+            //         if(element == value._sigla) { 
+            //             result = true;
+            //         }
+            //     });
                 
-                return result;
-            })
+            //     return result;
+            // })
 
             return stateList;
         }   
