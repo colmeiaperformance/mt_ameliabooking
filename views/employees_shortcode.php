@@ -79,7 +79,7 @@
     
     async function getInstructors() {
         const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
-        return instructorStateCityFilter;
+        return await instructorStateCityFilter.getStateAndCity();
     }
 
     let promisseInstructors = await getInstructors();

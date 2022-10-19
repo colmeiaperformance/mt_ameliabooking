@@ -7,7 +7,6 @@ class InstructorStateCityFilter {
         this._listStateCity = [];
         this.states = [];
         this.cities = [];
-        this.getStateAndCity();
     }
 
     getStateAndCity =  async() => {
