@@ -113,12 +113,11 @@
     // eventsListtt = controller.list();
     console.log("eventsss");
     console.log(eventsss);
-    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
+    
 
     let eventList = [];
     let orderBy = "";
-    let state = new State(eventsStateCityFilter);
-    let city = new City(eventsStateCityFilter);
+    
     let states = [];
     let cities = [];
     
@@ -143,6 +142,15 @@
     }
 
     let mt_filters = document.getElementById('mt_filters')
+
+    console.log("Event list linha 146");
+    let aux = await controller.list();
+    console.log(aux);
+
+    const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
+
+    let state = new State(eventsStateCityFilter);
+    let city = new City(eventsStateCityFilter);
 
     render();
 
