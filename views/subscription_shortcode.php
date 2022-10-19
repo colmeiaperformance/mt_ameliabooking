@@ -89,6 +89,10 @@
     }
 ?>
 
+<?php 
+   $eventsssURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/events&dates';
+   $eventsss = json_decode(file_get_contents($eventsssURL)); 
+?>
 
 
 <script>
