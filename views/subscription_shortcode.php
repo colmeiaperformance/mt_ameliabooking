@@ -122,10 +122,19 @@
         return eventsStateCityFilter;
     }
     
+    let states = [];
+    let cities = [];
+
     let eventsStateCityFilter = getEvents().then((resposta) => {
-        console.log("resposta");
-        console.log(resposta._states);
+        states = resposta._states;
+        cities = resposta._cities;
     });
+
+    console.log("States");
+    console.log(states);
+
+    console.log("Cities");
+    console.log(cities);
 
     console.log("Events state city filter 127");
     console.log(eventsStateCityFilter);
