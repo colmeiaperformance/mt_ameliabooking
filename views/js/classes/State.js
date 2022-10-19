@@ -14,35 +14,38 @@ class State{
     }
 
     list = async() => {
-        console.log("Provavel promisse");
+        let result = this._stateCityFilter.then(async(resposta) => {
+            console.log("Resposta 22");
+            console.log(resposta);
 
-        console.log(this._stateCityFilter);
-
-        let states = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
-        let stateList = [];
-        if(states.status == 200){
-            states.data.forEach(e => {
-                let newState = new State();
-                newState.constructByResponse(e);
-                stateList.push(
-                    newState
-                );
-            });
-
-            stateList = stateList.filter(value => {
-                let result = false;
-                this._stateCityFilter.states.forEach(element => {
-                    if(element == value._sigla) { 
-                        result = true;
-                    }
+            let states = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
+            let stateList = [];
+            if(states.status == 200){
+                states.data.forEach(e => {
+                    let newState = new State();
+                    newState.constructByResponse(e);
+                    stateList.push(
+                        newState
+                    );
                 });
-                
-                return result;
-            })
 
-            return stateList;
-        }   
-        return false;
+                stateList = stateList.filter(value => {
+                    let result = false;
+                    this._stateCityFilter.states.forEach(element => {
+                        if(element == value._sigla) { 
+                            result = true;
+                        }
+                    });
+                    
+                    return result;
+                })
+
+                return stateList;
+            }   
+            return false;
+        });
+
+        return result;
     }
 
     get id(){
