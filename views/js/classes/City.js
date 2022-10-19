@@ -13,32 +13,39 @@ class City{
     }
 
     getByUf = async(uf) => {
-        let regions = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`);
-        let citiesList = [];
-        if(regions.status == 200){
-            regions.data.forEach(e => {
-                let newCity = new City([],e.id, e.nome);
-                citiesList.push(
-                    newCity
-                );
-            });
-
-            let index = this._stateCityFilter.states.indexOf(uf);
-
-            citiesList = citiesList.filter(value => {
-                let result = false;
-                this._stateCityFilter.cities[index].forEach(element => {
-                    if(element.toLowerCase() == value._nome.toLowerCase()) { 
-                        result = true;
-                    }
+        let result = this._stateCityFilter.then(async(resposta) => {
+            let regions = await axios.get(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`);
+            let citiesList = [];
+            if(regions.status == 200){
+                regions.data.forEach(e => {
+                    let newCity = new City([],e.id, e.nome);
+                    citiesList.push(
+                        newCity
+                    );
                 });
-                
-                return result;
-            })
 
-            return citiesList;
-        }
-        return false;
+                let index = resposta.states.indexOf(uf);
+
+                citiesList = citiesList.filter(value => {
+                    let result = false;
+                    resposta.cities[index].forEach(element => {
+                        if(element.toLowerCase() == value._nome.toLowerCase()) { 
+                            result = true;
+                        }
+                    });
+                    
+                    return result;
+                })
+
+                return citiesList;
+            }
+            return false;
+        });
+
+        console.log("Result 45 city");
+        console.log(result);
+
+        return result;
     }
 
     get id(){
