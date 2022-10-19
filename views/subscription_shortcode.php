@@ -105,7 +105,7 @@
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
     
 
-    let eventsss = <?php echo json_decode($eventsss) ?>
+    let eventsss = <?php echo json_decode($eventsss); ?>
 
     // eventsListtt = controller.list();
     // console.log("eventsss");
