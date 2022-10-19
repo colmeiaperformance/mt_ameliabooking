@@ -151,6 +151,9 @@
         await getFilterEntities();
         eventList = await controller.list();
 
+        console.log("Event List render");
+        console.log(eventList);
+
         if(instrutorID){
 
             let list = []
