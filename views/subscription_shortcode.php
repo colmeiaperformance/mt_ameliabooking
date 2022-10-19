@@ -115,22 +115,21 @@
     console.log("eventsss");
     console.log(eventsss);
     
-    let eventsStateCityFilter = [];
-
+    
     async function getEvents() {
         let aux = await controller.list();
-        eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
+        let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
+        return eventsStateCityFilter;
     }
     
-    getEvents();
+    let eventsStateCityFilter = await getEvents();
 
     console.log("Events state city filter 127");
     console.log(eventsStateCityFilter);
 
     console.log("Promisse");
 
-    console.log(eventsStateCityFilter.PromiseResult);
-    console.log(eventsStateCityFilter['PromiseResult']);
+    console.log(eventsStateCityFilter.states);
 
     eventsStateCityFilter.then((data) => {
         console.log(data);
