@@ -125,33 +125,21 @@
     let states = [];
     let cities = [];
 
-    let eventsStateCityFilter = getEvents().then((resposta) => {
-        states = resposta._states;
-        cities = resposta._cities;
+    let result = getEvents().then((resposta) => {
+        return [resposta._states, resposta._cities];
     });
 
-    console.log("States");
-    console.log(states);
 
-    console.log("Cities");
-    console.log(cities);
-
-    console.log("Events state city filter 127");
-    console.log(eventsStateCityFilter);
+    console.log("Events state city filter 127 result");
+    console.log(result);
 
     console.log("Promisse");
-
-    console.log(eventsStateCityFilter.states);
-
-    eventsStateCityFilter.then((data) => {
-        console.log(data);
-    });
     
-    console.log("Events state city filter 127 event list");
-    console.log(eventsStateCityFilter._eventsList);
+    // console.log("Events state city filter 127 event list");
+    // console.log(eventsStateCityFilter._eventsList);
 
-    console.log("eventsStateCityFilter 130");
-    console.log(eventsStateCityFilter._states);
+    // console.log("eventsStateCityFilter 130");
+    // console.log(eventsStateCityFilter._states);
 
     // const eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, eventsss.data.events);
 
