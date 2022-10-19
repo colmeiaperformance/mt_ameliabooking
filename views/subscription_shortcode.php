@@ -127,6 +127,14 @@
     console.log("Events state city filter 127");
     console.log(eventsStateCityFilter);
 
+    console.log("Promisse");
+    eventsStateCityFilter.then((data) => {
+        console.log(data);
+    });
+    
+    console.log("Events state city filter 127 event list");
+    console.log(eventsStateCityFilter._eventsList);
+
     console.log("eventsStateCityFilter 130");
     console.log(eventsStateCityFilter._states);
 
