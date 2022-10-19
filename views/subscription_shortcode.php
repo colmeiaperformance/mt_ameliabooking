@@ -104,7 +104,13 @@
         return eventsStateCityFilter;
     }
     
-    let result = getEvents().then((resposta) => {
+    let resposta = getEvents().then((resposta) => {
+        return resposta;
+    });
+
+    console.log(resposta);
+
+
 
         let eventList = [];
         let orderBy = "";
@@ -527,5 +533,5 @@
                 $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
             }
         }
-    });
+   
 </script>

@@ -14,6 +14,10 @@ class State{
     }
 
     list = async() => {
+        console.log("Provavel promisse");
+
+        console.log(this._stateCityFilter);
+
         let states = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
         let stateList = [];
         if(states.status == 200){
