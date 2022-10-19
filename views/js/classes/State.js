@@ -37,7 +37,7 @@ class State{
                 
                 console.log("state city filter 38");
                 console.log(this._stateCityFilter);
-                this._stateCityFilter();
+                
                 this._stateCityFilter.getStateAndCity();
                 console.log(this._stateCityFilter.states);
 
