@@ -76,11 +76,20 @@
     const filterController = new EmployeeFilterController(ajaxurl, baseurl, $("#mt_filters"));
     
     let employeesList = <?php echo json_encode($employeesList) ?>;
-    const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
+    
+    async function getInstructors() {
+        const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
+        return instructorStateCityFilter;
+    }
+
+    let promisseInstructors = await getInstructors();
+
+    console.log("Promisse Instructors 87");
+    console.log(promisseInstructors);
 
     let orderBy = "";
-    let state = new State(instructorStateCityFilter);
-    let city = new City(instructorStateCityFilter);
+    let state = new State(promisseInstructors);
+    let city = new City(promisseInstructors);
     let states = [];
     let cities = [];
     let currentName = "";
@@ -221,8 +230,8 @@
         jQuery("#mt_loader_overlay").fadeIn();
         jQuery("#mt_empty_form").css('display', 'none');
         currentName = "";
-        state = new State(instructorStateCityFilter);
-        city = new City(instructorStateCityFilter);
+        state = new State(promisseInstructors);
+        city = new City(promisseInstructors);
         filterController.renderFields(states, cities, "--", "--", currentName);
         employess = await controller.list(false, false, false, wp_user_infos);
         employess.length > 0 ? showHideCarousel(true) : showHideCarousel();
