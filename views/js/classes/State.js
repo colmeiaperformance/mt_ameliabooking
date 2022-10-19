@@ -31,7 +31,7 @@ class State{
 
                 stateList = stateList.filter(value => {
                     let result = false;
-                    this._stateCityFilter.states.forEach(element => {
+                    resposta.states.forEach(element => {
                         if(element == value._sigla) { 
                             result = true;
                         }
@@ -44,6 +44,9 @@ class State{
             }   
             return false;
         });
+
+        console.log("Result 48");
+        console.log(result);
 
         return result;
     }
