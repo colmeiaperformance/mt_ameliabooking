@@ -104,8 +104,11 @@
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
     
+    console.log("Ajax URL");
+    console.log(ajaxurl);
 
     let eventsss = <?php echo json_encode($eventsss); ?>
+
 
     // eventsListtt = controller.list();
     console.log("eventsss");
