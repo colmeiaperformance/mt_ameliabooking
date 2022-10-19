@@ -13,7 +13,7 @@ class EventsStateCityFilter {
         let locList = [];
         let listStateCity = [];
 
-        console.log("Events List");
+        console.log("Events List 16");
         console.log(this._eventsList);
 
         let states = [];
