@@ -470,12 +470,17 @@
     //FilterInteractors
     const changeState = async(uf) =>{
         state.sigla = uf;
-        cities = await city.getByUf(uf);
+        city = new City(promisse);
         filterController.renderFields(states, cities, uf);
     }
     const changeCity = (val) =>{
         city.nome = val;
     }
+
+    const clickCitySelector = () => {
+        cities = await city.getByUf(uf);
+    }
+
     const changeOrderBy = (order) => {
         orderBy = order;
         jQuery("#mt_loader_overlay").fadeIn();
