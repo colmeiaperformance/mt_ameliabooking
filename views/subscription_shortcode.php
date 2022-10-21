@@ -69,6 +69,11 @@
         }
 
     }
+
+    .event-desktop, 
+    .event-mobile {
+        cursor: pointer;
+    }
 </style>
 
 <?php
