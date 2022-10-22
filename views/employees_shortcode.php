@@ -261,11 +261,14 @@
     //FilterInteractors
     const changeState = async(uf) =>{
         state.sigla = uf;
+        city.nome = '';
         cities = await city.getByUf(uf);
         filterController.renderFields(states, cities, uf, "--", currentName);
+        filterEvents();
     }
     const changeCity = (val) =>{
         city.nome = val;
+        filterEvents();
     }
     const changeOrderBy = (order) => {
         orderBy = order;

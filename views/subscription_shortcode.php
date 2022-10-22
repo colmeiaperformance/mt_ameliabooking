@@ -469,7 +469,6 @@
 
     //FilterInteractors
     const changeState = async(uf) =>{
-        console.log("change State");
         state.sigla = uf;
         city.nome = '';
         cities = await city.getByUf(uf);
@@ -477,7 +476,6 @@
         filterEvents();
     }
     const changeCity = (val) =>{
-        console.log("Change city");
         city.nome = val;
         filterEvents();
     }
