@@ -211,6 +211,7 @@ class EventsController {
                         filterPass = false;
                 }else{
                     console.log("else cityFilter");
+                    console.log(stateFilter);
                     if(stateFilter) {
                         console.log("stateFilter");
                         console.log(stateFilter);
