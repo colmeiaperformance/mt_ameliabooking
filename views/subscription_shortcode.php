@@ -479,7 +479,7 @@
         city.nome = val;
     }
 
-    const clickCitySelector = () => {
+    const clickCitySelector = async() => {
         console.log("change City selector");
         cities = await city.getByUf(uf);
     }
