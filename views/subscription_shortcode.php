@@ -482,7 +482,7 @@
     const clickCitySelector = async() => {
         console.log("change City selector");
         cities = await city.getByUf(state.sigla);
-        filterController.renderFields(states, cities, uf);
+        filterController.renderFields(states, cities, state.sigla);
     }
 
     const changeOrderBy = (order) => {
