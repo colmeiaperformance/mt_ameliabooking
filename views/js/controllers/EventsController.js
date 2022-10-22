@@ -210,10 +210,14 @@ class EventsController {
                     || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
                         filterPass = false;
                 }else{
-                    console.log("stateFilter");
+                    console.log("else cityFilter");
                     if(stateFilter)
-                        if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '))
+                    console.log("stateFilter");
+                        if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' ')) {
+                            console.log("if dentro do state filter");
+                            console.log(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '));
                             filterPass = false;
+                        }                
                 }
             }else{
                 console.log("Else e_location");
