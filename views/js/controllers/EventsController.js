@@ -213,7 +213,7 @@ class EventsController {
                     console.log("else cityFilter");
                     if(stateFilter)
                     console.log("stateFilter");
-                        if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' ')) {
+                        if(!(e_location.name).toLowerCase().includes(stateFilter.toLowerCase()+' ')) {
                             console.log("if dentro do state filter");
                             console.log(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '));
                             filterPass = false;
