@@ -213,10 +213,22 @@ class EventsController {
                     console.log("else cityFilter");
                     console.log(stateFilter);
                     if(stateFilter) {
+                        
+                        console.log("e_location.name");
+                        console.log(e_location.name);
+                        
                         console.log("stateFilter");
                         console.log(stateFilter);
+
                         let e_locationName = (e_location.name.toUpperCase()).trim();
                         let stateFilterLower = stateFilter;
+
+                        console.log("e location name");
+                        console.log(e_locationName);
+
+                        console.log("state filter lower");
+                        console.log(stateFilterLower);
+
                         if(!e_locationName.includes(stateFilterLower+' ')) {
                             console.log("if dentro do state filter");
                             console.log(e_locationName.includes(stateFilterLower));
@@ -245,7 +257,7 @@ class EventsController {
             console.log("e.show");
             console.log(e.show);
 
-            if(filterPass && e.status != 'rejected' && e.show == true){
+            if(filterPass && e.status != 'rejected' && e.show){
                 eventList.push(newEvent);
             }
            
