@@ -219,7 +219,7 @@ class EventsController {
                         let stateFilterLower = stateFilter;
                         if(!e_locationName.includes(stateFilterLower+' ')) {
                             console.log("if dentro do state filter");
-                            console.log(!e_locationName.includes(stateFilterLower));
+                            console.log(e_locationName.includes(stateFilterLower));
                             filterPass = false;
                         }
                     }                
@@ -235,6 +235,16 @@ class EventsController {
             newEvent = newEvent.constructByObjects(e,  e_organizer ? employee.constructByObjects(e_organizer) : false,
             e_location ? location.constructByObjects(e_location) : false);
             newEvent.customFields = e_custom_fields;
+
+            console.log("filterPass");
+            console.log(filterPass);
+
+            console.log("e status");
+            console.log(e.status);
+
+            console.log("e.show");
+            console.log(e.show);
+
             if(filterPass && e.status != 'rejected' && e.show == true){
                 eventList.push(newEvent);
             }
