@@ -19,7 +19,7 @@ class EmployeeFilterFields extends View{
           </select>
         </div>
         <div class="mt_filter select">
-          <select id="cityFilter" onchange="changeCity(this.value)" onmouseenter="clickCitySelector()" class="form-control">
+          <select id="cityFilter" onchange="changeCity(this.value)" class="form-control">
             <option selected disabled>Cidade</option>
             ${
             model.cities.map((c) => {
