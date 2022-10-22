@@ -171,14 +171,7 @@ class EventsController {
         let events = events_consult.data.data.events;
         let entities = entities_consult.data.data;
         let customFields = entities_consult.data.data.customFields;
-
-        console.log("events consult");
-        console.log(events_consult);
-
-
-        console.log("events_consult.data.data.events");
-        console.log(events_consult.data.data.events);
-        
+    
         while(events_consult.data.data.count > events.length) {
             events_consult =  await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
             if (events_consult.data.data.events.length > 0)
@@ -186,14 +179,8 @@ class EventsController {
         }
 
         let eventList = [];
-
-        console.log("Events 183");
-        console.log(events);
                
         events.forEach((e) => {
-            console.log("Dentro do forEach");
-            console.log(e);
-
             let filterPass = true;
             let e_location = entities.locations.filter( l => l.id == e.locationId)[0];
             let e_organizer = entities.employees.filter( o => o.id == e.organizerId)[0];
@@ -203,43 +190,22 @@ class EventsController {
             let e_custom_fields = customFields;
 
             if(e_location){
-                console.log("e_location");
                 if(cityFilter){
-                    console.log("cityFilter");
                     if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
                     || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
                         filterPass = false;
-                }else{
-                    console.log("else cityFilter");
-                    console.log(stateFilter);
-                    if(stateFilter) {
-                        
-                        console.log("e_location.name");
-                        console.log(e_location.name);
-
-                        console.log("stateFilter");
-                        console.log(stateFilter);
-
+                }else{                  
+                    if(stateFilter) {                    
                         let e_locationName = (e_location.name.toUpperCase()).trim();
-                        let stateFilterLower = stateFilter;
+                        let stateFilterUpper = stateFilter.toUpperCase();
 
-                        console.log("e location name");
-                        console.log(e_locationName);
-
-                        console.log("state filter lower");
-                        console.log(stateFilterLower);
-
-                        if(!e_locationName.includes(stateFilterLower)) {
-                            console.log("if dentro do state filter");
-                            console.log(e_locationName.includes(stateFilterLower));
+                        if(!e_locationName.includes(stateFilterUpper)) {                         
                             filterPass = false;
                         }
                     }                
                 }
-            }else{
-                console.log("Else e_location");
-                if(cityFilter || stateFilter) {
-                    console.log("cityFilter || stateFilter");
+            }else{              
+                if(cityFilter || stateFilter) {            
                     filterPass = false;
                 }
             }
@@ -248,24 +214,12 @@ class EventsController {
             e_location ? location.constructByObjects(e_location) : false);
             newEvent.customFields = e_custom_fields;
 
-            console.log("filterPass");
-            console.log(filterPass);
-
-            console.log("e status");
-            console.log(e.status);
-
-            console.log("e.show");
-            console.log(e.show);
-
             if(filterPass && e.status != 'rejected' && e.show){
                 eventList.push(newEvent);
             }
            
         });
-
-        console.log("Event List antes do order by");
-        console.log(eventList);
-
+    
         if(orderBy){
             switch(orderBy){
                 case 'instrutor':
@@ -277,10 +231,7 @@ class EventsController {
                     eventList = eventList.sort(this.dynamicSort("_start"));
             }
         }
-        console.log(eventList);
-        return eventList;
-        
-        
+        return eventList;                
     }
 
     orderBy = function(eventList, orderBy) {
