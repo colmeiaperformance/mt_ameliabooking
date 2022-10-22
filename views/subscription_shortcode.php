@@ -481,7 +481,7 @@
 
     const clickCitySelector = async() => {
         console.log("change City selector");
-        cities = await city.getByUf(uf);
+        cities = await city.getByUf(state.sigla);
     }
 
     const changeOrderBy = (order) => {
