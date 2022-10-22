@@ -216,7 +216,7 @@ class EventsController {
                         
                         console.log("e_location.name");
                         console.log(e_location.name);
-                        
+
                         console.log("stateFilter");
                         console.log(stateFilter);
 
@@ -229,7 +229,7 @@ class EventsController {
                         console.log("state filter lower");
                         console.log(stateFilterLower);
 
-                        if(!e_locationName.includes(stateFilterLower+' ')) {
+                        if(!e_locationName.includes(stateFilterLower)) {
                             console.log("if dentro do state filter");
                             console.log(e_locationName.includes(stateFilterLower));
                             filterPass = false;
