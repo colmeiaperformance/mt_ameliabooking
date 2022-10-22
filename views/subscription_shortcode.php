@@ -471,7 +471,6 @@
     const changeState = async(uf) =>{
         console.log("change State");
         state.sigla = uf;
-        // city = new City(promisse);
         city.nome = '';
         cities = await city.getByUf(uf);
         filterController.renderFields(states, cities, uf);
@@ -482,12 +481,6 @@
         city.nome = val;
         filterEvents();
     }
-
-    // const clickCitySelector = async() => {
-    //     console.log("change City selector");
-        
-    //     filterController.renderFields(states, cities, state.sigla);
-    // }
 
     const changeOrderBy = (order) => {
         orderBy = order;
