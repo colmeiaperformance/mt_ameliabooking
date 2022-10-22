@@ -473,10 +473,12 @@
         state.sigla = uf;
         city = new City(promisse);
         filterController.renderFields(states, cities, uf);
+        filterEvents();
     }
     const changeCity = (val) =>{
         console.log("Change city");
         city.nome = val;
+        filterEvents();
     }
 
     const clickCitySelector = async() => {
