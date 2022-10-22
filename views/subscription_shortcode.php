@@ -321,6 +321,9 @@
         jQuery("#msg").css('display', 'none');
 
         eventList = await controller.list(1, moment(), orderBy, state.sigla ? state.sigla : false, city.nome ? city.nome : false);
+
+        console.log("Event List 325");
+        console.log(eventList);
         
         if(eventList.length > 0 || instrutorID){
             jQuery("#mt_empty_form").css('display', 'none');
