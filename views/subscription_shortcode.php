@@ -469,15 +469,18 @@
 
     //FilterInteractors
     const changeState = async(uf) =>{
+        console.log("change State");
         state.sigla = uf;
         city = new City(promisse);
         filterController.renderFields(states, cities, uf);
     }
     const changeCity = (val) =>{
+        console.log("Change city");
         city.nome = val;
     }
 
     const clickCitySelector = () => {
+        console.log("change City selector");
         cities = await city.getByUf(uf);
     }
 
