@@ -171,6 +171,13 @@ class EventsController {
         let events = events_consult.data.data.events;
         let entities = entities_consult.data.data;
         let customFields = entities_consult.data.data.customFields;
+
+        console.log("events consult");
+        console.log(events_consult);
+
+
+        console.log("events_consult.data.data.events");
+        console.log(events_consult.data.data.events);
         
         while(events_consult.data.data.count > events.length) {
             events_consult =  await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
@@ -179,6 +186,9 @@ class EventsController {
         }
 
         let eventList = [];
+
+        console.log("Events 183");
+        console.log(events);
                
         events.forEach((e) => {
             let filterPass = true;
@@ -213,6 +223,9 @@ class EventsController {
             }
            
         });
+
+        console.log("Event List antes do order by");
+        console.log(eventList);
 
         if(orderBy){
             switch(orderBy){
