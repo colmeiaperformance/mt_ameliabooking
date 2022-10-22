@@ -211,19 +211,21 @@ class EventsController {
                         filterPass = false;
                 }else{
                     console.log("else cityFilter");
-                    if(stateFilter)
-                    console.log("stateFilter");
+                    if(stateFilter) {
+                        console.log("stateFilter");
+                        console.log(stateFilter);
                         let e_locationName = (e_location.name.toUpperCase()).trim();
                         let stateFilterLower = stateFilter;
                         if(!e_locationName.includes(stateFilterLower+' ')) {
                             console.log("if dentro do state filter");
                             console.log(!e_locationName.includes(stateFilterLower));
                             filterPass = false;
-                        }                
+                        }
+                    }                
                 }
             }else{
                 console.log("Else e_location");
-                if(cityFilter || stateFilter){
+                if(cityFilter || stateFilter) {
                     console.log("cityFilter || stateFilter");
                     filterPass = false;
                 }
