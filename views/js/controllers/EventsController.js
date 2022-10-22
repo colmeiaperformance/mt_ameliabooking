@@ -191,6 +191,9 @@ class EventsController {
         console.log(events);
                
         events.forEach((e) => {
+            console.log("Dentro do forEach");
+            console.log(e);
+
             let filterPass = true;
             let e_location = entities.locations.filter( l => l.id == e.locationId)[0];
             let e_organizer = entities.employees.filter( o => o.id == e.organizerId)[0];
@@ -200,17 +203,22 @@ class EventsController {
             let e_custom_fields = customFields;
 
             if(e_location){
+                console.log("e_location");
                 if(cityFilter){
+                    console.log("cityFilter");
                     if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
                     || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
                         filterPass = false;
                 }else{
+                    console.log("stateFilter");
                     if(stateFilter)
                         if(!e_location.name.toLowerCase().includes(stateFilter.toLowerCase()+' '))
                             filterPass = false;
                 }
             }else{
+                console.log("Else e_location");
                 if(cityFilter || stateFilter){
+                    console.log("cityFilter || stateFilter");
                     filterPass = false;
                 }
             }
