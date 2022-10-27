@@ -190,7 +190,7 @@
 
     async function getFilterEntities(){
         states = await state.list();
-        filterController.renderFields(states, cities, "--");
+        filterController.renderFields(states, cities, "--", "");
     }
 
     async function bookingEvent(eventId){
@@ -475,7 +475,7 @@
         state.sigla = uf;
         city.nome = '';
         cities = await city.getByUf(uf);
-        filterController.renderFields(states, cities, uf);
+        filterController.renderFields(states, cities, uf, "");
         filterEvents();
     }
     const changeCity = (val) =>{
@@ -540,6 +540,27 @@
             $(".mt_event_details_container").css('display', 'block');
             $(".mt_event_details_subscriptions.oppened").removeClass('oppened');
         }
+    }
+
+    function filterByDistrict(str){
+        currentDistrict = str;
+        console.log(str);
+        console.log("Event List 548");
+        console.log(eventList);
+        let result = eventList;
+        // result = result.filter(e => e.firstName.toLowerCase().includes(str.toLowerCase()) || e.lastName.toLowerCase().includes(str.toLowerCase()));
+
+        // if(result.length > 0){
+        //     jQuery("#mt_empty_form").css('display', 'none');
+        //     showHideCarousel(true);
+        // }else{
+        //     showNotFoundMessage('Desculpe! Não encontramos este instrutor.');
+        // }
+        // controller.renderItems(result);
+
+
+        // console.log(result);
+        // startSlider();
     }
    
 </script>

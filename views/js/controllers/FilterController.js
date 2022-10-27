@@ -9,8 +9,8 @@ class FilterController{
         this._view = new FilterFields(container, this, baseUrl);
     }
 
-    renderFields(states, cities, selectedState, selectedCity, date = true){
-        this._view.update({states: states, cities: cities, selectedState: selectedState, selectedCity: selectedCity}, date);
+    renderFields(states, cities, selectedState, district, selectedCity, date = true){
+        this._view.update({states: states, cities: cities, selectedState: selectedState, district: district, selectedCity: selectedCity}, date);
     }
 
     

@@ -35,12 +35,12 @@ class EmployeeFilterFields extends View{
         <div class="mt_filter input">
           <input type="text" id="nameFilter" class="form-control" placeholder="Procurar pelo nome" value="${model.currentName}" onKeyUp="filterByName(value)" class="form-control">
         </div>
-        </div>
-        <div class="mt_row justify-content-end">
-          <div class="mt_filter">
-            <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
+      </div>
+      <div class="mt_row justify-content-end">
+        <div class="mt_filter">
+          <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
             Remover Filtros
-            </button>
+          </button>
           </div>
         </div>
       </div>
