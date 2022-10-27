@@ -69,8 +69,8 @@ class EventItem extends View{
 									${startDateStr == endDateStr ? endDate.format('HH:mm') : endDateStr + ' ' + endDate.format('HH:mm') }
 								</h5>
 							</div>
-							<div class="mt_action_button">
-								<button class="btn_open">
+							<div class="mt_subscription_button">
+								<button class="btn_subscription">
 									Inscreva-se
 								</button>
 							</div>
