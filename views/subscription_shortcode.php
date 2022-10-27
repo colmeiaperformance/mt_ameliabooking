@@ -548,19 +548,19 @@
         console.log("Event List 548");
         console.log(eventList);
         let result = eventList;
-        // result = result.filter(e => e.firstName.toLowerCase().includes(str.toLowerCase()) || e.lastName.toLowerCase().includes(str.toLowerCase()));
+        result = result.filter(e => e._name.toLowerCase().includes(str.toLowerCase()));
 
-        // if(result.length > 0){
-        //     jQuery("#mt_empty_form").css('display', 'none');
-        //     showHideCarousel(true);
-        // }else{
-        //     showNotFoundMessage('Desculpe! Não encontramos este instrutor.');
-        // }
-        // controller.renderItems(result);
+        if(result.length > 0){
+            mt_filters.classList.remove('hideOrder');
+            document.getElementById('mt_filter_results').removeAttribute('style');
+        }else{
+            showNotFoundMessage('Desculpe! Não encontramos evento no seu bairro.');
+        }
 
+        console.log("Console depois");
+        console.log(result);
 
-        // console.log(result);
-        // startSlider();
+        controller.renderItems(result);
     }
    
 </script>
