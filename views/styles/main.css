@@ -1429,25 +1429,14 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.mt_subscription_button .btn_subscription {
+.mt_action_button .btn_subscription {
   border: 1px solid #313A4E;
-  border-radius: 30px;
-  font-family: "Work Sans";
-  font-style: normal;
   color: #313A4E;
-  background: none;
-  cursor: pointer;
-  transition: 0.5s;
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 8px;
-  padding: 4px 12px;
 }
 
-.mt_subscription_button .btn_subscription:hover {
+.mt_action_button .btn_subscription:hover {
   color: #FFF;
   background: #313A4E;
-  border: none;
 }
 
 @media screen and (max-width: 992px) {
