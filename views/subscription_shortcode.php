@@ -342,6 +342,7 @@
                 if(state.sigla){
                     if(eventList.length > 0){
                         mt_filters.classList.remove('hideOrder');
+                        jQuery("#districtFilter").css('display', 'block');
                         document.getElementById('mt_filter_results').removeAttribute('style');
                     }else{
                         if(instrutorID){
@@ -368,6 +369,7 @@
     }
 
     const showNotFoundMessage = (instructor = false, instrutorName = '',alertMensage = '', subtitleMensage = '') => {
+        jQuery("#districtFilter").css('display', 'none');
         let texto = "";
         
         if(city?.nome){
