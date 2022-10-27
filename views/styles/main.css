@@ -1430,13 +1430,12 @@
           align-items: center;
 }
 .mt_action_button .btn_subscription {
-  border: none !important;
+  border: 1px solid #313A4E !important;
   color: #FFF !important;
   background: #313A4E !important;
 }
 
 .mt_action_button .btn_subscription:hover {
-  border: 1px solid #313A4E !important;
   color: #313A4E !important;
   background: none !important;
 }
