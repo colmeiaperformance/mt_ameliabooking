@@ -37,12 +37,12 @@ class FilterFields extends View{
           <input type="text" id="districtFilter" class="form-control" placeholder="Bairro" value="${model.district}" onKeyUp="filterByDistrict(value)" class="form-control" style="display: none;>
         </div>
       </div>
-      <div class="mt_row ms-auto me-0 d-flex justify-content-center justify-content-lg-end flex-nowrap container-fluid">
-          <div class="mt_filter">
-            <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
-            Remover Filtros
-            </button>
-          </div>
+      <div class="ms-auto me-0 d-flex justify-content-center justify-content-lg-end flex-nowrap container-fluid">
+        <div class="mt_filter">
+          <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
+          Remover Filtros
+          </button>
+        </div>
       </div>
       <div class="mt_row justify-content-start" id="orderBy">
         <div class="mt_filter col-sm-3">
@@ -56,7 +56,6 @@ class FilterFields extends View{
             }
             <option value="instrutor">Instrutor</option>
           </select>
-        </div>
         </div>
       </div>
     </div>
