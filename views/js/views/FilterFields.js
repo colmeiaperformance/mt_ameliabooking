@@ -32,16 +32,16 @@ class FilterFields extends View{
           </select>
         </div>
       </div>
-      <div class="mt_row justify-content-start">
-        <div class="mt_filter col-sm-3">
-          <input type="text" id="districtFilter" class="form-control" placeholder="Bairro" value="${model.district}" onKeyUp="filterByDistrict(value)" class="form-control" style="display: none;>
-        </div>
-      </div>
       <div class="ms-auto me-0 d-flex justify-content-center justify-content-lg-end flex-nowrap container-fluid">
-        <div>
+        <div class="mt_filter">
           <button id="removeFilterButton" onclick="removeFilters()" class="btn btn-remove">
           Remover Filtros
           </button>
+        </div>
+      </div>
+      <div class="mt_row justify-content-start">
+        <div class="mt_filter col-sm-3">
+          <input type="text" id="districtFilter" class="form-control" placeholder="Bairro" value="${model.district}" onKeyUp="filterByDistrict(value)" class="form-control" style="display: none;>
         </div>
       </div>
       <div class="mt_row justify-content-start" id="orderBy">
