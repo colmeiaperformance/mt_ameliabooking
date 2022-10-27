@@ -191,6 +191,7 @@
     async function getFilterEntities(){
         states = await state.list();
         filterController.renderFields(states, cities, "--", "");
+        jQuery("#districtFilter").css('display', 'none');
     }
 
     async function bookingEvent(eventId){
