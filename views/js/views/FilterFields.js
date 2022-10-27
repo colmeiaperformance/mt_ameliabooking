@@ -39,7 +39,7 @@ class FilterFields extends View{
           </button>
         </div>
       </div>
-      <div class="mt_row">
+      <div class="ms-auto me-0 d-flex justify-content-center justify-content-lg-start flex-nowrap container-fluid">
         <div class="mt_filter">
           <input type="text" id="districtFilter" class="form-control" placeholder="Bairro" value="${model.district}" onKeyUp="filterByDistrict(value)" style="display: none;>
         </div>
