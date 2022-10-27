@@ -348,6 +348,7 @@
                         if(instrutorID){
                             showNotFoundMessage(true, instrutorName, 'O instrutor selecionado não possui eventos cadastrados nessa cidade/estado!');
                         }else{
+                            jQuery("#districtFilter").css('display', 'none');
                             showNotFoundMessage();
                         }
                     }
@@ -369,7 +370,6 @@
     }
 
     const showNotFoundMessage = (instructor = false, instrutorName = '',alertMensage = '', subtitleMensage = '') => {
-        jQuery("#districtFilter").css('display', 'none');
         let texto = "";
         
         if(city?.nome){
@@ -545,10 +545,6 @@
     }
 
     function filterByDistrict(str){
-        currentDistrict = str;
-        console.log(str);
-        console.log("Event List 548");
-        console.log(eventList);
         let result = eventList;
         result = result.filter(e => e._name.toLowerCase().includes(str.toLowerCase()));
 
@@ -558,9 +554,6 @@
         }else{
             showNotFoundMessage('Desculpe! Não encontramos evento no seu bairro.');
         }
-
-        console.log("Console depois");
-        console.log(result);
 
         controller.renderItems(result);
     }
