@@ -167,10 +167,15 @@ class EventsController {
 
     list = async(page = 1, startDate = moment(), orderBy = false, stateFilter = false, cityFilter = false, ) => {
         let entities_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/entities&types[]=locations&types[]=tags&types[]=custom_fields&types[]=employees`);     
+        console.log("this._ajaxUrl 170");
+        console.log(this._ajaxUrl);
         let events_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
         let events = events_consult.data.data.events;
         let entities = entities_consult.data.data;
         let customFields = entities_consult.data.data.customFields;
+
+        console.log("entities_consult 175");
+        console.log(entities_consult);
     
         while(events_consult.data.data.count > events.length) {
             events_consult =  await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
@@ -188,6 +193,9 @@ class EventsController {
             let location = new Location();
             let employee = new Employee();
             let e_custom_fields = customFields;
+
+            console.log("custom Fields");
+            console.log(customFields);
 
             if(e_location){
                 if(cityFilter){

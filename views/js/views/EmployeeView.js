@@ -5,6 +5,8 @@ class EmployeeView extends View {
 
     template(model, baseUrl){
         let uniteNames = model.otherLocations;
+        console.log("modelll 8");
+        console.log(model);
         uniteNames = uniteNames.filter(u => u != " " && u != "");
         return(
             `
@@ -38,22 +40,33 @@ class EmployeeView extends View {
                             ${model.note ? model.note : ''}
                         </p>
                         </div>
+                        <div class="containerButtons">
+                            <div class="text-center text-lg-start">
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=&amp;text=Ol%C3%A1,%20acessei%20seu%20contato%20no%20site%20da%20MT%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20curso." class="btn btn-whatsapp"> 
+                                <img loading="lazy" src="${baseUrl}/images/instrutor/wpp.png" alt="Whatsapp"> Fale comigo no Whatsapp
+                                </a>
+                            </div>
+                            <div class="container text-center">
+                                <button class="btn" onclick="toggleEvents()">Agende a palestra gratuita</button>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <section id="instructorEventsSection" class="hide">
+                <div class="container">
+                    <div id="eventsContainer" class="row row d-flex align-items-baseline">
+                    
+                    </div>
+                </div>
+            </section>
+
             <section class="instrutor-contact">
                 <div class="container">
                 <div class="row d-flex align-items-baseline">
-                    <div class="col-12 col-lg-5">
-                    <h2>Vamos <strong>conversar?</strong></h2>
-                    <div class="text-center text-lg-start">
-                        <a target="_blank" href="https://api.whatsapp.com/send?phone=${model.phone}&text=Ol%C3%A1,%20acessei%20seu%20contato%20no%20site%20da%20MT%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20curso." class="btn"> 
-                        <img loading="lazy" src='${baseUrl}/images/instrutor/wpp.png' alt="Whatsapp"> Fale comigo no Whatsapp
-                        </a>
-                    </div>
-                    </div>
-                    <div class="col-12 col-lg-7 mt-4 mt-lg-0">
+                    <div class="col-12 col-lg-7 mt-4 mt-lg-0 m-auto">
+                        <h2 class="titleForm">Quero receber contato do instrutor</h2>
                         <form id="employee-send-contact" onsubmit="sendContactForm(event,this)">
                             <div class="form-group">
                                 <input type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
