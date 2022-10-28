@@ -71,7 +71,7 @@ class EventItem extends View{
 							</div>
 							<div class="mt_action_button">
 								<button class="btn_subscription">
-									Inscreva-se
+									INSCREVA-SE
 								</button>
 							</div>
 						</div>						
@@ -101,7 +101,7 @@ class EventItem extends View{
 										</span>
 									<div class="mt_action_button">
 										<button class="btn_subscription">
-											Inscreva-se
+											INSCREVA-SE
 										</button>
 									</div>
 							</div>
