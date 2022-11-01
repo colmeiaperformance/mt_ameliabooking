@@ -204,7 +204,7 @@ class EventsController {
                     let state = '';
                     let city = '';
 
-                    if(arrayLocationName.includes("-")){
+                    if(locationName.includes("-")){
                         let arrayLocationName = locationName.split("-");
 
                         if((arrayLocationName[0] && arrayLocationName[0] != "") && (arrayLocationName[1] && arrayLocationName[1] != "")){                                                    
