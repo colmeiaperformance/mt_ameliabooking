@@ -74,41 +74,40 @@ class EmployeeController {
                 let otherLocationsPass = false;
                 
                 if(filterLocations.length > 0){
-                    
-                    if(filterLocations.length > 0){
-                        let city = '';
-                        let state = '';
+                    let city = '';
+                    let state = '';
 
-                        if(cityFilter){
-                            city = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                            city = city.toLowerCase();
-                        }
-
-                        if(stateFilter){
-                            state = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                            state = state.toLowerCase();
-                        }
-
-                        filterLocations.forEach((element) => {
-                            let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                            elemento = elemento.toLowerCase();
-
-                            if(element != ""){
-                                if(city && state){
-                                    if(elemento.includes(city) && elemento.includes(state)){
-                                        otherLocationsPass = true;
-                                    }
-                                }else if(state){
-                                    if(elemento.includes(state)){
-                                        otherLocationsPass = true;
-                                    }
-                                }else{
-                                    otherLocationsPass = true;
-                                }
-                            }
-                        })
+                    if(cityFilter){
+                        city = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        city = city.toLowerCase();
                     }
 
+                    if(stateFilter){
+                        state = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        state = state.toLowerCase();
+                    }
+
+                    console.log("filter location 90");
+                    console.log(filterLocations);
+
+                    filterLocations.forEach((element) => {
+                        let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        elemento = elemento.toLowerCase();
+
+                        if(element != ""){
+                            if(city && state){
+                                if(elemento.includes(city) && elemento.includes(state)){
+                                    otherLocationsPass = true;
+                                }
+                            }else if(state){
+                                if(elemento.includes(state)){
+                                    otherLocationsPass = true;
+                                }
+                            }else{
+                                otherLocationsPass = true;
+                            }
+                        }
+                    })                
                 }else{
                     if(!cityFilter && !stateFilter){
                         otherLocationsPass = true;

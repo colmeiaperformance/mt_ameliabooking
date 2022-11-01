@@ -208,8 +208,8 @@ class EventsController {
                         let arrayLocationName = locationName.split("-");
 
                         if((arrayLocationName[0] && arrayLocationName[0] != "") && (arrayLocationName[1] && arrayLocationName[1] != "")){                                                    
-                            arrayLocationName[0] = arrayLocationName[0].trim();
-                            arrayLocationName[1] = arrayLocationName[1].trim();
+                            arrayLocationName[0] = (arrayLocationName[0].trim()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                            arrayLocationName[1] = (arrayLocationName[1].trim()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
     
                             state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
                             city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
@@ -219,15 +219,22 @@ class EventsController {
                             console.log("events city 219");
                             console.log(city);
 
+                            
+
                             if(cityFilter){
-                                if(!city.toLowerCase().includes(cityFilter.toLowerCase()) 
-                                || !state.toLowerCase().includes(stateFilter.toLowerCase())){
+                                let cityFilterInternal = (cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
+                                let stateFilterInternal = (stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
+
+                                if(!city.toLowerCase().includes(cityFilterInternal) 
+                                || !state.toLowerCase().includes(stateFilterInternal)){
                                     filterPass = false;
                                 }
-                            }else{                  
+                            }else{   
                                 if(stateFilter) {                    
+                                    let stateFilterInternal = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");      
+
                                     let e_locationName = (state.toUpperCase()).trim();
-                                    let stateFilterUpper = stateFilter.toUpperCase();
+                                    let stateFilterUpper = stateFilterInternal.toUpperCase();
             
                                     if(!e_locationName.includes(stateFilterUpper)) {                         
                                         filterPass = false;
