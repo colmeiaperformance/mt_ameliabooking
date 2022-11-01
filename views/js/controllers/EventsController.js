@@ -214,6 +214,11 @@ class EventsController {
                             state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
                             city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
 
+                            console.log("events state 217");
+                            console.log(state);
+                            console.log("events city 219");
+                            console.log(city);
+
                             if(cityFilter){
                                 if(!city.toLowerCase().includes(cityFilter.toLowerCase()) 
                                 || !state.toLowerCase().includes(stateFilter.toLowerCase())){
