@@ -29,7 +29,7 @@ class City{
                 citiesList = citiesList.filter(value => {
                     let result = false;
                     resposta.cities[index].forEach(element => {
-                        if(element.toLowerCase() == value._nome.toLowerCase()) { 
+                        if((element.toLowerCase()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "") == (value._nome.toLowerCase()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "")) { 
                             result = true;
                         }
                     });
