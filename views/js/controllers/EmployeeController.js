@@ -74,39 +74,64 @@ class EmployeeController {
                 let otherLocationsPass = false;
                 
                 if(filterLocations.length > 0){
-                    let city = '';
-                    let state = '';
+                    let stateFilterInternal = '';
+                    let cityFilterInternal = '';
 
                     if(cityFilter){
-                        city = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        city = city.toLowerCase();
+                        cityFilterInternal = cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        cityFilterInternal = cityFilterInternal.toLowerCase();
                     }
 
                     if(stateFilter){
-                        state = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        state = state.toLowerCase();
+                        stateFilterInternal = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
+                        stateFilterInternal = stateFilterInternal.toLowerCase();
                     }
 
                     console.log("filter location 90");
                     console.log(filterLocations);
 
                     filterLocations.forEach((element) => {
-                        let elemento = element.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");
-                        elemento = elemento.toLowerCase();
+                        let city = '';
+                        let state = '';
 
-                        if(element != ""){
-                            if(city && state){
-                                if(elemento.includes(city) && elemento.includes(state)){
-                                    otherLocationsPass = true;
+                        if(element && element != ""){
+                            if(element.includes("-")){
+                                let arrayLocationName = element.split("-");
+
+                                if((arrayLocationName[0] && arrayLocationName[0] != "") && (arrayLocationName[1] && arrayLocationName[1] != "")){ 
+
+                                    arrayLocationName[0] = ((arrayLocationName[0].trim()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
+                                    arrayLocationName[1] = ((arrayLocationName[1].trim()).normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
+    
+                                    state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
+                                    city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
+
+                                    console.log("instructor state 109");
+                                    console.log(state);
+                                    console.log("instructor city 111");
+                                    console.log(city);
+
+                                    console.log("city filter internal 114");
+                                    console.log(cityFilterInternal);
+
+                                    console.log("state filter internal 117");
+                                    console.log(stateFilterInternal);
+
+                                    
+                                    if((cityFilterInternal && cityFilterInternal != "") && (stateFilterInternal && stateFilterInternal != "")){
+                                        if(city.includes(cityFilterInternal) && state.includes(stateFilterInternal)){
+                                            otherLocationsPass = true;
+                                        }
+                                    }else if(stateFilterInternal && stateFilterInternal != ""){
+                                        if(state.includes(stateFilterInternal)){
+                                            otherLocationsPass = true;
+                                        }
+                                    }else{
+                                        otherLocationsPass = true;
+                                    }                                    
                                 }
-                            }else if(state){
-                                if(elemento.includes(state)){
-                                    otherLocationsPass = true;
-                                }
-                            }else{
-                                otherLocationsPass = true;
                             }
-                        }
+                        }                        
                     })                
                 }else{
                     if(!cityFilter && !stateFilter){

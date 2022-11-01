@@ -219,9 +219,7 @@ class EventsController {
                             console.log("events city 219");
                             console.log(city);
 
-                            
-
-                            if(cityFilter){
+                            if(cityFilter && cityFilter != ""){
                                 let cityFilterInternal = (cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
                                 let stateFilterInternal = (stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
 
@@ -230,7 +228,7 @@ class EventsController {
                                     filterPass = false;
                                 }
                             }else{   
-                                if(stateFilter) {                    
+                                if(stateFilter && stateFilter != "") {                    
                                     let stateFilterInternal = stateFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "");      
 
                                     let e_locationName = (state.toUpperCase()).trim();
