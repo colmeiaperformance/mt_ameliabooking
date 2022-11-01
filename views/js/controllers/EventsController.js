@@ -198,20 +198,40 @@ class EventsController {
             console.log(customFields);
 
             if(e_location){
-                if(cityFilter){
-                    if(!e_location.name.toLowerCase().includes(cityFilter.toLowerCase()) 
-                    || !e_location.name.toLowerCase().includes(stateFilter.toLowerCase()))
-                        filterPass = false;
-                }else{                  
-                    if(stateFilter) {                    
-                        let e_locationName = (e_location.name.toUpperCase()).trim();
-                        let stateFilterUpper = stateFilter.toUpperCase();
+                if(e_location.name && e_location.name != ""){
+                    let locationName = e_location.name;
 
-                        if(!e_locationName.includes(stateFilterUpper)) {                         
-                            filterPass = false;
-                        }
-                    }                
-                }
+                    let state = '';
+                    let city = '';
+
+                    if(arrayLocationName.includes("-")){
+                        let arrayLocationName = locationName.split("-");
+
+                        if((arrayLocationName[0] && arrayLocationName[0] != "") && (arrayLocationName[1] && arrayLocationName[1] != "")){                                                    
+                            arrayLocationName[0] = arrayLocationName[0].trim();
+                            arrayLocationName[1] = arrayLocationName[1].trim();
+    
+                            state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
+                            city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
+
+                            if(cityFilter){
+                                if(!city.toLowerCase().includes(cityFilter.toLowerCase()) 
+                                || !state.toLowerCase().includes(stateFilter.toLowerCase())){
+                                    filterPass = false;
+                                }
+                            }else{                  
+                                if(stateFilter) {                    
+                                    let e_locationName = (state.toUpperCase()).trim();
+                                    let stateFilterUpper = stateFilter.toUpperCase();
+            
+                                    if(!e_locationName.includes(stateFilterUpper)) {                         
+                                        filterPass = false;
+                                    }
+                                }                
+                            }
+                        }                        
+                    }
+                }      
             }else{              
                 if(cityFilter || stateFilter) {            
                     filterPass = false;
