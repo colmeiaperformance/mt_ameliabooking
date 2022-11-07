@@ -172,6 +172,14 @@ function ajax_event_form(){
                [
                         "field"=> "75",
                         "value"=> $_POST['aceite']
+               ],
+               [
+                        "field"=> "80",
+                        "value"=> $_POST['melhorDia']
+               ],
+               [
+                        "field"=> "81",
+                        "value"=> $_POST['melhorPeriodo']
                ]
          )
       )

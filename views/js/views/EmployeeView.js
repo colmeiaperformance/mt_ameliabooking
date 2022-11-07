@@ -72,12 +72,56 @@ class EmployeeView extends View {
                                 <input type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
                             </div>
                             <div class="row">
-                            <div class="col-12 col-md-6 form-group">
-                                <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
+                                <div class="col-12 col-md-6 form-group">
+                                    <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
+                                </div>
+                                <div class="col-12 col-md-6 form-group">
+                                    <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
+                                </div>
                             </div>
-                            <div class="col-12 col-md-6 form-group">
-                                <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
-                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 form-group">
+                                    <select name="field[80]" id="field[80]" >
+                                        <option selected>
+                                        </option>
+                                        <option value="Domingo" >
+                                        Domingo
+                                        </option>
+                                        <option value="Segunda-feira" >
+                                        Segunda-feira
+                                        </option>
+                                        <option value="Terça-feira" >
+                                        Terça-feira
+                                        </option>
+                                        <option value="Quarta-feira" >
+                                        Quarta-feira
+                                        </option>
+                                        <option value="Quinta-feira" >
+                                        Quinta-feira
+                                        </option>
+                                        <option value="Sexta-feira" >
+                                        Sexta-feira
+                                        </option>
+                                        <option value="Sábado" >
+                                        Sábado
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-md-6 form-group">
+                                    <select name="field[81]" id="field[81]" >
+                                        <option selected>
+                                        </option>
+                                        <option value="Manhã" >
+                                        Manhã
+                                        </option>
+                                        <option value="Tarde" >
+                                        Tarde
+                                        </option>
+                                        <option value="Noite" >
+                                        Noite
+                                        </option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                             <textarea class="form-control" id="contactMessage" rows="7" placeholder="Sua mensagem"></textarea>
