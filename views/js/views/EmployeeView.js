@@ -76,7 +76,7 @@ class EmployeeView extends View {
                                     <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
-                                    <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
+                                    <input type="tel" name="phone" class="form-select" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
                                 </div>
                             </div>
                             <div class="row">
@@ -84,7 +84,7 @@ class EmployeeView extends View {
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-6 form-group">
-                                    <select name="field[80]" class="form-control mt-1" id="melhorDia" >
+                                    <select name="field[80]" class="form-select mt-1" id="melhorDia" >
                                         <option selected>
                                         </option>
                                         <option value="Domingo" >
