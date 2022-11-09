@@ -84,7 +84,7 @@ class EmployeeView extends View {
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-6 form-group">
-                                    <select name="field[80]" class="form-select mt-1" id="melhorDia" >
+                                    <select name="field[80]" class="form-control mt-1" id="melhorDia" >
                                         <option selected>
                                         </option>
                                         <option value="Domingo" >
@@ -111,7 +111,7 @@ class EmployeeView extends View {
                                     </select>
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
-                                    <select name="field[81]" id="melhorPeriodo" class="form-select mt-1">
+                                    <select name="field[81]" id="melhorPeriodo" class="form-control mt-1">
                                         <option selected>
                                         </option>
                                         <option value="Manhã" >
