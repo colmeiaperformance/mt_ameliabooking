@@ -962,11 +962,7 @@
     margin: 0 auto !important;
   }
 }
-.page-eventos .mt_filter .form-control,
-.page-eventos .mt_filter #melhorPeriodo,
-.page-eventos .mt_filter #melhorDia, .page-instrutores .mt_filter .form-control,
-.page-instrutores .mt_filter #melhorPeriodo,
-.page-instrutores .mt_filter #melhorDia {
+.page-eventos .mt_filter .form-control, .page-instrutores .mt_filter .form-control {
   width: 100%;
   font-weight: 500 !important;
   font-size: 1rem !important;
@@ -979,23 +975,11 @@
   background-color: #fff !important;
   background-repeat: no-repeat !important;
 }
-.page-eventos .mt_filter .form-control:active, .page-eventos .mt_filter .form-control:focus,
-.page-eventos .mt_filter #melhorPeriodo:active,
-.page-eventos .mt_filter #melhorPeriodo:focus,
-.page-eventos .mt_filter #melhorDia:active,
-.page-eventos .mt_filter #melhorDia:focus, .page-instrutores .mt_filter .form-control:active, .page-instrutores .mt_filter .form-control:focus,
-.page-instrutores .mt_filter #melhorPeriodo:active,
-.page-instrutores .mt_filter #melhorPeriodo:focus,
-.page-instrutores .mt_filter #melhorDia:active,
-.page-instrutores .mt_filter #melhorDia:focus {
+.page-eventos .mt_filter .form-control:active, .page-eventos .mt_filter .form-control:focus, .page-instrutores .mt_filter .form-control:active, .page-instrutores .mt_filter .form-control:focus {
   box-shadow: none !important;
 }
 @media (max-width: 992px) {
-  .page-eventos .mt_filter .form-control,
-.page-eventos .mt_filter #melhorPeriodo,
-.page-eventos .mt_filter #melhorDia, .page-instrutores .mt_filter .form-control,
-.page-instrutores .mt_filter #melhorPeriodo,
-.page-instrutores .mt_filter #melhorDia {
+  .page-eventos .mt_filter .form-control, .page-instrutores .mt_filter .form-control {
     font-size: 1rem !important;
     line-height: 18px !important;
     padding: 7px 17px !important;
