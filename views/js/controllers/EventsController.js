@@ -198,6 +198,8 @@ class EventsController {
             console.log(customFields);
 
             if(e_location){
+                console.log("e_location 201");
+                console.log(e_location);
                 if(e_location.name && e_location.name != ""){
                     let locationName = e_location.name;
 
