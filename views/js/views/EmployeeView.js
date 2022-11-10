@@ -42,7 +42,7 @@ class EmployeeView extends View {
                         </div>
                         <div class="containerButtons">
                             <div class="text-center div-button-whatsapp">
-                                <a target="_blank" href="https://api.whatsapp.com/send?phone=&amp;text=Ol%C3%A1,%20acessei%20seu%20contato%20no%20site%20da%20MT%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20curso." class="btn btn-whatsapp"> 
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=${model.phone}&text=Ol%C3%A1,%20acessei%20seu%20contato%20no%20site%20da%20MT%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20curso." class="btn btn-whatsapp"> 
                                     <img loading="lazy" src="${baseUrl}/images/instrutor/wpp.png" alt="Whatsapp"> Fale comigo no Whatsapp
                                 </a>
                             </div>
