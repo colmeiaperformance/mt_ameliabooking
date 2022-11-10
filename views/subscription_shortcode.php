@@ -162,8 +162,8 @@
     let eventList = [];
     let orderBy = "";
 
-    let state = new State(promisse);
-    let city = new City(promisse);
+    let state = new State(instructorPromisse);
+    let city = new City(instructorPromisse);
     
     let states = [];
     let cities = [];
@@ -342,8 +342,8 @@
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
-        state = new State(promisse);
-        city = new City(promisse);
+        state = new State(instructorPromisse);
+        city = new City(instructorPromisse);
         await getFilterEntities();
         eventList = await controller.list();
         if(instrutorID){
