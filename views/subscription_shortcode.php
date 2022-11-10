@@ -133,22 +133,11 @@
 
     let employeesList = <?php echo json_encode($employeesList); ?>;
 
-    console.log("Emploee list 120");
-    console.log(employeesList);
-
-    console.log("wp user infos 139");
-    console.log(wp_user_infos);
-
     const instructorPromisse = new Promise((resolve, reject) => {
         const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
         resolve(instructorStateCityFilter);
     });
 
-    console.log("Promisse Instructors 148");
-    console.log(instructorPromisse);
-
-
-    
     async function getEvents() {
         let aux = await controller.list();
         let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
@@ -196,9 +185,6 @@
         jQuery("#mt_loader_overlay").fadeIn();
         await getFilterEntities();
         eventList = await controller.list();
-
-        console.log("Event List render");
-        console.log(eventList);
 
         if(instrutorID){
 
@@ -259,7 +245,6 @@
         });
         
         if(!validateForm(array[0], array[1], array[2], array[3])){
-            console.log("está com erro");
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
@@ -336,9 +321,7 @@
             checkBox[key].push(event.value);
         else
             checkBox[key].splice(checkBox[key].indexOf(event.value));
-        console.log(checkBox);
     }
-
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
@@ -368,9 +351,6 @@
         jQuery("#msg").css('display', 'none');
 
         eventList = await controller.list(1, moment(), orderBy, state.sigla ? state.sigla : false, city.nome ? city.nome : false);
-
-        console.log("Event List 325");
-        console.log(eventList);
         
         if(eventList.length > 0 || instrutorID){
             jQuery("#mt_empty_form").css('display', 'none');

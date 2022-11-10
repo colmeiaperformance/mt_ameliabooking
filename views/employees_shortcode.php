@@ -82,9 +82,6 @@
         resolve(instructorStateCityFilter);
     });
 
-    console.log("Promisse Instructors 87");
-    console.log(instructorPromisse);
-
     let orderBy = "";
     let state = new State(instructorPromisse);
     let city = new City(instructorPromisse);
@@ -166,8 +163,6 @@
         }
         controller.renderItems(result);
 
-
-        console.log(result);
         startSlider();
     }
 
@@ -242,7 +237,6 @@
 
     const filterEvents = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
-        console.log(city.nome);
         eventList = await controller.list(orderBy, state.sigla ? state.sigla : false,
         city.nome != '' ? city.nome : false, wp_user_infos);
         if(eventList.length > 0){
