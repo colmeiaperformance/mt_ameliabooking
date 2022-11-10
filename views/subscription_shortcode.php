@@ -94,8 +94,21 @@
     }
 ?>
 
-<?php
+<?php 
+   $all_users = get_users();
+   $userInfos = [];
    
+   foreach($all_users  as $user){
+        $desc = get_user_meta($user->ID)['description'][0];
+        $userInfos[] = [
+        'email' => $user->data->user_email,
+        'id' => $user->ID,
+        'otherPlaces' => $desc ? explode(';', $desc) : []
+        ]; 
+   }
+?>
+
+<?php 
     $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
     $result = json_decode(file_get_contents($searchURL));
 
@@ -115,9 +128,16 @@
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
 
+    //Get alla employee
+    let wp_user_infos = <?php echo json_encode($userInfos) ?>;
+
     let employeesList = <?php echo json_encode($employeesList); ?>;
 
+    console.log("Emploee list 120");
     console.log(employeesList);
+
+    console.log("wp user infos 139");
+    console.log(wp_user_infos);
 
 
     
