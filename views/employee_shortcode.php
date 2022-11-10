@@ -133,14 +133,16 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        jQuery("#contactEmail, #contactName, #contactPhone, #contactMessage").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+        jQuery("#contactEmail, #melhorDia, #melhorPeriodo, #contactName, #contactPhone, #contactMessage").on('input', function() {
+            formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
         });
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
+            formData.append('melhorDia',jQuery("#melhorDia").val())
+            formData.append('melhorPeriodo',jQuery("#melhorPeriodo").val())
             formData.append('aceite',jQuery("#contactAceite").val())
             formData.append('name',jQuery("#contactName").val())
             formData.append('phone',jQuery("#contactPhone").val())
@@ -161,7 +163,7 @@
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
-    function formIsValid(email, name, phone, message){
+    function formIsValid(email, melhorDia, melhorPeriodo, name, phone, message){
         let valid = true;
 
         if(email.val() == ""){
@@ -179,6 +181,20 @@
             showHideError(name, true, true, 'Insira seu nome completo.');
         }else{
             showHideError(name, true, false, 'Este campo está válido.');
+        }
+
+        if(melhorDia.val() == ""){
+            valid = false;
+            showHideError(melhorDia, true, true, 'Selecione uma opção.');
+        }else{
+            showHideError(melhorDia, true, false, 'Este campo está válido.');
+        }
+
+        if(melhorPeriodo.val() == ""){
+            valid = false;
+            showHideError(melhorPeriodo, true, true, 'Selecione uma opção.');
+        }else{
+            showHideError(melhorPeriodo, true, false, 'Este campo está válido.');
         }
 
         if(phone.val() == ""){
