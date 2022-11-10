@@ -139,6 +139,14 @@
     console.log("wp user infos 139");
     console.log(wp_user_infos);
 
+    const instructorPromisse = new Promise((resolve, reject) => {
+        const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
+        resolve(instructorStateCityFilter);
+    });
+
+    console.log("Promisse Instructors 148");
+    console.log(instructorPromisse);
+
 
     
     async function getEvents() {
