@@ -94,6 +94,18 @@
     }
 ?>
 
+<?php
+   
+    $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
+    $result = json_decode(file_get_contents($searchURL));
+
+    $employeesList = [];
+
+    foreach($result->data->employees as $employee){
+        $employeesList[] = $employee;
+    }
+?>
+
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo plugin_dir_url( __FILE__ ); ?>';
@@ -102,6 +114,12 @@
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
+
+    let employeesList = <?php echo json_encode($employeesList); ?>;
+
+    console.log(employeesList);
+
+
     
     async function getEvents() {
         let aux = await controller.list();
