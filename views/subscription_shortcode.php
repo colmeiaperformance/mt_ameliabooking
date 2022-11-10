@@ -76,19 +76,6 @@
     }
 </style>
 
-<?php 
-   $all_users = get_users();
-   $userInfos = [];
-   
-   foreach($all_users  as $user){
-        $desc = get_user_meta($user->ID)['description'][0];
-        $userInfos[] = [
-        'email' => $user->data->user_email,
-        'id' => $user->ID,
-        'otherPlaces' => $desc ? explode(';', $desc) : []
-        ]; 
-?>
-
 <?php
     $instrutorID = false; 
     if(isset($_GET['instrutor'])){
@@ -107,60 +94,30 @@
     }
 ?>
 
-<?php
-   
-    $searchURL = admin_url( 'admin-ajax.php' ).'/?action=wpamelia_api&call=/entities&types[]=employees&types[]=locations';
-    $result = json_decode(file_get_contents($searchURL));
-
-    $employeesList = [];
-
-    foreach($result->data->employees as $employee){
-        $employeesList[] = $employee;
-    }
-?>
-
 <script>
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
     const baseurl = '<?php echo plugin_dir_url( __FILE__ ); ?>';
 
     let $ = document.querySelector.bind(document);
 
-    
-
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
-
-    //Get all employee
-    let wp_user_infos = <?php echo json_encode($userInfos) ?>;
     
-    let employeesList = <?php echo json_encode($employeesList) ?>;
-
-    // const instructorPromisse = new Promise((resolve, reject) => {
-    //     const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
-    //     resolve(instructorStateCityFilter);
-    // });
-
-    // console.log("Promisse Instructors 142");
-    // console.log(instructorPromisse);
-
-
-
+    async function getEvents() {
+        let aux = await controller.list();
+        let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
+        return eventsStateCityFilter;
+    }
     
-    // async function getEvents() {
-    //     let aux = await controller.list();
-    //     let eventsStateCityFilter = new EventsStateCityFilter(ajaxurl, aux);
-    //     return eventsStateCityFilter;
-    // }
-    
-    // let promisse = getEvents().then((resposta) => {
-    //     return resposta;
-    // });
+    let promisse = getEvents().then((resposta) => {
+        return resposta;
+    });
 
     let eventList = [];
     let orderBy = "";
 
-    let state = new State();
-    let city = new City();
+    let state = new State(promisse);
+    let city = new City(promisse);
     
     let states = [];
     let cities = [];
@@ -339,8 +296,8 @@
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
-        state = new State();
-        city = new City();
+        state = new State(promisse);
+        city = new City(promisse);
         await getFilterEntities();
         eventList = await controller.list();
         if(instrutorID){
