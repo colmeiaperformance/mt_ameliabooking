@@ -254,6 +254,9 @@ class EventsController {
             e_location ? location.constructByObjects(e_location) : false);
             newEvent.customFields = e_custom_fields;
 
+            console.log("new event 257");
+            console.log(newEvent);
+
             if(filterPass && e.status != 'rejected' && e.show){
                 eventList.push(newEvent);
             }
