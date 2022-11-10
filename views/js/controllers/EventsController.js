@@ -167,15 +167,10 @@ class EventsController {
 
     list = async(page = 1, startDate = moment(), orderBy = false, stateFilter = false, cityFilter = false, ) => {
         let entities_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/entities&types[]=locations&types[]=tags&types[]=custom_fields&types[]=employees`);     
-        console.log("this._ajaxUrl 170");
-        console.log(this._ajaxUrl);
         let events_consult = await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
         let events = events_consult.data.data.events;
         let entities = entities_consult.data.data;
         let customFields = entities_consult.data.data.customFields;
-
-        console.log("entities_consult 175");
-        console.log(entities_consult);
     
         while(events_consult.data.data.count > events.length) {
             events_consult =  await axios.get(`${this._ajaxUrl}?action=wpamelia_api&call=/events&dates[]=${startDate.format('YYYY-MM-DD')}&page=${page}`);
@@ -194,15 +189,7 @@ class EventsController {
             let employee = new Employee();
             let e_custom_fields = customFields;
 
-            console.log("custom Fields");
-            console.log(customFields);
-
             if(e_location){
-                console.log("e 201");
-                console.log(e);
-
-                console.log("e_location 204");
-                console.log(e_location);
                 if(e_location.name && e_location.name != ""){
                     let locationName = e_location.name;
 
@@ -218,11 +205,6 @@ class EventsController {
     
                             state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
                             city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
-
-                            console.log("events state 217");
-                            console.log(state);
-                            console.log("events city 219");
-                            console.log(city);
 
                             if(cityFilter && cityFilter != ""){
                                 let cityFilterInternal = (cityFilter.normalize("NFD").replace(/[^a-zA-Z\s]/g, "")).toLowerCase();
@@ -257,10 +239,7 @@ class EventsController {
             e_location ? location.constructByObjects(e_location) : false);
             newEvent.customFields = e_custom_fields;
 
-            console.log("new event 257");
-            console.log(newEvent);
-
-            if(filterPass && e.status != 'rejected' && e.show){
+            if(filterPass && e.status != 'rejected' && e.show && !e.closed){
                 eventList.push(newEvent);
             }
            
