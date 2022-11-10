@@ -125,22 +125,23 @@
 
     let $ = document.querySelector.bind(document);
 
-    //Get all employee
-    let wp_user_infos = <?php echo json_encode($userInfos) ?>;
+    
 
     const controller = new EventsController(ajaxurl, baseurl, $("#mt_filter_results"));
     const filterController = new FilterController(ajaxurl, baseurl, $("#mt_filters"));
 
-
+    //Get all employee
+    let wp_user_infos = <?php echo json_encode($userInfos) ?>;
+    
     let employeesList = <?php echo json_encode($employeesList) ?>;
 
-    const instructorPromisse = new Promise((resolve, reject) => {
-        const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
-        resolve(instructorStateCityFilter);
-    });
+    // const instructorPromisse = new Promise((resolve, reject) => {
+    //     const instructorStateCityFilter = new InstructorStateCityFilter(ajaxurl, employeesList, wp_user_infos);
+    //     resolve(instructorStateCityFilter);
+    // });
 
-    console.log("Promisse Instructors 87");
-    console.log(instructorPromisse);
+    // console.log("Promisse Instructors 142");
+    // console.log(instructorPromisse);
 
 
 
@@ -158,8 +159,8 @@
     let eventList = [];
     let orderBy = "";
 
-    let state = new State(instructorPromisse);
-    let city = new City(instructorPromisse);
+    let state = new State();
+    let city = new City();
     
     let states = [];
     let cities = [];
@@ -338,8 +339,8 @@
 
     const removeFilters = async() => {
         jQuery("#mt_loader_overlay").fadeIn();
-        state = new State(instructorPromisse);
-        city = new City(instructorPromisse);
+        state = new State();
+        city = new City();
         await getFilterEntities();
         eventList = await controller.list();
         if(instrutorID){
