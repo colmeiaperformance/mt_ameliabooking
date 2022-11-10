@@ -23,9 +23,6 @@ class InstructorStateCityFilter {
         });
         locList = locList.filter(value => value != "");
 
-        console.log("Loc list");
-        console.log(locList);
-
         let states = [];
         let cities = [];
 

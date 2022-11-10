@@ -102,7 +102,6 @@
 
     const id = getUrlParameter('id'); //Get id from url.
     const ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
-    console.log(ajaxurl);
     const baseurl = '<?php echo get_template_directory_uri(); ?>';
     const urlbase = '<?php echo plugin_dir_url( __FILE__ ); ?>';
     const urlRedirectInstructorsPage = '<?php echo home_url() . '/instrutores'; ?>';
@@ -112,9 +111,6 @@
     let employee = new Employee()
 
     const eventsController = new EventsController(ajaxurl, urlbase, jQuery("#eventsContainer"));
-
-    console.log("url base");
-    console.log(urlbase);
     
     getEmployee = async(id) => {
        

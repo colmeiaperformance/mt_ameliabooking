@@ -57,8 +57,6 @@ class EmployeeController {
 
                 let filterLocations = [];
                 if(otherLocations.length > 0 || e_location.name){
-                    console.log("filter location antes")
-                    console.log(filterLocations)
                     if(otherLocations.length > 0){
                         otherLocations.forEach((element) => {
                             if(element != ""){
@@ -87,9 +85,6 @@ class EmployeeController {
                         stateFilterInternal = stateFilterInternal.toLowerCase();
                     }
 
-                    console.log("filter location 90");
-                    console.log(filterLocations);
-
                     filterLocations.forEach((element) => {
                         let city = '';
                         let state = '';
@@ -105,19 +100,7 @@ class EmployeeController {
     
                                     state = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[1] : arrayLocationName[0]; 
                                     city = arrayLocationName[0].length > arrayLocationName[1].length ? arrayLocationName[0] : arrayLocationName[1]; 
-
-                                    console.log("instructor state 109");
-                                    console.log(state);
-                                    console.log("instructor city 111");
-                                    console.log(city);
-
-                                    console.log("city filter internal 114");
-                                    console.log(cityFilterInternal);
-
-                                    console.log("state filter internal 117");
-                                    console.log(stateFilterInternal);
-
-                                    
+  
                                     if((cityFilterInternal && cityFilterInternal != "") && (stateFilterInternal && stateFilterInternal != "")){
                                         if(city.includes(cityFilterInternal) && state.includes(stateFilterInternal)){
                                             otherLocationsPass = true;
@@ -160,8 +143,6 @@ class EmployeeController {
                     }
                 }
             });
-            console.log("employee List");
-            console.log(employeeList);
             return employeeList;
         }   
         return false;

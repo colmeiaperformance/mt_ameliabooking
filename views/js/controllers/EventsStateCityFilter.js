@@ -13,21 +13,12 @@ class EventsStateCityFilter {
         let locList = [];
         let listStateCity = [];
 
-        console.log("Events List 16");
-        console.log(this._eventsList);
-
         let states = [];
         let cities = [];
 
-        console.log("depois de adicionar");
-
         this._eventsList.forEach(element => {
-            console.log(element._local);
             locList.push(element._local);
         });
-
-        console.log("Loc list");
-        console.log(locList);
 
         locList.forEach(element => {
             if(element && element != ""){
@@ -78,11 +69,6 @@ class EventsStateCityFilter {
                 }
             }
         });
-
-        console.log("States");
-        console.log(states);
-        console.log("Cities");
-        console.log(cities);
 
         this.states = states;
         this.cities = cities;         

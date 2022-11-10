@@ -15,8 +15,6 @@ class State{
 
     list = async() => {
         let result = this._stateCityFilter.then(async(resposta) => {
-            console.log("Resposta 22");
-            console.log(resposta);
 
             let states = await axios.get('https://servicodados.ibge.gov.br/api/v1/localidades/estados?orderBy=nome');
             let stateList = [];
@@ -44,9 +42,6 @@ class State{
             }   
             return false;
         });
-
-        console.log("Result 48");
-        console.log(result);
 
         return result;
     }

@@ -42,9 +42,6 @@ class City{
             return false;
         });
 
-        console.log("Result 45 city");
-        console.log(result);
-
         return result;
     }
 
