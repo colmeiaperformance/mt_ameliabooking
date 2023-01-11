@@ -47,7 +47,7 @@ class EmployeeView extends View {
                                 </a>
                             </div>
                             <div class="text-center div-button-events">
-                                <button class="btn btn-events" onclick="toggleEvents()">Agende a palestra gratuita</button>
+                                <button class="btn btn-events" onclick="toggleEvents()">Inscreva-se na palestra gratuita</button>
                             </div>
                         </div>
                         </div>
