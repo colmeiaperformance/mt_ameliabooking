@@ -213,7 +213,7 @@
             jQuery('.phoneMask').mask(phoneBehavior, spOptions);
         }else{
             document.getElementById('mt_filter_results').style.display = 'none';
-            document.getElementById('mt_filters').style.marginBottom = '250px';
+            document.getElementById('mt_filters').style.marginBottom = '50px';
             jQuery("#mt_empty_form").css('display', 'none');
         }
         
@@ -335,7 +335,7 @@
         }else{
             mt_filters.classList.add('hideOrder');
             jQuery("#mt_filter_results").css('display', 'none');
-            document.getElementById('mt_filters').style.marginBottom = '250px';
+            document.getElementById('mt_filters').style.marginBottom = '50px';
             jQuery("#mt_empty_form").css('display', 'none');
             jQuery("#msg").css('display', 'none');
             controller.renderItems(eventList);
