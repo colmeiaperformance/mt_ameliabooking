@@ -560,13 +560,20 @@
           </p>
         </div>
       </div>
-      <div class="_form_element _x24363437 _full_width">
-        <div class="_field-wrapper">
-          <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required />
+      <div class="row p-0 m-0">
+        <div class="_form_element _x24363437 col-12 col-lg-6 p-0 pe-lg-3 mb-0">
+          <div class="_field-wrapper">
+            <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required />
+          </div>
+        </div>
+        <div class="_form_element _x26521569 col-12 col-lg-6 p-0 pe-lg-3 mb-0">
+          <div class="_field-wrapper">
+            <input type="text" id="lastname" name="lastname" placeholder="Digite seu sobrenome" />
+          </div>
         </div>
       </div>
       <div class="row p-0 m-0">
-        <div class="_form_element _x35236746 _col-12 col-lg-6 p-0 pe-lg-3 mb-0">
+        <div class="_form_element _x35236746 col-12 col-lg-6 p-0 pe-lg-3 mb-0">
           <div class="_field-wrapper">
             <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required />
           </div>
@@ -603,10 +610,58 @@
         </div>
        </div>
        
-       <div class="_form_element _field47 _full_width " >
-         <div class="_field-wrapper">
-           <textarea id="field[47]" name="field[47]" placeholder="Digite sua mensagem" rows="4" cols="50"></textarea>
-         </div>
+       <div class="row">
+          <p class="mt-2 mb-1">Melhor dia e período para contato:</p>
+      </div>
+       <div class="row p-0 m-0">
+        <div class="_form_element _x34965316 _full_width " >
+          <div class="_field-wrapper">
+            <select name="field[80]" id="field[80]" >
+              <option selected>
+              </option>
+              <option value="Domingo" >
+                Domingo
+              </option>
+              <option value="Segunda-feira" >
+                Segunda-feira
+              </option>
+              <option value="Terça-feira" >
+                Terça-feira
+              </option>
+              <option value="Quarta-feira" >
+                Quarta-feira
+              </option>
+              <option value="Quinta-feira" >
+                Quinta-feira
+              </option>
+              <option value="Sexta-feira" >
+                Sexta-feira
+              </option>
+              <option value="Sábado" >
+                Sábado
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="_form_element _x98840228 _full_width " >
+          <div class="_field-wrapper">
+            <select name="field[81]" id="field[81]" >
+              <option selected>
+              </option>
+              <option value="Manhã" >
+                Manhã
+              </option>
+              <option value="Tarde" >
+                Tarde
+              </option>
+              <option value="Noite" >
+                Noite
+              </option>
+            </select>
+          </div>
+        </div>
+
+
        </div>
        <div class="_form_element _x66411184 _full_width " >
          <fieldset class="_form-fieldset">
@@ -647,7 +702,9 @@
     "47": "mensagem",
     "75": "optin",
     "46": "cidade_onde_quer_palestra",
-    "65": "origemdemensagem"
+    "65": "origemdemensagem",
+    "80": "melhor_dia_para_contato",
+    "81": "melhor_periodo_para_contato"
   };
   window._show_thank_you = function(id, message, trackcmp_url, email) {
     var form = document.getElementById('_form_' + id + '_'),
