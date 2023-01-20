@@ -580,7 +580,7 @@
         </div>
         <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone" required />
+            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone com DDD" required />
           </div>
         </div>
       </div>
