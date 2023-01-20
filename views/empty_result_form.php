@@ -611,7 +611,7 @@
        </div>
        
        <div class="row">
-          <p class="mt-2 mb-1">Melhor dia e período para contato:</p>
+          <p class="text-start mt-2 mb-1">Melhor dia e período para contato:</p>
       </div>
        <div class="row p-0 m-0">
         <div class="_form_element _x34965316 col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
