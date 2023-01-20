@@ -699,7 +699,6 @@
 
 <script type="text/javascript">
   window.cfields = {
-    "47": "mensagem",
     "75": "optin",
     "46": "cidade_onde_quer_palestra",
     "65": "origemdemensagem",
