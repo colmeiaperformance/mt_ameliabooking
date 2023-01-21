@@ -681,7 +681,7 @@
          </fieldset>
        </div>
        <div class="_button-wrapper _full_width">
-         <button id="_form_4_submit" class="_submit" type="submit">
+         <button onclick="checkLength()" id="_form_4_submit" class="_submit" type="submit">
            Enviar
          </button>
        </div>
@@ -941,6 +941,11 @@
           no_error = false;
           tooltip = create_tooltip(elem, "Este campo é necessário.");
         }
+        else if (elem.type == 'text' && elem.id === "phone" && value.length < 14 ) {
+          elem.className = elem.className + ' _has_error';
+          no_error = false;
+          tooltip = create_tooltip(elem, "Digite um número de telefone válido com DDD.");
+        }
       }
       if (no_error && elem.name == 'email') {
         if (!value.match(/^[\+_a-z0-9-'&=]+(\.[\+_a-z0-9-']+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i)) {
@@ -1101,4 +1106,10 @@
     addEvent(form_to_submit, 'submit', form_submit);
   })(); 
   jQuery('#phone').mask(phoneBehavior, spOptions);
+  function checkLength(){
+    let phoneInput = document.querySelector('#phone');
+    if ( phoneInput.length < 15 ) {
+      console.log('Phone OK');
+    }
+  }
 </script>
