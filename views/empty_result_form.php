@@ -568,7 +568,7 @@
         </div>
         <div class="_form_element _x26521569 col-12 col-lg-6 p-0 pe-lg-3 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="lastname" name="lastname" placeholder="Digite seu sobrenome" />
+            <input type="text" id="lastname" name="lastname" placeholder="Digite seu sobrenome" required />
           </div>
         </div>
       </div>
