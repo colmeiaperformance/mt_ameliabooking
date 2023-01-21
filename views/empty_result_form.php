@@ -681,7 +681,7 @@
          </fieldset>
        </div>
        <div class="_button-wrapper _full_width">
-         <button onclick="checkLength()" id="_form_4_submit" class="_submit" type="submit">
+         <button id="_form_4_submit" class="_submit" type="submit">
            Enviar
          </button>
        </div>
@@ -1106,10 +1106,4 @@
     addEvent(form_to_submit, 'submit', form_submit);
   })(); 
   jQuery('#phone').mask(phoneBehavior, spOptions);
-  function checkLength(){
-    let phoneInput = document.querySelector('#phone');
-    if ( phoneInput.length < 15 ) {
-      console.log('Phone OK');
-    }
-  }
 </script>

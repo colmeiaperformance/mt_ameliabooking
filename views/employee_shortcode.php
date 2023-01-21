@@ -121,7 +121,7 @@
         jQuery("#mt_loader_overlay").fadeIn();
         employee = await getEmployee(id);
         controller.render(employee);
-        jQuery('#contactPhone').mask('(00) 00000-0000');
+        jQuery('#contactPhone').mask(phoneBehavior, spOptions);
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
@@ -192,10 +192,10 @@
         }else{
             showHideError(melhorPeriodo, true, false, 'Este campo está válido.');
         }
-
-        if(phone.val() == ""){
+        phoneValue = document.getElementById("contactPhone").value;
+        if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu telefone ou celular.');
+            showHideError(phone, true, true, 'Digite seu telefone ou celular com DDD.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
@@ -269,8 +269,7 @@
 
             let employeeEvents = new EmployeeEvents(jQuery("#eventsContainer"), events, urlbase);
             employeeEvents.renderView();
-        
-            jQuery('.phoneMask').mask(phoneBehavior, spOptions);
+            // jQuery('#contactPhone').mask(phoneBehavior, spOptions);
             jQuery("#mt_loader_overlay").fadeOut();
         }
     }
