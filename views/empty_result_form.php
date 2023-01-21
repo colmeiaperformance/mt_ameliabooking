@@ -616,7 +616,7 @@
        <div class="row p-0 m-0">
         <div class="_form_element _x34965316 col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
           <div class="_field-wrapper">
-            <select class="form-control" name="field[80]" id="melhorDia" >
+            <select class="form-control" name="field[80]" id="melhorDia" required >
               <option selected>
               </option>
               <option value="Domingo" >
@@ -645,7 +645,7 @@
         </div>
         <div class="_form_element _x98840228 col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
           <div class="_field-wrapper">
-            <select class="form-control" name="field[81]" id="melhorPeriodo" >
+            <select class="form-control" name="field[81]" id="melhorPeriodo" required >
               <option selected>
               </option>
               <option value="Manhã" >
