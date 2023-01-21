@@ -150,7 +150,7 @@ add_shortcode("edit_default_text", "edit_default_text");
 add_action('wp_ajax_event_form', 'ajax_event_form');
 add_action('wp_ajax_nopriv_event_form', 'ajax_event_form');
 function ajax_event_form(){
-  $url = 'https://meditacaotranscedental.api-us1.com/api/3/contacts';
+  $url = 'https://meditacaotranscedental.api-us1.com/api/3/contact/sync';
   $key = 'e95ce61eb9e4517b45d30bdcedb8a51ee117749f9f45bbdce702f03c5522ffb34d8e7eb8';
   
   //Formulario pagina single instrutor
