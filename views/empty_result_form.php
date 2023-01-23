@@ -566,7 +566,7 @@
             <input type="text" id="firstname" name="firstname" placeholder="Digite seu primeiro nome" required />
           </div>
         </div>
-        <div class="_form_element _x26521569 col-12 col-lg-6 p-0 pe-lg-3 mb-0">
+        <div class="_form_element _x26521569 col-12 col-lg-6 p-0 pe-lg-0 mb-0">
           <div class="_field-wrapper">
             <input type="text" id="lastname" name="lastname" placeholder="Digite seu sobrenome" required />
           </div>
@@ -614,7 +614,7 @@
           <p class="text-start mt-2 mb-1">Melhor dia e período para contato:</p>
       </div>
        <div class="row p-0 m-0">
-        <div class="_form_element _x34965316 col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
+        <div class="_form_element _x34965316 col-12 col-lg-6 p-0 pe-lg-3 mb-3 mb-lg-0" >
           <div class="_field-wrapper">
             <select class="form-control" name="field[80]" id="melhorDia" required >
               <option selected>
@@ -643,7 +643,7 @@
             </select>
           </div>
         </div>
-        <div class="_form_element _x98840228 col-12 col-lg-6 p-0 pe-lg-3 mb-0" >
+        <div class="_form_element _x98840228 col-12 col-lg-6 p-0 pe-lg-0 mb-0" >
           <div class="_field-wrapper">
             <select class="form-control" name="field[81]" id="melhorPeriodo" required >
               <option selected>
