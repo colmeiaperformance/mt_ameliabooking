@@ -69,7 +69,7 @@ class EmployeeView extends View {
                         <h2 class="titleForm">Quero receber contato do instrutor</h2>
                         <form id="employee-send-contact" onsubmit="sendContactForm(event,this)">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome">
+                                <input type="text" class="form-control" id="contactName" aria-describedby="textHelp" placeholder="Nome Completo">
                             </div>
                             <div class="row">
                                 <div class="col-12 col-md-6 form-group">
