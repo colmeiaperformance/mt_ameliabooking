@@ -580,7 +580,7 @@
         </div>
         <div class="_form_element _x04573228 col-12 col-lg-6 p-0 mb-0">
           <div class="_field-wrapper">
-            <input type="text" id="phone" name="phone" placeholder="Digite seu telefone com DDD" required />
+            <input type="text" id="phone" name="phone" placeholder="DDD + Telefone" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000" required />
           </div>
         </div>
       </div>
@@ -944,7 +944,7 @@
         else if (elem.type == 'text' && elem.id === "phone" && value.length < 14 ) {
           elem.className = elem.className + ' _has_error';
           no_error = false;
-          tooltip = create_tooltip(elem, "Digite um número de telefone válido com DDD.");
+          tooltip = create_tooltip(elem, "Digite o seu DDD + Telefone válido.");
         }
       }
       if (no_error && elem.name == 'email') {

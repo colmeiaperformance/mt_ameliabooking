@@ -76,7 +76,7 @@ class EmployeeView extends View {
                                     <input type="text" class="form-control" id="contactEmail" aria-describedby="emailHelp" placeholder="Email">
                                 </div>
                                 <div class="col-12 col-md-6 form-group">
-                                    <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="Telefone">
+                                    <input type="tel" name="phone" class="form-control" id="contactPhone" aria-describedby="phoneHelp" placeholder="DDD + Telefone" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000">
                                 </div>
                             </div>
                             <div class="row">

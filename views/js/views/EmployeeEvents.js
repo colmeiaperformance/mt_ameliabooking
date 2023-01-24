@@ -137,10 +137,10 @@ class EmployeeEvents {
                                             <input  name="email" onchange="email = this.value" type="email" class="form-control email">							
                                         </div>						
                                         <div class="mt_column phone">
-                                            <label> * Telefone: </label>		
+                                            <label> * DDD + Telefone: </label>		
                                             <div class="input-group">
                                                 <span class="input-group-text flag"><img src="${this._urlbase}resources/svg/flag.svg"></span>
-                                                <input name="phone" onchange="phone = this.value" type="tel" class="form-control phoneMask phoneInpt">
+                                                <input name="phone" onchange="phone = this.value" type="tel" class="form-control phoneMask phoneInpt" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000">
                                             </div>
                                         </div>
                                     </div>                                
