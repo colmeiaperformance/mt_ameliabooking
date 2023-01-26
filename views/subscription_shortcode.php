@@ -253,7 +253,6 @@
                     validateForm(array[0], array[1], array[2], array[3]);
                 });
             });
-
         }
         else{
             jQuery("#mt_loader_overlay").fadeIn();
@@ -542,7 +541,6 @@
         let $ = jQuery;
         let element = $(`#mt_event_details_subscriptions_${key}`);
         
-    
         if(!element.hasClass('oppened')){
             element.addClass('oppened');
             $(`#mt_event_details_${key}`).addClass('oppened');

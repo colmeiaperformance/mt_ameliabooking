@@ -242,7 +242,6 @@
         let $ = jQuery;
         let element = $(`#mt_event_details_subscriptions_${key}`);
         
-    
         if(!element.hasClass('oppened')){
             element.addClass('oppened');
             $(`#mt_event_details_${key}`).addClass('oppened');
@@ -271,6 +270,92 @@
             employeeEvents.renderView();
             jQuery('#contactPhone').mask(phoneBehavior, spOptions);
             jQuery("#mt_loader_overlay").fadeOut();
+        }
+    }
+
+    async function bookingEvent(eventId){
+        let formQuery = jQuery(`#formEvt${eventId}`);
+        let form = document.getElementById(`formEvt${eventId}`);
+        let formData = new FormData(form);
+        firstName =  formData.getAll('firstName')[0];
+        lastName =  formData.getAll('lastName')[0];
+        email =  formData.getAll('email')[0];
+        phone =  formData.getAll('phone')[0];
+
+        nomeDaPalestra =  formData.getAll('nomeDaPalestra')[0];
+        cidadeDaPalestra =  formData.getAll('cidadeDaPalestra')[0];
+
+        let array = [formQuery.find(".firstName"), formQuery.find(".lastName"), formQuery.find(".email"), formQuery.find(".phoneInpt")];
+
+        form.addEventListener("submit", event => {
+            event.preventDefault();
+        });
+        
+        if(!validateForm(array[0], array[1], array[2], array[3])){
+            jQuery("#mt_message_overlay_error").fadeIn();
+            jQuery("#mt_message_overlay_error").css('display', 'flex');
+
+            array.forEach((element) => {
+                jQuery(element).on('input', function() {
+                    validateForm(array[0], array[1], array[2], array[3]);
+                });
+            });
+        }
+        else{
+            jQuery("#mt_loader_overlay").fadeIn();
+            let bkEvent = eventList.filter(e => e.id == eventId);
+            bkEvent = bkEvent[0];
+            
+            let booking = await controller.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
+            if(booking){
+                jQuery("#mt_message_overlay_success").fadeIn();
+                jQuery("#mt_message_overlay_success").css('display', 'flex');
+                jQuery("#mt_loader_overlay").fadeOut();
+                
+                let filteredCheckOptions = checkBox.filter(c => c ? c : false);
+
+                //Connecting to Active Campaing
+                const url = `${ajaxurl}?action=event_subscription`;
+                let formData = new FormData();
+                formData.append('email',email)
+                formData.append('firstName',firstName)
+                formData.append('lastName',lastName)
+                formData.append('phone',phone)
+                formData.append('oqueTrouxe',filteredCheckOptions.join(', '));
+                
+                formData.append('nomeDaPalestra',nomeDaPalestra)
+                formData.append('cidadeDaPalestra',cidadeDaPalestra)
+                
+                let start = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('DD-MM-YYYY');
+                let hour = moment(bkEvent.periods[0].periodStart).subtract(3, 'hours').format('HH:mm');
+                let hourDate = moment(bkEvent.periods[0].periodStart).format('DD-MM-YYYY HH:mm');
+
+                let momentPeriod = moment(bkEvent.periods[0].periodStart);
+
+                let dataHoraText = `${momentPeriod.format('DD')}/${momentPeriod.format('MM')}/${momentPeriod.format('YYYY')}`
+
+                formData.append('dataPalestra', `${start}`);
+                formData.append('horaPalestra',  `${hour}`);
+                formData.append('dataHoraPalestra',  `${hourDate}`);
+                formData.append('dataHoraText',  `${dataHoraText}`);
+            
+                formData.append('instrutor',bkEvent.organizer?.firstName+' '+ bkEvent.organizer?.lastName)
+                formData.append('message',jQuery("#contactMessage").val())
+
+                let contactReq = await axios.post(`${url}`,formData,{
+                    headers: { 
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                });
+                setTimeout(function () {
+                    location.reload(true);
+                }, 1000);
+            }else{
+                validateForm(array[0], array[1], array[2], array[3]);
+                jQuery("#mt_message_overlay_error").fadeIn();
+                jQuery("#mt_message_overlay_error").css('display', 'flex');
+                jQuery("#mt_loader_overlay").fadeOut();
+            }
         }
     }
 

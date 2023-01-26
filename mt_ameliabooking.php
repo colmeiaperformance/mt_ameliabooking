@@ -143,10 +143,6 @@ function edit_default_text(){
 }
 add_shortcode("edit_default_text", "edit_default_text");
 
-
-
-
-
 add_action('wp_ajax_event_form', 'ajax_event_form');
 add_action('wp_ajax_nopriv_event_form', 'ajax_event_form');
 function ajax_event_form(){
@@ -184,7 +180,6 @@ function ajax_event_form(){
          )
       )
    );
-
 
    $ch = curl_init($url); 
 	curl_setopt($ch, CURLOPT_POST, 1);
