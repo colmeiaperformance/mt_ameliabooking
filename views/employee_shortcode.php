@@ -123,8 +123,6 @@
     
     let eventList = [];
     
-    eventList = eventsController.list();
-
     getEmployee = async(id) => {
        
        return await employee.find(id,ajaxurl, wp_user_infos)
@@ -287,6 +285,7 @@
     }
 
     async function bookingEvent(eventId){
+        let eventList = await eventsController.list();
         let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);
         let formData = new FormData(form);
