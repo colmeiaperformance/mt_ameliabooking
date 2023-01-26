@@ -465,7 +465,7 @@
 
         if(phone.val() == ""){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu telefone ou celular.');
+            showHideError(phone, true, true, 'Digite seu DDD + Telefone ou celular.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
