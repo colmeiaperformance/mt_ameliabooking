@@ -269,7 +269,7 @@
 
             let employeeEvents = new EmployeeEvents(jQuery("#eventsContainer"), events, urlbase);
             employeeEvents.renderView();
-            // jQuery('#contactPhone').mask(phoneBehavior, spOptions);
+            jQuery('#contactPhone').mask(phoneBehavior, spOptions);
             jQuery("#mt_loader_overlay").fadeOut();
         }
     }
