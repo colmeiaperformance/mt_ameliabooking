@@ -8,9 +8,11 @@
     margin: 0 auto !important;
     margin-bottom: 16px !important;
   }
-
+  .empty-events label {
+    font-size: 1rem;
+  }
   #_form_4_ {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1.6;
     font-family: arial, helvetica, sans-serif;
     margin: 0;
