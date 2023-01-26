@@ -123,8 +123,8 @@
     
     let eventList = [];
     
-    eventList = await eventsController.list();
-    
+    eventList = eventsController.list();
+
     getEmployee = async(id) => {
        
        return await employee.find(id,ajaxurl, wp_user_infos)
