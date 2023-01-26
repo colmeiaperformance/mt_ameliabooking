@@ -111,6 +111,15 @@
     let employee = new Employee()
 
     const eventsController = new EventsController(ajaxurl, urlbase, jQuery("#eventsContainer"));
+
+    let firstName = "";
+    let lastName = "";
+    let email = "";
+    let phone = "";
+    let checkBox = [];
+
+    let nomeDaPalestra = "";
+    let cidadeDaPalestra = "";
     
     getEmployee = async(id) => {
        
@@ -359,6 +368,16 @@
         }
     }
 
+    function changeCheckBoxOque(event,key){
+        if(!checkBox[key])
+            checkBox[key] = new Array();
+
+        if(event.checked)
+            checkBox[key].push(event.value);
+        else
+            checkBox[key].splice(checkBox[key].indexOf(event.value));
+    }
+
     const validateForm = (firstName, lastName, email, phone) => {
         let valid = true;
 
@@ -396,16 +415,6 @@
         phone.parent().addClass('mt_warning');
 
         return valid;
-    }
-
-    function changeCheckBoxOque(event,key){
-        if(!checkBox[key])
-            checkBox[key] = new Array();
-
-        if(event.checked)
-            checkBox[key].push(event.value);
-        else
-            checkBox[key].splice(checkBox[key].indexOf(event.value));
     }
 
     render();
