@@ -306,7 +306,7 @@
             let bkEvent = eventList.filter(e => e.id == eventId);
             bkEvent = bkEvent[0];
             
-            let booking = await controller.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
+            let booking = await eventsController.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
             if(booking){
                 jQuery("#mt_message_overlay_success").fadeIn();
                 jQuery("#mt_message_overlay_success").css('display', 'flex');
@@ -396,6 +396,16 @@
         phone.parent().addClass('mt_warning');
 
         return valid;
+    }
+
+    function changeCheckBoxOque(event,key){
+        if(!checkBox[key])
+            checkBox[key] = new Array();
+
+        if(event.checked)
+            checkBox[key].push(event.value);
+        else
+            checkBox[key].splice(checkBox[key].indexOf(event.value));
     }
 
     render();
