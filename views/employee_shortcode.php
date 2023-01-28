@@ -284,11 +284,13 @@
         }
     }
 
-    console.log('ajaxurl');
+    console.log('ajaxurl 287');
     console.log(ajaxurl);
 
     async function bookingEvent(eventId){
         let eventList = await eventsController.list();
+        console.log('linha 292');
+        console.log(eventList);
         let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);
         console.log('Form');

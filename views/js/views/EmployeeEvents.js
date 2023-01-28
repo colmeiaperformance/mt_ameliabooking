@@ -174,7 +174,7 @@ class EmployeeEvents {
                                     }                            
                                     <div class="mt_row confirm">
                                         <div class="mt_column">
-                                            <button type="submit" onClick="bookingEvent(${e.id})" class="mt_btn_default"> Confirmar </button>
+                                            <button onClick="bookingEvent(${e.id})" class="mt_btn_default"> Confirmar </button>
                                         </div>
                                     </div>
                                 </div>
