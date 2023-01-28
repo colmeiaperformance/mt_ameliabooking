@@ -373,6 +373,7 @@
                 //     location.reload(true);
                 // }, 1000);
             }else{
+                console.log('Linha 376');
                 validateForm(array[0], array[1], array[2], array[3]);
                 jQuery("#mt_message_overlay_error").fadeIn();
                 jQuery("#mt_message_overlay_error").css('display', 'flex');
