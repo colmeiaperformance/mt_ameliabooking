@@ -155,8 +155,7 @@
 
         let employeeEvents = new EmployeeEvents(jQuery("#eventsContainer"), events, urlbase);
         employeeEvents.renderView();
-        jQuery('#contactPhoneEvents').mask(phoneBehavior, spOptions);
-
+        jQuery('.phoneMask').mask(phoneBehavior, spOptions);
 
         jQuery('#contactPhone').mask(phoneBehavior, spOptions);
         jQuery("#mt_loader_overlay").fadeOut();
