@@ -322,8 +322,10 @@
                 });
             });
         } else {
-            console.log('linha 324');
             jQuery("#mt_loader_overlay").fadeIn();
+            let eventList = await eventsController.list();
+            console.log(eventList);
+            console.log('linha 324');
             let bkEvent = eventList.filter(e => e.id == eventId);
             bkEvent = bkEvent[0];
 
