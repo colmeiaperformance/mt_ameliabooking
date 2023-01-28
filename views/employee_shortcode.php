@@ -24,6 +24,21 @@
     <div class="lds-grid" style="top:50% !important"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
 
+<div id="mt_message_overlay_error">
+    <h2> Ops...</h2>
+    <h3>Não foi possível realizar sua inscrição, verifique os dados informados e tente novamente.</h3>
+    <button class="mt_btn_default" onclick="closeModal()"> Ok </button>
+</div>
+
+<div id="mt_message_overlay_success">
+    <h2> Obrigada!</h2>
+    <h3> 
+        Sua inscrição foi realizada com sucesso! <br/>
+        Você receberá as informações do evento no seu email.
+    </h3>
+    <button class="mt_btn_default" onclick="closeModal()"> Ok </button>
+</div>
+
 <div id="mt_message_overlay_success" style="max-width:350px">
     <h2> Obrigado!</h2>
     <h3> 
@@ -282,18 +297,9 @@
         eventsSection.classList.toggle('hide');
     }
 
-    console.log('ajaxurl 287');
-    console.log(ajaxurl);
-
     async function bookingEvent(eventId){
-        console.log('linha 292');
-        console.log(eventList);
         let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);
-        console.log('Form');
-        console.log(form);
-        console.log('Form query');
-        console.log(formQuery);
         let formData = new FormData(form);
         firstName =  formData.getAll('firstName')[0];
         lastName =  formData.getAll('lastName')[0];
@@ -308,11 +314,8 @@
         form.addEventListener("submit", event => {
             event.preventDefault();
         });
-
-        console.log('linha 313');
         
         if(!validateForm(array[0], array[1], array[2], array[3])){
-            console.log('linha 314');
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
@@ -324,17 +327,11 @@
         } else {
             jQuery("#mt_loader_overlay").fadeIn();
             let eventList = await eventsController.list();
-            console.log(eventList);
-            console.log('linha 324');
             let bkEvent = eventList.filter(e => e.id == eventId);
             bkEvent = bkEvent[0];
-
-            console.log('bk Event');
-            console.log(bkEvent);
             
             let booking = await eventsController.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
             if(booking){
-                console.log('Linha 333');
                 jQuery("#mt_message_overlay_success").fadeIn();
                 jQuery("#mt_message_overlay_success").css('display', 'flex');
                 jQuery("#mt_loader_overlay").fadeOut();
@@ -374,11 +371,10 @@
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
                 });
-                // setTimeout(function () {
-                //     location.reload(true);
-                // }, 1000);
+                setTimeout(function () {
+                    location.reload(true);
+                }, 1000);
             }else{
-                console.log('Linha 376');
                 validateForm(array[0], array[1], array[2], array[3]);
                 jQuery("#mt_message_overlay_error").fadeIn();
                 jQuery("#mt_message_overlay_error").css('display', 'flex');
