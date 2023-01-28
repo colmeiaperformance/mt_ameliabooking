@@ -226,6 +226,9 @@
         jQuery("#districtFilter").css('display', 'none');
     }
 
+    console.log('ajaxurl');
+    console.log(ajaxurl);
+
     async function bookingEvent(eventId){
         let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);

@@ -284,10 +284,17 @@
         }
     }
 
+    console.log('ajaxurl');
+    console.log(ajaxurl);
+
     async function bookingEvent(eventId){
         let eventList = await eventsController.list();
         let formQuery = jQuery(`#formEvt${eventId}`);
         let form = document.getElementById(`formEvt${eventId}`);
+        console.log('Form');
+        console.log(form);
+        console.log('Form query');
+        console.log(formQuery);
         let formData = new FormData(form);
         firstName =  formData.getAll('firstName')[0];
         lastName =  formData.getAll('lastName')[0];
