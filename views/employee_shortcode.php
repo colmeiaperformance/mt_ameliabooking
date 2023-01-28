@@ -278,6 +278,7 @@
     }
 
     const toggleEvents = async() => {
+        let eventsSection = document.getElementById('instructorEventsSection');
         eventsSection.classList.toggle('hide');
     }
 
