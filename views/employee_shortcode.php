@@ -309,8 +309,11 @@
         form.addEventListener("submit", event => {
             event.preventDefault();
         });
+
+        console.log('linha 313');
         
         if(!validateForm(array[0], array[1], array[2], array[3])){
+            console.log('linha 314');
             jQuery("#mt_message_overlay_error").fadeIn();
             jQuery("#mt_message_overlay_error").css('display', 'flex');
 
@@ -319,8 +322,8 @@
                     validateForm(array[0], array[1], array[2], array[3]);
                 });
             });
-        }
-        else{
+        } else {
+            console.log('linha 324');
             jQuery("#mt_loader_overlay").fadeIn();
             let bkEvent = eventList.filter(e => e.id == eventId);
             bkEvent = bkEvent[0];
@@ -330,6 +333,7 @@
             
             let booking = await eventsController.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
             if(booking){
+                console.log('Linha 333');
                 jQuery("#mt_message_overlay_success").fadeIn();
                 jQuery("#mt_message_overlay_success").css('display', 'flex');
                 jQuery("#mt_loader_overlay").fadeOut();
