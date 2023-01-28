@@ -133,8 +133,8 @@
         employee = await getEmployee(id);
         controller.render(employee);
 
-        let events = await eventsController.list();
-        events = events.filter((e) => {
+        let eventList = await eventsController.list();
+        events = eventList.filter((e) => {
             return e._organizerId == id;
         });
 
@@ -278,21 +278,13 @@
     }
 
     const toggleEvents = async() => {
-        let eventsSection = document.getElementById('instructorEventsSection');
         eventsSection.classList.toggle('hide');
-        
-        if(!eventsSection.classList.contains('hide')){
-            jQuery("#mt_loader_overlay").fadeIn();
-            
-            jQuery("#mt_loader_overlay").fadeOut();
-        }
     }
 
     console.log('ajaxurl 287');
     console.log(ajaxurl);
 
     async function bookingEvent(eventId){
-        let eventList = await eventsController.list();
         console.log('linha 292');
         console.log(eventList);
         let formQuery = jQuery(`#formEvt${eventId}`);
