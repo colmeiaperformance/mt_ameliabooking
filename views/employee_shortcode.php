@@ -324,6 +324,9 @@
             jQuery("#mt_loader_overlay").fadeIn();
             let bkEvent = eventList.filter(e => e.id == eventId);
             bkEvent = bkEvent[0];
+
+            console.log('bk Event');
+            console.log(bkEvent);
             
             let booking = await eventsController.booking(bkEvent,email, firstName, lastName, phone, ajaxurl);
             if(booking){
@@ -366,9 +369,9 @@
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
                 });
-                setTimeout(function () {
-                    location.reload(true);
-                }, 1000);
+                // setTimeout(function () {
+                //     location.reload(true);
+                // }, 1000);
             }else{
                 validateForm(array[0], array[1], array[2], array[3]);
                 jQuery("#mt_message_overlay_error").fadeIn();
