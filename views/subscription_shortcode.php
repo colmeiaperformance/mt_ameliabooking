@@ -172,7 +172,7 @@
     instrutorID = '<?php echo $instrutorID; ?>';
     if(instrutorID){
         instrutorID = Number(instrutorID);
-        instrutorName = '<?php echo $instrutorName; ?>';
+        instrutorName = esc_html($instrutorName);
     }else{
         instrutorID = false;   
     }
