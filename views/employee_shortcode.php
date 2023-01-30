@@ -96,6 +96,9 @@
             min-width: 257px !important;
         }
     }  
+    #eventsContainer .phone .input-group.mt_warning img {
+        margin-bottom: 18px !important;        
+    }
 </style>
 
 <script>
@@ -228,10 +231,11 @@
         }else{
             showHideError(melhorPeriodo, true, false, 'Este campo está válido.');
         }
+        
         phoneValue = document.getElementById("contactPhone").value;
         if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu telefone ou celular com DDD. Formato correto: (00) 00000-0000.');
+            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00) 00000-0000.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
@@ -419,9 +423,10 @@
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
-        if(phone.val() == ""){
+        phoneValue = document.getElementById("contactPhone").value;
+        if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu telefone ou celular.');
+            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00)00000-0000.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }

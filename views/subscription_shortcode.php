@@ -469,7 +469,7 @@
         phoneValue = document.getElementById("contactPhone").value;
         if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu DDD + Telefone ou celular.');
+            showHideError(phone, true, true, 'Digite seu DDD + Telefone ou celular. Formato: (00) 00000-0000.');
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
