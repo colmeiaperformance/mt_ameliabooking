@@ -466,7 +466,8 @@
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
-        if(phone.val() == ""){
+        phoneValue = document.getElementById("contactPhone").value;
+        if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + Telefone ou celular.');
         }else{
