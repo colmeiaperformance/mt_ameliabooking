@@ -234,9 +234,9 @@
         }
         
         phoneValueMsg = document.getElementById("contactPhoneMsg").value;
-        if(phone.val() == "" || phoneValueMsg.length < 14 ){
+        if(phone.val() == "" || phone.val().length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00) 00000-0000.');
+            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular.');
             console.log("Employee 239");
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
@@ -426,9 +426,9 @@
         }
 
         phoneValueEmplEvent = document.getElementById("contactPhoneEmplEvent").value;
-        if(phone.val() == "" || phoneValueEmplEvent.length < 14 ){
+        if(phone.val() == "" || phone.val().length < 14 ){
             valid = false;
-            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00)00000-0000.');
+            showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular.');
             console.log("employee 431");
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
