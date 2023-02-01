@@ -160,7 +160,8 @@
         employeeEvents.renderView();
         jQuery('.phoneMask').mask(phoneBehavior, spOptions);
 
-        jQuery('#contactPhone').mask(phoneBehavior, spOptions);
+        jQuery('#contactPhoneMsg').mask(phoneBehavior, spOptions);
+        jQuery('#contactPhoneEmplEvent').mask(phoneBehavior, spOptions);
         jQuery("#mt_loader_overlay").fadeOut();
     }
 
@@ -168,11 +169,11 @@
         jQuery("#mt_loader_overlay").fadeIn();
         event.preventDefault();
 
-        jQuery("#contactEmail, #melhorDia, #melhorPeriodo, #contactName, #contactPhone, #contactMessage").on('input', function() {
-            formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"));
+        jQuery("#contactEmail, #melhorDia, #melhorPeriodo, #contactName, #contactPhoneMsg, #contactMessage").on('input', function() {
+            formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhoneMsg"), jQuery("#contactMessage"));
         });
 
-        if(formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhone"), jQuery("#contactMessage"))){
+        if(formIsValid(jQuery("#contactEmail"), jQuery("#melhorDia"), jQuery("#melhorPeriodo"), jQuery("#contactName"), jQuery("#contactPhoneMsg"), jQuery("#contactMessage"))){
             const url = `${ajaxurl}?action=event_form`;
             let formData = new FormData();
             formData.append('email',jQuery("#contactEmail").val())
@@ -180,7 +181,7 @@
             formData.append('melhorPeriodo',jQuery("#melhorPeriodo").val())
             formData.append('aceite',jQuery("#contactAceite").val())
             formData.append('name',jQuery("#contactName").val())
-            formData.append('phone',jQuery("#contactPhone").val())
+            formData.append('phone',jQuery("#contactPhoneMsg").val())
             formData.append('instrutor',employee.firstName+' '+ employee.lastName)
             formData.append('message',jQuery("#contactMessage").val())
 
@@ -232,8 +233,8 @@
             showHideError(melhorPeriodo, true, false, 'Este campo está válido.');
         }
         
-        phoneValue = document.getElementById("contactPhone").value;
-        if(phone.val() == "" || phoneValue.length < 14 ){
+        phoneValueMsg = document.getElementById("contactPhoneMsg").value;
+        if(phone.val() == "" || phoneValueMsg.length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00) 00000-0000.');
             console.log("Employee 239");
@@ -424,8 +425,8 @@
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
-        phoneValue = document.getElementById("contactPhone").value;
-        if(phone.val() == "" || phoneValue.length < 14 ){
+        phoneValueEmplEvent = document.getElementById("contactPhoneEmplEvent").value;
+        if(phone.val() == "" || phoneValueEmplEvent.length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00)00000-0000.');
             console.log("employee 431");

@@ -466,8 +466,8 @@
             showHideError(lastName, true, false, 'Este campo está válido.');
         }
 
-        phoneValue = document.getElementById("contactPhone").value;
-        if(phone.val() == "" || phoneValue.length < 14 ){
+        phoneValueAgEvent = document.getElementById("contactPhoneAgEvent").value;
+        if(phone.val() == "" || phone.val().length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + Telefone ou celular. Formato: (00) 00000-0000.');
             console.log("subs 473");
