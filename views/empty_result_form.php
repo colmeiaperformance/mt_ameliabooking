@@ -947,6 +947,7 @@
           elem.className = elem.className + ' _has_error';
           no_error = false;
           tooltip = create_tooltip(elem, "Digite o seu DDD + Telefone válido.");
+          console.log("empty 950");
         }
       }
       if (no_error && elem.name == 'email') {

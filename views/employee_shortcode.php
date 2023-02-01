@@ -236,6 +236,7 @@
         if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00) 00000-0000.');
+            console.log("Employee 239");
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
@@ -427,6 +428,7 @@
         if(phone.val() == "" || phoneValue.length < 14 ){
             valid = false;
             showHideError(phone, true, true, 'Digite seu DDD + telefone ou celular. Formato: (00)00000-0000.');
+            console.log("employee 431");
         }else{
             showHideError(phone, true, false, 'Este campo está válido.');
         }
