@@ -3,7 +3,7 @@
    Plugin Name: Amelia Booking for Meditação Transcendental
    Plugin URI: https://github.com/jeffersonalopes
    description: Plugin para adição de funcionalidades para o plugin Amelia Booking - site Meditação Transcedental.
-   Version: 2.3.2
+   Version: 2.3.3
    Author: Jefferson Augusto Lopes
    Author URI: https://github.com/jeffersonalopes
    License: GPL2
