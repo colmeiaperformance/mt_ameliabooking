@@ -139,7 +139,7 @@ class EmployeeEvents {
                                         <div class="mt_column phone">
                                             <label> * DDD + Telefone: </label>		
                                             <div class="input-group">
-                                                <span class="input-group-text flag"><img src="${this._urlbase}resources/svg/flag.svg"></span>
+                                                <span class="input-group-text flag">+55</span>
                                                 <input id="contactPhoneEmplEvent" name="phone" onchange="phone = this.value" type="tel" class="form-control phoneMask phoneInpt" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000">
                                             </div>
                                         </div>
