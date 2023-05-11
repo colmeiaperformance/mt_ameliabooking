@@ -135,8 +135,15 @@ class EventItem extends View{
 										<label> * DDD + Telefone: </label>		
 										<div class="input-group">
 											<span class="input-group-text flag">+55</span>
-											<input id="contactPhoneAgEvent" name="phone" onchange="phone = this.value" style="padding-left: 75px;" type="tel" class="form-control phoneMask phoneInpt" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000">
+											<input id="contactPhoneAgEvent" name="phone" onchange="phone = this.value" style="padding-left: 75px;" type="tel" class="form-control phoneMask phoneInpt" data-bs-toggle="tooltip" data-bs-placement="top" title="(00) 00000-0000" aria-describedby="phone-ddd">
 										</div>
+									</div>
+								</div>
+								<div class="mt_row">
+									<div class="d-none d-md-block col-6"></div>
+									<div class="col-md-6 mb-3">
+										<div id="phone-ddd" class="form-text">Não necessita repetir o código do Brasil +55. Digite somente o DDD da
+									sua cidade e o seu número.</div>
 									</div>
 								</div>
 								${
